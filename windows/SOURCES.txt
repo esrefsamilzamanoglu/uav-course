@@ -1,0 +1,46 @@
+Windows native Gazebo / ArduPilot course helpers
+
+Student entry points: Kur.cmd (install), Baslat.cmd (run).
+Install Pixi x64 and Visual C++ Build Tools 2022 with MSVC v143 x64/x86
+and Windows 11 SDK 10.0.26100 using the official links in the main README.
+Use a path without spaces/non-ASCII characters, for example C:\uav-course.
+These helpers change no permanent execution policy and install no Windows services.
+
+Gazebo Jetty 10.5.0 and build tools: https://conda.anaconda.org/conda-forge/
+Windows installation reference: https://gazebosim.org/docs/jetty/install_windows/
+Pixi verifies downloaded conda packages against their repository checksums.
+
+Upstream plugin: https://github.com/ArduPilot/ardupilot_gazebo
+Revision: 082a0fe231f6e63bc8d1598f1cba461d9e2ea7f5
+windows-core.patch modifies the core plugin's Winsock, MSVC namespace/export
+and CMake handling. It disables the optional camera-streaming build.
+This is a local Windows source port, not an official Windows plugin release.
+SocketUDP: Copyright (C) 2024 ardupilot.org, LGPL-3.0-or-later.
+ArduPilotPlugin.hh: Copyright (C) 2016 Open Source Robotics Foundation,
+Apache License 2.0. Existing upstream notices remain in the fetched sources.
+LGPL text: COPYING.LESSER; GPL text: COPYING
+Apache text: https://www.apache.org/licenses/LICENSE-2.0
+Local port changes and course helper code: LGPL-3.0-or-later.
+
+Windows ArduCopter 4.7.2 (fbd0a316) and ten runtime DLLs are downloaded
+directly from https://firmware.ardupilot.org/Tools/MissionPlanner/sitl/CopterStable/
+The official .elf download is a Windows PE executable saved as ArduCopter.exe.
+Parameters come from official ArduPilot commit
+fbd0a3160c90a557c24ce4c38c16975532652536.
+downloads.json records SHA-256 values from the working 2026-10-15 installation.
+If the mutable CopterStable files change, installation stops instead of mixing
+unverified versions; the course maintainer must verify and update the manifest.
+
+The original native Windows 10 installation was tested with a 5 m Iris flight
+on 2026-10-15. The helper source retains that core setup. Camera, gimbal,
+other vehicles and arbitrary newer Gazebo/SITL combinations are outside scope.
+resolve_world.py expands only that revision's two local Iris includes and six
+mesh references to work around native sdformat 16.1.0 Windows path parsing.
+The installed default Gazebo GUI configuration is copied locally with the
+initial camera aimed at Iris; the global user GUI configuration is unchanged.
+No binaries, package caches or prebuilt DLLs are distributed here.
+Generated files stay under .local/ and .pixi/ in this directory.
+
+Mission Planner: TCP, host 127.0.0.1, port 5760.
+Gazebo physics JSON link: localhost UDP 9002 (separate from MAVLink).
+The launcher sends no arm, takeoff or flight commands.

@@ -1,0 +1,291 @@
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -83,9 +83,20 @@
+ 
+ # --------------------------------------------------------------------------- #
+ find_package(RapidJSON REQUIRED)
+-find_package(OpenCV REQUIRED)
+-
+-pkg_check_modules(GST REQUIRED gstreamer-1.0 gstreamer-app-1.0)
++find_path(ARDUPILOT_GAZEBO_RAPIDJSON_INCLUDE_DIR
++  NAMES rapidjson/document.h
++  HINTS ${RAPIDJSON_INCLUDE_DIRS} ${RapidJSON_INCLUDE_DIRS}
++)
++if(NOT ARDUPILOT_GAZEBO_RAPIDJSON_INCLUDE_DIR)
++  message(FATAL_ERROR "RapidJSON headers not found")
++endif()
++
++option(BUILD_GSTREAMER_PLUGIN "Build the optional camera streaming plugin" ON)
++if(BUILD_GSTREAMER_PLUGIN)
++  find_package(OpenCV REQUIRED)
++  find_package(PkgConfig REQUIRED)
++  pkg_check_modules(GST REQUIRED gstreamer-1.0 gstreamer-app-1.0)
++endif()
+ 
+ 
+ # --------------------------------------------------------------------------- #
+@@ -99,10 +110,16 @@
+ )
+ target_include_directories(ArduPilotPlugin PRIVATE
+   include
++  ${ARDUPILOT_GAZEBO_RAPIDJSON_INCLUDE_DIR}
+ )
+ target_link_libraries(ArduPilotPlugin PRIVATE
+   gz-sim${GZ_SIM_VER}::gz-sim${GZ_SIM_VER}
+ )
++if(WIN32)
++  target_link_libraries(ArduPilotPlugin PRIVATE ws2_32)
++  target_compile_definitions(ArduPilotPlugin PRIVATE
++    WIN32_LEAN_AND_MEAN NOMINMAX _WINSOCK_DEPRECATED_NO_WARNINGS)
++endif()
+ 
+ add_library(ParachutePlugin
+   SHARED
+@@ -128,6 +145,7 @@
+   gz-sim${GZ_SIM_VER}::gz-sim${GZ_SIM_VER}
+ )
+ 
++if(BUILD_GSTREAMER_PLUGIN)
+ add_library(GstCameraPlugin
+   SHARED
+   src/GstCameraPlugin.cc
+@@ -142,6 +160,7 @@
+   ${OpenCV_LIBS}
+   ${GST_LINK_LIBRARIES}
+ )
++endif()
+ 
+ # --------------------------------------------------------------------------- #
+ # Install.
+@@ -151,9 +170,11 @@
+   ArduPilotPlugin
+   ParachutePlugin
+   CameraZoomPlugin
+-  GstCameraPlugin
+   DESTINATION lib/${PROJECT_NAME}
+ )
++if(BUILD_GSTREAMER_PLUGIN)
++  install(TARGETS GstCameraPlugin DESTINATION lib/${PROJECT_NAME})
++endif()
+ 
+ install(
+   DIRECTORY
+@@ -182,4 +203,4 @@
+     "${CMAKE_CURRENT_SOURCE_DIR}/hooks/${PROJECT_NAME}.sh.in")
+ 
+   ament_package()
+-endif()
+\ No newline at end of file
++endif()
+--- a/include/SocketUDP.hh
++++ b/include/SocketUDP.hh
+@@ -18,14 +18,23 @@
+ #ifndef SOCKETUDP_HH_
+ #define SOCKETUDP_HH_
+ 
+-#include <fcntl.h>
+-#include <unistd.h>
++#include <cstddef>
++#include <cstdint>
+ 
+ #ifdef _WIN32
+ #include <winsock2.h>
+ #include <Ws2tcpip.h>
++#include <BaseTsd.h>
++
++// Winsock returns int, but the public socket wrapper uses the POSIX signed
++// byte-count type. MSVC does not provide ssize_t.
++#ifdef _MSC_VER
++using ssize_t = SSIZE_T;
++#endif
+ #else
+ 
++#include <fcntl.h>
++#include <unistd.h>
+ #include <sys/ioctl.h>
+ #include <sys/socket.h>
+ #include <netinet/in.h>
+@@ -68,7 +77,11 @@
+     struct sockaddr_in in_addr{};
+ 
+     /// \brief File descriptor.
++#ifdef _WIN32
++    SOCKET fd = INVALID_SOCKET;
++#else
+     int fd = -1;
++#endif
+ 
+     /// \brief Poll for incoming data with timeout.
+     bool pollin(uint32_t timeout_ms);
+--- a/src/SocketUDP.cc
++++ b/src/SocketUDP.cc
+@@ -20,14 +20,31 @@
+ #include <cstdio>
+ #include <cstdlib>
+ #include <cstring>
++#include <limits>
+ 
+ 
+ SocketUDP::SocketUDP(bool reuseaddress, bool blocking) {
++#ifdef _WIN32
++    WSADATA wsa_data{};
++    const int startup_result = WSAStartup(MAKEWORD(2, 2), &wsa_data);
++    if (startup_result != 0) {
++        fprintf(stderr, "SocketUDP WSAStartup failed: %d\n", startup_result);
++        exit(EXIT_FAILURE);
++    }
++#endif
+     fd = socket(AF_INET, SOCK_DGRAM, 0);
++#ifdef _WIN32
++    if (fd == INVALID_SOCKET) {
++        fprintf(stderr, "SocketUDP creation failed: %d\n", WSAGetLastError());
++        WSACleanup();
++        exit(EXIT_FAILURE);
++    }
++#else
+     if (fd < 0) {
+         perror("SocketUDP creation failed");
+         exit(EXIT_FAILURE);
+     }
++#endif
+ 
+ #ifndef _WIN32
+     // Windows does not support FD_CLOEXEC
+@@ -44,10 +61,18 @@
+ 
+ 
+ SocketUDP::~SocketUDP() {
++#ifdef _WIN32
++    if (fd != INVALID_SOCKET) {
++        closesocket(fd);
++        fd = INVALID_SOCKET;
++    }
++    WSACleanup();
++#else
+     if (fd != -1) {
+         ::close(fd);
+         fd = -1;
+     }
++#endif
+ }
+ 
+ 
+@@ -57,11 +82,14 @@
+ 
+     if (::bind(fd, reinterpret_cast<sockaddr *>(&server_addr),
+                sizeof(server_addr)) != 0) {
++#ifdef _WIN32
++        fprintf(stderr, "SocketUDP Bind failed: %d\n", WSAGetLastError());
++        closesocket(fd);
++        fd = INVALID_SOCKET;
++#else
+         perror("SocketUDP Bind failed");
+-#ifdef _WIN32
+-        closesocket(fd);
+-#else
+         close(fd);
++        fd = -1;
+ #endif
+         return false;
+     }
+@@ -71,7 +99,13 @@
+ 
+ bool SocketUDP::set_reuseaddress() {
+     int one = 1;
++#ifdef _WIN32
++    return setsockopt(fd, SOL_SOCKET, SO_REUSEADDR,
++                      reinterpret_cast<const char *>(&one),
++                      sizeof(one)) != SOCKET_ERROR;
++#else
+     return (setsockopt(fd, SOL_SOCKET, SO_REUSEADDR, &one, sizeof(one)) != -1);
++#endif
+ }
+ 
+ 
+@@ -96,9 +130,20 @@
+     struct sockaddr_in sockaddr_out{};
+     make_sockaddr(address, port, sockaddr_out);
+ 
++#ifdef _WIN32
++    if (size > static_cast<size_t>(std::numeric_limits<int>::max())) {
++        WSASetLastError(WSAEMSGSIZE);
++        return -1;
++    }
++    return ::sendto(fd, static_cast<const char *>(buf),
++                    static_cast<int>(size), 0,
++                    reinterpret_cast<sockaddr *>(&sockaddr_out),
++                    sizeof(sockaddr_out));
++#else
+     return ::sendto(fd, buf, size, 0,
+                     reinterpret_cast<sockaddr *>(&sockaddr_out),
+                     sizeof(sockaddr_out));
++#endif
+ }
+ 
+ /*
+@@ -108,9 +153,20 @@
+     if (!pollin(timeout_ms)) {
+         return -1;
+     }
++#ifdef _WIN32
++    if (size > static_cast<size_t>(std::numeric_limits<int>::max())) {
++        WSASetLastError(WSAEMSGSIZE);
++        return -1;
++    }
++    int len = sizeof(in_addr);
++    // select() above supplies the timeout; MSG_DONTWAIT is POSIX-only.
++    return ::recvfrom(fd, static_cast<char *>(buf), static_cast<int>(size), 0,
++                      reinterpret_cast<sockaddr *>(&in_addr), &len);
++#else
+     socklen_t len = sizeof(in_addr);
+     return ::recvfrom(fd, buf, size, MSG_DONTWAIT,
+                       reinterpret_cast<sockaddr *>(&in_addr), &len);
++#endif
+ }
+ 
+ 
+@@ -130,7 +186,13 @@
+     tv.tv_sec = timeout_ms / 1000;
+     tv.tv_usec = (timeout_ms % 1000) * 1000UL;
+ 
+-    if (select(fd + 1, &fds, nullptr, nullptr, &tv) != 1) {
++#ifdef _WIN32
++    // Winsock ignores nfds; do not narrow its pointer-sized SOCKET handle.
++    const int selected = select(0, &fds, nullptr, nullptr, &tv);
++#else
++    const int selected = select(fd + 1, &fds, nullptr, nullptr, &tv);
++#endif
++    if (selected != 1) {
+         return false;
+     }
+     return true;
+--- a/include/ArduPilotPlugin.hh
++++ b/include/ArduPilotPlugin.hh
+@@ -27,6 +27,7 @@
+ {
+ namespace sim
+ {
++inline namespace GZ_SIM_VERSION_NAMESPACE {
+ namespace systems
+ {
+ /// \todo(srmainwaring) handle 16 or 32 based on magic
+@@ -89,7 +90,10 @@
+ ///                       with wall-time
+ /// <have_32_channels>    set true if 32 channels are enabled
+ ///
+-class GZ_SIM_VISIBLE ArduPilotPlugin:
++// This class belongs to this plugin, not to the gz-sim DLL. GZ_ADD_PLUGIN
++// exports its registration entry point; GZ_SIM_VISIBLE would mark these
++// definitions as dllimport when building against Gazebo with MSVC.
++class ArduPilotPlugin:
+   public gz::sim::System,
+   public gz::sim::ISystemConfigure,
+   public gz::sim::ISystemPostUpdate,
+@@ -183,6 +187,7 @@
+ };
+ 
+ }  // namespace systems
++}  // namespace GZ_SIM_VERSION_NAMESPACE
+ }  // namespace sim
+ }  // namespace gz
+ 

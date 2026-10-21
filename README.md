@@ -4,68 +4,44 @@
 
 | Sistem | Kullanılacak yol |
 | --- | --- |
-| Windows 11, x64 | Güncel Mission Planner + Gazebo Jetty |
+| Windows 10/11, x64 | Gazebo + ArduPilot Gazebo eklentisi + SITL → Mission Planner TCP |
 | Ubuntu 24.04 Desktop, amd64 | Güncel QGroundControl + Gazebo Harmonic + ArduPilot SITL |
 
 İnternet bağlantısı ve birkaç GB boş alan gerekir. ROS kurulumu gerekmiyor.
 
-## Windows
+## Windows — Gazebo + ArduPilot + Mission Planner
 
-**1.** PowerShell'i **yönetici olarak** açın. [Git](https://git-scm.com/install/windows), [VS Code](https://code.visualstudio.com/download) ve Gazebo'nun kullandığı [Pixi](https://pixi.prefix.dev/latest/installation/) paket yöneticisini kurun:
+Bu bilgisayarda çalışan düzen: **Gazebo Jetty 10.5.0 + ArduCopter 4.7.2 + Windows ArduPilot Gazebo eklentisi**. WSL gerekmez.
 
-```powershell
-winget install --id Git.Git --exact --source winget --accept-package-agreements --accept-source-agreements
-winget install --id Microsoft.VisualStudioCode --exact --source winget --accept-package-agreements --accept-source-agreements
-winget install --id prefix-dev.pixi --exact --source winget --accept-package-agreements --accept-source-agreements
+**1. Programları resmî adreslerinden indirip kurun:**
+
+| Program | İndirme |
+| --- | --- |
+| Git | [Windows kurucusu](https://git-scm.com/install/windows) |
+| VS Code | [Windows indirme sayfası](https://code.visualstudio.com/download) |
+| Mission Planner | [Güncel MSI kurucusu](https://firmware.ardupilot.org/Tools/MissionPlanner/MissionPlanner-latest.msi) |
+| Pixi — Gazebo paket yöneticisi | [Güncel Windows x64 MSI](https://github.com/prefix-dev/pixi/releases/latest/download/pixi-x86_64-pc-windows-msvc.msi) |
+| Visual C++ Build Tools 2022 — eklentiyi derlemek için | [Microsoft kurucusu](https://aka.ms/vs/17/release/vs_BuildTools.exe) |
+
+Build Tools kurucusunda **C++ ile masaüstü geliştirme** iş yükünü; **MSVC v143 x64/x86** ve **Windows 11 SDK 10.0.26100** bileşenlerini seçin. Kurulumlar bittikten sonra bilgisayarı yeniden başlatın.
+
+**2. Ders deposunu alın:** VS Code'u açın → `Ctrl+Shift+P` → **Git: Clone** → bu adresi yapıştırın:
+
+```text
+https://github.com/esrefsamilzamanoglu/uav-course.git
 ```
 
-`winget` bulunamazsa [App Installer](https://apps.microsoft.com/detail/9nblggh4nns1) yükleyin. Kurulumdan sonra PowerShell'i kapatıp yeniden yönetici olarak açın; böylece `git` ve `pixi` komutları tanınır.
+Kayıt konumu olarak **`C:\`** seçin; depo **`C:\uav-course`** klasörüne alınır. Klasör yolunda boşluk kullanmayın.
 
-**2.** Ders deposunu alın:
+**3. Gazebo, eklenti ve SITL'yi kurun:** Dosya Gezgini'nde `C:\uav-course\windows\Kur.cmd` dosyasına çift tıklayın; başarı mesajını bekleyin. İlk indirmeler ve derleme zaman alabilir.
 
-```powershell
-Set-Location $env:USERPROFILE
-git clone https://github.com/esrefsamilzamanoglu/uav-course.git
-Set-Location .\uav-course
-```
+Bu adım [resmî Gazebo Windows yöntemiyle](https://gazebosim.org/docs/jetty/install_windows/) Gazebo'yu, [ArduPilot deposundan](https://github.com/ArduPilot/ardupilot_gazebo) eklenti kaynağını ve [resmî SITL sunucusundan](https://firmware.ardupilot.org/Tools/MissionPlanner/sitl/CopterStable/) uçuş yazılımını indirir. Bu bilgisayardaki çalışan eklentinin [Windows kaynak uyarlaması](windows/README.md) da uygulanır; derleme komutlarını elle yazmanız gerekmez.
 
-**3.** [Mission Planner'ın güncel resmî kurucusunu](https://firmware.ardupilot.org/Tools/MissionPlanner/MissionPlanner-latest.msi) indirin. Açılan kurulum sihirbazını tamamlayın:
+**4. Simülasyonu açın:** `C:\uav-course\windows\Baslat.cmd` dosyasına çift tıklayın. Gazebo'da Iris aracı ve SITL oturumu açılmalı.
 
-```powershell
-$ErrorActionPreference = 'Stop'
-[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-Invoke-WebRequest -UseBasicParsing -Uri 'https://firmware.ardupilot.org/Tools/MissionPlanner/MissionPlanner-latest.msi' -OutFile "$env:TEMP\MissionPlanner-latest.msi"
-Start-Process msiexec.exe -ArgumentList "/i `"$env:TEMP\MissionPlanner-latest.msi`"" -Wait
-```
+**5. Mission Planner'dan bağlanın:** Üstteki bağlantı türünü **TCP** seçin → **CONNECT** → IP **`127.0.0.1`** → port **`5760`**. Araç bilgileri ve telemetri geldiğinde bağlantı hazırdır; uçuş komutları Mission Planner'dan verilir.
 
-**4.** [Gazebo Jetty'yi resmî Windows yöntemiyle](https://gazebosim.org/docs/jetty/install_windows/) kurun. Yeni kurulum için boşluksuz `C:\gz-course` klasörünü kullanın:
-
-```powershell
-New-Item -ItemType Directory -Path C:\gz-course
-Set-Location C:\gz-course
-@'
-[workspace]
-name = "gazebo-course"
-version = "0.1.0"
-channels = ["conda-forge"]
-platforms = ["win-64"]
-
-[dependencies]
-gz-sim = "10.*"
-
-[target.win-64.activation.env]
-QT_QPA_PLATFORM_PLUGIN_PATH = "%CONDA_PREFIX%\\Library\\lib\\qt6\\plugins\\platforms"
-QML2_IMPORT_PATH = "%CONDA_PREFIX%\\Library\\lib\\qt6\\qml"
-'@ | Set-Content -LiteralPath .\pixi.toml -Encoding ascii
-pixi install
-pixi run gz sim -v4 shapes.sdf
-```
-
-Şekillerin bulunduğu Gazebo penceresi açılmalı. Sonraki açılışlarda aynı klasörde yalnızca son komutu çalıştırın.
-
-**5.** ArduPilot SITL için Mission Planner'ı açın: **SIMULATION → Multirotor**. Sürüm sorulursa **Stable** seçin. İlk açılışta gereken simülasyon dosyalarını Mission Planner resmî sunucudan indirir; indirme ve bağlantının tamamlanmasını bekleyin. [Resmî SITL yönergesi](https://ardupilot.org/planner/docs/mission-planner-simulation.html).
-
-Windows'ta bu adımlar Gazebo'yu ve Mission Planner SITL'yi ayrı ayrı çalıştırır. Gazebo–ArduPilot bağlantısı ayrıca eklenti gerektirir; upstream eklentinin native Windows kurulumu belgelenmiyor. Aşağıdaki Linux yolu eklentiyle bağlantıyı da kurar. Gazebo'nun Windows desteği deneysel olarak sunuluyor.
+Bu akışta Mission Planner'ın **SIMULATION** sekmesinden ikinci SITL açmayın. Oturumu bitirmek için başlatıcıda `Ctrl+C` kullanın. Sonraki kullanımlarda yalnızca **4 ve 5. adımları** uygulayın.
 
 ## Linux — Ubuntu 24.04 Desktop
 
@@ -159,11 +135,12 @@ QGroundControl aracı UDP `14550` üzerinden otomatik bulmalı. Gazebo'da araç,
 
 ## Takılırsanız
 
-- **Windows'ta Gazebo indirmesi yarım kaldı:** `C:\gz-course` içinde `pixi install` komutunu yeniden çalıştırın.
+- **Windows'ta kurulum yarım kaldı:** `windows\Kur.cmd` dosyasını yeniden açın. Derleyici bulunamadıysa Build Tools kurulumundaki C++ ve SDK bileşenlerini kontrol edin.
+- **Windows'ta TCP bağlantısı kurulamıyor:** `windows\Baslat.cmd` açık olmalı; IP `127.0.0.1`, port `5760` olmalı. Önceki simülasyon oturumunu kapatın.
 - **Linux'ta eklenti/model bulunamadı:** Gazebo terminalinde `source "$HOME/uav-course/course-env.sh"` çalıştırıp Gazebo'yu yeniden açın.
 - **Gazebo siyah ekran veriyor:** Grafik sürücüsünü güncelleyin. Linux'ta tanılama için `LIBGL_ALWAYS_SOFTWARE=1 gz sim -v4 -r iris_runway.sdf` deneyin.
 - **Linux'ta telemetri gelmiyor:** Gazebo ve SITL açık olmalı; önceki oturumları kapatın. QGroundControl için UDP `14550` kullanılır.
 
 Ek araç modelleri gerektiğinde [ArduPilot/SITL_Models](https://github.com/ArduPilot/SITL_Models) deposundan alınabilir. İlk Iris denemesinde eklentiyle gelen modeller yeterlidir.
 
-İndirme adresleri ve komut sözdizimi kontrol edildi; bu rehber için temiz bilgisayarda tam kurulum testi yapılmadı.
+Windows yardımcıları ayrı bir klasörde yeni ortam kurarak, eklentiyi derleyerek ve Gazebo + TCP telemetri bağlantısını açarak denendi. Önceki Windows kurulumunda kalkış, yaklaşık 5 m irtifada bekleme ve iniş kaydı da vardır. Temiz bilgisayar ve Linux uçtan uca kurulum testi yapılmadı.
