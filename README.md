@@ -1,24 +1,25 @@
 # UAV Course — 1. Hafta Kurulum
 
-İlk hafta için **Git + VS Code + yer kontrol istasyonu + Gazebo + ArduPilot SITL** kuracağız. Kendi işletim sisteminizin bölümünü izleyin; kod bloklarını sırayla çalıştırın. Bir adım hata verirse sonraki adıma geçmeyin.
+İlk hafta için **Git, VS Code, yer kontrol istasyonu, Gazebo ve ArduPilot SITL** kurulumu. Programlar kendi resmî kaynaklarından indirilir. İşletim sisteminizin bölümünü sırayla izleyin; bir adım hata verirse sonraki adıma geçmeyin.
 
 | Sistem | Kullanılacak yol |
 | --- | --- |
-| Windows 10/11, x64 | Mission Planner 1.3.83 + yerel Gazebo Jetty 10.5.0 ders paketi; WSL gerekmez |
-| Ubuntu 22.04 Desktop, amd64 | QGroundControl 4.4.5 + Gazebo Harmonic + ArduPilot 4.7.2 |
+| Windows 11, x64 | Güncel Mission Planner + Gazebo Jetty |
+| Ubuntu 24.04 Desktop, amd64 | Güncel QGroundControl + Gazebo Harmonic + ArduPilot SITL |
 
-İnternet bağlantısı ve birkaç GB boş alan gerekir. Linux komutları diğer dağıtımlar veya Ubuntu 24.04 için hazırlanmadı. ROS kurulumu gerekmiyor.
+İnternet bağlantısı ve birkaç GB boş alan gerekir. ROS kurulumu gerekmiyor.
 
 ## Windows
 
-**1.** PowerShell'i **yönetici olarak** açın. Git ve VS Code'u kurun:
+**1.** PowerShell'i **yönetici olarak** açın. [Git](https://git-scm.com/install/windows), [VS Code](https://code.visualstudio.com/download) ve Gazebo'nun kullandığı [Pixi](https://pixi.prefix.dev/latest/installation/) paket yöneticisini kurun:
 
 ```powershell
 winget install --id Git.Git --exact --source winget --accept-package-agreements --accept-source-agreements
 winget install --id Microsoft.VisualStudioCode --exact --source winget --accept-package-agreements --accept-source-agreements
+winget install --id prefix-dev.pixi --exact --source winget --accept-package-agreements --accept-source-agreements
 ```
 
-`winget` bulunamazsa [App Installer](https://apps.microsoft.com/detail/9nblggh4nns1) yükleyin. Kurulumdan sonra PowerShell'i kapatıp yeniden yönetici olarak açın; böylece `git` komutu tanınır.
+`winget` bulunamazsa [App Installer](https://apps.microsoft.com/detail/9nblggh4nns1) yükleyin. Kurulumdan sonra PowerShell'i kapatıp yeniden yönetici olarak açın; böylece `git` ve `pixi` komutları tanınır.
 
 **2.** Ders deposunu alın:
 
@@ -28,39 +29,45 @@ git clone https://github.com/esrefsamilzamanoglu/uav-course.git
 Set-Location .\uav-course
 ```
 
-**3.** Mission Planner'ı indirin. Açılan kurulum sihirbazını tamamlayın:
+**3.** [Mission Planner'ın güncel resmî kurucusunu](https://firmware.ardupilot.org/Tools/MissionPlanner/MissionPlanner-latest.msi) indirin. Açılan kurulum sihirbazını tamamlayın:
 
 ```powershell
 $ErrorActionPreference = 'Stop'
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-Invoke-WebRequest -UseBasicParsing -Uri 'https://github.com/ArduPilot/MissionPlanner/releases/download/MissionPlanner1.3.83/MissionPlanner-1.3.83.msi' -OutFile "$env:TEMP\MissionPlanner-1.3.83.msi"
-Start-Process msiexec.exe -ArgumentList "/i `"$env:TEMP\MissionPlanner-1.3.83.msi`"" -Wait
+Invoke-WebRequest -UseBasicParsing -Uri 'https://firmware.ardupilot.org/Tools/MissionPlanner/MissionPlanner-latest.msi' -OutFile "$env:TEMP\MissionPlanner-latest.msi"
+Start-Process msiexec.exe -ArgumentList "/i `"$env:TEMP\MissionPlanner-latest.msi`"" -Wait
 ```
 
-**4.** Ders paketini indirin ve kurun. `C:\IHA_Ders` boş olmalı; klasör yolunda boşluk kullanmayın:
+**4.** [Gazebo Jetty'yi resmî Windows yöntemiyle](https://gazebosim.org/docs/jetty/install_windows/) kurun. Yeni kurulum için boşluksuz `C:\gz-course` klasörünü kullanın:
 
 ```powershell
-Invoke-WebRequest -UseBasicParsing -Uri 'https://github.com/esrefsamilzamanoglu/uav-course/releases/download/hafta-1/IHA_Windows_Kurulum.zip' -OutFile "$env:TEMP\IHA_Windows_Kurulum.zip"
-if ((Get-FileHash "$env:TEMP\IHA_Windows_Kurulum.zip" -Algorithm SHA256).Hash -ne '945fa05ab348607c7488948dafe736b75ad5c767d8d97f041a13d5d42a87493e') { throw 'İndirme doğrulanamadı; ZIP dosyasını yeniden indirin.' }
-Expand-Archive -LiteralPath "$env:TEMP\IHA_Windows_Kurulum.zip" -DestinationPath C:\
-Set-Location C:\IHA_Ders
-powershell -NoProfile -ExecutionPolicy Bypass -File .\Install-Course.ps1
+New-Item -ItemType Directory -Path C:\gz-course
+Set-Location C:\gz-course
+@'
+[workspace]
+name = "gazebo-course"
+version = "0.1.0"
+channels = ["conda-forge"]
+platforms = ["win-64"]
+
+[dependencies]
+gz-sim = "10.*"
+
+[target.win-64.activation.env]
+QT_QPA_PLATFORM_PLUGIN_PATH = "%CONDA_PREFIX%\\Library\\lib\\qt6\\plugins\\platforms"
+QML2_IMPORT_PATH = "%CONDA_PREFIX%\\Library\\lib\\qt6\\qml"
+'@ | Set-Content -LiteralPath .\pixi.toml -Encoding ascii
+pixi install
+pixi run gz sim -v4 shapes.sdf
 ```
 
-İlk kurulum Gazebo, gerekli çalışma ortamı ve ek araç modellerini indirir; uzun sürebilir. Sistem Python'u veya derleyici kurmanız gerekmez.
+Şekillerin bulunduğu Gazebo penceresi açılmalı. Sonraki açılışlarda aynı klasörde yalnızca son komutu çalıştırın.
 
-**5.** Kurulum başarıyla bittikten sonra:
+**5.** ArduPilot SITL için Mission Planner'ı açın: **SIMULATION → Multirotor**. Sürüm sorulursa **Stable** seçin. İlk açılışta gereken simülasyon dosyalarını Mission Planner resmî sunucudan indirir; indirme ve bağlantının tamamlanmasını bekleyin. [Resmî SITL yönergesi](https://ardupilot.org/planner/docs/mission-planner-simulation.html).
 
-```powershell
-Set-Location C:\IHA_Ders
-.\Start-Copter.cmd
-```
+Windows'ta bu adımlar Gazebo'yu ve Mission Planner SITL'yi ayrı ayrı çalıştırır. Gazebo–ArduPilot bağlantısı ayrıca eklenti gerektirir; upstream eklentinin native Windows kurulumu belgelenmiyor. Aşağıdaki Linux yolu eklentiyle bağlantıyı da kurar. Gazebo'nun Windows desteği deneysel olarak sunuluyor.
 
-Gazebo açılınca Mission Planner'ı başlatın: **TCP → CONNECT → `127.0.0.1` → `5760`**. Araç ve telemetri görünmeli. Harici simülasyona bağlanırken Mission Planner'ın **SIMULATION** sekmesinden ikinci simülasyon başlatmayın.
-
-Sabit kanat için önce oturumu kapatıp `Start-Plane.cmd` çalıştırın. İki başlatıcıyı aynı anda açmayın. Ders deposunu VS Code'da normal kullanıcı oturumundan açabilirsiniz.
-
-## Linux — Ubuntu 22.04 Desktop
+## Linux — Ubuntu 24.04 Desktop
 
 Normal **Ubuntu Terminali** kullanın; conda/venv etkin olmasın. Komutları `sudo su` içinde çalıştırmayın.
 
@@ -81,7 +88,7 @@ sudo apt install -y ./tools/vscode.deb
 
 ```bash
 sudo curl -fsSL https://packages.osrfoundation.org/gazebo.gpg -o /usr/share/keyrings/pkgs-osrf-archive-keyring.gpg
-printf 'deb [arch=%s signed-by=/usr/share/keyrings/pkgs-osrf-archive-keyring.gpg] https://packages.osrfoundation.org/gazebo/ubuntu-stable jammy main\n' "$(dpkg --print-architecture)" | sudo tee /etc/apt/sources.list.d/gazebo-stable.list >/dev/null
+printf 'deb [arch=%s signed-by=/usr/share/keyrings/pkgs-osrf-archive-keyring.gpg] https://packages.osrfoundation.org/gazebo/ubuntu-stable noble main\n' "$(dpkg --print-architecture)" | sudo tee /etc/apt/sources.list.d/gazebo-stable.list >/dev/null
 sudo apt update
 sudo apt install -y gz-harmonic libgz-sim8-dev rapidjson-dev libopencv-dev \
   libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev \
@@ -100,13 +107,12 @@ DO_AP_STM_ENV=0 Tools/environment_install/install-prereqs-ubuntu.sh -y
 ./waf copter -j2
 ```
 
-**4.** [ArduPilot–Gazebo eklentisini](https://github.com/ArduPilot/ardupilot_gazebo/tree/082a0fe231f6e63bc8d1598f1cba461d9e2ea7f5) derleyip ortam dosyasını oluşturun:
+**4.** [Resmî ArduPilot–Gazebo eklentisini](https://github.com/ArduPilot/ardupilot_gazebo) derleyip ortam dosyasını oluşturun:
 
 ```bash
 cd "$HOME/uav-course/src"
 git clone https://github.com/ArduPilot/ardupilot_gazebo.git
 cd ardupilot_gazebo
-git checkout --detach 082a0fe231f6e63bc8d1598f1cba461d9e2ea7f5
 export GZ_VERSION=harmonic
 cmake -S . -B build -DCMAKE_BUILD_TYPE=RelWithDebInfo
 cmake --build build -j2
@@ -117,13 +123,13 @@ export GZ_SIM_RESOURCE_PATH="$HOME/uav-course/src/ardupilot_gazebo/models:$HOME/
 EOF
 ```
 
-**5.** [QGroundControl](https://docs.qgroundcontrol.com/Stable_V4.4/en/qgc-user-guide/getting_started/download_and_install.html) indirin:
+**5.** [QGroundControl'un güncel kararlı sürümünü](https://docs.qgroundcontrol.com/Stable_V5.1/en/qgc-user-guide/getting_started/download_and_install.html) indirin. Bu hazır sürüm Ubuntu 24.04 veya üzeri gerektirir:
 
 ```bash
-sudo apt install -y libfuse2 libqt5gui5 libxcb-xinerama0 libxkbcommon-x11-0
+sudo apt install -y libfuse2t64 libxcb-xinerama0 libxkbcommon-x11-0 libxcb-cursor0
 cd "$HOME/uav-course/tools"
-curl -fL --retry 3 https://github.com/mavlink/qgroundcontrol/releases/download/v4.4.5/QGroundControl.AppImage -o QGroundControl-4.4.5.AppImage
-chmod +x QGroundControl-4.4.5.AppImage
+curl -fL --retry 3 https://github.com/mavlink/qgroundcontrol/releases/latest/download/QGroundControl-x86_64.AppImage -o QGroundControl.AppImage
+chmod +x QGroundControl.AppImage
 ```
 
 **6.** Üç ayrı terminal açın; her birinde ilgili bloğu çalıştırın:
@@ -146,16 +152,18 @@ cd "$HOME/uav-course/src/ardupilot"
 Terminal 3 — yer kontrol istasyonu:
 
 ```bash
-"$HOME/uav-course/tools/QGroundControl-4.4.5.AppImage"
+"$HOME/uav-course/tools/QGroundControl.AppImage"
 ```
 
 QGroundControl aracı UDP `14550` üzerinden otomatik bulmalı. Gazebo'da araç, yer istasyonunda telemetri göründüğünde ilk hafta kurulumu tamamdır. Sonraki açılışlarda yalnızca **6. adımı** tekrarlayın.
 
 ## Takılırsanız
 
-- **Windows'ta kurulum yarım kaldı:** Aynı klasörde `Install-Course.ps1` komutunu yeniden çalıştırın. Klasörü taşıdıysanız çalışma ortamını yeni yerde yeniden kurun.
+- **Windows'ta Gazebo indirmesi yarım kaldı:** `C:\gz-course` içinde `pixi install` komutunu yeniden çalıştırın.
 - **Linux'ta eklenti/model bulunamadı:** Gazebo terminalinde `source "$HOME/uav-course/course-env.sh"` çalıştırıp Gazebo'yu yeniden açın.
 - **Gazebo siyah ekran veriyor:** Grafik sürücüsünü güncelleyin. Linux'ta tanılama için `LIBGL_ALWAYS_SOFTWARE=1 gz sim -v4 -r iris_runway.sdf` deneyin.
-- **Telemetri gelmiyor:** Gazebo ve SITL açık olmalı; önceki oturumları kapatın. Windows'ta TCP `5760`, Linux'ta UDP `14550` kullanın.
+- **Linux'ta telemetri gelmiyor:** Gazebo ve SITL açık olmalı; önceki oturumları kapatın. QGroundControl için UDP `14550` kullanılır.
 
-**Doğrulama sınırı:** Önceki Windows paketinde kurulum ve Copter/Plane telemetri başlangıcı mevcut Windows 10 bilgisayarında denenmiştir. Bu paketin yeni indirme adımı bağlantı/hash ve betik denetiminden geçti; tam kurulum yeniden çalıştırılmadı. Temiz bilgisayar ve Linux uçtan uca testleri yapılmadı. Windows eklentisi deneysel bir ders portudur; kamera/video/gimbal pakette yoktur.
+Ek araç modelleri gerektiğinde [ArduPilot/SITL_Models](https://github.com/ArduPilot/SITL_Models) deposundan alınabilir. İlk Iris denemesinde eklentiyle gelen modeller yeterlidir.
+
+İndirme adresleri ve komut sözdizimi kontrol edildi; bu rehber için temiz bilgisayarda tam kurulum testi yapılmadı.
