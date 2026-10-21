@@ -1,0 +1,32 @@
+[
+  {
+    "file": "sitl/arducopter",
+    "url": "https://firmware.ardupilot.org/Copter/stable-4.7.2/SITL_x86_64_linux_gnu/arducopter",
+    "sha256": "caed35e4cb796ec06cac40b09566a18251771486b1cbac5e2bf16b7a5ed5045d"
+  },
+  {
+    "file": "sitl/git-version.txt",
+    "url": "https://firmware.ardupilot.org/Copter/stable-4.7.2/SITL_x86_64_linux_gnu/git-version.txt",
+    "sha256": "625eab64bce710764ca6340e3773081d66837206cdb413a1185114c745fc4d57"
+  },
+  {
+    "file": "sitl/firmware-version.txt",
+    "url": "https://firmware.ardupilot.org/Copter/stable-4.7.2/SITL_x86_64_linux_gnu/firmware-version.txt",
+    "sha256": "7ee21c8b383119dfb87307a11d9249bbe0e5024554faff7bb7f62af13d3729d5"
+  },
+  {
+    "file": "sitl/default_params/copter.parm",
+    "url": "https://raw.githubusercontent.com/ArduPilot/ardupilot/fb773567896014da007bca58358704d4a0d8516f/Tools/autotest/default_params/copter.parm",
+    "sha256": "5e01345b45d1c6190b28bece5638bbdd4cf1cce35e05bbbf480ab24d2b51aa0e"
+  },
+  {
+    "file": "sitl/default_params/gazebo-iris.parm",
+    "url": "https://raw.githubusercontent.com/ArduPilot/ardupilot/fb773567896014da007bca58358704d4a0d8516f/Tools/autotest/default_params/gazebo-iris.parm",
+    "sha256": "4aee140cbb29b967e4519e4c84c4b389a2172c30e542f36b4fba4c118b4d4750"
+  },
+  {
+    "file": "qgc/QGroundControl.AppImage",
+    "url": "https://github.com/mavlink/qgroundcontrol/releases/download/v5.1.5/QGroundControl-x86_64.AppImage",
+    "sha256": "9a47e4cf269d9e4f897f582f6b19aa7ebf1e9e67c9d68a532a45b541354bc344"
+  }
+]

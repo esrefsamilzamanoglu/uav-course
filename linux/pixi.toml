@@ -1,0 +1,15 @@
+[workspace]
+name = "uav-course-linux"
+version = "0.1.0"
+channels = ["conda-forge"]
+platforms = ["linux-64"]
+
+[dependencies]
+gz-sim = "==10.5.0"
+python = "3.12.*"
+cxx-compiler = ">=1.11,<2"
+cmake = ">=4.4.4,<5"
+ninja = ">=1.13.2,<2"
+git = ">=2.56.0,<3"
+pkg-config = ">=0.29.2,<0.30"
+rapidjson = ">=1.1.0.post20250205,<2"

@@ -1,0 +1,49 @@
+All programs are downloaded from their upstream sources on the student's machine.
+No prebuilt application, AppImage or binary package is distributed in this repo.
+
+Gazebo Sim Jetty 10.5.0
+  https://gazebosim.org/docs/jetty/install/
+  https://gazebosim.org/docs/jetty/install_windows/
+  https://anaconda.org/conda-forge/gz-sim
+  https://github.com/conda-forge/gz-sim-feedstock
+  Installed by Pixi from conda-forge, with gz-sim == 10.5.0.
+  Each upstream dependency retains its original license.
+
+Pixi
+  https://pixi.sh/latest/installation/
+  https://github.com/prefix-dev/pixi
+  BSD-3-Clause
+
+ArduPilot Gazebo Plugin
+  https://github.com/ArduPilot/ardupilot_gazebo
+  Source commit: 082a0fe231f6e63bc8d1598f1cba461d9e2ea7f5
+  LGPL-3.0-or-later. See ../windows/COPYING.LESSER and ../windows/COPYING.
+  linux-core.patch changes only CMake configuration:
+    - C++17 for the conda-forge Jetty dependency toolchain;
+    - explicit RapidJSON header include path;
+    - optional camera streaming target, disabled for the first-week Iris world.
+  Linux socket/source files are unmodified.
+
+ArduCopter 4.7.2 Linux SITL
+  https://firmware.ardupilot.org/Copter/stable-4.7.2/SITL_x86_64_linux_gnu/
+  Source commit reported by git-version.txt:
+    fb773567896014da007bca58358704d4a0d8516f
+  https://github.com/ArduPilot/ardupilot/tree/fb773567896014da007bca58358704d4a0d8516f
+  GPL-3.0-or-later; copyright ArduPilot contributors.
+  copter.parm and gazebo-iris.parm are downloaded from the same source commit.
+  The Windows SITL has the same release number but a different build commit.
+  Upstream file hashes are listed in downloads.json.
+
+QGroundControl 5.1.5 Linux x86_64
+  https://github.com/mavlink/qgroundcontrol/releases/tag/v5.1.5
+  https://github.com/mavlink/qgroundcontrol/blob/v5.1.5/.github/COPYING.md
+  Dual licensed under Apache-2.0 and GPL-3.0.
+  AppImage SHA256 from the upstream GitHub release asset digest:
+    9a47e4cf269d9e4f897f582f6b19aa7ebf1e9e67c9d68a532a45b541354bc344
+  Extracted locally with --appimage-extract; AppRun executes outside Pixi's Qt environment.
+
+Shared course world and local model resolver
+  ../windows/iris.sdf
+  ../windows/resolve_world.py
+  The Iris models and meshes come from the plugin source commit above.
+  The resolver preserves source model files and prepares local resource paths.

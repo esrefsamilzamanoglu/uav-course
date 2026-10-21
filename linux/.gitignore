@@ -1,0 +1,4 @@
+.local/
+.pixi/
+pixi.lock
+__pycache__/

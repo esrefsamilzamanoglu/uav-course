@@ -5,7 +5,7 @@
 | Sistem | Kullanılacak yol |
 | --- | --- |
 | Windows 10/11, x64 | Gazebo + ArduPilot Gazebo eklentisi + SITL → Mission Planner TCP |
-| Ubuntu 24.04 Desktop, amd64 | Güncel QGroundControl + Gazebo Harmonic + ArduPilot SITL |
+| Ubuntu 24.04 Desktop, amd64 | Aynı Jetty 10.5.0 + ArduCopter 4.7.2 → QGroundControl TCP |
 
 İnternet bağlantısı ve birkaç GB boş alan gerekir. ROS kurulumu gerekmiyor.
 
@@ -43,104 +43,54 @@ Bu adım [resmî Gazebo Windows yöntemiyle](https://gazebosim.org/docs/jetty/in
 
 Bu akışta Mission Planner'ın **SIMULATION** sekmesinden ikinci SITL açmayın. Oturumu bitirmek için başlatıcıda `Ctrl+C` kullanın. Sonraki kullanımlarda yalnızca **4 ve 5. adımları** uygulayın.
 
-## Linux — Ubuntu 24.04 Desktop
+## Linux — Ubuntu 24.04 Desktop amd64
 
-Normal **Ubuntu Terminali** kullanın; conda/venv etkin olmasın. Komutları `sudo su` içinde çalıştırmayın.
+Windows ile aynı **Gazebo Jetty 10.5.0**, **ArduCopter 4.7.2** ve **ArduPilot Gazebo eklentisi kaynak sürümü** kullanılır. Linux yer kontrol istasyonu **QGroundControl 5.1.5**'tir; bağlantı burada da **TCP 127.0.0.1:5760** üzerinden yapılır.
 
-**1.** Temel araçları, VS Code'u ve ders deposunu alın:
+**1. Git, VS Code ve Pixi'yi hazırlayın:** [VS Code](https://code.visualstudio.com/download) ve [Pixi](https://pixi.prefix.dev/latest/installation/) resmî kaynaklarından kurulur. Gazebo ve QGroundControl'u 3. adımdaki yardımcı otomatik kurar.
+
+Normal Ubuntu Terminali'nde şu başlangıç adımlarını sırayla çalıştırın:
 
 ```bash
 sudo apt update
-sudo apt install -y git build-essential cmake pkg-config curl ca-certificates lsb-release gnupg
-cd "$HOME"
-git clone https://github.com/esrefsamilzamanoglu/uav-course.git
+sudo apt install -y git curl libxcb-xinerama0 libxkbcommon-x11-0 libxcb-cursor0
+curl -fL --retry 3 https://update.code.visualstudio.com/latest/linux-deb-x64/stable -o /tmp/uav-code.deb
+sudo apt install -y /tmp/uav-code.deb
+curl -fsSL https://pixi.sh/install.sh | bash
+```
+
+Terminali kapatıp yeniden açın. Kurulum ve başlatma yardımcılarını normal kullanıcıyla çalıştırın; önlerine `sudo` eklemeyin.
+
+**2. Ders deposunu alın:** VS Code → `Ctrl+Shift+P` → **Git: Clone** → `https://github.com/esrefsamilzamanoglu/uav-course.git`. Kayıt konumu olarak kendi ev klasörünüzü seçin; depo `~/uav-course` altına alınır.
+
+**3. Gazebo, eklenti, SITL ve QGroundControl'u kurun:**
+
+```bash
 cd "$HOME/uav-course"
-mkdir -p tools src
-curl -fL --retry 3 https://update.code.visualstudio.com/latest/linux-deb-x64/stable -o tools/vscode.deb
-sudo apt install -y ./tools/vscode.deb
+bash linux/kur.sh
 ```
 
-**2.** [Gazebo Harmonic](https://gazebosim.org/docs/harmonic/install_ubuntu/) ve eklenti bağımlılıklarını kurun. Eski Gazebo Classic/`gazebo11` kuruluysa bu adımı uygulamadan önce sürüm çakışmasını çözün:
+Sürümler sabitlenir; dosyalar resmî sunuculardan indirilip SHA256 ile doğrulanır. Eklenti otomatik derlenir. İlk kurulum zaman alabilir; yarıda kalırsa aynı komutu yeniden çalıştırın. [Linux kurulum notları](linux/README.md).
+
+**4. Simülasyonu açın:**
 
 ```bash
-sudo curl -fsSL https://packages.osrfoundation.org/gazebo.gpg -o /usr/share/keyrings/pkgs-osrf-archive-keyring.gpg
-printf 'deb [arch=%s signed-by=/usr/share/keyrings/pkgs-osrf-archive-keyring.gpg] https://packages.osrfoundation.org/gazebo/ubuntu-stable noble main\n' "$(dpkg --print-architecture)" | sudo tee /etc/apt/sources.list.d/gazebo-stable.list >/dev/null
-sudo apt update
-sudo apt install -y gz-harmonic libgz-sim8-dev rapidjson-dev libopencv-dev \
-  libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev \
-  gstreamer1.0-plugins-bad gstreamer1.0-libav gstreamer1.0-gl
+cd "$HOME/uav-course"
+bash linux/baslat.sh --qgc
 ```
 
-**3.** [ArduPilot SITL](https://ardupilot.org/dev/docs/building-setup-linux.html) kurun. Önkoşul betiğinin önüne `sudo` eklemeyin:
+Gazebo'da Iris, ayrıca QGroundControl açılmalı. QGroundControl'da **Application Settings → Comm Links → Add** açın. **Name: Iris**, **Type: TCP**, **Server Address: `127.0.0.1`**, **Port: `5760`** girin → **Save → Connect**. Sonraki açılışlarda yalnızca bu adımı uygulayın.
 
-```bash
-cd "$HOME/uav-course/src"
-git clone --branch Copter-4.7.2 --recurse-submodules https://github.com/ArduPilot/ardupilot.git
-cd ardupilot
-DO_AP_STM_ENV=0 Tools/environment_install/install-prereqs-ubuntu.sh -y
-. "$HOME/.profile"
-./waf configure --board sitl
-./waf copter -j2
-```
-
-**4.** [Resmî ArduPilot–Gazebo eklentisini](https://github.com/ArduPilot/ardupilot_gazebo) derleyip ortam dosyasını oluşturun:
-
-```bash
-cd "$HOME/uav-course/src"
-git clone https://github.com/ArduPilot/ardupilot_gazebo.git
-cd ardupilot_gazebo
-export GZ_VERSION=harmonic
-cmake -S . -B build -DCMAKE_BUILD_TYPE=RelWithDebInfo
-cmake --build build -j2
-cat > "$HOME/uav-course/course-env.sh" <<'EOF'
-export GZ_VERSION=harmonic
-export GZ_SIM_SYSTEM_PLUGIN_PATH="$HOME/uav-course/src/ardupilot_gazebo/build:${GZ_SIM_SYSTEM_PLUGIN_PATH:-}"
-export GZ_SIM_RESOURCE_PATH="$HOME/uav-course/src/ardupilot_gazebo/models:$HOME/uav-course/src/ardupilot_gazebo/worlds:${GZ_SIM_RESOURCE_PATH:-}"
-EOF
-```
-
-**5.** [QGroundControl'un güncel kararlı sürümünü](https://docs.qgroundcontrol.com/Stable_V5.1/en/qgc-user-guide/getting_started/download_and_install.html) indirin. Bu hazır sürüm Ubuntu 24.04 veya üzeri gerektirir:
-
-```bash
-sudo apt install -y libfuse2t64 libxcb-xinerama0 libxkbcommon-x11-0 libxcb-cursor0
-cd "$HOME/uav-course/tools"
-curl -fL --retry 3 https://github.com/mavlink/qgroundcontrol/releases/latest/download/QGroundControl-x86_64.AppImage -o QGroundControl.AppImage
-chmod +x QGroundControl.AppImage
-```
-
-**6.** Üç ayrı terminal açın; her birinde ilgili bloğu çalıştırın:
-
-Terminal 1 — Gazebo:
-
-```bash
-source "$HOME/uav-course/course-env.sh"
-gz sim -v4 -r iris_runway.sdf
-```
-
-Terminal 2 — ArduPilot SITL:
-
-```bash
-. "$HOME/.profile"
-cd "$HOME/uav-course/src/ardupilot"
-./Tools/autotest/sim_vehicle.py -v ArduCopter -f gazebo-iris --model JSON --no-extra-ports --out=127.0.0.1:14550 -j2
-```
-
-Terminal 3 — yer kontrol istasyonu:
-
-```bash
-"$HOME/uav-course/tools/QGroundControl.AppImage"
-```
-
-QGroundControl aracı UDP `14550` üzerinden otomatik bulmalı. Gazebo'da araç, yer istasyonunda telemetri göründüğünde ilk hafta kurulumu tamamdır. Sonraki açılışlarda yalnızca **6. adımı** tekrarlayın.
+Terminal açık kalsın. Bitirince Gazebo'yu kapatın veya terminalde `Ctrl+C` kullanın. Başlatıcı kendi açtığı süreçleri kapatır.
 
 ## Takılırsanız
 
 - **Windows'ta kurulum yarım kaldı:** `windows\Kur.cmd` dosyasını yeniden açın. Derleyici bulunamadıysa Build Tools kurulumundaki C++ ve SDK bileşenlerini kontrol edin.
 - **Windows'ta TCP bağlantısı kurulamıyor:** `windows\Baslat.cmd` açık olmalı; IP `127.0.0.1`, port `5760` olmalı. Önceki simülasyon oturumunu kapatın.
-- **Linux'ta eklenti/model bulunamadı:** Gazebo terminalinde `source "$HOME/uav-course/course-env.sh"` çalıştırıp Gazebo'yu yeniden açın.
-- **Gazebo siyah ekran veriyor:** Grafik sürücüsünü güncelleyin. Linux'ta tanılama için `LIBGL_ALWAYS_SOFTWARE=1 gz sim -v4 -r iris_runway.sdf` deneyin.
-- **Linux'ta telemetri gelmiyor:** Gazebo ve SITL açık olmalı; önceki oturumları kapatın. QGroundControl için UDP `14550` kullanılır.
+- **Linux'ta kurulum yarım kaldı:** `bash linux/kur.sh` komutunu yeniden çalıştırın. Gazebo'yu `bash linux/baslat.sh --qgc` ile açın; ortam yolları otomatik yüklenir.
+- **Gazebo siyah ekran veriyor:** Grafik sürücüsünü güncelleyin. Linux'ta tanılama için `LIBGL_ALWAYS_SOFTWARE=1 bash linux/baslat.sh --qgc` deneyin.
+- **Linux'ta telemetri gelmiyor:** Başlatıcı terminalini kontrol edin; QGroundControl bağlantısı TCP `127.0.0.1:5760` olmalı. Aynı anda ikinci bir SITL açmayın.
 
 Ek araç modelleri gerektiğinde [ArduPilot/SITL_Models](https://github.com/ArduPilot/SITL_Models) deposundan alınabilir. İlk Iris denemesinde eklentiyle gelen modeller yeterlidir.
 
-Windows yardımcıları ayrı bir klasörde yeni ortam kurarak, eklentiyi derleyerek ve Gazebo + TCP telemetri bağlantısını açarak denendi. Önceki Windows kurulumunda kalkış, yaklaşık 5 m irtifada bekleme ve iniş kaydı da vardır. Temiz bilgisayar ve Linux uçtan uca kurulum testi yapılmadı.
+Windows yardımcıları ayrı bir klasörde yeni ortam kurarak, eklentiyi derleyerek ve Gazebo + TCP telemetri bağlantısını açarak denendi. Önceki Windows kurulumunda kalkış, yaklaşık 5 m irtifada bekleme ve iniş kaydı da vardır. Linux yardımcıları Ubuntu 24.04.3 (WSL2) üzerinde ayrı ortamda kuruldu; tekrar kurulum, Gazebo ve QGroundControl açılışı, TCP üzerinden heartbeat/yönelim/konum verileri ve kapatıldığında süreçlerin temizlenmesi doğrulandı.
