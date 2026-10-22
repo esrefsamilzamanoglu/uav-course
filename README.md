@@ -1,4 +1,16 @@
-# UAV Course — 1. Hafta Kurulum
+# UAV Course
+
+Haftalık ders sunumları ve Windows/Linux kurulum rehberi.
+
+## Haftalık sunumlar
+
+| Hafta | Konu | Sunum |
+| --- | --- | --- |
+| 1. hafta | İHA Yazılımı ve Simülasyonu (v12) | [PDF'yi aç](haftalar/01/Hafta-01-Sunum.pdf) · [İndir](https://github.com/esrefsamilzamanoglu/uav-course/raw/refs/heads/main/haftalar/01/Hafta-01-Sunum.pdf) |
+
+Sonraki haftaların sunumları da burada, `haftalar/02`, `haftalar/03` sırasıyla paylaşılacak.
+
+## 1. hafta kurulumu
 
 İlk hafta için **Git, VS Code, yer kontrol istasyonu, Gazebo ve ArduPilot SITL** kurulumu. Programlar kendi resmî kaynaklarından indirilir. İşletim sisteminizin bölümünü sırayla izleyin; bir adım hata verirse sonraki adıma geçmeyin.
 
@@ -9,7 +21,7 @@
 
 İnternet bağlantısı ve birkaç GB boş alan gerekir. ROS kurulumu gerekmiyor.
 
-## Windows — Gazebo + ArduPilot + Mission Planner
+### Windows — Gazebo + ArduPilot + Mission Planner
 
 Bu bilgisayarda çalışan düzen: **Gazebo Jetty 10.5.0 + ArduCopter 4.7.2 + Windows ArduPilot Gazebo eklentisi**. WSL gerekmez.
 
@@ -43,7 +55,7 @@ Bu adım [resmî Gazebo Windows yöntemiyle](https://gazebosim.org/docs/jetty/in
 
 Bu akışta Mission Planner'ın **SIMULATION** sekmesinden ikinci SITL açmayın. Oturumu bitirmek için başlatıcıda `Ctrl+C` kullanın. Sonraki kullanımlarda yalnızca **4 ve 5. adımları** uygulayın.
 
-## Linux — Ubuntu 24.04 Desktop amd64
+### Linux — Ubuntu 24.04 Desktop amd64
 
 Windows ile aynı **Gazebo Jetty 10.5.0**, **ArduCopter 4.7.2** ve **ArduPilot Gazebo eklentisi kaynak sürümü** kullanılır. Linux yer kontrol istasyonu **QGroundControl 5.1.5**'tir; bağlantı burada da **TCP 127.0.0.1:5760** üzerinden yapılır.
 
@@ -83,7 +95,7 @@ Gazebo'da Iris, ayrıca QGroundControl açılmalı. QGroundControl'da **Applicat
 
 Terminal açık kalsın. Bitirince Gazebo'yu kapatın veya terminalde `Ctrl+C` kullanın. Başlatıcı kendi açtığı süreçleri kapatır.
 
-## Takılırsanız
+### Takılırsanız
 
 - **Windows'ta kurulum yarım kaldı:** `windows\Kur.cmd` dosyasını yeniden açın. Derleyici bulunamadıysa Build Tools kurulumundaki C++ ve SDK bileşenlerini kontrol edin.
 - **Windows'ta TCP bağlantısı kurulamıyor:** `windows\Baslat.cmd` açık olmalı; IP `127.0.0.1`, port `5760` olmalı. Önceki simülasyon oturumunu kapatın.
