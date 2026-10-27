@@ -1,0 +1,16 @@
+{
+  "scenario": "intro",
+  "flight_status": "auto_mission_passed",
+  "armed_modes": [
+    3
+  ],
+  "expected_auto_mode": 3,
+  "only_auto_while_armed": true,
+  "gcs_command_longs": [],
+  "flight_setpoints_sent": 0,
+  "force_arm_used": false,
+  "recorded_seconds": 151.46434092521667,
+  "maximum_altitude_m": 8.0,
+  "final_ground_distance_from_home_m": 0.0,
+  "final_disarmed": true
+}

@@ -1,0 +1,266 @@
+{
+  "name": "04_sabit_kanat_gozetim",
+  "description": "Zephyr fixed wing; mission contains TAKEOFF, three fixed scan legs, DO_LAND_START and LAND; detector never changes route.",
+  "home": [
+    -35.363262,
+    149.165237,
+    584
+  ],
+  "items": [
+    {
+      "seq": 0,
+      "frame": 0,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.363262,
+      "longitude": 149.165237,
+      "altitude": 584,
+      "east": 0,
+      "north": 0,
+      "label": "HOME"
+    },
+    {
+      "seq": 1,
+      "frame": 3,
+      "command": 22,
+      "params": [
+        15,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.36164503248858,
+      "longitude": 149.165237,
+      "altitude": 55,
+      "east": 0,
+      "north": 180,
+      "label": "AUTO_TAKEOFF"
+    },
+    {
+      "seq": 2,
+      "frame": 3,
+      "command": 178,
+      "params": [
+        0,
+        17,
+        -1,
+        0
+      ],
+      "latitude": 0,
+      "longitude": 0,
+      "altitude": 0,
+      "east": 0,
+      "north": 0,
+      "label": "DO_CHANGE_SPEED"
+    },
+    {
+      "seq": 3,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.361285706374936,
+      "longitude": 149.16457606831395,
+      "altitude": 55,
+      "east": -60,
+      "north": 220,
+      "label": "SCAN_1_START"
+    },
+    {
+      "seq": 4,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.3594890758067,
+      "longitude": 149.16457606831395,
+      "altitude": 55,
+      "east": -60,
+      "north": 420,
+      "label": "SCAN_1_END"
+    },
+    {
+      "seq": 5,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.358860255107814,
+      "longitude": 149.165237,
+      "altitude": 55,
+      "east": 0,
+      "north": 490,
+      "label": "TURN_1"
+    },
+    {
+      "seq": 6,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.362184021659054,
+      "longitude": 149.165237,
+      "altitude": 55,
+      "east": 0,
+      "north": 120,
+      "label": "SCAN_2_END"
+    },
+    {
+      "seq": 7,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.362857758122146,
+      "longitude": 149.16589793168603,
+      "altitude": 55,
+      "east": 60,
+      "north": 45,
+      "label": "TURN_2"
+    },
+    {
+      "seq": 8,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.3594890758067,
+      "longitude": 149.16589793168603,
+      "altitude": 55,
+      "east": 60,
+      "north": 420,
+      "label": "SCAN_3_END"
+    },
+    {
+      "seq": 9,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.35930941274987,
+      "longitude": 149.16744010562016,
+      "altitude": 60,
+      "east": 200,
+      "north": 440,
+      "label": "EXIT_SCAN"
+    },
+    {
+      "seq": 10,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.36730441877854,
+      "longitude": 149.16744010562016,
+      "altitude": 60,
+      "east": 200,
+      "north": -450,
+      "label": "DOWNWIND"
+    },
+    {
+      "seq": 11,
+      "frame": 3,
+      "command": 189,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": 0,
+      "longitude": 0,
+      "altitude": 0,
+      "east": 0,
+      "north": 0,
+      "label": "DO_LAND_START"
+    },
+    {
+      "seq": 12,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.36730441877854,
+      "longitude": 149.165237,
+      "altitude": 60,
+      "east": 0,
+      "north": -450,
+      "label": "PRE_APPROACH"
+    },
+    {
+      "seq": 13,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.36541795668189,
+      "longitude": 149.165237,
+      "altitude": 30,
+      "east": 0,
+      "north": -240,
+      "label": "FINAL_APPROACH"
+    },
+    {
+      "seq": 14,
+      "frame": 3,
+      "command": 21,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.363262,
+      "longitude": 149.165237,
+      "altitude": 0,
+      "east": 0,
+      "north": 0,
+      "label": "AUTO_LAND"
+    }
+  ]
+}

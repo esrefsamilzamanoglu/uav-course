@@ -1,0 +1,31 @@
+{
+  "scenario": "spray",
+  "flight_status": "auto_mission_passed",
+  "armed_modes": [
+    3
+  ],
+  "expected_auto_mode": 3,
+  "only_auto_while_armed": true,
+  "gcs_command_longs": [
+    400,
+    300
+  ],
+  "flight_setpoints_sent": 0,
+  "force_arm_used": false,
+  "recorded_seconds": 272.22595477104187,
+  "maximum_altitude_m": 4.02,
+  "final_ground_distance_from_home_m": 0.0,
+  "final_disarmed": true,
+  "pump_on_segments": 9,
+  "pump_on_seconds": 157.31290483474731,
+  "ideal_working_width_m": 8,
+  "planned_crop_bounds_enu_m": [
+    -31,
+    19,
+    31,
+    67
+  ],
+  "crop_covered_fraction": 1.0,
+  "crop_overlap_fraction": 0.13859169653524492,
+  "coverage_note": "Ideal 8m geometric swath inferred from real pump PWM and vehicle trajectory; not droplet/chemical deposition measurement."
+}

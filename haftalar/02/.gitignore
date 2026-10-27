@@ -1,0 +1,6 @@
+simulasyon/.local/
+simulasyon/.venv/
+simulasyon/build/
+simulasyon/output/
+__pycache__/
+*.pyc

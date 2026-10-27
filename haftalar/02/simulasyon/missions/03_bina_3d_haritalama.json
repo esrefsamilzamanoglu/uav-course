@@ -1,0 +1,997 @@
+{
+  "name": "03_bina_3d_haritalama",
+  "description": "Two AUTO waypoint orbits at 18/23 m; radius26 m; onboard DO_SET_ROI aims the servo gimbal; 3 m trigger.",
+  "home": [
+    -35.363262,
+    149.165237,
+    584
+  ],
+  "items": [
+    {
+      "seq": 0,
+      "frame": 0,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.363262,
+      "longitude": 149.165237,
+      "altitude": 584,
+      "east": 0,
+      "north": 0,
+      "label": "HOME"
+    },
+    {
+      "seq": 1,
+      "frame": 3,
+      "command": 22,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.363262,
+      "longitude": 149.165237,
+      "altitude": 18,
+      "east": 0,
+      "north": 0,
+      "label": "TAKEOFF"
+    },
+    {
+      "seq": 2,
+      "frame": 3,
+      "command": 178,
+      "params": [
+        1,
+        3,
+        -1,
+        0
+      ],
+      "latitude": 0,
+      "longitude": 0,
+      "altitude": 0,
+      "east": 0,
+      "north": 0,
+      "label": "DO_CHANGE_SPEED"
+    },
+    {
+      "seq": 3,
+      "frame": 3,
+      "command": 201,
+      "params": [
+        3,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.362857758122146,
+      "longitude": 149.165237,
+      "altitude": 7,
+      "east": 0,
+      "north": 45,
+      "label": "DO_SET_ROI_BUILDING"
+    },
+    {
+      "seq": 4,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.36309132009602,
+      "longitude": 149.165237,
+      "altitude": 18,
+      "east": 1.592040838891559e-15,
+      "north": 19.0,
+      "label": "ORBIT_1_00"
+    },
+    {
+      "seq": 5,
+      "frame": 3,
+      "command": 206,
+      "params": [
+        3,
+        0,
+        1,
+        0
+      ],
+      "latitude": 0,
+      "longitude": 0,
+      "altitude": 0,
+      "east": 0,
+      "north": 0,
+      "label": "DO_SET_CAM_TRIGG_DIST"
+    },
+    {
+      "seq": 6,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.36308336166475,
+      "longitude": 149.16531112674005,
+      "altitude": 18,
+      "east": 6.729295172665539,
+      "north": 19.885928516484224,
+      "label": "ORBIT_1_01"
+    },
+    {
+      "seq": 7,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.363060028724874,
+      "longitude": 149.1653802018653,
+      "altitude": 18,
+      "east": 12.999999999999996,
+      "north": 22.483339501604593,
+      "label": "ORBIT_1_02"
+    },
+    {
+      "seq": 8,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.3630229113777,
+      "longitude": 149.16543951802007,
+      "altitude": 18,
+      "east": 18.38477631085024,
+      "north": 26.61522368914976,
+      "label": "ORBIT_1_03"
+    },
+    {
+      "seq": 9,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.36297453910908,
+      "longitude": 149.16548503290645,
+      "altitude": 18,
+      "east": 22.516660498395403,
+      "north": 32.0,
+      "label": "ORBIT_1_04"
+    },
+    {
+      "seq": 10,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.3629182084092,
+      "longitude": 149.16551364476015,
+      "altitude": 18,
+      "east": 25.114071483515776,
+      "north": 38.27070482733446,
+      "label": "ORBIT_1_05"
+    },
+    {
+      "seq": 11,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.362857758122146,
+      "longitude": 149.16552340373062,
+      "altitude": 18,
+      "east": 26.0,
+      "north": 45.0,
+      "label": "ORBIT_1_06"
+    },
+    {
+      "seq": 12,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.362797307835095,
+      "longitude": 149.16551364476015,
+      "altitude": 18,
+      "east": 25.114071483515776,
+      "north": 51.72929517266554,
+      "label": "ORBIT_1_07"
+    },
+    {
+      "seq": 13,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.36274097713521,
+      "longitude": 149.16548503290645,
+      "altitude": 18,
+      "east": 22.516660498395407,
+      "north": 58.0,
+      "label": "ORBIT_1_08"
+    },
+    {
+      "seq": 14,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.362692604866595,
+      "longitude": 149.16543951802007,
+      "altitude": 18,
+      "east": 18.38477631085024,
+      "north": 63.38477631085024,
+      "label": "ORBIT_1_09"
+    },
+    {
+      "seq": 15,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.36265548751941,
+      "longitude": 149.1653802018653,
+      "altitude": 18,
+      "east": 12.999999999999996,
+      "north": 67.51666049839541,
+      "label": "ORBIT_1_10"
+    },
+    {
+      "seq": 16,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.36263215457954,
+      "longitude": 149.16531112674005,
+      "altitude": 18,
+      "east": 6.7292951726655446,
+      "north": 70.11407148351577,
+      "label": "ORBIT_1_11"
+    },
+    {
+      "seq": 17,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.362624196148275,
+      "longitude": 149.165237,
+      "altitude": 18,
+      "east": 1.592040838891559e-15,
+      "north": 71.0,
+      "label": "ORBIT_1_12"
+    },
+    {
+      "seq": 18,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.36263215457954,
+      "longitude": 149.16516287325993,
+      "altitude": 18,
+      "east": -6.729295172665542,
+      "north": 70.11407148351577,
+      "label": "ORBIT_1_13"
+    },
+    {
+      "seq": 19,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.36265548751941,
+      "longitude": 149.16509379813468,
+      "altitude": 18,
+      "east": -12.999999999999995,
+      "north": 67.51666049839541,
+      "label": "ORBIT_1_14"
+    },
+    {
+      "seq": 20,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.362692604866595,
+      "longitude": 149.16503448197992,
+      "altitude": 18,
+      "east": -18.384776310850224,
+      "north": 63.38477631085024,
+      "label": "ORBIT_1_15"
+    },
+    {
+      "seq": 21,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.36274097713521,
+      "longitude": 149.16498896709354,
+      "altitude": 18,
+      "east": -22.5166604983954,
+      "north": 58.00000000000001,
+      "label": "ORBIT_1_16"
+    },
+    {
+      "seq": 22,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.362797307835095,
+      "longitude": 149.16496035523983,
+      "altitude": 18,
+      "east": -25.114071483515776,
+      "north": 51.72929517266554,
+      "label": "ORBIT_1_17"
+    },
+    {
+      "seq": 23,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.362857758122146,
+      "longitude": 149.16495059626936,
+      "altitude": 18,
+      "east": -26.0,
+      "north": 45.0,
+      "label": "ORBIT_1_18"
+    },
+    {
+      "seq": 24,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.3629182084092,
+      "longitude": 149.16496035523983,
+      "altitude": 18,
+      "east": -25.11407148351578,
+      "north": 38.27070482733447,
+      "label": "ORBIT_1_19"
+    },
+    {
+      "seq": 25,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.36297453910908,
+      "longitude": 149.16498896709354,
+      "altitude": 18,
+      "east": -22.516660498395403,
+      "north": 31.999999999999996,
+      "label": "ORBIT_1_20"
+    },
+    {
+      "seq": 26,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.3630229113777,
+      "longitude": 149.16503448197992,
+      "altitude": 18,
+      "east": -18.38477631085024,
+      "north": 26.615223689149765,
+      "label": "ORBIT_1_21"
+    },
+    {
+      "seq": 27,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.363060028724874,
+      "longitude": 149.16509379813468,
+      "altitude": 18,
+      "east": -13.00000000000001,
+      "north": 22.4833395016046,
+      "label": "ORBIT_1_22"
+    },
+    {
+      "seq": 28,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.36308336166475,
+      "longitude": 149.16516287325993,
+      "altitude": 18,
+      "east": -6.72929517266556,
+      "north": 19.88592851648423,
+      "label": "ORBIT_1_23"
+    },
+    {
+      "seq": 29,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.36309132009602,
+      "longitude": 149.165237,
+      "altitude": 18,
+      "east": -4.776122516674677e-15,
+      "north": 19.0,
+      "label": "ORBIT_1_24"
+    },
+    {
+      "seq": 30,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.36309132009602,
+      "longitude": 149.165237,
+      "altitude": 23,
+      "east": 1.592040838891559e-15,
+      "north": 19.0,
+      "label": "ORBIT_2_00"
+    },
+    {
+      "seq": 31,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.36308336166475,
+      "longitude": 149.16531112674005,
+      "altitude": 23,
+      "east": 6.729295172665539,
+      "north": 19.885928516484224,
+      "label": "ORBIT_2_01"
+    },
+    {
+      "seq": 32,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.363060028724874,
+      "longitude": 149.1653802018653,
+      "altitude": 23,
+      "east": 12.999999999999996,
+      "north": 22.483339501604593,
+      "label": "ORBIT_2_02"
+    },
+    {
+      "seq": 33,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.3630229113777,
+      "longitude": 149.16543951802007,
+      "altitude": 23,
+      "east": 18.38477631085024,
+      "north": 26.61522368914976,
+      "label": "ORBIT_2_03"
+    },
+    {
+      "seq": 34,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.36297453910908,
+      "longitude": 149.16548503290645,
+      "altitude": 23,
+      "east": 22.516660498395403,
+      "north": 32.0,
+      "label": "ORBIT_2_04"
+    },
+    {
+      "seq": 35,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.3629182084092,
+      "longitude": 149.16551364476015,
+      "altitude": 23,
+      "east": 25.114071483515776,
+      "north": 38.27070482733446,
+      "label": "ORBIT_2_05"
+    },
+    {
+      "seq": 36,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.362857758122146,
+      "longitude": 149.16552340373062,
+      "altitude": 23,
+      "east": 26.0,
+      "north": 45.0,
+      "label": "ORBIT_2_06"
+    },
+    {
+      "seq": 37,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.362797307835095,
+      "longitude": 149.16551364476015,
+      "altitude": 23,
+      "east": 25.114071483515776,
+      "north": 51.72929517266554,
+      "label": "ORBIT_2_07"
+    },
+    {
+      "seq": 38,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.36274097713521,
+      "longitude": 149.16548503290645,
+      "altitude": 23,
+      "east": 22.516660498395407,
+      "north": 58.0,
+      "label": "ORBIT_2_08"
+    },
+    {
+      "seq": 39,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.362692604866595,
+      "longitude": 149.16543951802007,
+      "altitude": 23,
+      "east": 18.38477631085024,
+      "north": 63.38477631085024,
+      "label": "ORBIT_2_09"
+    },
+    {
+      "seq": 40,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.36265548751941,
+      "longitude": 149.1653802018653,
+      "altitude": 23,
+      "east": 12.999999999999996,
+      "north": 67.51666049839541,
+      "label": "ORBIT_2_10"
+    },
+    {
+      "seq": 41,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.36263215457954,
+      "longitude": 149.16531112674005,
+      "altitude": 23,
+      "east": 6.7292951726655446,
+      "north": 70.11407148351577,
+      "label": "ORBIT_2_11"
+    },
+    {
+      "seq": 42,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.362624196148275,
+      "longitude": 149.165237,
+      "altitude": 23,
+      "east": 1.592040838891559e-15,
+      "north": 71.0,
+      "label": "ORBIT_2_12"
+    },
+    {
+      "seq": 43,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.36263215457954,
+      "longitude": 149.16516287325993,
+      "altitude": 23,
+      "east": -6.729295172665542,
+      "north": 70.11407148351577,
+      "label": "ORBIT_2_13"
+    },
+    {
+      "seq": 44,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.36265548751941,
+      "longitude": 149.16509379813468,
+      "altitude": 23,
+      "east": -12.999999999999995,
+      "north": 67.51666049839541,
+      "label": "ORBIT_2_14"
+    },
+    {
+      "seq": 45,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.362692604866595,
+      "longitude": 149.16503448197992,
+      "altitude": 23,
+      "east": -18.384776310850224,
+      "north": 63.38477631085024,
+      "label": "ORBIT_2_15"
+    },
+    {
+      "seq": 46,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.36274097713521,
+      "longitude": 149.16498896709354,
+      "altitude": 23,
+      "east": -22.5166604983954,
+      "north": 58.00000000000001,
+      "label": "ORBIT_2_16"
+    },
+    {
+      "seq": 47,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.362797307835095,
+      "longitude": 149.16496035523983,
+      "altitude": 23,
+      "east": -25.114071483515776,
+      "north": 51.72929517266554,
+      "label": "ORBIT_2_17"
+    },
+    {
+      "seq": 48,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.362857758122146,
+      "longitude": 149.16495059626936,
+      "altitude": 23,
+      "east": -26.0,
+      "north": 45.0,
+      "label": "ORBIT_2_18"
+    },
+    {
+      "seq": 49,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.3629182084092,
+      "longitude": 149.16496035523983,
+      "altitude": 23,
+      "east": -25.11407148351578,
+      "north": 38.27070482733447,
+      "label": "ORBIT_2_19"
+    },
+    {
+      "seq": 50,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.36297453910908,
+      "longitude": 149.16498896709354,
+      "altitude": 23,
+      "east": -22.516660498395403,
+      "north": 31.999999999999996,
+      "label": "ORBIT_2_20"
+    },
+    {
+      "seq": 51,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.3630229113777,
+      "longitude": 149.16503448197992,
+      "altitude": 23,
+      "east": -18.38477631085024,
+      "north": 26.615223689149765,
+      "label": "ORBIT_2_21"
+    },
+    {
+      "seq": 52,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.363060028724874,
+      "longitude": 149.16509379813468,
+      "altitude": 23,
+      "east": -13.00000000000001,
+      "north": 22.4833395016046,
+      "label": "ORBIT_2_22"
+    },
+    {
+      "seq": 53,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.36308336166475,
+      "longitude": 149.16516287325993,
+      "altitude": 23,
+      "east": -6.72929517266556,
+      "north": 19.88592851648423,
+      "label": "ORBIT_2_23"
+    },
+    {
+      "seq": 54,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.36309132009602,
+      "longitude": 149.165237,
+      "altitude": 23,
+      "east": -4.776122516674677e-15,
+      "north": 19.0,
+      "label": "ORBIT_2_24"
+    },
+    {
+      "seq": 55,
+      "frame": 3,
+      "command": 206,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": 0,
+      "longitude": 0,
+      "altitude": 0,
+      "east": 0,
+      "north": 0,
+      "label": "DO_SET_CAM_TRIGG_DIST"
+    },
+    {
+      "seq": 56,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.36319013477727,
+      "longitude": 149.165237,
+      "altitude": 23,
+      "east": 0,
+      "north": 8,
+      "label": "RETURN"
+    },
+    {
+      "seq": 57,
+      "frame": 3,
+      "command": 21,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.363262,
+      "longitude": 149.165237,
+      "altitude": 0,
+      "east": 0,
+      "north": 0,
+      "label": "LAND"
+    }
+  ]
+}

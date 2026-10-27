@@ -7,8 +7,9 @@ Haftalık ders sunumları ve Windows/Linux kurulum rehberi.
 | Hafta | Konu | Sunum |
 | --- | --- | --- |
 | 1. hafta | İHA Yazılımı ve Simülasyonu (v12) | [PDF'yi aç](haftalar/01/Hafta-01-Sunum.pdf) · [İndir](https://github.com/esrefsamilzamanoglu/uav-course/raw/refs/heads/main/haftalar/01/Hafta-01-Sunum.pdf) |
+| 2. hafta | AUTO görevler: tarla, bina ve sabit kanat | [PDF’yi aç](haftalar/02/Hafta-02-Sunum.pdf) · [PowerPoint](haftalar/02/Hafta-02-Sunum.pptx) · [Uygulamalar](haftalar/02/README.md) |
 
-Sonraki haftaların sunumları da burada, `haftalar/02`, `haftalar/03` sırasıyla paylaşılacak.
+Haftalık sunumlar ve uygulamalar yukarıdaki tabloda paylaşılır. İkinci haftanın [kurulum ve çalıştırma adımları](haftalar/02/simulasyon/README.md) kendi klasöründedir.
 
 ## 1. hafta kurulumu
 

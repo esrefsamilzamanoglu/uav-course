@@ -1,0 +1,181 @@
+{
+  "name": "00_kamera_tanitimi",
+  "description": "AUTO camera introduction: takeoff8m, nadir/45deg/20deg camera holds, land; no guided setpoints.",
+  "home": [
+    -35.363262,
+    149.165237,
+    584
+  ],
+  "items": [
+    {
+      "seq": 0,
+      "frame": 0,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.363262,
+      "longitude": 149.165237,
+      "altitude": 584,
+      "east": 0,
+      "north": 0,
+      "label": "HOME"
+    },
+    {
+      "seq": 1,
+      "frame": 3,
+      "command": 22,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.363262,
+      "longitude": 149.165237,
+      "altitude": 8,
+      "east": 0,
+      "north": 0,
+      "label": "TAKEOFF"
+    },
+    {
+      "seq": 2,
+      "frame": 2,
+      "command": 205,
+      "params": [
+        -90,
+        0,
+        0,
+        0
+      ],
+      "latitude": 0,
+      "longitude": 0,
+      "altitude": 2,
+      "east": 0,
+      "north": 0,
+      "label": "CAMERA_PITCH_-90"
+    },
+    {
+      "seq": 3,
+      "frame": 3,
+      "command": 19,
+      "params": [
+        8,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.363262,
+      "longitude": 149.165237,
+      "altitude": 8,
+      "east": 0,
+      "north": 0,
+      "label": "CAMERA_HOLD_-90"
+    },
+    {
+      "seq": 4,
+      "frame": 2,
+      "command": 205,
+      "params": [
+        -45,
+        0,
+        0,
+        0
+      ],
+      "latitude": 0,
+      "longitude": 0,
+      "altitude": 2,
+      "east": 0,
+      "north": 0,
+      "label": "CAMERA_PITCH_-45"
+    },
+    {
+      "seq": 5,
+      "frame": 3,
+      "command": 19,
+      "params": [
+        8,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.363262,
+      "longitude": 149.165237,
+      "altitude": 8,
+      "east": 0,
+      "north": 0,
+      "label": "CAMERA_HOLD_-45"
+    },
+    {
+      "seq": 6,
+      "frame": 2,
+      "command": 205,
+      "params": [
+        -20,
+        0,
+        0,
+        0
+      ],
+      "latitude": 0,
+      "longitude": 0,
+      "altitude": 2,
+      "east": 0,
+      "north": 0,
+      "label": "CAMERA_PITCH_-20"
+    },
+    {
+      "seq": 7,
+      "frame": 3,
+      "command": 19,
+      "params": [
+        8,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.363262,
+      "longitude": 149.165237,
+      "altitude": 8,
+      "east": 0,
+      "north": 0,
+      "label": "CAMERA_HOLD_-20"
+    },
+    {
+      "seq": 8,
+      "frame": 2,
+      "command": 205,
+      "params": [
+        -90,
+        0,
+        0,
+        0
+      ],
+      "latitude": 0,
+      "longitude": 0,
+      "altitude": 2,
+      "east": 0,
+      "north": 0,
+      "label": "CAMERA_NADIR"
+    },
+    {
+      "seq": 9,
+      "frame": 3,
+      "command": 21,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.363262,
+      "longitude": 149.165237,
+      "altitude": 0,
+      "east": 0,
+      "north": 0,
+      "label": "LAND"
+    }
+  ]
+}

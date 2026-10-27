@@ -1,0 +1,4 @@
+python-pptx==1.0.2
+Pillow>=11
+# Windows PDF export: installed PowerPoint + pywin32
+# PDF review: PyMuPDF

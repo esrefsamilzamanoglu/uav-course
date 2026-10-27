@@ -1,0 +1,23 @@
+{
+  "scenario": "building",
+  "flight_status": "auto_mission_passed",
+  "armed_modes": [
+    3
+  ],
+  "expected_auto_mode": 3,
+  "only_auto_while_armed": true,
+  "gcs_command_longs": [
+    400,
+    300
+  ],
+  "flight_setpoints_sent": 0,
+  "force_arm_used": false,
+  "recorded_seconds": 244.82570600509644,
+  "maximum_altitude_m": 23.02,
+  "final_ground_distance_from_home_m": 0.0,
+  "final_disarmed": true,
+  "roi_samples": 108,
+  "roi_median_error_deg": 0.3181986272396716,
+  "roi_p95_error_deg": 0.7235031507412054,
+  "gimbal_model": "Ideal kinematic servo mount driven by actual ArduPilot mount outputs; no mechanical latency/inertia calibration."
+}

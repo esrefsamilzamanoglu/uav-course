@@ -1,0 +1,17 @@
+{
+  "method": "ORB + RANSAC ground homography + compensated residual + temporal persistence",
+  "processed_pairs": 134,
+  "events": 23,
+  "true_positive_events_against_independent_simulator_truth": 19,
+  "flight_commands_sent": 0,
+  "uses_ground_truth_for_detection": false,
+  "uses_ground_truth_for_evaluation": true,
+  "active_auto_mission_sequences": [
+    3,
+    4,
+    6,
+    8
+  ],
+  "transit_frames_ignored": 752,
+  "limitations": "Motion candidates, not a human classifier. Parallax, shadows and poorly estimated homographies can cause false positives."
+}

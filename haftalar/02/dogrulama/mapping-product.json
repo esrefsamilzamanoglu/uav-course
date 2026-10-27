@@ -1,0 +1,20 @@
+{
+  "method": "calibrated flat-plane projection from actual Gazebo RGB trigger images",
+  "images_used": 81,
+  "output_shape": [
+    744,
+    912
+  ],
+  "pixels_per_meter": 12,
+  "bounds_local_enu_m": [
+    -38,
+    12,
+    38,
+    74
+  ],
+  "field_covered_fraction": 1.0,
+  "field_overlap_3plus_fraction": 0.9952829743008315,
+  "maximum_observations": 13,
+  "source_ground_texture_used": false,
+  "limitations": "Known simulator camera poses; z=0 plane; not a DEM orthophoto or centimetre accuracy claim."
+}

@@ -1,0 +1,5 @@
+pymavlink==2.4.50
+opencv-python==5.0.0.93
+Pillow==13.0.0
+scipy==1.18.1
+matplotlib==3.11.2

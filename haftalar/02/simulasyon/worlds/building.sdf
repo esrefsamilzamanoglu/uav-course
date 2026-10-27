@@ -1,0 +1,1251 @@
+<?xml version='1.0' encoding='utf-8'?>
+<sdf version="1.9">
+  <world name="course_building">
+    <physics name="1ms" type="ignore">
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+    </physics>
+    <plugin filename="gz-sim-physics-system" name="gz::sim::systems::Physics" />
+    <plugin filename="gz-sim-user-commands-system" name="gz::sim::systems::UserCommands" />
+    <plugin filename="gz-sim-scene-broadcaster-system" name="gz::sim::systems::SceneBroadcaster" />
+    <plugin filename="gz-sim-imu-system" name="gz::sim::systems::Imu" />
+    <plugin filename="gz-sim-navsat-system" name="gz::sim::systems::NavSat" />
+    <plugin filename="gz-sim-sensors-system" name="gz::sim::systems::Sensors">
+      <render_engine>ogre2</render_engine>
+    </plugin>
+    <scene>
+      <ambient>0.55 0.58 0.61 1</ambient>
+      <background>0.64 0.77 0.88 1</background>
+      <shadows>true</shadows>
+      <sky />
+    </scene>
+    <spherical_coordinates>
+      <latitude_deg>-35.363262</latitude_deg>
+      <longitude_deg>149.165237</longitude_deg>
+      <elevation>584</elevation>
+      <heading_deg>0</heading_deg>
+      <surface_model>EARTH_WGS84</surface_model>
+    </spherical_coordinates>
+    <light name="afternoon_sun" type="directional">
+      <pose>0 0 200 0 0 0</pose>
+      <cast_shadows>true</cast_shadows>
+      <diffuse>.88 .85 .77 1</diffuse>
+      <specular>.18 .18 .18 1</specular>
+      <direction>-.35 -.42 -.84</direction>
+    </light>
+    <model name="horizon_ground">
+      <static>true</static>
+      <pose>0 0 -0.03 0 0 0</pose>
+      <link name="body">
+        <visual name="grass">
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>2400 2400</size>
+            </plane>
+          </geometry>
+          <material>
+            <ambient>0.37 0.44 0.27 1</ambient>
+            <diffuse>0.37 0.44 0.27 1</diffuse>
+            <specular>0.06 0.06 0.06 1</specular>
+          </material>
+        </visual>
+        <collision name="continuous_ground">
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>2400 2400</size>
+            </plane>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+    <model name="ground">
+      <static>true</static>
+      <pose>0 0 -0.5 0 0 0</pose>
+      <link name="body">
+        <collision name="solid">
+          <geometry>
+            <box>
+              <size>300 300 1</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="ground_surface">
+          <pose>0 0 0.501 0 0 0</pose>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>300 300</size>
+            </plane>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.06 0.06 0.06 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>model://course_assets/textures/building_ground.png</albedo_map>
+                <roughness>0.88</roughness>
+                <metalness>0</metalness>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="iris_with_ardupilot">
+      <pose degrees="true">0 0 0.195 0 0 90</pose>
+      <model name="iris_with_standoffs">
+        <pose>0 0 0 0 0 0</pose>
+        <link name="base_link">
+          <velocity_decay>
+            <linear>0.0</linear>
+            <angular>0.0</angular>
+          </velocity_decay>
+          <inertial>
+            <pose>0 0 0 0 0 0</pose>
+            <mass>1.5</mass>
+            <inertia>
+              <ixx>0.008</ixx>
+              <ixy>0</ixy>
+              <ixz>0</ixz>
+              <iyy>0.015</iyy>
+              <iyz>0</iyz>
+              <izz>0.017</izz>
+            </inertia>
+          </inertial>
+          <collision name="base_collision">
+            <pose>0 0 0 0 0 0</pose>
+            <geometry>
+              <mesh>
+                <uri>model://iris_with_standoffs/meshes/iris_collision.stl</uri>
+              </mesh>
+            </geometry>
+            <surface>
+              <contact>
+                <ode>
+                  <max_vel>100.0</max_vel>
+                  <min_depth>0.001</min_depth>
+                </ode>
+              </contact>
+              <friction>
+                <ode>
+                  <mu>100000.0</mu>
+                  <mu2>100000.0</mu2>
+                </ode>
+              </friction>
+            </surface>
+          </collision>
+          <collision name="front_left_leg_collision">
+            <pose>0.123 0.22 -0.11 0 0 0</pose>
+            <geometry>
+              <cylinder>
+                <radius>0.005</radius>
+                <length>0.17</length>
+              </cylinder>
+            </geometry>
+            <surface>
+              <contact>
+                <ode>
+                  <max_vel>100.0</max_vel>
+                  <min_depth>0.001</min_depth>
+                </ode>
+              </contact>
+              <friction>
+                <ode>
+                  <mu>100000.0</mu>
+                  <mu2>100000.0</mu2>
+                </ode>
+              </friction>
+            </surface>
+          </collision>
+          <collision name="front_right_leg_collision">
+            <pose>0.123 -0.22 -0.11 0 0 0</pose>
+            <geometry>
+              <cylinder>
+                <radius>0.005</radius>
+                <length>0.17</length>
+              </cylinder>
+            </geometry>
+            <surface>
+              <contact>
+                <ode>
+                  <max_vel>100.0</max_vel>
+                  <min_depth>0.001</min_depth>
+                </ode>
+              </contact>
+              <friction>
+                <ode>
+                  <mu>100000.0</mu>
+                  <mu2>100000.0</mu2>
+                </ode>
+              </friction>
+            </surface>
+          </collision>
+          <collision name="rear_left_leg_collision">
+            <pose>-0.140 0.21 -0.11 0 0 0</pose>
+            <geometry>
+              <cylinder>
+                <radius>0.005</radius>
+                <length>0.17</length>
+              </cylinder>
+            </geometry>
+            <surface>
+              <contact>
+                <ode>
+                  <max_vel>100.0</max_vel>
+                  <min_depth>0.001</min_depth>
+                </ode>
+              </contact>
+              <friction>
+                <ode>
+                  <mu>100000.0</mu>
+                  <mu2>100000.0</mu2>
+                </ode>
+              </friction>
+            </surface>
+          </collision>
+          <collision name="rear_right_leg_collision">
+            <pose>-0.140 -0.21 -0.11 0 0 0</pose>
+            <geometry>
+              <cylinder>
+                <radius>0.005</radius>
+                <length>0.17</length>
+              </cylinder>
+            </geometry>
+            <surface>
+              <contact>
+                <ode>
+                  <max_vel>100.0</max_vel>
+                  <min_depth>0.001</min_depth>
+                </ode>
+              </contact>
+              <friction>
+                <ode>
+                  <mu>100000.0</mu>
+                  <mu2>100000.0</mu2>
+                </ode>
+              </friction>
+            </surface>
+          </collision>
+          <visual name="base_visual">
+            <geometry>
+              <mesh>
+                <uri>model://iris_with_standoffs/meshes/iris.dae</uri>
+              </mesh>
+            </geometry>
+            <material>
+              <ambient>0.05 0.05 0.05</ambient>
+              <diffuse>0.05 0.05 0.05</diffuse>
+              <specular>1 1 1 1</specular>
+              <pbr>
+                <metal>
+                  <metalness>0.5</metalness>
+                  <roughness>0.5</roughness>
+                </metal>
+              </pbr>
+            </material>
+          </visual>
+          <visual name="front_left_leg_visual">
+            <pose>0.123 0.22 -0.11 0 0 0</pose>
+            <geometry>
+              <cylinder>
+                <radius>0.005</radius>
+                <length>0.17</length>
+              </cylinder>
+            </geometry>
+            <material>
+              <ambient>0.05 0.05 0.05</ambient>
+              <diffuse>0.05 0.05 0.05</diffuse>
+              <specular>0.01 0.01 0.01 1.0</specular>
+              <pbr>
+                <metal>
+                  <metalness>0.5</metalness>
+                  <roughness>0.5</roughness>
+                </metal>
+              </pbr>
+            </material>
+          </visual>
+          <visual name="front_right_leg_visual">
+            <pose>0.123 -0.22 -0.11 0 0 0</pose>
+            <geometry>
+              <cylinder>
+                <radius>0.005</radius>
+                <length>0.17</length>
+              </cylinder>
+            </geometry>
+            <material>
+              <ambient>0.05 0.05 0.05</ambient>
+              <diffuse>0.05 0.05 0.05</diffuse>
+              <specular>0.01 0.01 0.01 1.0</specular>
+              <pbr>
+                <metal>
+                  <metalness>0.5</metalness>
+                  <roughness>0.5</roughness>
+                </metal>
+              </pbr>
+            </material>
+          </visual>
+          <visual name="rear_left_leg_visual">
+            <pose>-0.140 0.21 -0.11 0 0 0</pose>
+            <geometry>
+              <cylinder>
+                <radius>0.005</radius>
+                <length>0.17</length>
+              </cylinder>
+            </geometry>
+            <material>
+              <ambient>0.05 0.05 0.05</ambient>
+              <diffuse>0.05 0.05 0.05</diffuse>
+              <specular>0.01 0.01 0.01 1.0</specular>
+              <pbr>
+                <metal>
+                  <metalness>0.5</metalness>
+                  <roughness>0.5</roughness>
+                </metal>
+              </pbr>
+            </material>
+          </visual>
+          <visual name="rear_right_leg_visual">
+            <pose>-0.140 -0.21 -0.11 0 0 0</pose>
+            <geometry>
+              <cylinder>
+                <radius>0.005</radius>
+                <length>0.17</length>
+              </cylinder>
+            </geometry>
+            <material>
+              <ambient>0.05 0.05 0.05</ambient>
+              <diffuse>0.05 0.05 0.05</diffuse>
+              <specular>0.01 0.01 0.01 1.0</specular>
+              <pbr>
+                <metal>
+                  <metalness>0.5</metalness>
+                  <roughness>0.5</roughness>
+                </metal>
+              </pbr>
+            </material>
+          </visual>
+        </link>
+        <link name="imu_link">
+          <inertial>
+            <pose>0 0 0 0 0 0</pose>
+            <mass>0.15</mass>
+            <inertia>
+              <ixx>0.00001</ixx>
+              <ixy>0</ixy>
+              <ixz>0</ixz>
+              <iyy>0.00002</iyy>
+              <iyz>0</iyz>
+              <izz>0.00002</izz>
+            </inertia>
+          </inertial>
+          <sensor name="imu_sensor" type="imu">
+            <gz_frame_id>imu_link</gz_frame_id>
+            <pose degrees="true">0 0 0 180 0 0</pose>
+            <always_on>1</always_on>
+            <update_rate>1000.0</update_rate>
+          </sensor>
+        </link>
+        <joint name="imu_joint" type="revolute">
+          <child>imu_link</child>
+          <parent>base_link</parent>
+          <axis>
+            <xyz>0 0 1</xyz>
+            <limit>
+              <lower>0</lower>
+              <upper>0</upper>
+              <effort>0</effort>
+              <velocity>0</velocity>
+            </limit>
+            <dynamics>
+              <damping>1.0</damping>
+            </dynamics>
+          </axis>
+        </joint>
+        <link name="rotor_0">
+          <pose>0.13 -0.22 0.023 0 0 0</pose>
+          <inertial>
+            <pose>0 0 0 0 0 0</pose>
+            <mass>0.025</mass>
+            <inertia>
+              <ixx>9.75e-06</ixx>
+              <ixy>0</ixy>
+              <ixz>0</ixz>
+              <iyy>0.000166704</iyy>
+              <iyz>0</iyz>
+              <izz>0.000167604</izz>
+            </inertia>
+          </inertial>
+          <collision name="collision">
+            <pose>0 0 0 0 0 0</pose>
+            <geometry>
+              <cylinder>
+                <length>0.005</length>
+                <radius>0.1</radius>
+              </cylinder>
+            </geometry>
+          </collision>
+          <visual name="visual">
+            <pose>0 0 0 0 0 0</pose>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://iris_with_standoffs/meshes/iris_prop_ccw.dae</uri>
+              </mesh>
+            </geometry>
+            <material>
+              <ambient>0 0 1</ambient>
+              <diffuse>0 0 1</diffuse>
+              <specular>1 1 1 1</specular>
+              <pbr>
+                <metal>
+                  <metalness>0.5</metalness>
+                  <roughness>0.5</roughness>
+                </metal>
+              </pbr>
+            </material>
+          </visual>
+        </link>
+        <joint name="rotor_0_joint" type="revolute">
+          <child>rotor_0</child>
+          <parent>base_link</parent>
+          <axis>
+            <xyz>0 0 1</xyz>
+            <limit>
+              <lower>-1e+16</lower>
+              <upper>1e+16</upper>
+            </limit>
+            <dynamics>
+              <damping>0.004</damping>
+            </dynamics>
+          </axis>
+        </joint>
+        <link name="rotor_1">
+          <pose>-0.13 0.2 0.023 0 0 0</pose>
+          <inertial>
+            <pose>0 0 0 0 0 0</pose>
+            <mass>0.025</mass>
+            <inertia>
+              <ixx>9.75e-06</ixx>
+              <ixy>0</ixy>
+              <ixz>0</ixz>
+              <iyy>0.000166704</iyy>
+              <iyz>0</iyz>
+              <izz>0.000167604</izz>
+            </inertia>
+          </inertial>
+          <collision name="collision">
+            <pose>0 0 0 0 0 0</pose>
+            <geometry>
+              <cylinder>
+                <length>0.005</length>
+                <radius>0.1</radius>
+              </cylinder>
+            </geometry>
+          </collision>
+          <visual name="visual">
+            <pose>0 0 0 0 0 0</pose>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://iris_with_standoffs/meshes/iris_prop_ccw.dae</uri>
+              </mesh>
+            </geometry>
+            <material>
+              <ambient>0 0 1 1</ambient>
+              <diffuse>0 0 1 1</diffuse>
+              <specular>1 1 1 1</specular>
+              <pbr>
+                <metal>
+                  <metalness>0.5</metalness>
+                  <roughness>0.5</roughness>
+                </metal>
+              </pbr>
+            </material>
+          </visual>
+        </link>
+        <joint name="rotor_1_joint" type="revolute">
+          <child>rotor_1</child>
+          <parent>base_link</parent>
+          <axis>
+            <xyz>0 0 1</xyz>
+            <limit>
+              <lower>-1e+16</lower>
+              <upper>1e+16</upper>
+            </limit>
+            <dynamics>
+              <damping>0.004</damping>
+            </dynamics>
+          </axis>
+        </joint>
+        <link name="rotor_2">
+          <pose>0.13 0.22 0.023 0 0 0</pose>
+          <inertial>
+            <pose>0 0 0 0 0 0</pose>
+            <mass>0.025</mass>
+            <inertia>
+              <ixx>9.75e-06</ixx>
+              <ixy>0</ixy>
+              <ixz>0</ixz>
+              <iyy>0.000166704</iyy>
+              <iyz>0</iyz>
+              <izz>0.000167604</izz>
+            </inertia>
+          </inertial>
+          <collision name="collision">
+            <pose>0 0 0 0 0 0</pose>
+            <geometry>
+              <cylinder>
+                <length>0.005</length>
+                <radius>0.1</radius>
+              </cylinder>
+            </geometry>
+          </collision>
+          <visual name="visual">
+            <pose>0 0 0 0 0 0</pose>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://iris_with_standoffs/meshes/iris_prop_cw.dae</uri>
+              </mesh>
+            </geometry>
+            <material>
+              <ambient>0 1 0</ambient>
+              <diffuse>0 1 0</diffuse>
+              <specular>1 1 1 1</specular>
+              <pbr>
+                <metal>
+                  <metalness>0.5</metalness>
+                  <roughness>0.5</roughness>
+                </metal>
+              </pbr>
+            </material>
+          </visual>
+        </link>
+        <joint name="rotor_2_joint" type="revolute">
+          <child>rotor_2</child>
+          <parent>base_link</parent>
+          <axis>
+            <xyz>0 0 1</xyz>
+            <limit>
+              <lower>-1e+16</lower>
+              <upper>1e+16</upper>
+            </limit>
+            <dynamics>
+              <damping>0.004</damping>
+            </dynamics>
+          </axis>
+        </joint>
+        <link name="rotor_3">
+          <pose>-0.13 -0.2 0.023 0 0 0</pose>
+          <inertial>
+            <pose>0 0 0 0 0 0</pose>
+            <mass>0.025</mass>
+            <inertia>
+              <ixx>9.75e-06</ixx>
+              <ixy>0</ixy>
+              <ixz>0</ixz>
+              <iyy>0.000166704</iyy>
+              <iyz>0</iyz>
+              <izz>0.000167604</izz>
+            </inertia>
+          </inertial>
+          <collision name="collision">
+            <pose>0 0 0 0 0 0</pose>
+            <geometry>
+              <cylinder>
+                <length>0.005</length>
+                <radius>0.1</radius>
+              </cylinder>
+            </geometry>
+          </collision>
+          <visual name="visual">
+            <pose>0 0 0 0 0 0</pose>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://iris_with_standoffs/meshes/iris_prop_cw.dae</uri>
+              </mesh>
+            </geometry>
+            <material>
+              <ambient>0 1 0</ambient>
+              <diffuse>0 1 0</diffuse>
+              <specular>1 1 1 1</specular>
+              <pbr>
+                <metal>
+                  <metalness>0.5</metalness>
+                  <roughness>0.5</roughness>
+                </metal>
+              </pbr>
+            </material>
+          </visual>
+        </link>
+        <joint name="rotor_3_joint" type="revolute">
+          <child>rotor_3</child>
+          <parent>base_link</parent>
+          <axis>
+            <xyz>0 0 1</xyz>
+            <limit>
+              <lower>-1e+16</lower>
+              <upper>1e+16</upper>
+            </limit>
+            <dynamics>
+              <damping>0.004</damping>
+            </dynamics>
+          </axis>
+        </joint>
+      </model>
+      <plugin filename="gz-sim-joint-state-publisher-system" name="gz::sim::systems::JointStatePublisher">
+    </plugin>
+      <plugin filename="gz-sim-lift-drag-system" name="gz::sim::systems::LiftDrag">
+        <a0>0.3</a0>
+        <alpha_stall>1.4</alpha_stall>
+        <cla>4.2500</cla>
+        <cda>0.10</cda>
+        <cma>0.0</cma>
+        <cla_stall>-0.025</cla_stall>
+        <cda_stall>0.0</cda_stall>
+        <cma_stall>0.0</cma_stall>
+        <area>0.002</area>
+        <air_density>1.2041</air_density>
+        <cp>0.084 0 0</cp>
+        <forward>0 1 0</forward>
+        <upward>0 0 1</upward>
+        <link_name>iris_with_standoffs::rotor_0</link_name>
+      </plugin>
+      <plugin filename="gz-sim-lift-drag-system" name="gz::sim::systems::LiftDrag">
+        <a0>0.3</a0>
+        <alpha_stall>1.4</alpha_stall>
+        <cla>4.2500</cla>
+        <cda>0.10</cda>
+        <cma>0.0</cma>
+        <cla_stall>-0.025</cla_stall>
+        <cda_stall>0.0</cda_stall>
+        <cma_stall>0.0</cma_stall>
+        <area>0.002</area>
+        <air_density>1.2041</air_density>
+        <cp>-0.084 0 0</cp>
+        <forward>0 -1 0</forward>
+        <upward>0 0 1</upward>
+        <link_name>iris_with_standoffs::rotor_0</link_name>
+      </plugin>
+      <plugin filename="gz-sim-lift-drag-system" name="gz::sim::systems::LiftDrag">
+        <a0>0.3</a0>
+        <alpha_stall>1.4</alpha_stall>
+        <cla>4.2500</cla>
+        <cda>0.10</cda>
+        <cma>0.0</cma>
+        <cla_stall>-0.025</cla_stall>
+        <cda_stall>0.0</cda_stall>
+        <cma_stall>0.0</cma_stall>
+        <area>0.002</area>
+        <air_density>1.2041</air_density>
+        <cp>0.084 0 0</cp>
+        <forward>0 1 0</forward>
+        <upward>0 0 1</upward>
+        <link_name>iris_with_standoffs::rotor_1</link_name>
+      </plugin>
+      <plugin filename="gz-sim-lift-drag-system" name="gz::sim::systems::LiftDrag">
+        <a0>0.3</a0>
+        <alpha_stall>1.4</alpha_stall>
+        <cla>4.2500</cla>
+        <cda>0.10</cda>
+        <cma>0.0</cma>
+        <cla_stall>-0.025</cla_stall>
+        <cda_stall>0.0</cda_stall>
+        <cma_stall>0.0</cma_stall>
+        <area>0.002</area>
+        <air_density>1.2041</air_density>
+        <cp>-0.084 0 0</cp>
+        <forward>0 -1 0</forward>
+        <upward>0 0 1</upward>
+        <link_name>iris_with_standoffs::rotor_1</link_name>
+      </plugin>
+      <plugin filename="gz-sim-lift-drag-system" name="gz::sim::systems::LiftDrag">
+        <a0>0.3</a0>
+        <alpha_stall>1.4</alpha_stall>
+        <cla>4.2500</cla>
+        <cda>0.10</cda>
+        <cma>0.0</cma>
+        <cla_stall>-0.025</cla_stall>
+        <cda_stall>0.0</cda_stall>
+        <cma_stall>0.0</cma_stall>
+        <area>0.002</area>
+        <air_density>1.2041</air_density>
+        <cp>0.084 0 0</cp>
+        <forward>0 -1 0</forward>
+        <upward>0 0 1</upward>
+        <link_name>iris_with_standoffs::rotor_2</link_name>
+      </plugin>
+      <plugin filename="gz-sim-lift-drag-system" name="gz::sim::systems::LiftDrag">
+        <a0>0.3</a0>
+        <alpha_stall>1.4</alpha_stall>
+        <cla>4.2500</cla>
+        <cda>0.10</cda>
+        <cma>0.0</cma>
+        <cla_stall>-0.025</cla_stall>
+        <cda_stall>0.0</cda_stall>
+        <cma_stall>0.0</cma_stall>
+        <area>0.002</area>
+        <air_density>1.2041</air_density>
+        <cp>-0.084 0 0</cp>
+        <forward>0 1 0</forward>
+        <upward>0 0 1</upward>
+        <link_name>iris_with_standoffs::rotor_2</link_name>
+      </plugin>
+      <plugin filename="gz-sim-lift-drag-system" name="gz::sim::systems::LiftDrag">
+        <a0>0.3</a0>
+        <alpha_stall>1.4</alpha_stall>
+        <cla>4.2500</cla>
+        <cda>0.10</cda>
+        <cma>0.0</cma>
+        <cla_stall>-0.025</cla_stall>
+        <cda_stall>0.0</cda_stall>
+        <cma_stall>0.0</cma_stall>
+        <area>0.002</area>
+        <air_density>1.2041</air_density>
+        <cp>0.084 0 0</cp>
+        <forward>0 -1 0</forward>
+        <upward>0 0 1</upward>
+        <link_name>iris_with_standoffs::rotor_3</link_name>
+      </plugin>
+      <plugin filename="gz-sim-lift-drag-system" name="gz::sim::systems::LiftDrag">
+        <a0>0.3</a0>
+        <alpha_stall>1.4</alpha_stall>
+        <cla>4.2500</cla>
+        <cda>0.10</cda>
+        <cma>0.0</cma>
+        <cla_stall>-0.025</cla_stall>
+        <cda_stall>0.0</cda_stall>
+        <cma_stall>0.0</cma_stall>
+        <area>0.002</area>
+        <air_density>1.2041</air_density>
+        <cp>-0.084 0 0</cp>
+        <forward>0 1 0</forward>
+        <upward>0 0 1</upward>
+        <link_name>iris_with_standoffs::rotor_3</link_name>
+      </plugin>
+      <plugin filename="gz-sim-apply-joint-force-system" name="gz::sim::systems::ApplyJointForce">
+        <joint_name>iris_with_standoffs::rotor_0_joint</joint_name>
+      </plugin>
+      <plugin filename="gz-sim-apply-joint-force-system" name="gz::sim::systems::ApplyJointForce">
+        <joint_name>iris_with_standoffs::rotor_1_joint</joint_name>
+      </plugin>
+      <plugin filename="gz-sim-apply-joint-force-system" name="gz::sim::systems::ApplyJointForce">
+        <joint_name>iris_with_standoffs::rotor_2_joint</joint_name>
+      </plugin>
+      <plugin filename="gz-sim-apply-joint-force-system" name="gz::sim::systems::ApplyJointForce">
+        <joint_name>iris_with_standoffs::rotor_3_joint</joint_name>
+      </plugin>
+      <plugin name="ArduPilotPlugin" filename="ArduPilotPlugin">
+        <fdm_addr>127.0.0.1</fdm_addr>
+        <fdm_port_in>9002</fdm_port_in>
+        <connectionTimeoutMaxCount>5</connectionTimeoutMaxCount>
+        <lock_step>1</lock_step>
+        <no_time_sync>1</no_time_sync>
+        <have_32_channels>0</have_32_channels>
+        <modelXYZToAirplaneXForwardZDown degrees="true">0 0 0 180 0 0</modelXYZToAirplaneXForwardZDown>
+        <gazeboXYZToNED degrees="true">0 0 0 180 0 90</gazeboXYZToNED>
+        <imuName>iris_with_standoffs::imu_link::imu_sensor</imuName>
+        <control channel="0">
+          <jointName>iris_with_standoffs::rotor_0_joint</jointName>
+          <useForce>1</useForce>
+          <multiplier>838</multiplier>
+          <offset>0</offset>
+          <servo_min>1100</servo_min>
+          <servo_max>1900</servo_max>
+          <type>VELOCITY</type>
+          <p_gain>0.20</p_gain>
+          <i_gain>0</i_gain>
+          <d_gain>0</d_gain>
+          <i_max>0</i_max>
+          <i_min>0</i_min>
+          <cmd_max>2.5</cmd_max>
+          <cmd_min>-2.5</cmd_min>
+          <controlVelocitySlowdownSim>1</controlVelocitySlowdownSim>
+        </control>
+        <control channel="1">
+          <jointName>iris_with_standoffs::rotor_1_joint</jointName>
+          <useForce>1</useForce>
+          <multiplier>838</multiplier>
+          <offset>0</offset>
+          <servo_min>1100</servo_min>
+          <servo_max>1900</servo_max>
+          <type>VELOCITY</type>
+          <p_gain>0.20</p_gain>
+          <i_gain>0</i_gain>
+          <d_gain>0</d_gain>
+          <i_max>0</i_max>
+          <i_min>0</i_min>
+          <cmd_max>2.5</cmd_max>
+          <cmd_min>-2.5</cmd_min>
+          <controlVelocitySlowdownSim>1</controlVelocitySlowdownSim>
+        </control>
+        <control channel="2">
+          <jointName>iris_with_standoffs::rotor_2_joint</jointName>
+          <useForce>1</useForce>
+          <multiplier>-838</multiplier>
+          <offset>0</offset>
+          <servo_min>1100</servo_min>
+          <servo_max>1900</servo_max>
+          <type>VELOCITY</type>
+          <p_gain>0.20</p_gain>
+          <i_gain>0</i_gain>
+          <d_gain>0</d_gain>
+          <i_max>0</i_max>
+          <i_min>0</i_min>
+          <cmd_max>2.5</cmd_max>
+          <cmd_min>-2.5</cmd_min>
+          <controlVelocitySlowdownSim>1</controlVelocitySlowdownSim>
+        </control>
+        <control channel="3">
+          <jointName>iris_with_standoffs::rotor_3_joint</jointName>
+          <useForce>1</useForce>
+          <multiplier>-838</multiplier>
+          <offset>0</offset>
+          <servo_min>1100</servo_min>
+          <servo_max>1900</servo_max>
+          <type>VELOCITY</type>
+          <p_gain>0.20</p_gain>
+          <i_gain>0</i_gain>
+          <d_gain>0</d_gain>
+          <i_max>0</i_max>
+          <i_min>0</i_min>
+          <cmd_max>2.5</cmd_max>
+          <cmd_min>-2.5</cmd_min>
+          <controlVelocitySlowdownSim>1</controlVelocitySlowdownSim>
+        </control>
+        <control channel="8">
+          <jointName>iris_with_standoffs::rotor_0_joint</jointName>
+          <type>COMMAND</type>
+          <multiplier>1.0471975511965976</multiplier>
+          <offset>-0.5</offset>
+          <servo_min>1000</servo_min>
+          <servo_max>2000</servo_max>
+          <cmd_topic>/course/gimbal/roll</cmd_topic>
+        </control>
+        <control channel="9">
+          <jointName>iris_with_standoffs::rotor_0_joint</jointName>
+          <type>COMMAND</type>
+          <multiplier>-1.5707963267948966</multiplier>
+          <offset>-1</offset>
+          <servo_min>1000</servo_min>
+          <servo_max>2000</servo_max>
+          <cmd_topic>/course/gimbal/pitch</cmd_topic>
+        </control>
+        <control channel="10">
+          <jointName>iris_with_standoffs::rotor_0_joint</jointName>
+          <type>COMMAND</type>
+          <multiplier>-6.283185307179586</multiplier>
+          <offset>-0.5</offset>
+          <servo_min>1000</servo_min>
+          <servo_max>2000</servo_max>
+          <cmd_topic>/course/gimbal/yaw</cmd_topic>
+        </control>
+        <control channel="11">
+          <jointName>iris_with_standoffs::rotor_0_joint</jointName>
+          <type>COMMAND</type>
+          <multiplier>1</multiplier>
+          <offset>0</offset>
+          <servo_min>1000</servo_min>
+          <servo_max>2000</servo_max>
+          <cmd_topic>/course/pump</cmd_topic>
+        </control>
+      </plugin>
+    </model>
+    <plugin filename="CourseScene" name="uav_course::CourseScene">
+      <vehicle>iris_with_ardupilot</vehicle>
+      <rural>false</rural>
+    </plugin>
+    <model name="course_camera">
+      <static>true</static>
+      <pose>0 0 0.1 0 1.570796 0</pose>
+      <link name="body">
+        <sensor name="rgb" type="camera">
+          <always_on>true</always_on>
+          <update_rate>6</update_rate>
+          <topic>/course/camera/image</topic>
+          <camera>
+            <horizontal_fov>1.22173</horizontal_fov>
+            <image>
+              <width>960</width>
+              <height>640</height>
+              <format>R8G8B8</format>
+            </image>
+            <clip>
+              <near>0.05</near>
+              <far>1200</far>
+            </clip>
+          </camera>
+        </sensor>
+      </link>
+    </model>
+    <model name="overview">
+      <static>true</static>
+      <pose>75 -30 60 0 0.4633986 2.356194</pose>
+      <link name="body">
+        <sensor name="rgb" type="camera">
+          <always_on>true</always_on>
+          <update_rate>1</update_rate>
+          <topic>/course/overview/image</topic>
+          <camera>
+            <horizontal_fov>1.0</horizontal_fov>
+            <image>
+              <width>1600</width>
+              <height>1000</height>
+              <format>R8G8B8</format>
+            </image>
+            <clip>
+              <near>0.05</near>
+              <far>1200</far>
+            </clip>
+          </camera>
+        </sensor>
+      </link>
+    </model>
+    <model name="mapping_building">
+      <static>true</static>
+      <pose>0 45 7 0 0 0</pose>
+      <link name="body">
+        <visual name="body">
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>14 12 14</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.7 0.67 0.58 1</ambient>
+            <diffuse>0.7 0.67 0.58 1</diffuse>
+            <specular>0.06 0.06 0.06 1</specular>
+          </material>
+        </visual>
+        <collision name="solid">
+          <geometry>
+            <box>
+              <size>14 12 14</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="facade_0">
+          <pose>0 -6.012 0 1.570796 0 0</pose>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>14 14</size>
+            </plane>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.06 0.06 0.06 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>model://course_assets/textures/facade_0.png</albedo_map>
+                <roughness>0.88</roughness>
+                <metalness>0</metalness>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <visual name="facade_1">
+          <pose>7.012 0 0 1.570796 0 1.570796</pose>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>12 14</size>
+            </plane>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.06 0.06 0.06 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>model://course_assets/textures/facade_1.png</albedo_map>
+                <roughness>0.88</roughness>
+                <metalness>0</metalness>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <visual name="facade_2">
+          <pose>0 6.012 0 1.570796 0 3.141593</pose>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>14 14</size>
+            </plane>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.06 0.06 0.06 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>model://course_assets/textures/facade_2.png</albedo_map>
+                <roughness>0.88</roughness>
+                <metalness>0</metalness>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <visual name="facade_3">
+          <pose>-7.012 0 0 1.570796 0 -1.570796</pose>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>12 14</size>
+            </plane>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.06 0.06 0.06 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>model://course_assets/textures/facade_3.png</albedo_map>
+                <roughness>0.88</roughness>
+                <metalness>0</metalness>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <visual name="roof">
+          <pose>0 0 7.1 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>14.6 12.6 0.25</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.25 0.28 0.3 1</ambient>
+            <diffuse>0.25 0.28 0.3 1</diffuse>
+            <specular>0.06 0.06 0.06 1</specular>
+          </material>
+        </visual>
+        <visual name="entry">
+          <pose>0 -6.07 -5.5 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>2.8 0.16 3</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.28 0.17 0.12 1</ambient>
+            <diffuse>0.28 0.17 0.12 1</diffuse>
+            <specular>0.06 0.06 0.06 1</specular>
+          </material>
+        </visual>
+        <visual name="canopy">
+          <pose>0 -7.3 -3.8 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>4 2.8 0.18</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.79 0.78 0.7 1</ambient>
+            <diffuse>0.79 0.78 0.7 1</diffuse>
+            <specular>0.06 0.06 0.06 1</specular>
+          </material>
+        </visual>
+        <visual name="pillar-2">
+          <pose>-2 -8 -5.3 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.18 0.18 3.2</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.71 0.71 0.65 1</ambient>
+            <diffuse>0.71 0.71 0.65 1</diffuse>
+            <specular>0.06 0.06 0.06 1</specular>
+          </material>
+        </visual>
+        <visual name="pillar2">
+          <pose>2 -8 -5.3 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.18 0.18 3.2</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.71 0.71 0.65 1</ambient>
+            <diffuse>0.71 0.71 0.65 1</diffuse>
+            <specular>0.06 0.06 0.06 1</specular>
+          </material>
+        </visual>
+        <visual name="solar-4">
+          <pose>-4 1 7.45 0.12 0 0</pose>
+          <geometry>
+            <box>
+              <size>3 5 0.15</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.1 0.19 0.26 1</ambient>
+            <diffuse>0.1 0.19 0.26 1</diffuse>
+            <specular>0.06 0.06 0.06 1</specular>
+          </material>
+        </visual>
+        <visual name="solar0">
+          <pose>0 1 7.45 0.12 0 0</pose>
+          <geometry>
+            <box>
+              <size>3 5 0.15</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.1 0.19 0.26 1</ambient>
+            <diffuse>0.1 0.19 0.26 1</diffuse>
+            <specular>0.06 0.06 0.06 1</specular>
+          </material>
+        </visual>
+        <visual name="solar4">
+          <pose>4 1 7.45 0.12 0 0</pose>
+          <geometry>
+            <box>
+              <size>3 5 0.15</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.1 0.19 0.26 1</ambient>
+            <diffuse>0.1 0.19 0.26 1</diffuse>
+            <specular>0.06 0.06 0.06 1</specular>
+          </material>
+        </visual>
+        <visual name="vent">
+          <pose>3 -3.5 7.7 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>1.5 1.2 1.2</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.55 0.59 0.57 1</ambient>
+            <diffuse>0.55 0.59 0.57 1</diffuse>
+            <specular>0.06 0.06 0.06 1</specular>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="building_details">
+      <static>true</static>
+      <pose>0 0 0 0 0 0</pose>
+      <link name="body">
+        <visual name="bark">
+          <geometry>
+            <mesh>
+              <uri>model://course_assets/meshes/building_details_bark.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.29 0.2 0.13 1</ambient>
+            <diffuse>0.29 0.2 0.13 1</diffuse>
+            <specular>0.06 0.06 0.06 1</specular>
+          </material>
+        </visual>
+        <visual name="leaf">
+          <geometry>
+            <mesh>
+              <uri>model://course_assets/meshes/building_details_leaf.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.18 0.36 0.12 1</ambient>
+            <diffuse>0.18 0.36 0.12 1</diffuse>
+            <specular>0.06 0.06 0.06 1</specular>
+          </material>
+        </visual>
+        <visual name="leaf_light">
+          <geometry>
+            <mesh>
+              <uri>model://course_assets/meshes/building_details_leaf_light.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.32 0.48 0.17 1</ambient>
+            <diffuse>0.32 0.48 0.17 1</diffuse>
+            <specular>0.06 0.06 0.06 1</specular>
+          </material>
+        </visual>
+        <visual name="red">
+          <geometry>
+            <mesh>
+              <uri>model://course_assets/meshes/building_details_red.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.55 0.18 0.13 1</ambient>
+            <diffuse>0.55 0.18 0.13 1</diffuse>
+            <specular>0.06 0.06 0.06 1</specular>
+          </material>
+        </visual>
+        <visual name="glass">
+          <geometry>
+            <mesh>
+              <uri>model://course_assets/meshes/building_details_glass.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.15 0.35 0.43 1</ambient>
+            <diffuse>0.15 0.35 0.43 1</diffuse>
+            <specular>0.06 0.06 0.06 1</specular>
+          </material>
+        </visual>
+        <visual name="black">
+          <geometry>
+            <mesh>
+              <uri>model://course_assets/meshes/building_details_black.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.055 0.065 0.07 1</ambient>
+            <diffuse>0.055 0.065 0.07 1</diffuse>
+            <specular>0.06 0.06 0.06 1</specular>
+          </material>
+        </visual>
+        <visual name="white">
+          <geometry>
+            <mesh>
+              <uri>model://course_assets/meshes/building_details_white.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.88 0.88 0.81 1</ambient>
+            <diffuse>0.88 0.88 0.81 1</diffuse>
+            <specular>0.06 0.06 0.06 1</specular>
+          </material>
+        </visual>
+        <visual name="concrete">
+          <geometry>
+            <mesh>
+              <uri>model://course_assets/meshes/building_details_concrete.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.69 0.67 0.58 1</ambient>
+            <diffuse>0.69 0.67 0.58 1</diffuse>
+            <specular>0.06 0.06 0.06 1</specular>
+          </material>
+        </visual>
+        <visual name="roof">
+          <geometry>
+            <mesh>
+              <uri>model://course_assets/meshes/building_details_roof.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.24 0.26 0.28 1</ambient>
+            <diffuse>0.24 0.26 0.28 1</diffuse>
+            <specular>0.06 0.06 0.06 1</specular>
+          </material>
+        </visual>
+      </link>
+    </model>
+  </world>
+</sdf>

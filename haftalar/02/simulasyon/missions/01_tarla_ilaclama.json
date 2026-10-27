@@ -1,0 +1,708 @@
+{
+  "name": "01_tarla_ilaclama",
+  "description": "9 rows with 7m spacing and 8m working width; 4m altitude; 3m/s; headland extension; onboard DO_AUX_FUNCTION15.",
+  "home": [
+    -35.363262,
+    149.165237,
+    584
+  ],
+  "items": [
+    {
+      "seq": 0,
+      "frame": 0,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.363262,
+      "longitude": 149.165237,
+      "altitude": 584,
+      "east": 0,
+      "north": 0,
+      "label": "HOME"
+    },
+    {
+      "seq": 1,
+      "frame": 3,
+      "command": 22,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.363262,
+      "longitude": 149.165237,
+      "altitude": 4,
+      "east": 0,
+      "north": 0,
+      "label": "TAKEOFF"
+    },
+    {
+      "seq": 2,
+      "frame": 3,
+      "command": 178,
+      "params": [
+        1,
+        3,
+        -1,
+        0
+      ],
+      "latitude": 0,
+      "longitude": 0,
+      "altitude": 0,
+      "east": 0,
+      "north": 0,
+      "label": "DO_CHANGE_SPEED"
+    },
+    {
+      "seq": 3,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.3631092864017,
+      "longitude": 149.16492856521316,
+      "altitude": 4,
+      "east": -28,
+      "north": 17,
+      "label": "ROW_1_START"
+    },
+    {
+      "seq": 4,
+      "frame": 3,
+      "command": 218,
+      "params": [
+        15,
+        2,
+        0,
+        0
+      ],
+      "latitude": 0,
+      "longitude": 0,
+      "altitude": 0,
+      "east": 0,
+      "north": 0,
+      "label": "SPRAYER_ON"
+    },
+    {
+      "seq": 5,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.36264216245396,
+      "longitude": 149.16492856521316,
+      "altitude": 4,
+      "east": -28,
+      "north": 69,
+      "label": "ROW_1_END"
+    },
+    {
+      "seq": 6,
+      "frame": 3,
+      "command": 218,
+      "params": [
+        15,
+        0,
+        0,
+        0
+      ],
+      "latitude": 0,
+      "longitude": 0,
+      "altitude": 0,
+      "east": 0,
+      "north": 0,
+      "label": "SPRAYER_OFF"
+    },
+    {
+      "seq": 7,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.36264216245396,
+      "longitude": 149.16500567390986,
+      "altitude": 4,
+      "east": -21,
+      "north": 69,
+      "label": "ROW_2_START"
+    },
+    {
+      "seq": 8,
+      "frame": 3,
+      "command": 218,
+      "params": [
+        15,
+        2,
+        0,
+        0
+      ],
+      "latitude": 0,
+      "longitude": 0,
+      "altitude": 0,
+      "east": 0,
+      "north": 0,
+      "label": "SPRAYER_ON"
+    },
+    {
+      "seq": 9,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.3631092864017,
+      "longitude": 149.16500567390986,
+      "altitude": 4,
+      "east": -21,
+      "north": 17,
+      "label": "ROW_2_END"
+    },
+    {
+      "seq": 10,
+      "frame": 3,
+      "command": 218,
+      "params": [
+        15,
+        0,
+        0,
+        0
+      ],
+      "latitude": 0,
+      "longitude": 0,
+      "altitude": 0,
+      "east": 0,
+      "north": 0,
+      "label": "SPRAYER_OFF"
+    },
+    {
+      "seq": 11,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.3631092864017,
+      "longitude": 149.1650827826066,
+      "altitude": 4,
+      "east": -14,
+      "north": 17,
+      "label": "ROW_3_START"
+    },
+    {
+      "seq": 12,
+      "frame": 3,
+      "command": 218,
+      "params": [
+        15,
+        2,
+        0,
+        0
+      ],
+      "latitude": 0,
+      "longitude": 0,
+      "altitude": 0,
+      "east": 0,
+      "north": 0,
+      "label": "SPRAYER_ON"
+    },
+    {
+      "seq": 13,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.36264216245396,
+      "longitude": 149.1650827826066,
+      "altitude": 4,
+      "east": -14,
+      "north": 69,
+      "label": "ROW_3_END"
+    },
+    {
+      "seq": 14,
+      "frame": 3,
+      "command": 218,
+      "params": [
+        15,
+        0,
+        0,
+        0
+      ],
+      "latitude": 0,
+      "longitude": 0,
+      "altitude": 0,
+      "east": 0,
+      "north": 0,
+      "label": "SPRAYER_OFF"
+    },
+    {
+      "seq": 15,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.36264216245396,
+      "longitude": 149.1651598913033,
+      "altitude": 4,
+      "east": -7,
+      "north": 69,
+      "label": "ROW_4_START"
+    },
+    {
+      "seq": 16,
+      "frame": 3,
+      "command": 218,
+      "params": [
+        15,
+        2,
+        0,
+        0
+      ],
+      "latitude": 0,
+      "longitude": 0,
+      "altitude": 0,
+      "east": 0,
+      "north": 0,
+      "label": "SPRAYER_ON"
+    },
+    {
+      "seq": 17,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.3631092864017,
+      "longitude": 149.1651598913033,
+      "altitude": 4,
+      "east": -7,
+      "north": 17,
+      "label": "ROW_4_END"
+    },
+    {
+      "seq": 18,
+      "frame": 3,
+      "command": 218,
+      "params": [
+        15,
+        0,
+        0,
+        0
+      ],
+      "latitude": 0,
+      "longitude": 0,
+      "altitude": 0,
+      "east": 0,
+      "north": 0,
+      "label": "SPRAYER_OFF"
+    },
+    {
+      "seq": 19,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.3631092864017,
+      "longitude": 149.165237,
+      "altitude": 4,
+      "east": 0,
+      "north": 17,
+      "label": "ROW_5_START"
+    },
+    {
+      "seq": 20,
+      "frame": 3,
+      "command": 218,
+      "params": [
+        15,
+        2,
+        0,
+        0
+      ],
+      "latitude": 0,
+      "longitude": 0,
+      "altitude": 0,
+      "east": 0,
+      "north": 0,
+      "label": "SPRAYER_ON"
+    },
+    {
+      "seq": 21,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.36264216245396,
+      "longitude": 149.165237,
+      "altitude": 4,
+      "east": 0,
+      "north": 69,
+      "label": "ROW_5_END"
+    },
+    {
+      "seq": 22,
+      "frame": 3,
+      "command": 218,
+      "params": [
+        15,
+        0,
+        0,
+        0
+      ],
+      "latitude": 0,
+      "longitude": 0,
+      "altitude": 0,
+      "east": 0,
+      "north": 0,
+      "label": "SPRAYER_OFF"
+    },
+    {
+      "seq": 23,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.36264216245396,
+      "longitude": 149.1653141086967,
+      "altitude": 4,
+      "east": 7,
+      "north": 69,
+      "label": "ROW_6_START"
+    },
+    {
+      "seq": 24,
+      "frame": 3,
+      "command": 218,
+      "params": [
+        15,
+        2,
+        0,
+        0
+      ],
+      "latitude": 0,
+      "longitude": 0,
+      "altitude": 0,
+      "east": 0,
+      "north": 0,
+      "label": "SPRAYER_ON"
+    },
+    {
+      "seq": 25,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.3631092864017,
+      "longitude": 149.1653141086967,
+      "altitude": 4,
+      "east": 7,
+      "north": 17,
+      "label": "ROW_6_END"
+    },
+    {
+      "seq": 26,
+      "frame": 3,
+      "command": 218,
+      "params": [
+        15,
+        0,
+        0,
+        0
+      ],
+      "latitude": 0,
+      "longitude": 0,
+      "altitude": 0,
+      "east": 0,
+      "north": 0,
+      "label": "SPRAYER_OFF"
+    },
+    {
+      "seq": 27,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.3631092864017,
+      "longitude": 149.1653912173934,
+      "altitude": 4,
+      "east": 14,
+      "north": 17,
+      "label": "ROW_7_START"
+    },
+    {
+      "seq": 28,
+      "frame": 3,
+      "command": 218,
+      "params": [
+        15,
+        2,
+        0,
+        0
+      ],
+      "latitude": 0,
+      "longitude": 0,
+      "altitude": 0,
+      "east": 0,
+      "north": 0,
+      "label": "SPRAYER_ON"
+    },
+    {
+      "seq": 29,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.36264216245396,
+      "longitude": 149.1653912173934,
+      "altitude": 4,
+      "east": 14,
+      "north": 69,
+      "label": "ROW_7_END"
+    },
+    {
+      "seq": 30,
+      "frame": 3,
+      "command": 218,
+      "params": [
+        15,
+        0,
+        0,
+        0
+      ],
+      "latitude": 0,
+      "longitude": 0,
+      "altitude": 0,
+      "east": 0,
+      "north": 0,
+      "label": "SPRAYER_OFF"
+    },
+    {
+      "seq": 31,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.36264216245396,
+      "longitude": 149.16546832609012,
+      "altitude": 4,
+      "east": 21,
+      "north": 69,
+      "label": "ROW_8_START"
+    },
+    {
+      "seq": 32,
+      "frame": 3,
+      "command": 218,
+      "params": [
+        15,
+        2,
+        0,
+        0
+      ],
+      "latitude": 0,
+      "longitude": 0,
+      "altitude": 0,
+      "east": 0,
+      "north": 0,
+      "label": "SPRAYER_ON"
+    },
+    {
+      "seq": 33,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.3631092864017,
+      "longitude": 149.16546832609012,
+      "altitude": 4,
+      "east": 21,
+      "north": 17,
+      "label": "ROW_8_END"
+    },
+    {
+      "seq": 34,
+      "frame": 3,
+      "command": 218,
+      "params": [
+        15,
+        0,
+        0,
+        0
+      ],
+      "latitude": 0,
+      "longitude": 0,
+      "altitude": 0,
+      "east": 0,
+      "north": 0,
+      "label": "SPRAYER_OFF"
+    },
+    {
+      "seq": 35,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.3631092864017,
+      "longitude": 149.16554543478682,
+      "altitude": 4,
+      "east": 28,
+      "north": 17,
+      "label": "ROW_9_START"
+    },
+    {
+      "seq": 36,
+      "frame": 3,
+      "command": 218,
+      "params": [
+        15,
+        2,
+        0,
+        0
+      ],
+      "latitude": 0,
+      "longitude": 0,
+      "altitude": 0,
+      "east": 0,
+      "north": 0,
+      "label": "SPRAYER_ON"
+    },
+    {
+      "seq": 37,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.36264216245396,
+      "longitude": 149.16554543478682,
+      "altitude": 4,
+      "east": 28,
+      "north": 69,
+      "label": "ROW_9_END"
+    },
+    {
+      "seq": 38,
+      "frame": 3,
+      "command": 218,
+      "params": [
+        15,
+        0,
+        0,
+        0
+      ],
+      "latitude": 0,
+      "longitude": 0,
+      "altitude": 0,
+      "east": 0,
+      "north": 0,
+      "label": "SPRAYER_OFF"
+    },
+    {
+      "seq": 39,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.36319013477727,
+      "longitude": 149.165237,
+      "altitude": 4,
+      "east": 0,
+      "north": 8,
+      "label": "RETURN"
+    },
+    {
+      "seq": 40,
+      "frame": 3,
+      "command": 21,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.363262,
+      "longitude": 149.165237,
+      "altitude": 0,
+      "east": 0,
+      "north": 0,
+      "label": "LAND"
+    }
+  ]
+}

@@ -1,0 +1,368 @@
+{
+  "name": "02_tarla_2d_haritalama",
+  "description": "18 m altitude, 70 deg horizontal FoV, 960x640 sensor; 8 m strips, 4 m camera distance; flat ground mosaic.",
+  "home": [
+    -35.363262,
+    149.165237,
+    584
+  ],
+  "items": [
+    {
+      "seq": 0,
+      "frame": 0,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.363262,
+      "longitude": 149.165237,
+      "altitude": 584,
+      "east": 0,
+      "north": 0,
+      "label": "HOME"
+    },
+    {
+      "seq": 1,
+      "frame": 3,
+      "command": 22,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.363262,
+      "longitude": 149.165237,
+      "altitude": 18,
+      "east": 0,
+      "north": 0,
+      "label": "TAKEOFF"
+    },
+    {
+      "seq": 2,
+      "frame": 3,
+      "command": 178,
+      "params": [
+        1,
+        4,
+        -1,
+        0
+      ],
+      "latitude": 0,
+      "longitude": 0,
+      "altitude": 0,
+      "east": 0,
+      "north": 0,
+      "label": "DO_CHANGE_SPEED"
+    },
+    {
+      "seq": 3,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.363064370637495,
+      "longitude": 149.16497262732557,
+      "altitude": 18,
+      "east": -24,
+      "north": 22,
+      "label": "GRID_1_START"
+    },
+    {
+      "seq": 4,
+      "frame": 3,
+      "command": 206,
+      "params": [
+        4,
+        0,
+        1,
+        0
+      ],
+      "latitude": 0,
+      "longitude": 0,
+      "altitude": 0,
+      "east": 0,
+      "north": 0,
+      "label": "DO_SET_CAM_TRIGG_DIST"
+    },
+    {
+      "seq": 5,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.362687078218165,
+      "longitude": 149.16497262732557,
+      "altitude": 18,
+      "east": -24,
+      "north": 64,
+      "label": "GRID_1_END"
+    },
+    {
+      "seq": 6,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.362687078218165,
+      "longitude": 149.16506075155039,
+      "altitude": 18,
+      "east": -16,
+      "north": 64,
+      "label": "GRID_2_START"
+    },
+    {
+      "seq": 7,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.363064370637495,
+      "longitude": 149.16506075155039,
+      "altitude": 18,
+      "east": -16,
+      "north": 22,
+      "label": "GRID_2_END"
+    },
+    {
+      "seq": 8,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.363064370637495,
+      "longitude": 149.16514887577517,
+      "altitude": 18,
+      "east": -8,
+      "north": 22,
+      "label": "GRID_3_START"
+    },
+    {
+      "seq": 9,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.362687078218165,
+      "longitude": 149.16514887577517,
+      "altitude": 18,
+      "east": -8,
+      "north": 64,
+      "label": "GRID_3_END"
+    },
+    {
+      "seq": 10,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.362687078218165,
+      "longitude": 149.165237,
+      "altitude": 18,
+      "east": 0,
+      "north": 64,
+      "label": "GRID_4_START"
+    },
+    {
+      "seq": 11,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.363064370637495,
+      "longitude": 149.165237,
+      "altitude": 18,
+      "east": 0,
+      "north": 22,
+      "label": "GRID_4_END"
+    },
+    {
+      "seq": 12,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.363064370637495,
+      "longitude": 149.1653251242248,
+      "altitude": 18,
+      "east": 8,
+      "north": 22,
+      "label": "GRID_5_START"
+    },
+    {
+      "seq": 13,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.362687078218165,
+      "longitude": 149.1653251242248,
+      "altitude": 18,
+      "east": 8,
+      "north": 64,
+      "label": "GRID_5_END"
+    },
+    {
+      "seq": 14,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.362687078218165,
+      "longitude": 149.1654132484496,
+      "altitude": 18,
+      "east": 16,
+      "north": 64,
+      "label": "GRID_6_START"
+    },
+    {
+      "seq": 15,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.363064370637495,
+      "longitude": 149.1654132484496,
+      "altitude": 18,
+      "east": 16,
+      "north": 22,
+      "label": "GRID_6_END"
+    },
+    {
+      "seq": 16,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.363064370637495,
+      "longitude": 149.1655013726744,
+      "altitude": 18,
+      "east": 24,
+      "north": 22,
+      "label": "GRID_7_START"
+    },
+    {
+      "seq": 17,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.362687078218165,
+      "longitude": 149.1655013726744,
+      "altitude": 18,
+      "east": 24,
+      "north": 64,
+      "label": "GRID_7_END"
+    },
+    {
+      "seq": 18,
+      "frame": 3,
+      "command": 206,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": 0,
+      "longitude": 0,
+      "altitude": 0,
+      "east": 0,
+      "north": 0,
+      "label": "DO_SET_CAM_TRIGG_DIST"
+    },
+    {
+      "seq": 19,
+      "frame": 3,
+      "command": 16,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.36319013477727,
+      "longitude": 149.165237,
+      "altitude": 18,
+      "east": 0,
+      "north": 8,
+      "label": "RETURN"
+    },
+    {
+      "seq": 20,
+      "frame": 3,
+      "command": 21,
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "latitude": -35.363262,
+      "longitude": 149.165237,
+      "altitude": 0,
+      "east": 0,
+      "north": 0,
+      "label": "LAND"
+    }
+  ]
+}

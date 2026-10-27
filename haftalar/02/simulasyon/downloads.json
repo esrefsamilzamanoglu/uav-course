@@ -1,0 +1,5 @@
+[
+  {"file":"research/ArduPlane.exe","url":"https://firmware.ardupilot.org/Tools/MissionPlanner/sitl/PlaneStable/ArduPlane.elf","sha256":"8efc03f8c72433ef19db028f0c59a62ff3b48a67b680d94bed084b5e19fb798c"},
+  {"file":"research/plane_git.txt","url":"https://firmware.ardupilot.org/Tools/MissionPlanner/sitl/PlaneStable/git.txt","sha256":"065caf05167599bb7c4e8ebe79fff3906c431b53c5024e8829cfc5794066e2d6"},
+  {"file":"research/gazebo-zephyr.parm","url":"https://raw.githubusercontent.com/ArduPilot/ardupilot/fbd0a3160c90a557c24ce4c38c16975532652536/Tools/autotest/default_params/gazebo-zephyr.parm","sha256":"ab168edad5fa97e9469738511a740cd2b167a52330ba9f7dacc0a31bd2701352"}
+]
