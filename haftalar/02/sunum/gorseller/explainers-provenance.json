@@ -1,0 +1,142 @@
+[
+  {
+    "file": "ex_system.png",
+    "kind": "teaching diagram / measured-data visualization",
+    "description": "System and read-only vision data flow",
+    "source_files": [],
+    "sha256": "f5887816654691f556cd4ce56963508cf7b020f85c870fa2c0863bc856ac197e"
+  },
+  {
+    "file": "ex_camera_height.png",
+    "kind": "teaching diagram / measured-data visualization",
+    "description": "Same HFOV and resolution: altitude changes footprint and nominal GSD",
+    "source_files": [],
+    "sha256": "8aff2475d368741f0ea19d5caee8d1d00ad0e35e954d6870c8dcfaa5eb6c75ce"
+  },
+  {
+    "file": "ex_overlap.png",
+    "kind": "teaching diagram / measured-data visualization",
+    "description": "Image footprints and along/across-track overlap; concept, not to scale",
+    "source_files": [],
+    "sha256": "9334eddcc5bf86d0a73c68e9f32736df669f4d4ba2bf85ef24b771d8a3e049c3"
+  },
+  {
+    "file": "ex_swath.png",
+    "kind": "teaching diagram / measured-data visualization",
+    "description": "AUTO pump-on/off geometry; ideal swath and headland extension",
+    "source_files": [],
+    "sha256": "2657287a060258b4defa541592cef104086cb79f4ec38c1d30f5d6b7c196721c"
+  },
+  {
+    "file": "ex_nav_do.png",
+    "kind": "teaching diagram / measured-data visualization",
+    "description": "Waypoint and pump state timeline; correct NAV/DO ordering",
+    "source_files": [],
+    "sha256": "a67472b8fca94739723a3bb5d620e558713c38c005a36e42c282891441740807"
+  },
+  {
+    "file": "ex_mosaic.png",
+    "kind": "teaching diagram / measured-data visualization",
+    "description": "Actual RGB frames projected to a common ground plane",
+    "source_files": [
+      "mapping_kamera.png",
+      "tarla_mozaik.png"
+    ],
+    "sha256": "4fc8f8fb02f009e896c09a46087af77134f2f924cdd6b9a4acd47118299b781e"
+  },
+  {
+    "file": "ex_roi.png",
+    "kind": "teaching diagram / measured-data visualization",
+    "description": "Fixed ROI continuously drives the mount while AUTO flies the orbit",
+    "source_files": [],
+    "sha256": "c03b4d6b2177420573e7e15b156cccb17ea3597b66ffad5f385cb617c5e40462"
+  },
+  {
+    "file": "ex_gaussian.png",
+    "kind": "teaching diagram / measured-data visualization",
+    "description": "An anisotropic 3D Gaussian and its optimized parameter groups",
+    "source_files": [],
+    "sha256": "74605eda2200da22a6ad253f10e51f3a46da827bc96fe9d518574c978469f1ae"
+  },
+  {
+    "file": "ex_splat_projection.png",
+    "kind": "teaching diagram / measured-data visualization",
+    "description": "Projection of anisotropic Gaussians and depth-aware alpha compositing",
+    "source_files": [],
+    "sha256": "7ce2051a5b52cc76105235c2c61f5a42bbe241920d578d136698989377d371c7"
+  },
+  {
+    "file": "ex_alpha.png",
+    "kind": "teaching diagram / measured-data visualization",
+    "description": "Ordering affects translucent splat appearance; conceptual alpha example",
+    "source_files": [],
+    "sha256": "0b799d44fc7d2e7d3b0f3b2f44919d0ae7c55dc45512d8c5070e4275221ffd1f"
+  },
+  {
+    "file": "ex_densification.png",
+    "kind": "teaching diagram / measured-data visualization",
+    "description": "Concept of adaptive splat density; not claimed to be a measured checkpoint",
+    "source_files": [],
+    "sha256": "fa118f49be7965365259e24426fd93fd4671d5a6988ff2e14edd60e7c714eb5c"
+  },
+  {
+    "file": "ex_holdout.png",
+    "kind": "teaching diagram / measured-data visualization",
+    "description": "Train/eval view partition; hold-out images excluded from gradient optimization and sparse initialization",
+    "source_files": [],
+    "sha256": "c3d8c34366ebcb75be7457b59e14829206d6744bd018dfff72000941323f1d16"
+  },
+  {
+    "file": "ex_parallax.png",
+    "kind": "teaching diagram / measured-data visualization",
+    "description": "Depth-dependent motion creates parallax and potential false alarms",
+    "source_files": [],
+    "sha256": "1dbc86228acfced56e64ec1ffb1a0915fd1b53c1c56a0010b6d5bb852ddc6ca9"
+  },
+  {
+    "file": "ex_homography.png",
+    "kind": "teaching diagram / measured-data visualization",
+    "description": "Actual ORB matches, RANSAC inliers and previous-to-current camera-frame warp",
+    "source_files": [
+      ".local/runs/20261027-190335-plane/camera/000106.png",
+      ".local/runs/20261027-190335-plane/camera/000108.png"
+    ],
+    "sha256": "e509b1621fa5fd1a866499c42ac6667e1b20881a7cb4b5a1fa785f5524caea38"
+  },
+  {
+    "file": "ex_motion_stages.png",
+    "kind": "teaching diagram / measured-data visualization",
+    "description": "Real input, compensated residual, and live event output",
+    "source_files": [
+      "hareket_ham.png",
+      "hareket_artik.png",
+      "hareket.png"
+    ],
+    "sha256": "a58933ede193c18fbb71615820758ae18a0989b466566f3a94ddd3c4b274ec98"
+  },
+  {
+    "file": "ex_event_timeline.png",
+    "kind": "teaching diagram / measured-data visualization",
+    "description": "Measured live event-to-landing timing from final Plane telemetry",
+    "source_files": [],
+    "sha256": "fc5a93a18b00a5f2c9c7abdca42d13921bbdebaabbddc56d59cfeb52eaafaf9c"
+  },
+  {
+    "file": "ex_training_loop.png",
+    "kind": "teaching diagram / measured-data visualization",
+    "description": "Actual held-out reference/render/error; optimized model never reads the source mesh",
+    "source_files": [
+      "gaussian_reference.png",
+      "gaussian_final.png",
+      "gaussian_difference.png"
+    ],
+    "sha256": "49376f5d900344cb05b49b113e367d43142ebb1de999df566f225433b3145190"
+  },
+  {
+    "file": "ex_training_progress.png",
+    "kind": "teaching diagram / measured-data visualization",
+    "description": "Actual checkpoint renders from the same final optimization run",
+    "source_files": [],
+    "sha256": "432dff511ec9f7ba81e23ef3b82294a62cfd5870e1db913458da15641d6a5e71"
+  }
+]

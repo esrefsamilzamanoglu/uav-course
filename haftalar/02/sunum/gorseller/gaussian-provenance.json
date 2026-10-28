@@ -1,0 +1,77 @@
+[
+  {
+    "file": "gaussian_reference.png",
+    "kind": "actual RGB / trained Gaussian render",
+    "source": ".local/runs/20261027-183245-building/products/gaussian/dataset/images/0000.png",
+    "sha256": "03cf89a063ad9c130a3635f632c10fe5b06cf3d404e8e85b54116a154a728b79"
+  },
+  {
+    "file": "gaussian_final.png",
+    "kind": "actual RGB / trained Gaussian render",
+    "source": ".local/runs/20261027-183245-building/products/gaussian/training/eval_6000/0000.png",
+    "sha256": "0d54de57f93a82f443545a7d9741e4c49ee7030cb0d8d27bfc10075350546ee6"
+  },
+  {
+    "file": "gaussian_step1000.png",
+    "kind": "actual RGB / trained Gaussian render",
+    "source": ".local/runs/20261027-183245-building/products/gaussian/training/eval_1000/0000.png",
+    "sha256": "df47684041dabaf0b0b74f5bbbf5554f0d3bf02ad33fcc77d3859eb4a21e2f80"
+  },
+  {
+    "file": "gaussian_step3000.png",
+    "kind": "actual RGB / trained Gaussian render",
+    "source": ".local/runs/20261027-183245-building/products/gaussian/training/eval_3000/0000.png",
+    "sha256": "c179e1358c79c234ac711c729e118ac5b994e8c3012d35af096523efe699bfcc"
+  },
+  {
+    "file": "gaussian_capture_a.png",
+    "kind": "actual RGB / trained Gaussian render",
+    "source": ".local/runs/20261027-183245-building/products/gaussian/dataset/images/0000.png",
+    "sha256": "03cf89a063ad9c130a3635f632c10fe5b06cf3d404e8e85b54116a154a728b79"
+  },
+  {
+    "file": "gaussian_render_a.png",
+    "kind": "actual RGB / trained Gaussian render",
+    "source": ".local/runs/20261027-183245-building/products/gaussian/training/eval_6000/0000.png",
+    "sha256": "0d54de57f93a82f443545a7d9741e4c49ee7030cb0d8d27bfc10075350546ee6"
+  },
+  {
+    "file": "gaussian_capture_b.png",
+    "kind": "actual RGB / trained Gaussian render",
+    "source": ".local/runs/20261027-183245-building/products/gaussian/dataset/images/0032.png",
+    "sha256": "ff2ae48cee50a3bc24559fc28f59410e829d18374387d0a1b0aedc3a1b1e934b"
+  },
+  {
+    "file": "gaussian_render_b.png",
+    "kind": "actual RGB / trained Gaussian render",
+    "source": ".local/runs/20261027-183245-building/products/gaussian/training/eval_6000/0032.png",
+    "sha256": "fc9ebcf269b832345297896252f386db32d06d7627f820f24d7f1584a182c194"
+  },
+  {
+    "file": "gaussian_capture_c.png",
+    "kind": "actual RGB / trained Gaussian render",
+    "source": ".local/runs/20261027-183245-building/products/gaussian/dataset/images/0072.png",
+    "sha256": "41952f96c289d9af7f941e291afbe7d841976098010013f275fe835087ac48b6"
+  },
+  {
+    "file": "gaussian_render_c.png",
+    "kind": "actual RGB / trained Gaussian render",
+    "source": ".local/runs/20261027-183245-building/products/gaussian/training/eval_6000/0072.png",
+    "sha256": "b312ebc02392486071e2c3460497098ae13ac91739bc86df10582998f3f8e307"
+  },
+  {
+    "file": "gaussian_difference.png",
+    "kind": "measured pixel difference, multiplied by4 for display",
+    "sources": [
+      "gaussian_reference.png",
+      "gaussian_final.png"
+    ],
+    "sha256": "f0cdc553aecac24df007475a00ebf6875ea43f772971008f327c8f5b29f1f358"
+  },
+  {
+    "file": "../ornekler/Bina-Gaussian.ply",
+    "kind": "trained 3D Gaussian model",
+    "source": ".local/runs/20261027-183245-building/products/gaussian/training/export_6000.ply",
+    "sha256": "7976371b9c396a65b744b1e9dfe234d2763c7943863d1a78850fcadc13f79e3b"
+  }
+]

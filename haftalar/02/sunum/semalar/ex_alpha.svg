@@ -1,0 +1,1221 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1152pt" height="475.2pt" viewBox="0 0 1152 475.2" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-10-28T13:39:56.161798</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 475.2 
+L 1152 475.2 
+L 1152 0 
+L 0 0 
+z
+" style="fill: #edf3ff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 67.68 406.817561 
+L 537.12 406.817561 
+Q 548.64 406.817561 548.64 397.545366 
+L 548.64 66.06439 
+Q 548.64 56.792195 537.12 56.792195 
+L 67.68 56.792195 
+Q 56.16 56.792195 56.16 66.06439 
+L 56.16 397.545366 
+Q 56.16 406.817561 67.68 406.817561 
+z
+" clip-path="url(#p1c314f3b23)" style="fill: #ffffff"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 276.813085 285.212746 
+C 311.802085 274.96266 341.989635 257.671791 360.727278 237.14825 
+C 379.464922 216.624709 385.222813 194.544153 376.732844 175.769568 
+C 368.242874 156.994983 346.198212 143.059231 315.453939 137.031499 
+C 284.709665 131.003767 247.775914 133.376194 212.786915 143.626279 
+C 177.797915 153.876364 147.610365 171.167234 128.872722 191.690775 
+C 110.135078 212.214316 104.377187 234.294872 112.867156 253.069457 
+C 121.357126 271.844042 143.401788 285.779794 174.146061 291.807525 
+C 204.890335 297.835257 241.824086 295.462831 276.813085 285.212746 
+z
+" clip-path="url(#p1c314f3b23)" style="fill: #238b88; opacity: 0.65"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 348.813085 337.368843 
+C 383.802085 327.118758 413.989635 309.827888 432.727278 289.304347 
+C 451.464922 268.780806 457.222813 246.70025 448.732844 227.925665 
+C 440.242874 209.15108 418.198212 195.215328 387.453939 189.187596 
+C 356.709665 183.159865 319.775914 185.532291 284.786915 195.782376 
+C 249.797915 206.032462 219.610365 223.323331 200.872722 243.846872 
+C 182.135078 264.370413 176.377187 286.450969 184.867156 305.225554 
+C 193.357126 324.000139 215.401788 337.935891 246.146061 343.963623 
+C 276.890335 349.991355 313.824086 347.618928 348.813085 337.368843 
+z
+" clip-path="url(#p1c314f3b23)" style="fill: #d79a29; opacity: 0.65"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 618.48 406.817561 
+L 1087.92 406.817561 
+Q 1099.44 406.817561 1099.44 397.545366 
+L 1099.44 66.06439 
+Q 1099.44 56.792195 1087.92 56.792195 
+L 618.48 56.792195 
+Q 606.96 56.792195 606.96 66.06439 
+L 606.96 397.545366 
+Q 606.96 406.817561 618.48 406.817561 
+z
+" clip-path="url(#p1c314f3b23)" style="fill: #ffffff"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 827.613085 285.212746 
+C 862.602085 274.96266 892.789635 257.671791 911.527278 237.14825 
+C 930.264922 216.624709 936.022813 194.544153 927.532844 175.769568 
+C 919.042874 156.994983 896.998212 143.059231 866.253939 137.031499 
+C 835.509665 131.003767 798.575914 133.376194 763.586915 143.626279 
+C 728.597915 153.876364 698.410365 171.167234 679.672722 191.690775 
+C 660.935078 212.214316 655.177187 234.294872 663.667156 253.069457 
+C 672.157126 271.844042 694.201788 285.779794 724.946061 291.807525 
+C 755.690335 297.835257 792.624086 295.462831 827.613085 285.212746 
+z
+" clip-path="url(#p1c314f3b23)" style="fill: #d79a29; opacity: 0.65"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 899.613085 337.368843 
+C 934.602085 327.118758 964.789635 309.827888 983.527278 289.304347 
+C 1002.264922 268.780806 1008.022813 246.70025 999.532844 227.925665 
+C 991.042874 209.15108 968.998212 195.215328 938.253939 189.187596 
+C 907.509665 183.159865 870.575914 185.532291 835.586915 195.782376 
+C 800.597915 206.032462 770.410365 223.323331 751.672722 243.846872 
+C 732.935078 264.370413 727.177187 286.450969 735.667156 305.225554 
+C 744.157126 324.000139 766.201788 337.935891 796.946061 343.963623 
+C 827.690335 349.991355 864.624086 347.618928 899.613085 337.368843 
+z
+" clip-path="url(#p1c314f3b23)" style="fill: #238b88; opacity: 0.65"/>
+   </g>
+   <g id="text_1">
+    <!-- Önce teal -->
+    <g style="fill: #18365d" transform="translate(73.44 94.519667) scale(0.2645 -0.2645)">
+     <defs>
+      <path id="CenturyGothic-Bold-67" d="M 2697 4713 
+Q 3672 4713 4373 4006 
+Q 5075 3300 5075 2284 
+Q 5075 1278 4383 581 
+Q 3691 -116 2703 -116 
+Q 1669 -116 984 600 
+Q 300 1316 300 2300 
+Q 300 2959 619 3512 
+Q 938 4066 1495 4389 
+Q 2053 4713 2697 4713 
+z
+M 2688 3856 
+Q 2050 3856 1615 3412 
+Q 1181 2969 1181 2284 
+Q 1181 1522 1728 1078 
+Q 2153 731 2703 731 
+Q 3325 731 3762 1181 
+Q 4200 1631 4200 2291 
+Q 4200 2947 3759 3401 
+Q 3319 3856 2688 3856 
+z
+M 1994 5847 
+Q 2182 5847 2313 5715 
+Q 2444 5584 2444 5400 
+Q 2444 5212 2313 5081 
+Q 2182 4950 1994 4950 
+Q 1810 4950 1678 5081 
+Q 1547 5212 1547 5400 
+Q 1547 5584 1678 5715 
+Q 1810 5847 1994 5847 
+z
+M 3379 5847 
+Q 3566 5847 3697 5715 
+Q 3829 5584 3829 5400 
+Q 3829 5212 3697 5081 
+Q 3566 4950 3379 4950 
+Q 3194 4950 3063 5081 
+Q 2932 5212 2932 5400 
+Q 2932 5584 3063 5715 
+Q 3194 5847 3379 5847 
+z
+" transform="scale(0.015625)"/>
+      <path id="CenturyGothic-Bold-51" d="M 431 3400 
+L 1281 3400 
+L 1281 3053 
+Q 1572 3297 1808 3392 
+Q 2044 3488 2291 3488 
+Q 2797 3488 3150 3134 
+Q 3447 2834 3447 2247 
+L 3447 0 
+L 2603 0 
+L 2603 1491 
+Q 2603 2100 2548 2300 
+Q 2494 2500 2358 2604 
+Q 2222 2709 2022 2709 
+Q 1763 2709 1577 2536 
+Q 1391 2363 1319 2056 
+Q 1281 1897 1281 1366 
+L 1281 0 
+L 431 0 
+L 431 3400 
+z
+" transform="scale(0.015625)"/>
+      <path id="CenturyGothic-Bold-46" d="M 3759 2713 
+L 3050 2322 
+Q 2850 2531 2654 2612 
+Q 2459 2694 2197 2694 
+Q 1719 2694 1423 2408 
+Q 1128 2122 1128 1675 
+Q 1128 1241 1412 966 
+Q 1697 691 2159 691 
+Q 2731 691 3050 1081 
+L 3722 622 
+Q 3175 -88 2178 -88 
+Q 1281 -88 773 443 
+Q 266 975 266 1688 
+Q 266 2181 512 2597 
+Q 759 3013 1201 3250 
+Q 1644 3488 2191 3488 
+Q 2697 3488 3100 3286 
+Q 3503 3084 3759 2713 
+z
+" transform="scale(0.015625)"/>
+      <path id="CenturyGothic-Bold-48" d="M 3838 1453 
+L 1097 1453 
+Q 1156 1091 1414 877 
+Q 1672 663 2072 663 
+Q 2550 663 2894 997 
+L 3613 659 
+Q 3344 278 2969 95 
+Q 2594 -88 2078 -88 
+Q 1278 -88 775 417 
+Q 272 922 272 1681 
+Q 272 2459 773 2973 
+Q 1275 3488 2031 3488 
+Q 2834 3488 3337 2973 
+Q 3841 2459 3841 1616 
+L 3838 1453 
+z
+M 2981 2125 
+Q 2897 2409 2648 2587 
+Q 2400 2766 2072 2766 
+Q 1716 2766 1447 2566 
+Q 1278 2441 1134 2125 
+L 2981 2125 
+z
+" transform="scale(0.015625)"/>
+      <path id="CenturyGothic-Bold-3" transform="scale(0.015625)"/>
+      <path id="CenturyGothic-Bold-57" d="M 534 4653 
+L 1384 4653 
+L 1384 3400 
+L 1891 3400 
+L 1891 2666 
+L 1384 2666 
+L 1384 0 
+L 534 0 
+L 534 2666 
+L 97 2666 
+L 97 3400 
+L 534 3400 
+L 534 4653 
+z
+" transform="scale(0.015625)"/>
+      <path id="CenturyGothic-Bold-44" d="M 2944 3400 
+L 3794 3400 
+L 3794 0 
+L 2944 0 
+L 2944 359 
+Q 2694 122 2442 17 
+Q 2191 -88 1897 -88 
+Q 1238 -88 756 423 
+Q 275 934 275 1694 
+Q 275 2481 740 2984 
+Q 1206 3488 1872 3488 
+Q 2178 3488 2447 3372 
+Q 2716 3256 2944 3025 
+L 2944 3400 
+z
+M 2047 2700 
+Q 1650 2700 1387 2420 
+Q 1125 2141 1125 1703 
+Q 1125 1263 1392 978 
+Q 1659 694 2050 694 
+Q 2453 694 2718 973 
+Q 2984 1253 2984 1706 
+Q 2984 2150 2718 2425 
+Q 2453 2700 2047 2700 
+z
+" transform="scale(0.015625)"/>
+      <path id="CenturyGothic-Bold-4f" d="M 341 4713 
+L 1194 4713 
+L 1194 0 
+L 341 0 
+L 341 4713 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#CenturyGothic-Bold-67"/>
+     <use xlink:href="#CenturyGothic-Bold-51" transform="translate(83.984375 0)"/>
+     <use xlink:href="#CenturyGothic-Bold-46" transform="translate(144 0)"/>
+     <use xlink:href="#CenturyGothic-Bold-48" transform="translate(208.015625 0)"/>
+     <use xlink:href="#CenturyGothic-Bold-3" transform="translate(272.03125 0)"/>
+     <use xlink:href="#CenturyGothic-Bold-57" transform="translate(300.015625 0)"/>
+     <use xlink:href="#CenturyGothic-Bold-48" transform="translate(330 0)"/>
+     <use xlink:href="#CenturyGothic-Bold-44" transform="translate(394.015625 0)"/>
+     <use xlink:href="#CenturyGothic-Bold-4f" transform="translate(460.03125 0)"/>
+    </g>
+   </g>
+   <g id="text_2">
+    <!-- Aynı splat’ler, farklı görünüş -->
+    <g style="fill: #263d56" transform="translate(160.045543 371.013948) scale(0.2185 -0.2185)">
+     <defs>
+      <path id="CenturyGothic-24" d="M 2438 4597 
+L 4581 0 
+L 4088 0 
+L 3366 1513 
+L 1384 1513 
+L 666 0 
+L 153 0 
+L 2325 4597 
+L 2438 4597 
+z
+M 2381 3622 
+L 1591 1956 
+L 3163 1956 
+L 2381 3622 
+z
+" transform="scale(0.015625)"/>
+      <path id="CenturyGothic-5c" d="M 122 3400 
+L 584 3400 
+L 1753 781 
+L 2888 3400 
+L 3353 3400 
+L 1325 -1244 
+L 863 -1244 
+L 1519 256 
+L 122 3400 
+z
+" transform="scale(0.015625)"/>
+      <path id="CenturyGothic-51" d="M 488 3400 
+L 925 3400 
+L 925 2791 
+Q 1188 3141 1506 3314 
+Q 1825 3488 2200 3488 
+Q 2581 3488 2876 3294 
+Q 3172 3100 3312 2772 
+Q 3453 2444 3453 1750 
+L 3453 0 
+L 3019 0 
+L 3019 1622 
+Q 3019 2209 2969 2406 
+Q 2891 2744 2675 2914 
+Q 2459 3084 2113 3084 
+Q 1716 3084 1402 2821 
+Q 1088 2559 988 2172 
+Q 925 1919 925 1247 
+L 925 0 
+L 488 0 
+L 488 3400 
+z
+" transform="scale(0.015625)"/>
+      <path id="CenturyGothic-d7" d="M 422 3400 
+L 863 3400 
+L 863 0 
+L 422 0 
+L 422 3400 
+z
+" transform="scale(0.015625)"/>
+      <path id="CenturyGothic-3" transform="scale(0.015625)"/>
+      <path id="CenturyGothic-56" d="M 2197 3028 
+L 1916 2738 
+Q 1566 3078 1231 3078 
+Q 1019 3078 867 2937 
+Q 716 2797 716 2609 
+Q 716 2444 841 2294 
+Q 966 2141 1366 1934 
+Q 1853 1681 2028 1447 
+Q 2200 1209 2200 913 
+Q 2200 494 1906 203 
+Q 1613 -88 1172 -88 
+Q 878 -88 611 40 
+Q 344 169 169 394 
+L 444 706 
+Q 778 328 1153 328 
+Q 1416 328 1600 497 
+Q 1784 666 1784 894 
+Q 1784 1081 1663 1228 
+Q 1541 1372 1113 1591 
+Q 653 1828 488 2059 
+Q 322 2291 322 2588 
+Q 322 2975 586 3231 
+Q 850 3488 1253 3488 
+Q 1722 3488 2197 3028 
+z
+" transform="scale(0.015625)"/>
+      <path id="CenturyGothic-53" d="M 494 3400 
+L 928 3400 
+L 928 2775 
+Q 1188 3131 1525 3309 
+Q 1863 3488 2278 3488 
+Q 3003 3488 3518 2966 
+Q 4034 2444 4034 1709 
+Q 4034 959 3523 435 
+Q 3013 -88 2291 -88 
+Q 1884 -88 1543 81 
+Q 1203 250 928 584 
+L 928 -1244 
+L 494 -1244 
+L 494 3400 
+z
+M 2244 3066 
+Q 1675 3066 1286 2669 
+Q 897 2272 897 1681 
+Q 897 1294 1070 984 
+Q 1244 675 1567 494 
+Q 1891 313 2250 313 
+Q 2603 313 2914 495 
+Q 3225 678 3409 1006 
+Q 3594 1334 3594 1694 
+Q 3594 2056 3411 2381 
+Q 3228 2706 2918 2886 
+Q 2609 3066 2244 3066 
+z
+" transform="scale(0.015625)"/>
+      <path id="CenturyGothic-4f" d="M 422 4713 
+L 859 4713 
+L 859 0 
+L 422 0 
+L 422 4713 
+z
+" transform="scale(0.015625)"/>
+      <path id="CenturyGothic-44" d="M 3875 3400 
+L 3875 0 
+L 3444 0 
+L 3444 584 
+Q 3169 250 2826 81 
+Q 2484 -88 2078 -88 
+Q 1356 -88 845 435 
+Q 334 959 334 1709 
+Q 334 2444 850 2966 
+Q 1366 3488 2091 3488 
+Q 2509 3488 2848 3309 
+Q 3188 3131 3444 2775 
+L 3444 3400 
+L 3875 3400 
+z
+M 2125 3066 
+Q 1759 3066 1450 2886 
+Q 1141 2706 958 2381 
+Q 775 2056 775 1694 
+Q 775 1334 959 1006 
+Q 1144 678 1455 495 
+Q 1766 313 2122 313 
+Q 2481 313 2803 494 
+Q 3125 675 3298 984 
+Q 3472 1294 3472 1681 
+Q 3472 2272 3083 2669 
+Q 2694 3066 2125 3066 
+z
+" transform="scale(0.015625)"/>
+      <path id="CenturyGothic-57" d="M 869 4663 
+L 1309 4663 
+L 1309 3400 
+L 2003 3400 
+L 2003 3025 
+L 1309 3025 
+L 1309 0 
+L 869 0 
+L 869 3025 
+L 272 3025 
+L 272 3400 
+L 869 3400 
+L 869 4663 
+z
+" transform="scale(0.015625)"/>
+      <path id="CenturyGothic-b7" d="M 1084 2997 
+L 844 3134 
+Q 963 3372 1003 3506 
+Q 1044 3641 1063 3853 
+L 788 3853 
+L 788 4713 
+L 1353 4713 
+L 1353 4175 
+Q 1353 3772 1298 3542 
+Q 1244 3313 1084 2997 
+z
+" transform="scale(0.015625)"/>
+      <path id="CenturyGothic-48" d="M 3350 1128 
+L 3719 934 
+Q 3538 578 3300 359 
+Q 3063 141 2766 26 
+Q 2469 -88 2094 -88 
+Q 1263 -88 794 457 
+Q 325 1003 325 1691 
+Q 325 2338 722 2844 
+Q 1225 3488 2069 3488 
+Q 2938 3488 3456 2828 
+Q 3825 2363 3831 1666 
+L 775 1666 
+Q 788 1072 1153 692 
+Q 1519 313 2056 313 
+Q 2316 313 2561 403 
+Q 2806 494 2978 644 
+Q 3150 794 3350 1128 
+z
+M 3350 2044 
+Q 3263 2394 3095 2603 
+Q 2928 2813 2653 2941 
+Q 2378 3069 2075 3069 
+Q 1575 3069 1216 2747 
+Q 953 2513 819 2044 
+L 3350 2044 
+z
+" transform="scale(0.015625)"/>
+      <path id="CenturyGothic-55" d="M 322 3400 
+L 769 3400 
+L 769 2903 
+Q 969 3197 1191 3342 
+Q 1413 3488 1653 3488 
+Q 1834 3488 2041 3372 
+L 1813 3003 
+Q 1675 3063 1581 3063 
+Q 1363 3063 1159 2883 
+Q 956 2703 850 2325 
+Q 769 2034 769 1150 
+L 769 0 
+L 322 0 
+L 322 3400 
+z
+" transform="scale(0.015625)"/>
+      <path id="CenturyGothic-f" d="M 922 844 
+L 1344 644 
+L 709 -538 
+L 400 -406 
+L 922 844 
+z
+" transform="scale(0.015625)"/>
+      <path id="CenturyGothic-49" d="M 1888 4713 
+L 1888 4284 
+Q 1647 4388 1475 4388 
+Q 1347 4388 1262 4336 
+Q 1178 4284 1156 4217 
+Q 1134 4150 1134 3859 
+L 1134 3400 
+L 1844 3400 
+L 1844 3025 
+L 1131 3025 
+L 1131 0 
+L 694 0 
+L 694 3025 
+L 247 3025 
+L 247 3400 
+L 694 3400 
+L 694 3931 
+Q 694 4297 761 4453 
+Q 828 4609 989 4704 
+Q 1150 4800 1378 4800 
+Q 1591 4800 1888 4713 
+z
+" transform="scale(0.015625)"/>
+      <path id="CenturyGothic-4e" d="M 484 4713 
+L 925 4713 
+L 925 2031 
+L 2497 3400 
+L 3141 3400 
+L 1275 1778 
+L 3250 0 
+L 2631 0 
+L 925 1528 
+L 925 0 
+L 484 0 
+L 484 4713 
+z
+" transform="scale(0.015625)"/>
+      <path id="CenturyGothic-4a" d="M 3416 3400 
+L 3856 3400 
+L 3856 691 
+Q 3856 -25 3731 -356 
+Q 3559 -825 3134 -1078 
+Q 2709 -1331 2113 -1331 
+Q 1675 -1331 1326 -1207 
+Q 978 -1084 759 -876 
+Q 541 -669 356 -269 
+L 831 -269 
+Q 1025 -606 1331 -768 
+Q 1638 -931 2091 -931 
+Q 2538 -931 2845 -764 
+Q 3153 -597 3284 -344 
+Q 3416 -91 3416 472 
+L 3416 647 
+Q 3169 334 2812 167 
+Q 2456 0 2056 0 
+Q 1588 0 1175 233 
+Q 763 466 538 859 
+Q 313 1253 313 1725 
+Q 313 2197 547 2605 
+Q 781 3013 1195 3250 
+Q 1609 3488 2069 3488 
+Q 2450 3488 2779 3330 
+Q 3109 3172 3416 2809 
+L 3416 3400 
+z
+M 2125 3066 
+Q 1753 3066 1434 2886 
+Q 1116 2706 934 2389 
+Q 753 2072 753 1703 
+Q 753 1144 1128 778 
+Q 1503 413 2100 413 
+Q 2703 413 3070 775 
+Q 3438 1138 3438 1728 
+Q 3438 2113 3269 2414 
+Q 3100 2716 2790 2891 
+Q 2481 3066 2125 3066 
+z
+" transform="scale(0.015625)"/>
+      <path id="CenturyGothic-7c" d="M 2097 3488 
+Q 2881 3488 3397 2919 
+Q 3866 2400 3866 1691 
+Q 3866 978 3370 445 
+Q 2875 -88 2097 -88 
+Q 1316 -88 820 445 
+Q 325 978 325 1691 
+Q 325 2397 794 2916 
+Q 1309 3488 2097 3488 
+z
+M 2097 3059 
+Q 1553 3059 1162 2656 
+Q 772 2253 772 1681 
+Q 772 1313 950 994 
+Q 1128 675 1431 501 
+Q 1734 328 2097 328 
+Q 2459 328 2762 501 
+Q 3066 675 3244 994 
+Q 3422 1313 3422 1681 
+Q 3422 2253 3030 2656 
+Q 2638 3059 2097 3059 
+z
+M 1460 4744 
+Q 1610 4744 1716 4637 
+Q 1822 4531 1822 4381 
+Q 1822 4231 1716 4125 
+Q 1610 4019 1460 4019 
+Q 1310 4019 1203 4125 
+Q 1097 4231 1097 4381 
+Q 1097 4531 1203 4637 
+Q 1310 4744 1460 4744 
+z
+M 2735 4744 
+Q 2885 4744 2991 4637 
+Q 3097 4531 3097 4381 
+Q 3097 4231 2991 4125 
+Q 2885 4019 2735 4019 
+Q 2585 4019 2478 4125 
+Q 2372 4231 2372 4381 
+Q 2372 4531 2478 4637 
+Q 2585 4744 2735 4744 
+z
+" transform="scale(0.015625)"/>
+      <path id="CenturyGothic-81" d="M 431 3400 
+L 872 3400 
+L 872 1813 
+Q 872 1231 934 1013 
+Q 1028 700 1292 519 
+Q 1556 338 1922 338 
+Q 2288 338 2542 514 
+Q 2797 691 2894 978 
+Q 2959 1175 2959 1813 
+L 2959 3400 
+L 3406 3400 
+L 3406 1731 
+Q 3406 1028 3242 672 
+Q 3078 316 2748 114 
+Q 2419 -88 1922 -88 
+Q 1425 -88 1092 114 
+Q 759 316 595 677 
+Q 431 1038 431 1763 
+L 431 3400 
+z
+M 1307 4744 
+Q 1457 4744 1563 4637 
+Q 1669 4531 1669 4381 
+Q 1669 4231 1563 4125 
+Q 1457 4019 1307 4019 
+Q 1157 4019 1050 4125 
+Q 944 4231 944 4381 
+Q 944 4531 1050 4637 
+Q 1157 4744 1307 4744 
+z
+M 2582 4744 
+Q 2732 4744 2838 4637 
+Q 2944 4531 2944 4381 
+Q 2944 4231 2838 4125 
+Q 2732 4019 2582 4019 
+Q 2432 4019 2325 4125 
+Q 2219 4231 2219 4381 
+Q 2219 4531 2325 4637 
+Q 2432 4744 2582 4744 
+z
+" transform="scale(0.015625)"/>
+      <path id="CenturyGothic-fc" d="M 2197 3028 
+L 1916 2738 
+Q 1566 3078 1231 3078 
+Q 1019 3078 867 2937 
+Q 716 2797 716 2609 
+Q 716 2444 841 2294 
+Q 966 2141 1366 1934 
+Q 1853 1681 2028 1447 
+Q 2200 1209 2200 913 
+Q 2200 494 1906 203 
+Q 1613 -88 1172 -88 
+Q 878 -88 611 40 
+Q 344 169 169 394 
+L 444 706 
+Q 778 328 1153 328 
+Q 1416 328 1600 497 
+Q 1784 666 1784 894 
+Q 1784 1081 1663 1228 
+Q 1541 1372 1113 1591 
+Q 653 1828 488 2059 
+Q 322 2291 322 2588 
+Q 322 2975 586 3231 
+Q 850 3488 1253 3488 
+Q 1722 3488 2197 3028 
+z
+M 1063 0 
+L 1338 0 
+L 1285 -369 
+Q 1357 -359 1404 -359 
+Q 1557 -359 1660 -454 
+Q 1763 -550 1763 -694 
+Q 1763 -900 1575 -1044 
+Q 1388 -1188 1047 -1188 
+Q 769 -1188 525 -1094 
+L 594 -878 
+Q 794 -941 969 -941 
+Q 1204 -941 1297 -883 
+Q 1391 -825 1391 -738 
+Q 1391 -684 1339 -643 
+Q 1288 -603 1197 -603 
+Q 1122 -603 979 -631 
+L 1063 0 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#CenturyGothic-24"/>
+     <use xlink:href="#CenturyGothic-5c" transform="translate(73.96875 0)"/>
+     <use xlink:href="#CenturyGothic-51" transform="translate(127.578125 0)"/>
+     <use xlink:href="#CenturyGothic-d7" transform="translate(188.5625 0)"/>
+     <use xlink:href="#CenturyGothic-3" transform="translate(208.578125 0)"/>
+     <use xlink:href="#CenturyGothic-56" transform="translate(236.265625 0)"/>
+     <use xlink:href="#CenturyGothic-53" transform="translate(275.078125 0)"/>
+     <use xlink:href="#CenturyGothic-4f" transform="translate(343.296875 0)"/>
+     <use xlink:href="#CenturyGothic-44" transform="translate(363.3125 0)"/>
+     <use xlink:href="#CenturyGothic-57" transform="translate(431.625 0)"/>
+     <use xlink:href="#CenturyGothic-b7" transform="translate(465.515625 0)"/>
+     <use xlink:href="#CenturyGothic-4f" transform="translate(500.625 0)"/>
+     <use xlink:href="#CenturyGothic-48" transform="translate(520.640625 0)"/>
+     <use xlink:href="#CenturyGothic-55" transform="translate(585.625 0)"/>
+     <use xlink:href="#CenturyGothic-f" transform="translate(615.703125 0)"/>
+     <use xlink:href="#CenturyGothic-3" transform="translate(643.390625 0)"/>
+     <use xlink:href="#CenturyGothic-49" transform="translate(671.078125 0)"/>
+     <use xlink:href="#CenturyGothic-44" transform="translate(702.46875 0)"/>
+     <use xlink:href="#CenturyGothic-55" transform="translate(770.78125 0)"/>
+     <use xlink:href="#CenturyGothic-4e" transform="translate(800.859375 0)"/>
+     <use xlink:href="#CenturyGothic-4f" transform="translate(851.0625 0)"/>
+     <use xlink:href="#CenturyGothic-d7" transform="translate(871.078125 0)"/>
+     <use xlink:href="#CenturyGothic-3" transform="translate(891.09375 0)"/>
+     <use xlink:href="#CenturyGothic-4a" transform="translate(918.78125 0)"/>
+     <use xlink:href="#CenturyGothic-7c" transform="translate(986.0625 0)"/>
+     <use xlink:href="#CenturyGothic-55" transform="translate(1051.546875 0)"/>
+     <use xlink:href="#CenturyGothic-81" transform="translate(1081.625 0)"/>
+     <use xlink:href="#CenturyGothic-51" transform="translate(1142.421875 0)"/>
+     <use xlink:href="#CenturyGothic-81" transform="translate(1203.40625 0)"/>
+     <use xlink:href="#CenturyGothic-fc" transform="translate(1264.203125 0)"/>
+    </g>
+   </g>
+   <g id="text_3">
+    <!-- Önce gold -->
+    <g style="fill: #18365d" transform="translate(624.24 94.519667) scale(0.2645 -0.2645)">
+     <defs>
+      <path id="CenturyGothic-Bold-4a" d="M 2944 3400 
+L 3794 3400 
+L 3794 488 
+Q 3794 -375 3447 -781 
+Q 2981 -1331 2044 -1331 
+Q 1544 -1331 1203 -1206 
+Q 863 -1081 628 -839 
+Q 394 -597 281 -250 
+L 1222 -250 
+Q 1347 -394 1544 -467 
+Q 1741 -541 2009 -541 
+Q 2353 -541 2562 -434 
+Q 2772 -328 2858 -159 
+Q 2944 9 2944 422 
+Q 2719 197 2472 98 
+Q 2225 0 1913 0 
+Q 1228 0 756 494 
+Q 284 988 284 1744 
+Q 284 2553 784 3044 
+Q 1238 3488 1866 3488 
+Q 2159 3488 2420 3380 
+Q 2681 3272 2944 3025 
+L 2944 3400 
+z
+M 2059 2691 
+Q 1656 2691 1393 2420 
+Q 1131 2150 1131 1741 
+Q 1131 1316 1400 1044 
+Q 1669 772 2075 772 
+Q 2472 772 2730 1037 
+Q 2988 1303 2988 1734 
+Q 2988 2159 2728 2425 
+Q 2469 2691 2059 2691 
+z
+" transform="scale(0.015625)"/>
+      <path id="CenturyGothic-Bold-52" d="M 2028 3488 
+Q 2509 3488 2932 3247 
+Q 3356 3006 3593 2593 
+Q 3831 2181 3831 1703 
+Q 3831 1222 3592 803 
+Q 3353 384 2940 148 
+Q 2528 -88 2031 -88 
+Q 1300 -88 783 432 
+Q 266 953 266 1697 
+Q 266 2494 850 3025 
+Q 1363 3488 2028 3488 
+z
+M 2041 2684 
+Q 1644 2684 1380 2407 
+Q 1116 2131 1116 1700 
+Q 1116 1256 1377 981 
+Q 1638 706 2038 706 
+Q 2438 706 2703 984 
+Q 2969 1263 2969 1700 
+Q 2969 2138 2708 2411 
+Q 2447 2684 2041 2684 
+z
+" transform="scale(0.015625)"/>
+      <path id="CenturyGothic-Bold-47" d="M 2944 4713 
+L 3794 4713 
+L 3794 0 
+L 2944 0 
+L 2944 359 
+Q 2694 122 2442 17 
+Q 2191 -88 1897 -88 
+Q 1238 -88 756 423 
+Q 275 934 275 1694 
+Q 275 2481 740 2984 
+Q 1206 3488 1872 3488 
+Q 2178 3488 2447 3372 
+Q 2716 3256 2944 3025 
+L 2944 4713 
+z
+M 2047 2700 
+Q 1650 2700 1387 2420 
+Q 1125 2141 1125 1703 
+Q 1125 1263 1392 978 
+Q 1659 694 2050 694 
+Q 2453 694 2718 973 
+Q 2984 1253 2984 1706 
+Q 2984 2150 2718 2425 
+Q 2453 2700 2047 2700 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#CenturyGothic-Bold-67"/>
+     <use xlink:href="#CenturyGothic-Bold-51" transform="translate(83.984375 0)"/>
+     <use xlink:href="#CenturyGothic-Bold-46" transform="translate(144 0)"/>
+     <use xlink:href="#CenturyGothic-Bold-48" transform="translate(208.015625 0)"/>
+     <use xlink:href="#CenturyGothic-Bold-3" transform="translate(272.03125 0)"/>
+     <use xlink:href="#CenturyGothic-Bold-4a" transform="translate(300.015625 0)"/>
+     <use xlink:href="#CenturyGothic-Bold-52" transform="translate(366.03125 0)"/>
+     <use xlink:href="#CenturyGothic-Bold-4f" transform="translate(430.046875 0)"/>
+     <use xlink:href="#CenturyGothic-Bold-47" transform="translate(454.015625 0)"/>
+    </g>
+   </g>
+   <g id="text_4">
+    <!-- Aynı splat’ler, farklı görünüş -->
+    <g style="fill: #263d56" transform="translate(710.845543 371.013948) scale(0.2185 -0.2185)">
+     <use xlink:href="#CenturyGothic-24"/>
+     <use xlink:href="#CenturyGothic-5c" transform="translate(73.96875 0)"/>
+     <use xlink:href="#CenturyGothic-51" transform="translate(127.578125 0)"/>
+     <use xlink:href="#CenturyGothic-d7" transform="translate(188.5625 0)"/>
+     <use xlink:href="#CenturyGothic-3" transform="translate(208.578125 0)"/>
+     <use xlink:href="#CenturyGothic-56" transform="translate(236.265625 0)"/>
+     <use xlink:href="#CenturyGothic-53" transform="translate(275.078125 0)"/>
+     <use xlink:href="#CenturyGothic-4f" transform="translate(343.296875 0)"/>
+     <use xlink:href="#CenturyGothic-44" transform="translate(363.3125 0)"/>
+     <use xlink:href="#CenturyGothic-57" transform="translate(431.625 0)"/>
+     <use xlink:href="#CenturyGothic-b7" transform="translate(465.515625 0)"/>
+     <use xlink:href="#CenturyGothic-4f" transform="translate(500.625 0)"/>
+     <use xlink:href="#CenturyGothic-48" transform="translate(520.640625 0)"/>
+     <use xlink:href="#CenturyGothic-55" transform="translate(585.625 0)"/>
+     <use xlink:href="#CenturyGothic-f" transform="translate(615.703125 0)"/>
+     <use xlink:href="#CenturyGothic-3" transform="translate(643.390625 0)"/>
+     <use xlink:href="#CenturyGothic-49" transform="translate(671.078125 0)"/>
+     <use xlink:href="#CenturyGothic-44" transform="translate(702.46875 0)"/>
+     <use xlink:href="#CenturyGothic-55" transform="translate(770.78125 0)"/>
+     <use xlink:href="#CenturyGothic-4e" transform="translate(800.859375 0)"/>
+     <use xlink:href="#CenturyGothic-4f" transform="translate(851.0625 0)"/>
+     <use xlink:href="#CenturyGothic-d7" transform="translate(871.078125 0)"/>
+     <use xlink:href="#CenturyGothic-3" transform="translate(891.09375 0)"/>
+     <use xlink:href="#CenturyGothic-4a" transform="translate(918.78125 0)"/>
+     <use xlink:href="#CenturyGothic-7c" transform="translate(986.0625 0)"/>
+     <use xlink:href="#CenturyGothic-55" transform="translate(1051.546875 0)"/>
+     <use xlink:href="#CenturyGothic-81" transform="translate(1081.625 0)"/>
+     <use xlink:href="#CenturyGothic-51" transform="translate(1142.421875 0)"/>
+     <use xlink:href="#CenturyGothic-81" transform="translate(1203.40625 0)"/>
+     <use xlink:href="#CenturyGothic-fc" transform="translate(1264.203125 0)"/>
+    </g>
+   </g>
+   <g id="text_5">
+    <!-- Compositing sırası derinliğe göre belirlenir. -->
+    <g style="fill: #18365d" transform="translate(292.8585 456.851568) scale(0.276 -0.276)">
+     <defs>
+      <path id="CenturyGothic-Bold-26" d="M 4750 3788 
+L 4138 3203 
+Q 3513 3863 2731 3863 
+Q 2072 3863 1620 3413 
+Q 1169 2963 1169 2303 
+Q 1169 1844 1369 1487 
+Q 1569 1131 1934 928 
+Q 2300 725 2747 725 
+Q 3128 725 3443 867 
+Q 3759 1009 4138 1384 
+L 4731 766 
+Q 4222 269 3769 76 
+Q 3316 -116 2734 -116 
+Q 1663 -116 980 564 
+Q 297 1244 297 2306 
+Q 297 2994 608 3528 
+Q 919 4063 1498 4388 
+Q 2078 4713 2747 4713 
+Q 3316 4713 3842 4472 
+Q 4369 4231 4750 3788 
+z
+" transform="scale(0.015625)"/>
+      <path id="CenturyGothic-Bold-50" d="M 425 3400 
+L 1281 3400 
+L 1281 3009 
+Q 1500 3250 1767 3369 
+Q 2034 3488 2350 3488 
+Q 2669 3488 2925 3331 
+Q 3181 3175 3338 2875 
+Q 3541 3175 3836 3331 
+Q 4131 3488 4481 3488 
+Q 4844 3488 5119 3319 
+Q 5394 3150 5514 2878 
+Q 5634 2606 5634 1994 
+L 5634 0 
+L 4775 0 
+L 4775 1725 
+Q 4775 2303 4631 2508 
+Q 4488 2713 4200 2713 
+Q 3981 2713 3807 2588 
+Q 3634 2463 3550 2242 
+Q 3466 2022 3466 1534 
+L 3466 0 
+L 2606 0 
+L 2606 1647 
+Q 2606 2103 2539 2308 
+Q 2472 2513 2337 2613 
+Q 2203 2713 2013 2713 
+Q 1800 2713 1626 2586 
+Q 1453 2459 1367 2231 
+Q 1281 2003 1281 1513 
+L 1281 0 
+L 425 0 
+L 425 3400 
+z
+" transform="scale(0.015625)"/>
+      <path id="CenturyGothic-Bold-53" d="M 1278 3400 
+L 1278 3025 
+Q 1509 3256 1778 3372 
+Q 2047 3488 2353 3488 
+Q 3019 3488 3484 2984 
+Q 3950 2481 3950 1694 
+Q 3950 934 3469 423 
+Q 2988 -88 2328 -88 
+Q 2034 -88 1781 17 
+Q 1528 122 1278 359 
+L 1278 -1244 
+L 431 -1244 
+L 431 3400 
+L 1278 3400 
+z
+M 2175 2700 
+Q 1772 2700 1506 2425 
+Q 1241 2150 1241 1706 
+Q 1241 1253 1506 973 
+Q 1772 694 2175 694 
+Q 2566 694 2833 978 
+Q 3100 1263 3100 1703 
+Q 3100 2141 2837 2420 
+Q 2575 2700 2175 2700 
+z
+" transform="scale(0.015625)"/>
+      <path id="CenturyGothic-Bold-56" d="M 2513 2925 
+L 1984 2397 
+Q 1663 2716 1400 2716 
+Q 1256 2716 1175 2655 
+Q 1094 2594 1094 2503 
+Q 1094 2434 1145 2376 
+Q 1197 2319 1400 2219 
+L 1713 2063 
+Q 2206 1819 2390 1566 
+Q 2575 1313 2575 972 
+Q 2575 519 2242 215 
+Q 1909 -88 1350 -88 
+Q 606 -88 163 494 
+L 688 1066 
+Q 838 891 1039 783 
+Q 1241 675 1397 675 
+Q 1566 675 1669 756 
+Q 1772 838 1772 944 
+Q 1772 1141 1400 1328 
+L 1113 1472 
+Q 288 1888 288 2513 
+Q 288 2916 598 3202 
+Q 909 3488 1394 3488 
+Q 1725 3488 2017 3342 
+Q 2309 3197 2513 2925 
+z
+" transform="scale(0.015625)"/>
+      <path id="CenturyGothic-Bold-4c" d="M 766 4800 
+Q 991 4800 1152 4637 
+Q 1313 4475 1313 4244 
+Q 1313 4016 1153 3855 
+Q 994 3694 772 3694 
+Q 544 3694 383 3858 
+Q 222 4022 222 4256 
+Q 222 4481 381 4640 
+Q 541 4800 766 4800 
+z
+M 338 3400 
+L 1194 3400 
+L 1194 0 
+L 338 0 
+L 338 3400 
+z
+" transform="scale(0.015625)"/>
+      <path id="CenturyGothic-Bold-d7" d="M 338 3400 
+L 1194 3400 
+L 1194 0 
+L 338 0 
+L 338 3400 
+z
+" transform="scale(0.015625)"/>
+      <path id="CenturyGothic-Bold-55" d="M 231 3400 
+L 963 3400 
+L 963 2972 
+Q 1081 3225 1278 3356 
+Q 1475 3488 1709 3488 
+Q 1875 3488 2056 3400 
+L 1791 2666 
+Q 1641 2741 1544 2741 
+Q 1347 2741 1211 2497 
+Q 1075 2253 1075 1541 
+L 1078 1375 
+L 1078 0 
+L 231 0 
+L 231 3400 
+z
+" transform="scale(0.015625)"/>
+      <path id="CenturyGothic-Bold-f9" d="M 2944 3400 
+L 3794 3400 
+L 3794 488 
+Q 3794 -375 3447 -781 
+Q 2981 -1331 2044 -1331 
+Q 1544 -1331 1203 -1206 
+Q 863 -1081 628 -839 
+Q 394 -597 281 -250 
+L 1222 -250 
+Q 1347 -394 1544 -467 
+Q 1741 -541 2009 -541 
+Q 2353 -541 2562 -434 
+Q 2772 -328 2858 -159 
+Q 2944 9 2944 422 
+Q 2719 197 2472 98 
+Q 2225 0 1913 0 
+Q 1228 0 756 494 
+Q 284 988 284 1744 
+Q 284 2553 784 3044 
+Q 1238 3488 1866 3488 
+Q 2159 3488 2420 3380 
+Q 2681 3272 2944 3025 
+L 2944 3400 
+z
+M 2059 2691 
+Q 1656 2691 1393 2420 
+Q 1131 2150 1131 1741 
+Q 1131 1316 1400 1044 
+Q 1669 772 2075 772 
+Q 2472 772 2730 1037 
+Q 2988 1303 2988 1734 
+Q 2988 2159 2728 2425 
+Q 2469 2691 2059 2691 
+z
+M 954 4900 
+L 1644 4900 
+Q 1726 4772 1871 4708 
+Q 2016 4644 2226 4644 
+Q 2438 4644 2610 4719 
+Q 2722 4769 2807 4900 
+L 3497 4900 
+Q 3438 4503 3117 4262 
+Q 2797 4022 2222 4022 
+Q 1835 4022 1574 4130 
+Q 1313 4238 1153 4438 
+Q 994 4638 954 4900 
+z
+" transform="scale(0.015625)"/>
+      <path id="CenturyGothic-Bold-7c" d="M 2028 3488 
+Q 2509 3488 2932 3247 
+Q 3356 3006 3593 2593 
+Q 3831 2181 3831 1703 
+Q 3831 1222 3592 803 
+Q 3353 384 2940 148 
+Q 2528 -88 2031 -88 
+Q 1300 -88 783 432 
+Q 266 953 266 1697 
+Q 266 2494 850 3025 
+Q 1363 3488 2028 3488 
+z
+M 2041 2684 
+Q 1644 2684 1380 2407 
+Q 1116 2131 1116 1700 
+Q 1116 1256 1377 981 
+Q 1638 706 2038 706 
+Q 2438 706 2703 984 
+Q 2969 1263 2969 1700 
+Q 2969 2138 2708 2411 
+Q 2447 2684 2041 2684 
+z
+M 1353 4916 
+Q 1541 4916 1672 4784 
+Q 1803 4653 1803 4469 
+Q 1803 4281 1672 4150 
+Q 1541 4019 1353 4019 
+Q 1169 4019 1037 4150 
+Q 906 4281 906 4469 
+Q 906 4653 1037 4784 
+Q 1169 4916 1353 4916 
+z
+M 2738 4916 
+Q 2925 4916 3056 4784 
+Q 3188 4653 3188 4469 
+Q 3188 4281 3056 4150 
+Q 2925 4019 2738 4019 
+Q 2553 4019 2422 4150 
+Q 2291 4281 2291 4469 
+Q 2291 4653 2422 4784 
+Q 2553 4916 2738 4916 
+z
+" transform="scale(0.015625)"/>
+      <path id="CenturyGothic-Bold-45" d="M 1278 4713 
+L 1278 3025 
+Q 1509 3256 1778 3372 
+Q 2047 3488 2353 3488 
+Q 3019 3488 3484 2984 
+Q 3950 2481 3950 1694 
+Q 3950 934 3469 423 
+Q 2988 -88 2328 -88 
+Q 2034 -88 1781 17 
+Q 1528 122 1278 359 
+L 1278 0 
+L 431 0 
+L 431 4713 
+L 1278 4713 
+z
+M 2175 2700 
+Q 1772 2700 1506 2425 
+Q 1241 2150 1241 1706 
+Q 1241 1253 1506 973 
+Q 1772 694 2175 694 
+Q 2566 694 2833 978 
+Q 3100 1263 3100 1703 
+Q 3100 2141 2837 2420 
+Q 2575 2700 2175 2700 
+z
+" transform="scale(0.015625)"/>
+      <path id="CenturyGothic-Bold-11" d="M 897 891 
+Q 1100 891 1244 748 
+Q 1388 606 1388 403 
+Q 1388 200 1244 56 
+Q 1100 -88 897 -88 
+Q 694 -88 550 56 
+Q 406 200 406 403 
+Q 406 606 550 748 
+Q 694 891 897 891 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#CenturyGothic-Bold-26"/>
+     <use xlink:href="#CenturyGothic-Bold-52" transform="translate(77.984375 0)"/>
+     <use xlink:href="#CenturyGothic-Bold-50" transform="translate(142 0)"/>
+     <use xlink:href="#CenturyGothic-Bold-53" transform="translate(236 0)"/>
+     <use xlink:href="#CenturyGothic-Bold-52" transform="translate(302.015625 0)"/>
+     <use xlink:href="#CenturyGothic-Bold-56" transform="translate(366.03125 0)"/>
+     <use xlink:href="#CenturyGothic-Bold-4c" transform="translate(410.03125 0)"/>
+     <use xlink:href="#CenturyGothic-Bold-57" transform="translate(434 0)"/>
+     <use xlink:href="#CenturyGothic-Bold-4c" transform="translate(463.984375 0)"/>
+     <use xlink:href="#CenturyGothic-Bold-51" transform="translate(487.953125 0)"/>
+     <use xlink:href="#CenturyGothic-Bold-4a" transform="translate(547.96875 0)"/>
+     <use xlink:href="#CenturyGothic-Bold-3" transform="translate(613.984375 0)"/>
+     <use xlink:href="#CenturyGothic-Bold-56" transform="translate(641.96875 0)"/>
+     <use xlink:href="#CenturyGothic-Bold-d7" transform="translate(685.96875 0)"/>
+     <use xlink:href="#CenturyGothic-Bold-55" transform="translate(709.9375 0)"/>
+     <use xlink:href="#CenturyGothic-Bold-44" transform="translate(741.921875 0)"/>
+     <use xlink:href="#CenturyGothic-Bold-56" transform="translate(807.9375 0)"/>
+     <use xlink:href="#CenturyGothic-Bold-d7" transform="translate(851.9375 0)"/>
+     <use xlink:href="#CenturyGothic-Bold-3" transform="translate(875.90625 0)"/>
+     <use xlink:href="#CenturyGothic-Bold-47" transform="translate(903.890625 0)"/>
+     <use xlink:href="#CenturyGothic-Bold-48" transform="translate(969.90625 0)"/>
+     <use xlink:href="#CenturyGothic-Bold-55" transform="translate(1033.921875 0)"/>
+     <use xlink:href="#CenturyGothic-Bold-4c" transform="translate(1065.90625 0)"/>
+     <use xlink:href="#CenturyGothic-Bold-51" transform="translate(1089.875 0)"/>
+     <use xlink:href="#CenturyGothic-Bold-4f" transform="translate(1149.890625 0)"/>
+     <use xlink:href="#CenturyGothic-Bold-4c" transform="translate(1173.859375 0)"/>
+     <use xlink:href="#CenturyGothic-Bold-f9" transform="translate(1197.828125 0)"/>
+     <use xlink:href="#CenturyGothic-Bold-48" transform="translate(1263.84375 0)"/>
+     <use xlink:href="#CenturyGothic-Bold-3" transform="translate(1327.859375 0)"/>
+     <use xlink:href="#CenturyGothic-Bold-4a" transform="translate(1355.84375 0)"/>
+     <use xlink:href="#CenturyGothic-Bold-7c" transform="translate(1421.859375 0)"/>
+     <use xlink:href="#CenturyGothic-Bold-55" transform="translate(1485.875 0)"/>
+     <use xlink:href="#CenturyGothic-Bold-48" transform="translate(1517.859375 0)"/>
+     <use xlink:href="#CenturyGothic-Bold-3" transform="translate(1581.875 0)"/>
+     <use xlink:href="#CenturyGothic-Bold-45" transform="translate(1609.859375 0)"/>
+     <use xlink:href="#CenturyGothic-Bold-48" transform="translate(1675.875 0)"/>
+     <use xlink:href="#CenturyGothic-Bold-4f" transform="translate(1739.890625 0)"/>
+     <use xlink:href="#CenturyGothic-Bold-4c" transform="translate(1763.859375 0)"/>
+     <use xlink:href="#CenturyGothic-Bold-55" transform="translate(1787.828125 0)"/>
+     <use xlink:href="#CenturyGothic-Bold-4f" transform="translate(1819.8125 0)"/>
+     <use xlink:href="#CenturyGothic-Bold-48" transform="translate(1843.78125 0)"/>
+     <use xlink:href="#CenturyGothic-Bold-51" transform="translate(1907.796875 0)"/>
+     <use xlink:href="#CenturyGothic-Bold-4c" transform="translate(1967.8125 0)"/>
+     <use xlink:href="#CenturyGothic-Bold-55" transform="translate(1991.78125 0)"/>
+     <use xlink:href="#CenturyGothic-Bold-11" transform="translate(2023.765625 0)"/>
+    </g>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p1c314f3b23">
+   <rect x="0" y="0" width="1152" height="475.2"/>
+  </clipPath>
+ </defs>
+</svg>

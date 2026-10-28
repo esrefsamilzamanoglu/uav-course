@@ -1,0 +1,12 @@
+{
+  "method": "SIFT + image matching + known-pose calibrated triangulation; sparse reconstruction",
+  "photos": 108,
+  "pairs": 141,
+  "vertices": 1787,
+  "height_span_m": 15.940620637845795,
+  "median_distance_to_main_building_surfaces_m": 0.07295269640823676,
+  "camera_poses_source": "recorded Gazebo camera poses, not estimated SfM poses",
+  "source_mesh_read": false,
+  "limitations": "No dense mesh, texture baking or bundle adjustment; simulator poses supply scale.",
+  "role": "v1 sparse baseline; initialization concept, not current final product"
+}

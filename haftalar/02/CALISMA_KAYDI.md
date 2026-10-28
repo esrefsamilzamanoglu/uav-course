@@ -1,5 +1,19 @@
 # 2. hafta — hazırlık ve test kaydı
 
+## 28 Ekim 2026 — güncel v2
+
+- Bina ana çıktısı sparse point cloud yerine gerçek **3D Gaussian Splatting / Brush0.3.0** oldu.
+- Aynı gerçek AUTO capture:108 RGB.94train /14hold-out; initialization yalnız train karelerinden1298nokta.
+- Öğrenci Python ortamındaki tam pipeline geçti:640×427,6 000steps,45 000Gaussians, SH degree2. Training16dk38s sürdü.
+- Hold-out ortalama PSNR27,996dB; SSIM0,913738. Merkez bina crop PSNR30,612dB.1 000step PSNR22,076dB.
+- Kaynak bina mesh'i okunmadı; camera pose simülatörden bilinir. Uçuş kontrolüne komut yok.
+- Native Brush penceresi açıldı. Otomatik masaüstü görüntüsü doğrulanamadı; sunumda sahte UI yerine gerçek hold-out render'lar kullanıldı.
+- Sunum93sayfa:20sayfalık yeni3DGS bölümü,18yeni açıklayıcı şema, teknik İngilizce terimler, bölüm açılışları, zoom/crop, checkpoint ve reference/render karşılaştırmaları.
+- Şemaların düzenlenebilir SVG kaynakları ve görsel köken listeleri paylaşıldı.
+- Eski yerel PDF yazmaya kilitli olduğundan güncel PDF **Hafta-02-Sunum-v2.pdf** adıyla kaydedildi; ana indeks bu sürüme yönelir.
+
+## 27 Ekim — önceki hazırlık ve uçuş doğrulamaları
+
 27 Ekim 2026. Önce dünyalar, nesneler, görevler ve scriptler hazırlandı; son uçuşlar ve ürünler doğrulandıktan sonra sunum üretildi. İlk hafta dosyaları değiştirilmedi.
 
 ## Tamamlanan işler

@@ -11,3 +11,5 @@
 *.stl binary
 *.pdf binary
 *.pptx binary
+*.ply binary
+*.svg text eol=lf

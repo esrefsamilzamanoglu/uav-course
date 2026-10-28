@@ -1,0 +1,9 @@
+{
+  "tool": "Brush",
+  "version": "0.3.0",
+  "release": "https://github.com/ArthurBrussee/brush/releases/tag/v0.3.0",
+  "url": "https://github.com/ArthurBrussee/brush/releases/download/v0.3.0/brush-app-x86_64-pc-windows-msvc.zip",
+  "sha256": "b68e3e9cf052d51bf3ee30776fa5a364de7f2ba13b58443128ff797bb7bcfcd6",
+  "archive_member": "brush_app.exe",
+  "note": "Official archive is downloaded locally; no executable or ZIP is redistributed in the course repository."
+}

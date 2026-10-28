@@ -1,6 +1,6 @@
 # 2. hafta — AUTO görevler ve uygulamalar
 
-[Sunumu aç (PDF · 86 sayfa)](Hafta-02-Sunum.pdf) · [Düzenlenebilir PowerPoint](Hafta-02-Sunum.pptx) · [Eğitmen notları](Hafta-02-Egitmen-Notlari.txt)
+[Güncel sunumu aç (v2 PDF · 93 sayfa)](Hafta-02-Sunum-v2.pdf) · [Düzenlenebilir PowerPoint](Hafta-02-Sunum.pptx) · [Eğitmen notları](Hafta-02-Egitmen-Notlari.txt)
 
 İlk haftanın anlatım düzeniyle: **aracı ve kamerayı tanı → görevi planla → simülasyonda uygula → veriden ürün çıkar → sonucu değerlendir**. Önerilen süre: 80 dakika anlatım, 30 dakika canlı uygulama, 10 dakika değerlendirme.
 
@@ -9,7 +9,7 @@
 | Araç ve kamera tanıtımı | 8m kalkış, üç gimbal açısı, bekleme, iniş | Gerçek RGB ve telemetri |
 | Tarla ilaçlama | 9 şerit, pompa aç/kapa, dönüş, iniş | PWM ve ideal geometrik kaplama |
 | Aynı tarlada 2D haritalama | Grid ve mesafeye bağlı kamera tetiği | Bilinen pozlarla düzlem mozaiği |
-| 3D bina haritalama | İki orbit, sürekli ROI, mesafeli çekim | SIFT eşleşmeleri ve seyrek 3D bulut |
+| 3D bina haritalama | İki orbit, sürekli ROI, mesafeli çekim | Trained Gaussian model ve novel-view render |
 | Sabit kanatla kırsal gözlem | Otomatik kalkış, sabit tarama, otomatik iniş | Canlı hareket olayı, tam kare ve kırpım |
 
 ## Başlayın
@@ -27,13 +27,17 @@ Tüm sahneler ve görevler **sunum hazırlanmadan önce** gerçek Gazebo/SITL u�
 
 - **İlaçlama:** 9 pompa açık bölümü; 8m ideal iş genişliğiyle hedef alanın %100 kaplaması. İlk denemedeki %82,86 kaplama, şerit sayısı ve uç noktalar değiştirilip yeniden uçularak düzeltildi.
 - **2D tarla:** 81 tetik / 81 gerçek fotoğraf, %100 alan kaplama; en az üç görüntülü alan %99,53. Mozaik 912×744 piksel.
-- **Bina:** 108 fotoğraf, 1787 seyrek nokta. İdeal gimbalda ROI doğrultu hatası medyan0,318°, %95 değeri0,724°.
+- **Bina:** 108 fotoğraf; 94training /14hold-out. Sparse noktalar yalnız initialization içindir; ana çıktı **3D Gaussian Splatting** modelidir. İdeal gimbalda ROI doğrultu hatası medyan0,318°, %95 değeri0,724°. [Güncel Gaussian metrikleri](dogrulama/gaussian_validation.json) ve [hazır model](ornekler/Bina-Gaussian.ply).
 - **Sabit kanat:** canlı analizde 23 hareket olayı; 19 olay sonradan bağımsız simülasyon kişi kutusuyla ilişkilendirildi, 4 yanlış alarm görüldü. İlk olaydan yaklaşık317s sonra AUTO iniş tamamlandı; hedefe son yatay uzaklık4,11m.
 - **Kurulum:** ayrı öğrenci Python ortamında ilk kurulum ve tekrar kurulum; GUI; operatör5760 + pasif gözlemci5762 akışı denendi.
 
 Metrikler ve kanıt özeti: [dogrulama/final_summary.json](dogrulama/final_summary.json). Görsellerin hangi gerçek kayıttan geldiği ve SHA256 değerleri: [provenance.json](sunum/gorseller/provenance.json).
 
-**Sonuçların kapsamı:** mozaik düz zemin ve bilinen simülasyon pozlarını kullanır; DEM ortofotosu veya ölçülmüş saha doğruluğu değildir. Bina örneği tam SfM/yoğun mesh yerine bilinen pozlarla seyrek üçgenlemedir. Gimbal ideal kinematiktir. İlaçlama damlacık fiziği veya gerçek debi ölçümü değildir. Hareket işçisi insan sınıflandırıcısı değildir; olay sayıları kişi sayısı veya genel precision/recall sonucu değildir.
+**28 Ekim revizyonu:** bina örneği sparse point cloud yerine gerçek Gaussian Splatting optimizasyonuna geçirildi. Sunumda yerleşik İngilizce teknik terimler korundu; camera footprint, overlap, NAV/DO zamanlaması, Gaussian projection, alpha compositing ve motion compensation için yeni şemalar eklendi. Tekrarlanan kart düzenleri; bölüm açılışları, büyük görseller, zoom/crop, checkpoint ve reference/render karşılaştırmalarıyla çeşitlendirildi.
+
+**Sonuçların kapsamı:** mozaik düz zemin ve bilinen simülasyon pozlarını kullanır; DEM ortofotosu veya ölçülmüş saha doğruluğu değildir. Gaussian model görünüş üretir; triangle mesh değildir. Kamera pozları Gazebo'dan bilinir; image-estimated SfM yapılmış gibi sunulmaz. Gimbal ideal kinematiktir. İlaçlama damlacık fiziği veya gerçek debi ölçümü değildir. Hareket işçisi insan sınıflandırıcısı değildir; olay sayıları kişi sayısı veya genel precision/recall sonucu değildir.
+
+**3D'yi hemen açın:** `simulasyon/3D_Goster.cmd`. Kendi bina uçuşunuzdan üretin: `simulasyon/3D_Uret.cmd`.
 
 ## Eğitmen için
 

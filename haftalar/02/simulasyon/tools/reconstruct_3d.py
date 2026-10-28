@@ -11,10 +11,10 @@ from pathlib import Path
 import cv2,numpy as np
 from vision_geometry import geometry,load_frames
 
-def reconstruct(run):
-    run=Path(run);out=run/'products';out.mkdir(exist_ok=True)
+def reconstruct(run,output=None,frames=None):
+    run=Path(run);out=Path(output) if output is not None else run/'products';out.mkdir(parents=True,exist_ok=True)
     photos=[];seen=set()
-    for frame in load_frames(run):
+    for frame in (frames if frames is not None else load_frames(run)):
         if frame['frame'] not in seen and frame['position'][2]>12:
             photos.append(frame);seen.add(frame['frame'])
     sift=cv2.SIFT_create(nfeatures=5000,contrastThreshold=.025);matcher=cv2.BFMatcher(cv2.NORM_L2)

@@ -1,9 +1,9 @@
 from pathlib import Path
 import json,math,re
-import fitz
+import pymupdf as fitz
 from PIL import Image,ImageDraw,ImageFont
 ROOT=Path(__file__).resolve().parents[2];OUT=ROOT/'simulasyon/.local/research/pdf_review';OUT.mkdir(parents=True,exist_ok=True)
-doc=fitz.open(ROOT/'Hafta-02-Sunum.pdf');data=json.loads((ROOT/'sunum/kaynak/slides.json').read_text(encoding='utf-8'))
+doc=fitz.open(ROOT/'Hafta-02-Sunum-v2.pdf');data=json.loads((ROOT/'sunum/kaynak/slides.json').read_text(encoding='utf-8'))
 assert len(doc)==data['count']<=100
 font=ImageFont.truetype('C:/Windows/Fonts/arial.ttf',16);issues=[]
 for i,p in enumerate(doc):

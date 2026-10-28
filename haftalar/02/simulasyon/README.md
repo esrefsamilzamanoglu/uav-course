@@ -30,12 +30,21 @@ Uçuş bittiğinde terminaldeki `RESULT` yolunun bulunduğu klasör **uçuş kla
 
 ```powershell
 .\.local\venv\Scripts\python.exe .\tools\mosaic_2d.py "UCUS_KLASORU"
-.\.local\venv\Scripts\python.exe .\tools\reconstruct_3d.py "UCUS_KLASORU"
 ```
 
-İlk komut **tarla haritalama**, ikinci komut **bina haritalama** uçuşundan sonra çalıştırılır. Sonuçlar uçuş klasöründeki `products` altına yazılır. Sabit kanat görüntü analizi menüden seçildiğinde kendiliğinden çalışır; örnek olaylar `products/motion` içindedir.
+Bu komut **tarla haritalama** uçuşundan sonra çalıştırılır. Sonuçlar uçuş klasöründeki `products` altına yazılır. Sabit kanat görüntü analizi menüden seçildiğinde kendiliğinden çalışır; örnek olaylar `products/motion` içindedir.
 
-**Çıktıların anlamı:** tarla mozaiği bilinen simülasyon kamera pozlarıyla düzlem projeksiyonudur; bina çıktısı görüntü eşleşmelerinden seyrek nokta bulutudur. Bunlar tam DEM/yoğun mesh iş akışı veya ölçülmüş gerçek saha doğruluğu değildir. İlaçlama kaplaması gerçek pompa çıkışından hesaplanan ideal geometrik iş genişliğidir; damlacık fiziği ölçümü değildir. Hareket işçisi insan sınıflandırıcısı değildir; hareket adayları üretir ve yanlış alarm verebilir.
+## Bina için gerçek Gaussian Splatting
+
+1. Menü **3** ile bina AUTO görevini uçurun; LAND tamamlanınca terminaldeki uçuş klasörünü saklayın.
+2. **`3D_Uret.cmd`** dosyasını açın ve bu uçuş klasörünü yapıştırın. Resmî [Brush0.3.0](https://github.com/ArthurBrussee/brush/releases/tag/v0.3.0) aracı yerelde hazırlanır; fotoğraflardan initialization, Gaussian training ve hold-out değerlendirmesi yapılır.
+3. Biten model Brush viewer'da açılır. Orbit ve zoom ile cepheleri, çatıyı ve kalan artefact'ları inceleyin.
+
+Hazır ders örneğini hemen görmek için **`3D_Goster.cmd`** dosyasını açın. [Örnek Gaussian PLY](../ornekler/Bina-Gaussian.ply), gerçek Gazebo fotoğraflarından eğitilmiş modeldir. CUDA kurulumu gerekmez; referans test Intel UHD730 bulunan bu Windows bilgisayarda yapıldı. Training süresi donanıma bağlıdır. Resmî araç arşivi otomatik indirilir ve SHA256 kontrolünden geçer; öğrenciye ZIP/EXE paketi dağıtılmaz.
+
+Varsayılan çalışma: **640×427 RGB, 6 000 steps, en fazla45 000 Gaussians, SH degree2**. 108fotoğrafın94'ü train,14'ü hold-out'tur. Hold-out kareler sparse initialization'a da verilmez. Camera pose simülatörden bilinir; bina mesh'i okunmaz. Çıktılar `products/gaussian/training` altındadır; `export_6000.ply`, `gaussian_metrics.json` ve `eval_6000/` incelemeye hazırdır. Eski `reconstruct_3d.py` artık ana ürün yerine sparse initialization aşamasını sağlar.
+
+**Çıktıların anlamı:** tarla mozaiği bilinen simülasyon kamera pozlarıyla düzlem projeksiyonudur. Yeni bina çıktısı optimize edilmiş **3D Gaussian radiance representation**'dır; dolu görünüş render eder, watertight triangle mesh veya ölçülmüş geometric accuracy değildir. İlaçlama kaplaması gerçek pompa çıkışından hesaplanan ideal geometrik iş genişliğidir; damlacık fiziği ölçümü değildir. Hareket işçisi insan sınıflandırıcısı değildir; hareket adayları üretir ve yanlış alarm verebilir.
 
 ## Dosyalar
 

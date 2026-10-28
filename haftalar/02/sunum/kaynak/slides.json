@@ -1,5 +1,5 @@
 {
-  "count": 86,
+  "count": 93,
   "slides": [
     {
       "title": "AUTO Görevler",
@@ -26,7 +26,7 @@
         ],
         [
           "Değerlendir",
-          "Kaplama, fotoğraf, nokta bulutu ve olay kaydını yorumla."
+          "Kaplama, mozaik, Gaussian model ve hareket olayını yorumla."
         ]
       ],
       "section": "BAŞLANGIÇ",
@@ -84,7 +84,7 @@
         [
           "3D bina haritalama",
           "İki orbit + ROI + kamera tetiği",
-          "Seyrek 3D nokta bulutu"
+          "Trained Gaussian model + novel-view render"
         ],
         [
           "Kırsal hareket gözlemi",
@@ -94,10 +94,48 @@
       ]
     },
     {
+      "title": "Terimleri arayüzde gördüğümüz gibi kullanalım",
+      "message": "İngilizce terimi koru; ne yaptığını kısa Türkçe açıklamayla anlat.",
+      "section": "BAŞLANGIÇ",
+      "layout": "table",
+      "headers": [
+        "Terim",
+        "Burada neyi ifade ediyor?"
+      ],
+      "rows": [
+        [
+          "Waypoint / trajectory",
+          "Görev noktası / uçuş yolu"
+        ],
+        [
+          "Footprint / overlap / GSD",
+          "Görülen alan / ortak görüntü alanı / piksel örneklemesi"
+        ],
+        [
+          "ROI / gimbal / camera trigger",
+          "Bakılacak hedef / kamera yönelimi / çekim komutu"
+        ],
+        [
+          "Feature matching / inlier / RANSAC",
+          "Ayrıntı eşleme / uyumlu eşleşme / hatalıları süzme"
+        ],
+        [
+          "Gaussian / splat / opacity / render",
+          "3D primitive / ekran footprint’i / görünürlük / görüntü üretimi"
+        ]
+      ],
+      "notes": "Yerleşik terimleri Türkçeye zorla çevirmek yerine ilk geçtiği yerde İngilizce terim ve kısa işlev açıklaması verilir. Böylece Mission Planner, Brush ve OpenCV dokümanları ile dersteki kelimeler eşleşir. Her terimin fiziksel veya işlem karşılığını görselle ilişkilendirin. Örneğin footprint yalnız sözlük maddesi değil kameranın zeminde gördüğü alandır; splat ise 3DGaussian’ın görüntü düzlemine projeksiyonudur.",
+      "sources": [
+        "commands",
+        "gs",
+        "brush"
+      ]
+    },
+    {
       "title": "Komut kimden, veri kimden geliyor?",
       "message": "Uçuş kontrol döngüsü ArduPilot içinde kalır.",
       "notes": "Buradaki oklar öğretim amaçlı iş akışını gösterir; fizik ile uçuş yazılımı sürekli çift yönlü etkileşir. Kritik sınır şudur: görüntü işçileri konum veya hız setpointi göndermez. Öğrenci uçuş sırasında Python kodundan yörünge değiştirmeyi beklememelidir. Yer istasyonu görevi yükledikten sonra NAV ve DO komutları uçuş yazılımında yürütülür. Uygulama dosyalarını hazırlayan Python da yer görev planlayıcısıdır; uçuşta araç sürmez.",
-      "layout": "flow",
+      "layout": "visual",
       "cards": [
         [
           "Mission Planner",
@@ -120,7 +158,8 @@
       "sources": [
         "auto",
         "gazebo"
-      ]
+      ],
+      "image": "ex_system.png"
     },
     {
       "title": "AUTO modunun sınırını koruyalım",
@@ -179,9 +218,9 @@
           "Görev yükleme ve başlatma"
         ],
         [
-          "Görüntü işleme",
-          "OpenCV + NumPy + SciPy",
-          "Mozaik, 3D eşleştirme, hareket"
+          "Görüntü /3D işleme",
+          "OpenCV · SciPy · Brush",
+          "Mosaic ·3DGS · motion events"
         ],
         [
           "Ders eklentisi",
@@ -263,7 +302,7 @@
     {
       "title": "Kamera ne üretiyor?",
       "message": "Her RGB kareye zaman, kalibrasyon ve gerçek kamera pozu eşlik eder.",
-      "notes": "Kamera sensörü saniyede6 görüntü üretir; kayıt köprüsü yaklaşık3 kare/saniye saklar. Görev tetiği olduğunda en yakın gerçek RGB kare seçilir. Ekrandaki görüntü bir yer dokusu kopyası değil Gazebo kamerasının kaydıdır: bitkiler, gölgeler ve perspektif içerir. Kalibrasyon dosyasında çözünürlük ve yatay FOV saklanır. Bu bilgiler sonraki düzlem projeksiyonu ve üçgenleme için kullanılır; gerçek kamerada ayrıca lens ve zaman kalibrasyonu gerekir.",
+      "notes": "Kamera sensörü saniyede6 görüntü üretir; kayıt köprüsü yaklaşık3 kare/saniye saklar. Görev tetiği olduğunda en yakın gerçek RGB kare seçilir. Ekrandaki görüntü bir yer dokusu kopyası değil Gazebo kamerasının kaydıdır: bitkiler, gölgeler ve perspektif içerir. Kalibrasyon dosyasında çözünürlük ve yatay FOV saklanır. Bu bilgiler sonraki düzlem projeksiyonu ve triangulation için kullanılır; gerçek kamerada ayrıca lens ve zaman kalibrasyonu gerekir.",
       "layout": "photo",
       "cards": [
         [
@@ -286,15 +325,15 @@
     {
       "title": "İrtifa ve FOV, görülen alanı belirler",
       "message": "18 m irtifada yatay görüntü genişliği yaklaşık25,2 m olur.",
-      "notes": "Düz zemine dik bakan kamerada genişlik W=2H tan(FOV/2) bağıntısıyla bulunur.18 m ve70 derece için25,2 m genişlik elde edilir.960 piksele böldüğümüzde yaklaşık2,6 cm/piksel nominal yer örnekleme aralığı çıkar. Bu bir doğruluk garantisi değildir; gimbal eğimi, yükselti, hareket bulanıklığı ve kalibrasyon hatası sonucu etkiler. Dikey boyut görüntü oranıyla16,8 m olur. Sabit kanatta kamera eğik olduğu için bu basit dik-bakış hesabını aynen kullanmayacağız.",
-      "layout": "diagram",
+      "notes": "Düz zemine dik bakan kamerada genişlik W=2 H tan(FOV/2) bağıntısıyla bulunur.18 m ve70 derece için25,2 m genişlik elde edilir.960 piksele böldüğümüzde yaklaşık2,6 cm/piksel nominal yer örnekleme aralığı çıkar. Bu bir doğruluk garantisi değildir; gimbal eğimi, yükselti, hareket bulanıklığı ve kalibrasyon hatası sonucu etkiler. Dikey boyut görüntü oranıyla16,8 m olur. Sabit kanatta kamera eğik olduğu için bu basit dik-bakış hesabını aynen kullanmayacağız.",
+      "layout": "visual",
       "cards": [
         [
           "Yatay FOV",
           "70°"
         ],
         [
-          "Ayak izi",
+          "Footprint",
           "25,2 × 16,8 m · düz zemin"
         ],
         [
@@ -305,27 +344,33 @@
       "section": "ARAÇ VE KAMERA",
       "sources": [],
       "diagram": "fov",
-      "question": "İrtifayı iki katına çıkarınca ayak izi ve GSD nasıl değişir?"
+      "question": "İrtifayı iki katına çıkarınca footprint ve GSD nasıl değişir?",
+      "image": "ex_camera_height.png"
     },
     {
       "title": "Aynı araç, farklı kamera açısı",
       "message": "Gimbal açısı görüntünün kapsamını değiştirir.",
       "notes": "Bu kareler aynı8 m AUTO tanıtım uçuşundan seçilmiştir. Önce−90 derecede kalkış alanına, sonra−45 ve−20 derecede ileriye bakılır. Sunumdaki iki kareyi karşılaştırın; ara açı kaydı kamera_45.png dosyasında mevcuttur. Kamera öne döndüğünde ufuk ve tarla görünüme girer. Aracın yatay rotası değişmeden görüntünün değişebildiğini vurgulayın. Geometrik hesaplarda araç yaw değeri tek başına kamera yönünü vermez.",
-      "layout": "compare",
+      "layout": "gallery",
       "cards": [
         [
-          "−90°: nadir",
-          "Haritalama için zemine dik bakış"
+          "Nadir · −90°",
+          "Doğrudan zemin"
         ],
         [
-          "−20°: ileriye eğik",
-          "Daha uzak alan; güçlü perspektif"
+          "Oblique · −45°",
+          "Zemin + ileri alan"
+        ],
+        [
+          "Forward · −20°",
+          "Güçlü perspective"
         ]
       ],
       "section": "ARAÇ VE KAMERA",
       "sources": [],
       "images": [
         "kamera_90.png",
+        "kamera_45.png",
         "kamera_20.png"
       ]
     },
@@ -538,7 +583,7 @@
       "title": "Bir zamanlama hatasını nasıl düzelttik?",
       "message": "Şerit başındaki DO komutunu gereksiz mesafe koşuluyla geciktirmeyin.",
       "notes": "İlk denemede CONDITION_DISTANCE komutu sezgisel olarak şerit başına yakınlığı ifade edecek sanıldı. Oysa aktif hedef bir sonraki NAV noktası olduğunda mesafe koşulu bitiş noktasına yaklaşana kadar pompayı bekletti. Kayıtlardaki pompa PWM’i bunu ortaya çıkardı. Bu örnekte koşulu kaldırdık ve şerit başlangıcından sonraki DO komutunu ilgili bacakta hemen uyguladık. Ders: görev listesi tek başına kanıt değildir; gerçekleşen çıkış zamanını ölçün.",
-      "layout": "cards",
+      "layout": "visual",
       "cards": [
         [
           "İlk deneme",
@@ -557,7 +602,8 @@
       "sources": [
         "commands"
       ],
-      "question": "Pompa şerit sonunda açılıyorsa ilk bakılacak yer neresi olur?"
+      "question": "Pompa şerit sonunda açılıyorsa ilk bakılacak yer neresi olur?",
+      "image": "ex_nav_do.png"
     },
     {
       "title": "Sürümle birlikte parametre adları da değişir",
@@ -604,7 +650,7 @@
       "title": "Problem: tarlayı eşit işlemek",
       "message": "Rota yalnız alanı dolaşmamalı; iş genişliğiyle alanı kaplamalı.",
       "notes": "Tarla sınırını ve baş-son dönüş alanını geniş görüntüde gösterin. Tarım uygulamasında çizginin tarlanın ortasından geçmesi tüm alanın işlendiğini göstermez. Her uçuş çizgisinin belirli bir etkili çalışma genişliği vardır. Gerçek sistemde bu genişlik nozul, yükseklik ve rüzgâr gibi etkenlerle kalibre edilir; burada8 m ideal geometrik genişlik kullanıyoruz. Önce planlanan alanı, sonra şeritlerin kapsadığı alanı kıyaslayacağız.",
-      "layout": "photo",
+      "layout": "chapter",
       "cards": [
         [
           "İş alanı",
@@ -623,12 +669,14 @@
       "sources": [
         "spray"
       ],
-      "image": "spray_dunya.png"
+      "image": "spray_dunya.png",
+      "chapter": "01",
+      "subtitle": "Grid trajectory + sprayer ON/OFF"
     },
     {
       "title": "Aynı dünya iki göreve hizmet ediyor",
       "message": "Tarla nesneleri hem ilaçlama hem kamera uygulaması için hazır.",
-      "notes": "Tarla dokusu tek başına düz bir resim değildir; yapraklı ve gövdeli bitkiler3Dolarak yer alır. Bu nesneler gölge ve perspektif üretir, haritalamada gerçek görüntü eşleşmesini anlamlı kılar. Tarla dışındaki ağaç ve binalar görsel bağlam sağlar. Kalkış alanı tarladan ayrı konumdadır. İlaçlama ile2Dharitalama görevleri aynı dünya dosyasını kullanır; yalnız uçuş yüksekliği, şerit aralığı ve faydalı yük komutları değişir.",
+      "notes": "Tarla dokusu tek başına düz bir resim değildir; yapraklı ve gövdeli bitkiler 3D olarak yer alır. Bu nesneler gölge ve perspektif üretir, haritalamada gerçek görüntü eşleşmesini anlamlı kılar. Tarla dışındaki ağaç ve binalar görsel bağlam sağlar. Kalkış alanı tarladan ayrı konumdadır. İlaçlama ile 2D haritalama görevleri aynı dünya dosyasını kullanır; yalnız uçuş yüksekliği, şerit aralığı ve faydalı yük komutları değişir.",
       "layout": "photo",
       "cards": [
         [
@@ -650,7 +698,7 @@
     },
     {
       "title": "Aynı tarla, farklı görev geometrisi",
-      "message": "İş genişliği ile kamera ayak izi aynı şey değildir.",
+      "message": "İş genişliği ile kamera footprint aynı şey değildir.",
       "notes": "Bu değerler test edilmiş öğretim dünyasına aittir. İlaçlamada kamera yerine ideal iş şeridi genişliğini kullanıyoruz. Haritalamada ise FOV, irtifa ve örtüşme belirleyici. Öğrencilere aynı grid dosyasını iki uygulamada değiştirmeden kullanmanın neden doğru olmayacağını sorun. İlaçlama dönüşlerinde pompa kapalıdır. Haritalama kamera tetiği dönüşler sırasında da açık kalabilir; ürün üretirken tüm kareler bilinen pozlarla değerlendirilir.",
       "layout": "table",
       "cards": [],
@@ -693,7 +741,7 @@
       "title": "Grid planında kenarlar da önemlidir",
       "message": "7 m aralık, 8 m ideal iş genişliğiyle güvenli örtüşme sağlar.",
       "notes": "Bu şema grid kavramını anlatır; gerçek ilaçlama görevinde9 şerit vardır.7 m aralık ile ideal8 m genişlik arasında1 m nominal örtüşme bulunur. Uç noktaları y17 ve69 m seçilerek y19–67 m arasındaki tarla sınırları aşılır. Waypoint dönüşü ve kabul yarıçapı nedeniyle gerçek uçuş çizgisi köşeleri kesebilir; sadece ideal çizimleri değil kaydedilmiş izlerden hesaplanan kaplamayı kontrol ediyoruz. Kenar kaçırma hatasını sonraki sonuç karşılaştırmasında göreceğiz.",
-      "layout": "diagram",
+      "layout": "visual",
       "cards": [
         [
           "İlaçlama planı",
@@ -710,7 +758,8 @@
       ],
       "section": "UYGULAMA 1 · TARLA İLAÇLAMA",
       "sources": [],
-      "diagram": "spray_grid"
+      "diagram": "spray_grid",
+      "image": "ex_swath.png"
     },
     {
       "title": "İlaçlama görevinin tekrarlanan bloğu",
@@ -853,7 +902,7 @@
       "title": "Doz hesabında hız neden önemli?",
       "message": "PWM yüzdesi tek başına litre/hektar vermez.",
       "notes": "Bu slayt bir birim dönüşümü ve mühendislik hesabı örneğidir; ürün veya kimyasal kullanım önerisi değildir. Hektar başına hedef hacim D, km/saat cinsinden hız V, metre cinsinden genişlik W ile litre/dakika Q hesaplanır.3 m/s hız10,8 km/saat eder. Pompa PWM’i ile gerçek debi arasındaki ilişki bilinmeden bu örnek dozun uygulandığı söylenemez. Simülasyonda kanıtlanan şey komut zamanlaması ve ideal alan kaplamasıdır.",
-      "layout": "cards",
+      "layout": "formula",
       "cards": [
         [
           "Bağıntı",
@@ -861,7 +910,7 @@
         ],
         [
           "Sayısal örnek",
-          "20L/ha ×10,8 km/h ×8 m /600 =2,88L/dk"
+          "20 L/ha ×10,8 km/h ×8 m /600 =2,88 L/dk"
         ],
         [
           "Gerekli ölçüm",
@@ -869,7 +918,23 @@
         ]
       ],
       "section": "UYGULAMA 1 · TARLA İLAÇLAMA",
-      "sources": []
+      "sources": [],
+      "formula": "Q = D × V × W / 600",
+      "example": "20 L/ha × 10,8 km/h × 8 m / 600 = 2,88 L/min",
+      "legend": [
+        [
+          "D",
+          "Target volume · L/ha"
+        ],
+        [
+          "V",
+          "Groundspeed · km/h"
+        ],
+        [
+          "W",
+          "Working width · m"
+        ]
+      ]
     },
     {
       "title": "Uygulama: bir şeridi değiştirin",
@@ -897,7 +962,7 @@
       "title": "Problem: tarlanın tek görüntüsünü üretmek",
       "message": "Birbirini örten fotoğraflar toplayıp ortak düzleme taşıyoruz.",
       "notes": "Aynı tarla dünyasında bu kez yükseklik ve şerit aralığı kamera geometrisine göre seçilir. İlaçlama göreviyle karıştırmamak için doğru dosyayı araca yazdırın. Görevin hedefi tüm alanı yeterli örtüşmeyle fotoğraflamaktır. Bu derste kamera pozlarını simülatörden bilerek düz zemin varsayımında mozaik üretiyoruz. Gerçek saha fotogrametrisinde poz kestirimi ve yükselti modeli gibi ek aşamalar gerekir; sonuç türünü baştan doğru adlandıralım.",
-      "layout": "photo",
+      "layout": "chapter",
       "cards": [
         [
           "Uçuş",
@@ -916,7 +981,9 @@
       "sources": [
         "grid"
       ],
-      "image": "mapping_dunya.png"
+      "image": "mapping_dunya.png",
+      "chapter": "02",
+      "subtitle": "Grid capture + overlap + planar mosaic"
     },
     {
       "title": "GSD, çıktı pikseli ve doğruluk farklıdır",
@@ -943,8 +1010,8 @@
     {
       "title": "İleri ve yanal örtüşme birlikte planlanır",
       "message": "8 m hat aralığı ve4 m tetik aralığı, geniş ortak alan sağlar.",
-      "notes": "Nominal kameranın genişliği25,2 m, uçuş yönündeki yüksekliği16,8 m kabul edilir. Şerit aralığı8 m olduğunda yanal, tetik mesafesi4 m olduğunda ileri örtüşme hesaplanır. Gövde ve gimbal yönelimi gerçek ayak izini değiştirebilir; bu yüzden ürünün gerçek kaplama sayacı ayrıca ölçülür. Şemadaki noktalar mesafe tetiklerini temsil eder. Dönüşlerde de tetik açık kalabildiği için fotoğraf sayısı yalnız düz çizgi uzunluğundan hesaplanan sayıya eşit olmayabilir.",
-      "layout": "diagram",
+      "notes": "Nominal kameranın genişliği25,2 m, uçuş yönündeki yüksekliği16,8 m kabul edilir. Şerit aralığı8 m olduğunda yanal, tetik mesafesi4 m olduğunda ileri örtüşme hesaplanır. Gövde ve gimbal yönelimi gerçek footprintni değiştirebilir; bu yüzden ürünün gerçek kaplama sayacı ayrıca ölçülür. Şemadaki noktalar mesafe tetiklerini temsil eder. Dönüşlerde de tetik açık kalabildiği için fotoğraf sayısı yalnız düz çizgi uzunluğundan hesaplanan sayıya eşit olmayabilir.",
+      "layout": "visual",
       "cards": [
         [
           "Yanal örtüşme",
@@ -963,7 +1030,8 @@
       "sources": [
         "grid"
       ],
-      "diagram": "grid"
+      "diagram": "grid",
+      "image": "ex_overlap.png"
     },
     {
       "title": "Mission Planner’da otomatik grid üretimi",
@@ -1139,7 +1207,7 @@
       "title": "Mozaik üretiminin dört adımı",
       "message": "Kamera ışınlarını z=0 düzlemine projekte ediyoruz.",
       "notes": "Bu akış bilinen kamera iç parametreleri ve simülatör pozlarına dayalıdır. Her görüntünün zemin köşeleri bulunur, düzleme dönüşümü hesaplanır ve ortak rasterde birleştirilir. Kaynak zemin dokusu okunmaz; sadece uçuşta çekilmiş fotoğraflar kullanılır. Gerçek ortofoto iş akışındaki yükseklik modeli ve poz optimizasyonu burada yoktur. Dersin amacı uçuş planı ile fotoğraf geometrisi ve ürün kaplaması arasındaki bağı göstermektir.",
-      "layout": "flow",
+      "layout": "visual",
       "cards": [
         [
           "Kalibrasyon",
@@ -1162,7 +1230,8 @@
       "sources": [
         "triangulate",
         "sfm"
-      ]
+      ],
+      "image": "ex_mosaic.png"
     },
     {
       "title": "Sonuç: aynı tarlanın tek mozaik görüntüsü",
@@ -1178,7 +1247,7 @@
       "title": "Haritalama sonucunu nasıl puanlarız?",
       "message": "Görüntünün güzel görünmesi yanında kaplama da ölçülmeli.",
       "notes": "Kaplama metrikleri gerçek fotoğraf ayak izlerinin hedef alan üzerinde sayılmasıyla hesaplandı. En az üç görüntüyle kaplanan alan99,53 yüzdedir. Bu metrik görüntü eşleşmesinin her noktada başarılı olduğu veya konumun gerçek dünyada doğru olduğu anlamına gelmez. Öğrencinin nicel bir ölçüyü doğru kapsamda yorumlamasını isteyin. Aynı zamanda az fotoğrafın her zaman verimlilik olmadığını; yeterli örtüşmenin ürün güvenilirliği için gerekli olduğunu tartışın.",
-      "layout": "cards",
+      "layout": "spotlight",
       "cards": [
         [
           "Alan kaplama",
@@ -1194,7 +1263,22 @@
         ]
       ],
       "section": "UYGULAMA 2 · 2D TARLA HARİTALAMA",
-      "sources": []
+      "sources": [],
+      "image": "tarla_mozaik.png",
+      "stats": [
+        [
+          "100%",
+          "field coverage"
+        ],
+        [
+          "99,53%",
+          "3+ image overlap"
+        ],
+        [
+          "81",
+          "real RGB photos"
+        ]
+      ]
     },
     {
       "title": "Uygulama: mozaik üretin ve karşılaştırın",
@@ -1216,337 +1300,440 @@
       "code": ".\\.local\\venv\\Scripts\\python.exe .\\tools\\mosaic_2d.py\n  \"UCUS_KLASORU\""
     },
     {
-      "title": "Problem: binayı birden çok açıdan görmek",
-      "message": "Tek bir nadir görüntü cephelerin 3D yapısını vermez.",
-      "notes": "Bina modelinde dört farklı cephe dokusu, pencereler, giriş gölgeliği, kolonlar ve çatı ekipmanları vardır. Bu ayrıntılar hem görsel olarak anlaşılır bir sahne hem de SIFT için eşleşebilir yüzey sağlar. Tek bir üstten görüntü cephe derinliğini yeterince gözleyemez. Birden fazla yönden ve iki yükseklikten bakarak görüş çeşitliliği toplarız. Son ürünün seyrek nokta bulutu olduğunu baştan söyleyin; yoğun, dokulu bir bina mesh’i vaat etmiyoruz.",
-      "layout": "photo",
-      "cards": [
-        [
-          "Sahne",
-          "14 ×12 ×14 m ana bina"
-        ],
-        [
-          "Gereksinim",
-          "Cephelerde ortak detaylar"
-        ],
-        [
-          "Görev",
-          "İki yükseklikte çevresel çekim"
-        ]
-      ],
-      "section": "UYGULAMA 3 · BİNA ÇEVRESİNDE 3D VERİ",
-      "sources": [],
-      "image": "building_dunya.png"
-    },
-    {
-      "title": "Cephe ayrıntıları neden gerekli?",
-      "message": "Tekrarlı ve düz yüzeylerde güvenilir eşleşme bulmak zorlaşır.",
-      "notes": "Dört cephedeki farklı dokular tamamen benzer pencerelerin yanlış eşleşme riskini azaltmaya yardımcı olur. Yine de pencere tekrarları ve gölgeler hatalı eşleşme üretebilir. Kaynak bina mesh’i rekonstrüksiyon scriptine verilmez. Eşleşmeler gerçek RGB görüntülerden bulunur. Doğrulama aşamasında ana cephe sınırlarına mesafe gibi ölçüler hesaplanabilir; bunlar simülasyon değerlendirmesidir, kaynak geometriyi ürün diye kopyalamak değildir.",
-      "layout": "photo",
-      "cards": [
-        [
-          "Doku",
-          "Tuğla ve pencere çerçeveleri"
-        ],
-        [
-          "3D ayrıntı",
-          "Gölgeliğe ait parallax"
-        ],
-        [
-          "Çevre",
-          "Araç, ağaç ve yollar"
-        ]
-      ],
-      "section": "UYGULAMA 3 · BİNA ÇEVRESİNDE 3D VERİ",
-      "sources": [],
-      "image": "building_kamera.png"
-    },
-    {
-      "title": "İki AUTO orbit, tek sabit ROI",
-      "message": "Araç yörüngede ilerlerken kamera bina merkezine yönelir.",
-      "notes": "Orbit,24 açısal aralıklı waypoint’lerden oluşan kapalı yol olarak hazırlanmıştır; sürekli matematiksel circle kontrolü değildir. Her turda başlangıç noktasına geri dönülür ve ikinci yükseklikte tekrar edilir. ArduPilot mount sistemi ROI hedefini izlerken araç NAV noktalarını yürütür. Böylece Python ile kameraya her karede açı komutu göndermek gerekmez. İdeal gimbalın fiziksel gecikme ve atalet modellemediğini yeniden hatırlatın.",
-      "layout": "diagram",
-      "cards": [
-        [
-          "Yarıçap",
-          "26 m"
-        ],
-        [
-          "İrtifalar",
-          "18 m ve23 m"
-        ],
-        [
-          "ROI",
-          "Bina merkezi · göreli7 m"
-        ]
-      ],
-      "section": "UYGULAMA 3 · BİNA ÇEVRESİNDE 3D VERİ",
-      "sources": [
-        "roi",
-        "commands"
-      ],
-      "diagram": "orbit"
-    },
-    {
-      "title": "Bina görevinin yapısı",
-      "message": "ROI ve mesafeli tetik, orbit waypoint’leri boyunca sürer.",
-      "notes": "03_bina_3 d_haritalama dosyasında home dahil58 öğe bulunur. ROI konumu GPS koordinatlarına dönüştürülmüştür; yükseklik home’a göre7 m olarak tanımlanır. Görev listesini açıp ROI’nin orbitlerden önce geldiğini, tetik kapatmanın iki turdan sonra olduğunu gösterin. ArduPilot kamera yönü ve uçuş konumu için ayrı görevleri aynı anda yürütebilir. Uçağın yaw yönünün her zaman kamera hedef doğrultusuna eşit olması gerekmez.",
-      "layout": "table",
+      "title": "Binayı bu kez dolu yüzeylerle görelim",
+      "message": "AUTO ile veri topla; görüntülerden 3D Gaussian modeli öğren.",
+      "notes": "Önceki sparse point cloud yalnız başlangıç geometrisini gösteriyordu. Bu revizyonda gerçek 3D Gaussian Splatting optimizasyonu kullanıyoruz. Konum, scale, rotation, opacity ve renk katsayıları fotoğraflara göre öğrenilir. Sonuç yalnız daha çok nokta çizmek değildir: kameraya yansıtılan Gaussian footprint’leri alpha compositing ile birleştirerek yeni bakışlar render edilir. Kaynak Gazebo bina mesh’i eğitim girdisi değildir. İlk olarak referans fotoğraf ile yeni modeli karşılaştırın.",
+      "layout": "chapter",
       "cards": [],
-      "section": "UYGULAMA 3 · BİNA ÇEVRESİNDE 3D VERİ",
+      "section": "UYGULAMA 3 · 3D GAUSSIAN SPLATTING",
+      "sources": [
+        "gs",
+        "brush"
+      ],
+      "chapter": "03",
+      "subtitle": "Bina çevresinde capture → reconstruction → novel-view rendering",
+      "image": "gaussian_final.png"
+    },
+    {
+      "title": "Aynı binaya farklı açılardan bakmak",
+      "message": "Görünmeyen yüzey fotoğraf verisi olmadan öğrenilemez.",
+      "notes": "Bu üç kare iki AUTO orbit sırasında çekilmiş gerçek RGB fotoğraflarıdır. Cephelerde ortak ayrıntılar görünmeli; çatı da farklı yükseklikten gözlenmelidir. Doku, motion blur, camera pose ve overlap son kaliteyi etkiler. Çok fotoğraf, kötü açıyı otomatik düzeltmez. Görüntü seti 108 kare içerir; 94 train ve14 hold-out olarak ayrılır. Hold-out görüntüler sparse initialization ve gradient optimization aşamalarına verilmez.",
+      "layout": "gallery",
+      "cards": [
+        [
+          "Cephe A",
+          "Gerçek Gazebo RGB"
+        ],
+        [
+          "Cephe B",
+          "Ortak feature’lar"
+        ],
+        [
+          "Cephe + çatı",
+          "İkinci yükseklik"
+        ]
+      ],
+      "section": "UYGULAMA 3 · 3D GAUSSIAN SPLATTING",
+      "sources": [
+        "gs",
+        "brush"
+      ],
+      "images": [
+        "gaussian_capture_a.png",
+        "gaussian_capture_b.png",
+        "gaussian_capture_c.png"
+      ]
+    },
+    {
+      "title": "Capture trajectory: iki AUTO orbit",
+      "message": "26 m radius;18 ve23 m altitude;3 m camera trigger.",
+      "notes": "Çalışan AUTO uçuş dosyası korunur. Her orbit24 açısal aralıklı waypoint’ten oluşur; iki yükseklik kamera açılarını çeşitlendirir. Araç3 m/s görev hızında ilerler, mesafe tetiği fotoğraf komutlarını ArduPilot içinde üretir. Python burada rotayı sürmez. Sol grafikte iki tur yatayda üst üste gelir; sağdaki altitude grafiği iki yüksekliği ayırır. Mission Planner’da Create WP Circle ile benzer başlangıç rotası üretilebilir; yükseklik, yarıçap ve ROI daha sonra kontrol edilir.",
+      "layout": "photo",
+      "cards": [
+        [
+          "AUTO trajectory",
+          "R=26 m ·18/23 m"
+        ],
+        [
+          "Camera trigger",
+          "DO_SET_CAM_TRIGG_DIST=3 m"
+        ],
+        [
+          "Veri",
+          "108 gerçek RGB fotoğraf"
+        ]
+      ],
+      "section": "UYGULAMA 3 · 3D GAUSSIAN SPLATTING",
       "sources": [
         "commands",
         "roi"
       ],
-      "headers": [
-        "Bölüm",
-        "Komut",
-        "Değer"
-      ],
-      "rows": [
-        [
-          "Yüksel / hız",
-          "TAKEOFF · DO_CHANGE_SPEED",
-          "18 m ·3 m/s"
-        ],
-        [
-          "Hedefi seç",
-          "DO_SET_ROI",
-          "(0,45,7)m yerel hedef"
-        ],
-        [
-          "Çekimi başlat",
-          "DO_SET_CAM_TRIGG_DIST",
-          "3 m"
-        ],
-        [
-          "Orbitler",
-          "NAV_WAYPOINT dizisi",
-          "26 m yarıçap ·18/23 m"
-        ],
-        [
-          "Bitir",
-          "Tetik0 · dönüş · LAND",
-          "Home üzerinde iniş"
-        ]
-      ]
-    },
-    {
-      "title": "ROI, “binaya bak” komutudur",
-      "message": "Kamera yönelimi uçuş rotasından bağımsız bir görev işlevi olabilir.",
-      "notes": "Hedef doğrultusu araç hareket ettikçe değişir. ArduPilot bunu mount çıkışlarında günceller; Python yörünge veya gimbal takip döngüsü kurmaz. Gimbal açısal sınırları ROI’nin görülebilmesini kısıtlayabilir. Bu dünyada kamera ideal ve görüş şartları uygundur. Gerçek sistemde kablo dönüş sınırı, mekanik tıkanma, gecikme ve titreşim gibi konular ayrıca test edilmelidir. Öğrenciye kamera yönü ile gövde yönünün farklı olabileceğini gerçek karelerle gösterin.",
-      "layout": "cards",
-      "cards": [
-        [
-          "Hedef konumu",
-          "Bina merkezindeki sabit3D nokta."
-        ],
-        [
-          "ArduPilot mount",
-          "Hedef doğrultusuna gereken açıları üretir."
-        ],
-        [
-          "İdeal gimbal",
-          "Gerçek servo PWM’ini kamera pozuna uygular."
-        ]
-      ],
-      "section": "UYGULAMA 3 · BİNA ÇEVRESİNDE 3D VERİ",
-      "sources": [
-        "mount",
-        "roi"
-      ]
-    },
-    {
-      "title": "Orbit gerçekten uçuldu; yönelim de ölçüldü",
-      "message": "ROI doğrultu hatasının %95’i0,724° altında kaldı.",
-      "notes": "Hata, kaydedilmiş kamera ileri ekseni ile aynı andaki kamera konumundan ROI noktasına giden vektör arasındaki açıdır. Örnekler orbit bölgesinde filtrelenmiştir. Bu değerler gerçek gimbal donanım doğruluğu olarak yorumlanmaz; ideal kinematik mount modelinin doğru bağlandığını gösterir. Sol grafikte iki tur üst üste geldiği için tek daireye yakın görünür; sağdaki irtifa iki yüksekliği açıkça gösterir.",
-      "layout": "photo",
-      "cards": [
-        [
-          "Uçuş",
-          "İki tur ·18/23 m · AUTO"
-        ],
-        [
-          "ROI medyan hata",
-          "0,318°"
-        ],
-        [
-          "ROI %95 değeri",
-          "0,724° · ideal gimbal"
-        ]
-      ],
-      "section": "UYGULAMA 3 · BİNA ÇEVRESİNDE 3D VERİ",
-      "sources": [],
       "image": "building_ucus.png"
     },
     {
-      "title": "Binaya sürekli yönelmiş kamera",
-      "message": "Araç orbitin farklı noktasındayken bina görüntüde kalır.",
-      "notes": "Bu kare gerçek orbit uçuşundan alınmıştır. Binanın ortada kalması tek başına tüm cephenin yeterli örtüşmeyle görüldüğü anlamına gelmez; tur boyunca görüş açılarına bakmak gerekir. Giriş gölgeliği veya yakındaki ağaçlar bazı yüzeyleri örtebilir. Kameranın binaya baktığını doğruladıktan sonra fotoğraf sayısını ve eşleştirme sonuçlarını inceleyin. Binanın kaynak modelinin görüntüde görünmesi, nokta bulutunun kaynaktan kopyalandığı anlamına gelmez.",
-      "layout": "photo",
-      "cards": [
-        [
-          "Bakış",
-          "Cephe ve çatı birlikte"
-        ],
-        [
-          "Ortak ayrıntı",
-          "Komşu karelerde aynı pencere"
-        ],
-        [
-          "Tetik",
-          "Her3 m’de bir fotoğraf komutu"
-        ]
-      ],
-      "section": "UYGULAMA 3 · BİNA ÇEVRESİNDE 3D VERİ",
-      "sources": [],
-      "image": "building_kamera.png"
-    },
-    {
-      "title": "108 görüntü, tek başına 3D model değildir",
-      "message": "Fotoğraflar arasında aynı ayrıntıları güvenilir biçimde bulmalıyız.",
-      "notes": "Her fotoğrafın diğer107 fotoğrafla karşılaştırılması gereksiz iş yüküdür. Script görünüm yakınlığına göre aday çiftler seçer ve141 çift üzerinde eşleşme değerlendirir. SIFT ayrıntı noktaları bulunur, tanımlayıcı eşleşmeleri oran testiyle süzülür ve geometrik tutarsızlıklar RANSAC ile ayıklanır. Sonra eşleşen pikseller bilinen kamera pozlarıyla üçgenlenir. Bu ders tam Structure from Motion yerine onun görüntü eşleştirme ve3Dgeometri bölümünü öğretir.",
-      "layout": "cards",
-      "cards": [
-        [
-          "Veri",
-          "108 gerçek tetik fotoğrafı."
-        ],
-        [
-          "Seçim",
-          "Yakın görüş çiftleri karşılaştırılır."
-        ],
-        [
-          "Geometri",
-          "Kalibrasyon + bilinen kamera pozları kullanılır."
-        ]
-      ],
-      "section": "UYGULAMA 3 · BİNA ÇEVRESİNDE 3D VERİ",
-      "sources": [
-        "triangulate",
-        "sfm"
-      ]
-    },
-    {
-      "title": "SIFT: iki karede aynı ayrıntıyı bulmak",
-      "message": "Renkli çizgiler, süzülmüş görüntü eşleşmelerini gösterir.",
-      "notes": "Görsel scriptin gerçek eşleştirme çıktısıdır. Bazı çizgilerin benzer pencereler arasında yanlış gitme ihtimalini tartışın. SIFT sonrası Lowe oran testi0,72, temel matris RANSAC ve daha sonra yeniden izdüşüm filtresi uygulanır. Bu aşamaların her biri farklı bir tutarsızlığı azaltır, sıfır hata garantisi sağlamaz. Çok sayıda eşleşme çizgisi iyi modelin tek ölçütü değildir; geometri ve yeniden izdüşüm hatası da incelenir.",
-      "layout": "full",
+      "title": "Gimbal sürekli ROI’ye bakar",
+      "message": "Flight trajectory ve camera pointing iki ayrı görev işlevi.",
+      "notes": "Şemada kameralar orbit üzerinde ilerlerken görüş doğrultuları aynı ROI noktasına gider. DO_SET_ROI hedefi home’a göre7 m yükseklikte seçilmiştir. ArduPilot mount çıkışları kamera yönünü günceller; Python kare başına açı komutu yollamaz. Buradaki servo gimbal ideal kinematiktir; latency ve inertia modellenmez. Gerçek kayıtta ROI doğrultu hatası medyan0,318 derece ve95.persentil0,724 derecedir. İdeal gimbalın doğru bağlandığı kanıtlanır; donanım doğruluğu iddia edilmez.",
+      "layout": "visual",
       "cards": [],
-      "section": "UYGULAMA 3 · BİNA ÇEVRESİNDE 3D VERİ",
+      "section": "UYGULAMA 3 · 3D GAUSSIAN SPLATTING",
       "sources": [
-        "triangulate"
+        "mount",
+        "roi"
       ],
-      "image": "sift.png"
+      "image": "ex_roi.png"
     },
     {
-      "title": "Eşleşen piksellerden 3D noktaya",
-      "message": "İki kamera ışını ortak bir dünya noktasını sınırlar.",
-      "notes": "İki görüntüde aynı fiziksel noktayı gözlediğimizi varsayarsak, kamera kalibrasyonu ve pozları piksel ışınlarını dünya koordinatlarına taşır. Gürültü nedeniyle ışınlar kusursuz kesişmez; üçgenleme en uygun3Dnoktayı bulur. Negatif derinlikli noktalar,2 pikselden büyük yeniden izdüşüm hataları ve ilgisiz bölge noktaları ayıklanır.8 cmvoxel ile yinelenen noktalar seyreltilir. Bina mesh’i bu hesapta okunmaz.",
+      "title": "Pipeline: pose → initialization → training",
+      "message": "Bu simülasyonda camera pose biliniyor; saha akışında SfM gerekir.",
+      "notes": "Gerçek saha iş akışında COLMAP veya benzeri SfM aracı intrinsics, camera poses ve başlangıç point cloud üretir. Bu öğretim örneğinde simülatörden kaydedilmiş kalibre camera pose kullanılır. Image matching ve triangulation ise yalnız94 train fotoğrafında yapılır.1298 görüntü kaynaklı sparse nokta initialization için kullanılır. Daha sonra Brush bu Gaussians’ları tüm train görüntülere göre optimize eder. Kaynak bina mesh’i veya derinlik sensörü okunmaz.",
       "layout": "flow",
       "cards": [
         [
-          "SIFT",
-          "Ayrıntı ve tanımlayıcı"
+          "RGB + poses",
+          "Gazebo kayıtları"
         ],
         [
-          "Süz",
-          "Oran testi + RANSAC"
+          "Sparse init",
+          "Train-only SIFT"
         ],
         [
-          "Üçgenle",
-          "K ve bilinen pozlar"
+          "3DGS training",
+          "Brush · gradient update"
         ],
         [
-          "Temizle",
-          "Pozitif derinlik + hata"
+          "Novel view",
+          "Hold-out render"
         ]
       ],
-      "section": "UYGULAMA 3 · BİNA ÇEVRESİNDE 3D VERİ",
+      "section": "UYGULAMA 3 · 3D GAUSSIAN SPLATTING",
       "sources": [
-        "triangulate"
+        "sfm",
+        "gs",
+        "brush"
       ]
     },
     {
-      "title": "Sonuç: görüntülerden seyrek bina bulutu",
-      "message": "1787 nokta üretildi; cephe ve çatı yapısı seçilebiliyor.",
-      "notes": "Bu grafik son PLY dosyasındaki1787 noktanın görünüşüdür. Binanın dikey yüzeyleri ve çatı üstü ayrıntıları kabaca seçilir; eksik bölgeler ve aykırı noktalar da görünür. Çıktı yoğun mesh veya dokulu model değildir. Bilinen simülatör kamera pozları ölçeği sağlar. Analitik ana yüzeylere medyan mesafe yaklaşık7,3 cm olsa da bu yalnız ideal dünyadaki değerlendirmedir; gerçek saha doğruluğu iddiası değildir. Öğrencilerden bulutun hangi kısımlarının gözlenemediğini göstermelerini isteyin.",
-      "layout": "full",
+      "title": "Sparse point cloud artık başlangıç verisi",
+      "message": "Eksik yüzeyi nokta sayısını artırarak değil, görüntü loss’u ile tamamlıyoruz.",
+      "notes": "Sparse initialization SIFT eşleşmesi, RANSAC, triangulation ve reprojection error filtresinden üretilir. Önceki1787 noktalı çıktı burada nihai ürün olarak sunulmaz. Yeni temiz train/hold-out ayrımında1298 train-only başlangıç noktası vardır. Bu daha küçük başlangıç kümesi bile Gaussian optimization için yeterli referans sağlar. Modelin gerçek gelişimi render edilen görüntü ile referans fotoğraf arasındaki farkın azaltılmasından gelir.",
+      "layout": "compare",
+      "cards": [
+        [
+          "Sparse initialization",
+          "Geometrik başlangıç; nihai ürün değil."
+        ],
+        [
+          "Optimized 3D Gaussians",
+          "Yüzey görünüşünü veren radiance representation."
+        ]
+      ],
+      "section": "UYGULAMA 3 · 3D GAUSSIAN SPLATTING",
+      "sources": [
+        "gs",
+        "brush"
+      ],
+      "images": [
+        "bina_3d.png",
+        "gaussian_final.png"
+      ]
+    },
+    {
+      "title": "Bir Gaussian hangi parametrelere sahip?",
+      "message": "Position, scale, rotation, opacity ve color birlikte öğrenilir.",
+      "notes": "Bir Gaussian’ı uzayda yönlenmiş yumuşak bir elipsoid olarak düşünün. Merkez μ, üç eksenli scale ve rotation covariance’ı belirler. Opacity görünürlüğü, renk ve spherical harmonics katsayıları görünüşü belirler. Final modelde SH degree2 kullanıldı. Elipsoidler kapalı katı yüzeyler değildir; görüntü oluşturmak için sürekli ağırlık fonksiyonlarıdır. Şema öğretim çizimidir, gerçek modeldeki bir Gaussian’ın ölçümü değildir.",
+      "layout": "visual",
       "cards": [],
-      "section": "UYGULAMA 3 · BİNA ÇEVRESİNDE 3D VERİ",
-      "sources": [],
-      "image": "bina_3d.png"
+      "section": "UYGULAMA 3 · 3D GAUSSIAN SPLATTING",
+      "sources": [
+        "gs",
+        "brush"
+      ],
+      "image": "ex_gaussian.png"
     },
     {
-      "title": "Bu örnek hangi fotogrametri aşamasıdır?",
-      "message": "Seyrek üçgenleme yaptık; tam SfM ve yoğun rekonstrüksiyon yapmadık.",
-      "notes": "Tam Structure from Motion akışı kamera pozlarını görüntülerden kestirir ve birlikte optimize eder. Biz pozları simülatörden alarak temel geometriyi görünür kıldık. COLMAP gibi araçlar seyrek model sonrası dense reconstruction da sağlayabilir; bunlar bu haftanın çalışır temel örneğinin dışında tutulur. Öğrencinin PLY dosyası ile dokulu mesh arasındaki farkı ve ölçeğin nereden geldiğini açıklayabilmesi beklenir.1787 nokta bir başarı metrikidir ama tek başına kaliteli model garantisi değildir.",
-      "layout": "cards",
+      "title": "3D Gaussian ekranda bir splat olur",
+      "message": "Camera projection, elipsoidi piksel düzleminde footprint’e dönüştürür.",
+      "notes": "K ve camera pose ile Gaussian merkezi kameraya taşınır. Projection Jacobian,3D covariance’ı yaklaşık 2D elliptik covariance’a dönüştürür. Böylece aynı Gaussian farklı bakışlarda farklı boyut ve yönelimle görünür. Her piksel Gaussian merkezine göre ağırlık alır. Splatting, normal point cloud’daki sabit büyüklükte nokta işaretlerinden bu yönüyle ayrılır. Bu derste türevi ezberletmek yerine 3D→2D→renk birikimi ilişkisini gösterin.",
+      "layout": "visual",
+      "cards": [],
+      "section": "UYGULAMA 3 · 3D GAUSSIAN SPLATTING",
+      "sources": [
+        "gs",
+        "brush"
+      ],
+      "image": "ex_splat_projection.png"
+    },
+    {
+      "title": "Alpha compositing ve depth order",
+      "message": "Öndeki splat, arkadakinin katkısını azaltır.",
+      "notes": "Gaussian’lar görüntüde örtüşür. Front-to-back compositing sırasında birikmiş transmittance, arkadaki renk katkısını ağırlıklandırır. Örneğin yüzde50 opacity’li iki katmanın etkisi düz renk ortalaması değildir; sıralama önemlidir. Bu nedenle visibility-aware rendering gerekir. Slayttaki iki panel yalnız compositing mantığını anlatır; gerçek binanın iki render’ı değildir. Rendering’in fiziksel yüzey mesh’i yerine optik katkı modeli kullandığını vurgulayın.",
+      "layout": "visual",
+      "cards": [],
+      "section": "UYGULAMA 3 · 3D GAUSSIAN SPLATTING",
+      "sources": [
+        "gs",
+        "brush"
+      ],
+      "image": "ex_alpha.png"
+    },
+    {
+      "title": "Training loop: render, compare, update",
+      "message": "Amaç referans fotoğraflara benzeyen render üretmek.",
+      "notes": "Her training step bir train camera seçer, mevcut Gaussians’ları render eder, referans RGB ile L1 ve SSIM tabanlı loss hesaplar ve gradient ile parametreleri günceller. Paneldeki görüntü eğitimden ayrı hold-out değerlendirme görüntüsüdür; mekanizmayı göstermek için final render ile referans farkı yan yana verilmiştir. Hold-out görüntünün loss’u optimizer’a geri verilmez. Difference paneli görünürlük için4 kat büyütülmüştür; yeni ayrıntı veya sahte hata üretilmemiştir.",
+      "layout": "visual",
+      "cards": [],
+      "section": "UYGULAMA 3 · 3D GAUSSIAN SPLATTING",
+      "sources": [
+        "gs",
+        "brush"
+      ],
+      "image": "ex_training_loop.png"
+    },
+    {
+      "title": "Densification: ayrıntı gereken yerde büyüme",
+      "message": "Gaussian yoğunluğu training sırasında uyarlanır.",
+      "notes": "Başlangıç noktaları bütün dokuyu açıklayamaz. Brush0.3 MCMC benzeri adaptive densification kullanır; growth eşiği, seçilen oran ve max-splats sınırı yoğunluğu kontrol eder. Bu şema genel ilkeyi gösterir; Brush’ın birebir her kernel adımını veya gerçek nokta sayısını resmetmez. Gerçek referans koşusunda max45000 Gaussians sınırı kullanılır. Daha çok Gaussian tek başına kalite kanıtı değildir; hold-out görünüş ve floaters da kontrol edilir.",
+      "layout": "visual",
+      "cards": [],
+      "section": "UYGULAMA 3 · 3D GAUSSIAN SPLATTING",
+      "sources": [
+        "gs",
+        "brush"
+      ],
+      "image": "ex_densification.png"
+    },
+    {
+      "title": "Aynı run:1 000 →3 000 →6 000 steps",
+      "message": "Checkpoint render’ları aynı hold-out camera’dan karşılaştırılıyor.",
+      "notes": "Üç panel final training koşusunun gerçek checkpoint çıktılarıdır. Aynı camera ve aynı input karşılaştırıldığı için iyileşmeyi doğrudan görebiliriz. Pencere kenarları, çatı ve bina siluetini gözleyin. Step sayısı ilerlerken gereksiz floaters veya aşırı bulanıklık kalırsa yalnız süreyi artırmak yerine veri kalitesine dönmek gerekir. Bu run Intel UHD730 bulunan Windows bilgisayarda CUDA kurulmadan çalıştırılmıştır.",
+      "layout": "visual",
+      "cards": [],
+      "section": "UYGULAMA 3 · 3D GAUSSIAN SPLATTING",
+      "sources": [
+        "gs",
+        "brush"
+      ],
+      "image": "ex_training_progress.png"
+    },
+    {
+      "title": "Hold-out view: görmediği açıyı render et",
+      "message": "14 görüntü initialization ve training dışında bırakıldı.",
+      "notes": "Her8.kare evaluation için ayrıldı. Bu görüntüler sparse initialization’a da verilmedi; böylece görüntü veya renk başlangıcından leakage önlendi. Camera pose evaluation render için bilinir; bu bilinen-pose deneyinin parçasıdır.94 train görüntüyle öğrenilen model,14 ayrılmış açıdan render edilir. Bu bir gerçek dünya genel performans benchmarkı değildir; aynı simülasyon sahnesinde genellemeyi kontrol eden bir deneydir.",
+      "layout": "visual",
+      "cards": [],
+      "section": "UYGULAMA 3 · 3D GAUSSIAN SPLATTING",
+      "sources": [
+        "gs",
+        "brush"
+      ],
+      "image": "ex_holdout.png"
+    },
+    {
+      "title": "Reference RGB ile Gaussian render",
+      "message": "Aynı camera; solda gerçek sensör kaydı, sağda model.",
+      "notes": "Soldaki fotoğraf Gazebo kamerasından, sağdaki yalnız eğitilmiş Gaussian parametrelerinden üretilmiştir. Sağ görüntüde kaynak bina mesh’i kullanılmaz. Pencereler, çatı kenarı, giriş ve gölgeyi kıyaslayın. Sahnenin uzak zemininde daha fazla blur olabilir; kameranın gördüğü airframe parçaları floaters’a yol açabilir. Öğrenciden yalnız güzel görünen yüzeyi değil kalan farkları da göstermesini isteyin.",
+      "layout": "compare",
       "cards": [
         [
-          "Yaptık",
-          "RGB → eşleşme → bilinen pozla seyrek3D."
+          "Reference · hold-out RGB",
+          "Optimizasyona verilmemiş gerçek görüntü."
         ],
         [
-          "Bu örnekte yok",
-          "Poz kestirimi, bundle adjustment, yoğun mesh."
-        ],
-        [
-          "Sonraki adım",
-          "Aynı fotoğrafları tam SfM aracında karşılaştır."
+          "3DGS render",
+          "Öğrenilmiş Gaussian modelinin görünüşü."
         ]
       ],
-      "section": "UYGULAMA 3 · BİNA ÇEVRESİNDE 3D VERİ",
+      "section": "UYGULAMA 3 · 3D GAUSSIAN SPLATTING",
       "sources": [
-        "sfm"
+        "gs",
+        "brush"
+      ],
+      "images": [
+        "gaussian_reference.png",
+        "gaussian_final.png"
       ]
     },
     {
-      "title": "Uygulama: bina bulutunu üretin",
-      "message": "Çıktıyı görüntülerden yeniden üretebiliriz.",
-      "notes": "Komut terminalde tek satır yazılır. Yalnız bina uygulamasının uçuş klasörünü kullanın. Script gerçek RGB fotoğraflarını işler; kaynak bina model dosyasını okumaz. Çalışma süresi bilgisayara göre birkaç dakika olabilir. Sonuç klasöründe eşleşme görseli, rekonstrüksiyon metriği ve PLY dosyası oluşur. Bir3Dgörüntüleyicide bulutu açıp farklı açılardan incelemek, tek sabit grafikte görünmeyen aykırı noktaları fark etmeyi sağlar.",
-      "layout": "code",
-      "cards": [
+      "title": "Sonuç: kullanılabilir 3D Gaussian model",
+      "message": "45 000 Gaussians · hold-out PSNR28,0 dB · SSIM0,914.",
+      "notes": "Final model6 bin training step sonunda45 000 Gaussians içeriyor.14 hold-out görüntüde ortalama PSNR28,0 dB ve SSIM0,914 ölçüldü. PSNR piksel hatasını, SSIM yerel yapı benzerliğini özetler. Bunlar geometric accuracy, ölçüm hatası veya bina boyut doğruluğu değildir. Render görselleri ve metrik JSON birlikte saklanır. Model PLY dosyasında opacity, rotation, scale ve SH katsayıları vardır; sıradan XYZRGB point cloud dosyası değildir.",
+      "layout": "spotlight",
+      "cards": [],
+      "section": "UYGULAMA 3 · 3D GAUSSIAN SPLATTING",
+      "sources": [
+        "gs",
+        "brush"
+      ],
+      "stats": [
         [
-          "Girdi",
-          "Bina uçuşunun fotoğrafları ve kamera pozları."
+          "45 000",
+          "trained Gaussians"
         ],
         [
-          "Çıktı",
-          "products/bina_seyrek_nokta_bulutu.ply + PNG grafikler"
+          "28,0 dB",
+          "mean hold-out PSNR"
+        ],
+        [
+          "0,914",
+          "mean hold-out SSIM"
         ]
       ],
-      "section": "UYGULAMA 3 · BİNA ÇEVRESİNDE 3D VERİ",
-      "sources": [],
-      "code": ".\\.local\\venv\\Scripts\\python.exe .\\tools\\reconstruct_3d.py\n  \"UCUS_KLASORU\""
+      "image": "gaussian_final.png"
     },
     {
-      "title": "Uygulama: bakış çeşitliliğini sınayın",
-      "message": "Fotoğraf sayısını değil, gözlenen yüzeyleri de karşılaştırın.",
-      "notes": "Bu karşılaştırma için görev veya fotoğraf listesinin bir kopyasını kullanın. Kameranın aynı noktadan çok sayıda benzer görüntü çekmesinin yeni geometri sağlamayabileceğini tartışın. Yükseklik ve açı değişimi görüş çeşitliliği sağlar; çok büyük açı farkı ise eşleştirmeyi zorlaştırabilir. Yalnız toplam nokta sayısını değil binanın yüzeylerinin gözlenmesini, aykırı noktaları ve yeniden izdüşüm filtresini değerlendirin. Kamera her iki turda da ROI’ye bakmalıdır.",
+      "title": "Tek model, farklı viewpoint’ler",
+      "message": "Brush viewer’da orbit ve zoom ile bütün cepheleri inceleyin.",
+      "notes": "Paneller aynı final Gaussian checkpoint’inin üç farklı hold-out camera’dan gerçek render’larıdır; viewer ekran görüntüsü değildir.3D_Goster.cmd paylaşılan Gaussian PLY modelini resmî Brush viewer’da açar. Çatı üstünü, yan cepheleri ve floaters’ı inceleyin; tek bir render’a güvenmeyin. Bu bir Gazebo sahne dosyasının yeniden açılması değildir. Otomatik testte native viewer penceresi açıldı; masaüstü oturumunda ekran yakalama doğrulanamadığından sunumda yalnız gerçek render’lar gösterilir. EXE veya ZIP yeniden dağıtılmaz.",
+      "layout": "gallery",
+      "cards": [
+        [
+          "View A",
+          "Final Gaussian render"
+        ],
+        [
+          "View B",
+          "Farklı cephe"
+        ],
+        [
+          "View C",
+          "İkinci yükseklik"
+        ]
+      ],
+      "section": "UYGULAMA 3 · 3D GAUSSIAN SPLATTING",
+      "sources": [
+        "brush"
+      ],
+      "images": [
+        "gaussian_render_a.png",
+        "gaussian_render_b.png",
+        "gaussian_render_c.png"
+      ]
+    },
+    {
+      "title": "Gaussian model, mesh ve point cloud farklıdır",
+      "message": "Görsel olarak dolu görünmek, watertight mesh üretmek değildir.",
+      "notes": "Üç çıktı tipini doğru adlandırın. Point cloud örneklenmiş konumları gösterir. Gaussian model optimize edilmiş radiance primitive’leriyle görüntü render eder. Mesh ise vertex ve triangle bağlantılarıyla yüzey temsilidir. Bu haftanın yeni çıktısıGaussian PLY’dir; CAD, kapalı yüzey veya hacim ölçümü için doğrudan mesh kabul edilmez. İleri iş akışlarında meshing veya surface reconstruction ayrıca gerekir.",
+      "layout": "table",
+      "cards": [],
+      "section": "UYGULAMA 3 · 3D GAUSSIAN SPLATTING",
+      "sources": [
+        "gs",
+        "brush"
+      ],
+      "headers": [
+        "Temsil",
+        "Dosyadaki temel bilgi",
+        "Bu haftadaki rol"
+      ],
+      "rows": [
+        [
+          "Sparse point cloud",
+          "XYZ + RGB",
+          "Train-only initialization"
+        ],
+        [
+          "3D Gaussian Splatting",
+          "XYZ + scale + rotation + opacity + SH",
+          "Yeni ana 3D çıktı"
+        ],
+        [
+          "Triangle mesh",
+          "Vertex + face + texture",
+          "Bu akışta üretilmiyor"
+        ],
+        [
+          "Kontrol",
+          "Hold-out render + serbest viewer",
+          "Görünüş ve floaters kontrolü"
+        ]
+      ]
+    },
+    {
+      "title": "Öğrencinin 3D üretim adımları",
+      "message": "Bina AUTO uçuşundan sonra 3D_Uret.cmd çalıştırılır.",
+      "notes": "Önce menü3 ile bina görevini tamamlayın. Sonra 3D_Uret.cmd dosyasını açıp terminalde gösterilen uçuş klasörünü yapıştırın. Araç indirme, dataset export, train-only initialization, training ve değerlendirme otomatik yürür. Bu sırada uçuş komutu gönderilmez. Training süresi donanıma bağlıdır; derste önce hazır model 3D_Goster.cmd ile incelenebilir. İsteyen öğrenci aynı dosyalardan kendi modelini yeniden üretir. Installer SHA256 ile resmî Brush release’ini doğrular.",
+      "layout": "flow",
+      "cards": [
+        [
+          "AUTO capture",
+          "Menü3 → görev → LAND"
+        ],
+        [
+          "3D_Uret.cmd",
+          "RESULT klasörünü yapıştır"
+        ],
+        [
+          "Training",
+          "Checkpoint + hold-out eval"
+        ],
+        [
+          "Viewer",
+          "Orbit → zoom → incele"
+        ]
+      ],
+      "section": "UYGULAMA 3 · 3D GAUSSIAN SPLATTING",
+      "sources": [
+        "repo",
+        "brush"
+      ]
+    },
+    {
+      "title": "Kaliteyi artırmak için önce veriye bakın",
+      "message": "Blur, düşük overlap ve occlusion daha çok step ile her zaman düzelmez.",
+      "notes": "İlk örnek dolu bir bina görünüşü üretse de kamera önündeki airframe parçaları, tekdüze duvar ve uzaktaki zemin kalite sınırlarıdır. Daha iyi capture için gövdeyi görmeyen kamera yerleşimi, farklı yükseklik ve yeterli overlap gerekir. Gerekirse image mask yalnız gerçek RGB’den hazırlanarak occluder’lar training loss’undan çıkarılır; bu referans koşusunda mask kullanılmadı. Parametre değiştirmeden önce reference fotoğrafı büyütün. Yalnız Gaussians sayısını büyütmek veri hatasını çözmez.",
+      "layout": "photo",
+      "cards": [
+        [
+          "Capture",
+          "Overlap + net görüntü + angle çeşitliliği"
+        ],
+        [
+          "Occlusion",
+          "Airframe / ağaç / gölge kontrolü"
+        ],
+        [
+          "Evaluation",
+          "Novel-view render ve floaters"
+        ]
+      ],
+      "section": "UYGULAMA 3 · 3D GAUSSIAN SPLATTING",
+      "sources": [
+        "gs",
+        "brush"
+      ],
+      "image": "gaussian_reference.png"
+    },
+    {
+      "title": "Uygulama: capture değişsin, AUTO sınırı kalsın",
+      "message": "Tek değişkenle veri toplayın; aynı hold-out mantığıyla karşılaştırın.",
+      "notes": "Öğrenci referans görevini koruyup bir kopyada yalnız camera trigger mesafesini veya ikinci orbit yüksekliğini değiştirir. Uçuş yine AUTO kalkıştan LAND’e kadar ilerlemelidir. Sonra aynı training budget ile yeniden model üretir. Karşılaştırmada capture sayısı, render ayrıntısı, floaters, PSNR ve SSIM birlikte yorumlanır. Camera pose simülatörden biliniyorsa bunun raporda açıkça yazılması gerekir. Son ürün Gaussian PLY ve bir reference/render karşılaştırmasıdır.",
       "layout": "cards",
       "cards": [
         [
-          "Tek tur",
-          "İlk yüksekliği kullanarak ürün çıkar."
+          "Planla",
+          "Orbit veya trigger’da tek değişken."
         ],
         [
-          "İki tur",
-          "18 m ve23 m verisini birlikte kullan."
+          "Üret",
+          "Aynı training budget ile 3DGS."
         ],
         [
-          "Yorumla",
-          "Çatı, cephe ve kapalı bölgeler nasıl değişiyor?"
+          "Karşılaştır",
+          "Hold-out view + viewer + artefact’lar."
         ]
       ],
-      "section": "UYGULAMA 3 · BİNA ÇEVRESİNDE 3D VERİ",
-      "sources": []
+      "section": "UYGULAMA 3 · 3D GAUSSIAN SPLATTING",
+      "sources": [
+        "commands",
+        "brush"
+      ]
     },
     {
       "title": "Problem: uçuş sürerken hareketi kaydetmek",
       "message": "Sabit tarama görevi değişmeden, görüntüden olay çıktısı alıyoruz.",
       "notes": "Kırsal alanda önceden belirlenmiş bir tarama rotası düşünün. Uçak rota üzerinde kalırken görüntü işçisi hareket adayını bulur, çerçeveli görüntü ve kırpım üretir. Görev hedefe yönelmez, takip veya kovalamaya dönüşmez. Bu ayrım AUTO sınırını korumak için bilinçli seçildi. Hedefler simülasyondaki yürüyen üç insandır; öğrenilecek esas problem, hareketli kamerada arka plan hareketini ayırmaktır.",
-      "layout": "photo",
+      "layout": "chapter",
       "cards": [
         [
           "Platform",
@@ -1563,12 +1750,14 @@
       ],
       "section": "UYGULAMA 4 · SABİT KANATLA HAREKET GÖZLEMİ",
       "sources": [],
-      "image": "plane_dunya.png"
+      "image": "plane_dunya.png",
+      "chapter": "04",
+      "subtitle": "AUTO takeoff + fixed scan + motion events + landing"
     },
     {
       "title": "Kırsal sahne ve hareketli insanlar",
       "message": "Pist, tepeler, evler, ağaçlar ve üç yürüyen kişi hazır.",
-      "notes": "Sahne nesneleri gerçek3Dvarlıklardır. İnsan modelleri simülasyon zamanına bağlı hareket eder ve gerçek RGB görüntüde konum değiştirir. Konumları değerlendirme için saklanır, detektörün insanı bulmasına verilmez. Tepeler ve ağaçlar homografi varsayımını zorlayarak parallax üretir. Bu özellik yanlış alarmları tartışmak için yararlıdır. Pist ve sürekli zemin çarpışması otomatik kalkış ve iniş testleriyle geliştirilmiştir.",
+      "notes": "Sahne nesneleri gerçek 3D varlıklardır. İnsan modelleri simülasyon zamanına bağlı hareket eder ve gerçek RGB görüntüde konum değiştirir. Konumları değerlendirme için saklanır, detektörün insanı bulmasına verilmez. Tepeler ve ağaçlar homografi varsayımını zorlayarak parallax üretir. Bu özellik yanlış alarmları tartışmak için yararlıdır. Pist ve sürekli zemin çarpışması otomatik kalkış ve iniş testleriyle geliştirilmiştir.",
       "layout": "photo",
       "cards": [
         [
@@ -1743,7 +1932,7 @@
       "title": "Hareketli kamerada her şey hareket eder",
       "message": "İki kare farkı tek başına hareketli insanı ayıramaz.",
       "notes": "Bir sabit kamerada basit arka plan çıkarma işe yarayabilir; uçan kamerada ise sabit zemin bile görüntü üzerinde yer değiştirir. Önce baskın zemin hareketini kestirip önceki kareyi güncel kareye hizalarız. Sonra kalan farkı eşikleriz. Siyah-beyaz artık maskesinde insan dışında gölge, ağaç parallax’ı veya hizalama hatası da görülebilir. Bu yüzden tek karedeki parlak leke olay için yeterli değildir.",
-      "layout": "compare",
+      "layout": "visual",
       "cards": [
         [
           "Gerçek kamera karesi",
@@ -1761,13 +1950,14 @@
       "images": [
         "hareket_ham.png",
         "hareket_artik.png"
-      ]
+      ],
+      "image": "ex_homography.png"
     },
     {
       "title": "Hareket adayını nasıl buluyoruz?",
       "message": "Görüntü işçisi yalnız RGB ve salt-okunur uçuş fazını kullanır.",
-      "notes": "ORB tanımlayıcıları Hamming mesafesi ve0,74 oran testiyle eşleştirilir. Homografi2,5 piksel RANSAC eşiği ve en az0,5 içerdeş oranıyla kabul edilir. Artık maske küçük bileşenlere ayrılır; en az iki gözlem ve yaklaşık1,2 piksel bağımsız hareket aranır. Olaylar çok sık yinelenmesin diye aynı iz için iki saniyelik çıktı aralığı uygulanır. Bunlar sahneye göre test edilmiş başlangıç değerleridir; genellenmiş bir insan algılayıcısı değildir.",
-      "layout": "flow",
+      "notes": "ORB tanımlayıcıları Hamming mesafesi ve0,74 oran testiyle eşleştirilir. Homografi2,5 piksel RANSAC eşiği ve en az0,5 inlier oranıyla kabul edilir. Artık maske küçük bileşenlere ayrılır; en az iki gözlem ve yaklaşık1,2 piksel bağımsız hareket aranır. Olaylar çok sık yinelenmesin diye aynı iz için iki saniyelik çıktı aralığı uygulanır. Bunlar sahneye göre test edilmiş başlangıç değerleridir; genellenmiş bir insan algılayıcısı değildir.",
+      "layout": "visual",
       "cards": [
         [
           "ORB",
@@ -1790,13 +1980,14 @@
       "sources": [
         "orb",
         "homography"
-      ]
+      ],
+      "image": "ex_motion_stages.png"
     },
     {
       "title": "Homografi hangi varsayımla çalışıyor?",
       "message": "Baskın zemin tek düzlem gibi görünürse kamera hareketi telafi edilebilir.",
       "notes": "Homografi iki görüntüdeki tek düzlem arasındaki izdüşümsel ilişkiyi açıklar. Kırsal sahnede zemin büyük alan kaplasa da ağaç tepeleri ve binalar farklı derinliktedir. Uçak hareket ettikçe bu nesneler zemine göre farklı kayar; tek homografi hepsini hizalayamaz. Yanlış alarm örneğini daha sonra özellikle göstereceğiz. Detektörün sınırlarını bilmek, yalnız doğru kutuyu göstermekten daha öğreticidir.",
-      "layout": "cards",
+      "layout": "visual",
       "cards": [
         [
           "İyi koşul",
@@ -1814,12 +2005,13 @@
       "section": "UYGULAMA 4 · SABİT KANATLA HAREKET GÖZLEMİ",
       "sources": [
         "homography"
-      ]
+      ],
+      "image": "ex_parallax.png"
     },
     {
       "title": "İlk görüntü işleme denemesi neden zayıftı?",
       "message": "Düşük kontrastlı çimende yeterli eşleşme bulunmuyordu.",
-      "notes": "Kamerayı iyileştirdikten sonra bile ilk detektör düşük kontrastlı çimende homografi kuracak yeterli ORB ayrıntısını bulamadı. FAST eşiğini3 e düşürmek bu sahnede kullanılabilir eşleşmeleri artırdı. Örnek bir çiftte661 eşleşme ve yaklaşık95 yüzde içerdeş elde edildi. Eşiği düşürmek her zaman daha iyi değildir; gürültü de artabilir. Değişikliği aynı görüntülerde yeniden çalıştırıp hem doğru olayları hem yanlış alarmları karşılaştırdık.",
+      "notes": "Kamerayı iyileştirdikten sonra bile ilk detektör düşük kontrastlı çimende homografi kuracak yeterli ORB ayrıntısını bulamadı. FAST eşiğini3 e düşürmek bu sahnede kullanılabilir eşleşmeleri artırdı. Örnek bir çiftte661 eşleşme ve yaklaşık95 yüzde inlier elde edildi. Eşiği düşürmek her zaman daha iyi değildir; gürültü de artabilir. Değişikliği aynı görüntülerde yeniden çalıştırıp hem doğru olayları hem yanlış alarmları karşılaştırdık.",
       "layout": "cards",
       "cards": [
         [
@@ -1880,7 +2072,7 @@
       "title": "Canlı denemeden gerçek olay çıktısı",
       "message": "Yeşil kutu bir hareket adayıdır; uçak AUTO uçuşuna devam eder.",
       "notes": "Bu olay uçuş devam ederken canlı işçi tarafından üretildi. Çıktıdaki kutu görüntü tabanlı adaydır; değerlendirme katmanı daha sonra gerçek simülasyon kişi kutusuyla kesiştiğini doğruladı. İlk olayın hesaplanma gecikmesi bu örnekte yaklaşık0,77 sduvar saatidir. Bu değer tek olay örneğidir, gecikme garantisi değildir. Uçuşta yeni hedef waypoint’i veya GUIDED komutu gönderilmedi. Tam kareyi bağlam için, kırpımı ayrıntı için birlikte gösterin.",
-      "layout": "photo",
+      "layout": "zoom",
       "cards": [
         [
           "Kaynak anı",
@@ -1897,7 +2089,16 @@
       ],
       "section": "UYGULAMA 4 · SABİT KANATLA HAREKET GÖZLEMİ",
       "sources": [],
-      "image": "hareket.png"
+      "image": "hareket.png",
+      "zoom": "hareket_kirpim.png",
+      "bbox": [
+        594,
+        125,
+        34,
+        32
+      ],
+      "zoom_title": "Motion candidate",
+      "zoom_caption": "34 × 32 px · büyütülmüş crop"
     },
     {
       "title": "Olayın ayrıntısı ve hareket artığı",
@@ -1925,7 +2126,7 @@
       "title": "Canlı uçuşun sayısal sonucu",
       "message": "23 olay üretildi;19’u bağımsız kişi kutusuyla örtüştü.",
       "notes": "Bu sayılar tek canlı uçuşun olay sayılarıdır;23 farklı kişi ya da genel precision/recall anlamına gelmez. Değerlendirmede küçük ve dolgulu kırpımlar için IoU0,06 üstü ilişkilendirme kullanıldı. Aynı kişiden tekrar olay gelebilir; kaçırılan tüm insan anları etiketlenmediği için recall hesaplanmıyor. Detektör insan koordinatlarını giriş olarak kullanmaz. Bu kapsamı açıkça söylemek sonuçları karşılaştırılabilir ve dürüst tutar.",
-      "layout": "cards",
+      "layout": "stats",
       "cards": [
         [
           "23 olay",
@@ -1941,13 +2142,27 @@
         ]
       ],
       "section": "UYGULAMA 4 · SABİT KANATLA HAREKET GÖZLEMİ",
-      "sources": []
+      "sources": [],
+      "stats": [
+        [
+          "23",
+          "motion events"
+        ],
+        [
+          "19",
+          "evaluation-only person overlaps"
+        ],
+        [
+          "4",
+          "false alarms"
+        ]
+      ]
     },
     {
       "title": "Yanlış alarmı da inceleyelim",
       "message": "Ağaç ve parallax, insan olmasa da hareket artığı üretebilir.",
       "notes": "Bu görsel aynı final canlı uçuşta üretilen dört yanlış alarmdan biridir. Ağaç zemin düzleminden yukarıda olduğundan kamera hareketi sonrası aynı homografiyle tam hizalanmaz. Kalan hareket süreklilik filtresini aşabilir. Örnek yalnız başarılı olayları seçmenin sistemi olduğundan iyi göstereceğini hatırlatır. Gerçek uygulamada insan sınıflandırıcısı, daha güçlü hareket modeli veya ek doğrulama katmanı gerekebilir; bu haftada ana hedef AUTO uçuşu değiştirmeden görsel olay üretmektir.",
-      "layout": "photo",
+      "layout": "zoom",
       "cards": [
         [
           "Örnek",
@@ -1964,13 +2179,16 @@
       ],
       "section": "UYGULAMA 4 · SABİT KANATLA HAREKET GÖZLEMİ",
       "sources": [],
-      "image": "yanlis_alarm.png"
+      "image": "yanlis_alarm.png",
+      "zoom": "yanlis_alarm_kirpim.png",
+      "zoom_title": "False positive",
+      "zoom_caption": "Parallax / alignment residual"
     },
     {
       "title": "Tespitten sonra uçuş ne yaptı?",
       "message": "İlk olaydan yaklaşık317 s sonra AUTO iniş tamamlandı.",
-      "notes": "Bu süre olayın gerçekten üretildiği duvar saati ile auto_landed olayının duvar saati arasından hesaplandı:317,05 s. Böylece yalnız daha sonra kayıttan işlenmiş bir görüntüyü canlıymış gibi sunmuyoruz. Aynı süre boyunca kayıtlı silahlı uçuş modu10AUTOolarak kaldı. Görüntü işçisinin gönderdiği uçuş komutu sayısı sıfırdır. Uygulamanın başarısı tespit kutusu yanında görevin kesilmeden tamamlanmasıyla ölçülür.",
-      "layout": "flow",
+      "notes": "Bu süre olayın gerçekten üretildiği duvar saati ile auto_landed olayının duvar saati arasından hesaplandı:317,05 s. Böylece yalnız daha sonra kayıttan işlenmiş bir görüntüyü canlıymış gibi sunmuyoruz. Aynı süre boyunca kayıtlı silahlı uçuş modu10 AUTOolarak kaldı. Görüntü işçisinin gönderdiği uçuş komutu sayısı sıfırdır. Uygulamanın başarısı tespit kutusu yanında görevin kesilmeden tamamlanmasıyla ölçülür.",
+      "layout": "visual",
       "cards": [
         [
           "Olay",
@@ -1990,7 +2208,8 @@
         ]
       ],
       "section": "UYGULAMA 4 · SABİT KANATLA HAREKET GÖZLEMİ",
-      "sources": []
+      "sources": [],
+      "image": "ex_event_timeline.png"
     },
     {
       "title": "Uygulama: alarmı üret, rotayı koru",
@@ -2037,7 +2256,7 @@
         ],
         [
           "worlds/ · models/",
-          "Üç dünya + yerel3Dvarlıklar",
+          "Üç dünya + yerel 3D varlıklar",
           "Menüyle doğru dünyayı aç"
         ],
         [
@@ -2052,7 +2271,7 @@
         ],
         [
           "products/",
-          "Mozaik · PLY · hareket olayları",
+          "Mosaic · Gaussian PLY · motion events",
           "Sonucu incele ve raporla"
         ]
       ]
@@ -2079,7 +2298,7 @@
     {
       "title": "Son denemeler: ne doğrulandı?",
       "message": "Sunum, çalışan son kayıtlar hazır olduktan sonra üretildi.",
-      "notes": "Tüm sonuçlar27Ekim2026 tarihinde aynı native Windows ortamında kaydedildi. İniş başarısı disarm ve yere yakın irtifa ile doğrulanır. Sunumdaki sayılar tek örnek dünya ve kayıt ailesine aittir; farklı bilgisayar zamanlaması veya görev değişikliğiyle birebir aynı sayılar beklenmeyebilir. Beklenen nitel sonuçlar korunmalıdır: doğru AUTO rota, gerçek RGB veri, uygulama çıktısı ve açık sınırlamalar. Detaylı metrikler dogrulama/final_summary.json dosyasındadır.",
+      "notes": "AUTO uçuşlar27 Ekim2026 tarihinde doğrulandı. Gaussian Splatting ve sunum revizyonu28 Ekim2026 tarihinde eklendi. Bina modelinin train/hold-out ayrımı initialization aşamasından başlar. Güncel metrikler dogrulama/gaussian_validation.json içindedir. Önceki sparse point cloud artık nihai 3D ürün değildir.",
       "layout": "table",
       "cards": [],
       "section": "SONUÇLARI ÜRETME VE DEĞERLENDİRME",
@@ -2108,7 +2327,7 @@
         [
           "3D bina",
           "AUTO ·18/23 m · LAND",
-          "108 fotoğraf ·1787 nokta"
+          "108 RGB · trained Gaussian PLY"
         ],
         [
           "Sabit kanat",
@@ -2186,7 +2405,7 @@
     {
       "title": "Teslim: sonucu kanıtlayan kısa bir rapor",
       "message": "Görev dosyası + uçuş kanıtı + ürün + sınırlama yeterlidir.",
-      "notes": "Tüm ham videoyu veya binlerce kareyi teslim istemek yerine kısa ve ölçülebilir rapor isteyin. İlaçlamada kaplama ve PWM; haritalamada fotoğraf sayısı ve mozaik; binada yönelim ve seyrek bulut; sabit kanatta bir doğru olay, bir yanlış alarm ve uçuş devam kanıtı seçilebilir. Tek bir başarılı ekran görüntüsü yeterli değildir. Öğrencinin sonuç için doğru terimi seçmesi değerlendirmeye dahildir: nominal GSD, ideal kaplama, seyrek bulut ve hareket adayı.",
+      "notes": "Tüm ham videoyu veya binlerce kareyi teslim istemek yerine kısa ve ölçülebilir rapor isteyin. İlaçlamada kaplama ve PWM; haritalamada fotoğraf sayısı ve mozaik; binada yönelim, Gaussian PLY ve hold-out render; sabit kanatta bir doğru olay, bir yanlış alarm ve uçuş devam kanıtı seçilebilir. Tek bir başarılı ekran görüntüsü yeterli değildir. Öğrencinin sonuç için doğru terimi seçmesi değerlendirmeye dahildir: nominal GSD, ideal kaplama, Gaussian model ve hareket adayı.",
       "layout": "cards",
       "cards": [
         [
@@ -2255,7 +2474,9 @@
         "homography",
         "triangulate",
         "sfm",
-        "repo"
+        "repo",
+        "gs",
+        "brush"
       ],
       "headers": [
         "Konu",
@@ -2275,8 +2496,8 @@
           "ardupilot.org → Plane → Automatic takeoff / landing"
         ],
         [
-          "Görüntü geometrisi",
-          "docs.opencv.org · colmap.github.io/tutorial.html"
+          "3D Gaussian Splatting",
+          "INRIA3DGS paper · Brush0.3.0 · OpenCV / COLMAP"
         ],
         [
           "Bu haftanın tüm dosyaları",
@@ -2302,6 +2523,8 @@
     "homography": "https://docs.opencv.org/4.x/d1/de0/tutorial_py_feature_homography.html",
     "triangulate": "https://docs.opencv.org/4.x/d9/d0c/group__calib3d.html",
     "sfm": "https://colmap.github.io/tutorial.html",
-    "repo": "https://github.com/esrefsamilzamanoglu/uav-course/tree/main/haftalar/02"
+    "repo": "https://github.com/esrefsamilzamanoglu/uav-course/tree/main/haftalar/02",
+    "gs": "https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/",
+    "brush": "https://github.com/ArthurBrussee/brush/tree/v0.3.0"
   }
 }

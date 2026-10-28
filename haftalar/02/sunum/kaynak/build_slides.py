@@ -10,9 +10,13 @@ from pptx.enum.shapes import MSO_SHAPE,MSO_CONNECTOR
 from pptx.enum.text import PP_ALIGN,MSO_ANCHOR
 from PIL import Image
 from curriculum import SLIDES,SOURCES
+from revise_curriculum import revise
+SLIDES=revise(SLIDES,SOURCES)
 def typography(v):
     if isinstance(v,str):
-        return re.sub(r'(?<=[0-9])(?=[a-zçğıöşü])',' ',v)
+        v=re.sub(r'(?<=[0-9])(?=[a-zçğıöşüA-CE-Z])',' ',v)
+        v=re.sub(r'(?<=[a-zçğıöşü])(?=[23]D)',' ',v)
+        return re.sub(r'(?<=[23]D)(?=[a-zçğıöşü])',' ',v)
     if isinstance(v,dict):return {k:(val if k in ('image','images','sources','code','diagram','layout','section') else typography(val)) for k,val in v.items()}
     if isinstance(v,(tuple,list)):return [typography(x) for x in v]
     return v
@@ -110,16 +114,53 @@ def diagram(s,kind):
         text(s,'450 m',1.2,5.65,2,.4,18);text(s,'240 m',4.25,5.65,2,.4,18)
 def render(d,n):
     s=base(d,n);layout=d.get('layout','photo');items=d.get('cards',[])
-    if layout=='cover':
+    if layout=='chapter':
+        s.background.fill.fore_color.rgb=rgb(NAVY)
+        for sh in list(s.shapes):
+            el=sh._element;el.getparent().remove(el)
+        text(s,d['chapter'],.7,.45,3.8,1.8,86,'385777',True)
+        text(s,d['title'],.75,2.3,4.15,2.1,29,WHITE,True)
+        text(s,d.get('subtitle',d['message']),.78,4.8,3.9,1.25,18,'9DDED7')
+        image(s,d['image'],5.1,.8,7.6,5.8)
+        rect(s,.78,6.7,.65,.08,TEAL)
+        text(s,d['message'],1.65,6.58,10.8,.58,17,WHITE)
+        text(s,f'{n:02d} / {len(SLIDES):02d}',11.8,7.18,.85,.2,9,'BDCEE2',align=PP_ALIGN.RIGHT)
+    elif layout=='cover':
         s.background.fill.fore_color.rgb=rgb(NAVY)
         for sh in list(s.shapes):
             el=sh._element;el.getparent().remove(el)
         text(s,'İHA YAZILIMI\nVE SİMÜLASYONU',.75,.65,8,1.6,36,WHITE,True)
         text(s,'2. HAFTA  /  AUTO GÖREVLER',.8,2.4,8,.55,24,'8DD8D1',True)
         text(s,'Gerçek problemlerden simülasyon uygulamalarına',.8,3.05,11,.5,21,WHITE)
-        for i,name in enumerate(['mapping_dunya.png','building_dunya.png','plane_dunya.png']):image(s,name,.8+i*4.02,3.85,3.85,2.3)
+        for i,name in enumerate(['mapping_dunya.png','gaussian_final.png','plane_dunya.png']):image(s,name,.8+i*4.02,3.85,3.85,2.3)
         text(s,'Birlik Akademi · Bilişim Programları  |  2026 Güz Dönemi',.8,6.33,11.8,.4,16,WHITE)
         text(s,'Arş. Gör. Eşref Şamil Zamanoğlu  ·  Birlik Vakfı Sakarya Şubesi',.8,6.85,11.8,.35,15,'C7D9EF')
+    elif layout=='visual':
+        image(s,d['image'],.62,1.4,12.08,4.98)
+    elif layout=='gallery':
+        for i,name in enumerate(d['images']):
+            x=.65+i*4.12;image(s,name,x,1.6,3.8,3.9)
+            title,body=items[i];text(s,title,x+.03,5.6,3.75,.42,20,NAVY,True);text(s,body,x+.03,6.05,3.75,.35,15)
+    elif layout=='spotlight':
+        image(s,d['image'],.7,1.5,8.15,4.85)
+        for i,(value,label) in enumerate(d['stats']):
+            y=1.65+i*1.62;text(s,value,9.15,y,3.4,.8,40,TEAL,True);text(s,label,9.18,y+.9,3.35,.45,16,NAVY)
+    elif layout=='stats':
+        for i,(value,label) in enumerate(d['stats']):
+            x=.7+i*4.15;text(s,value,x,2.1,3.8,1.6,76,TEAL if i<2 else GOLD,True,align=PP_ALIGN.CENTER);text(s,label,x,4.3,3.8,1.05,23,NAVY,True,align=PP_ALIGN.CENTER)
+        text(s,'Olay sayısı ≠ kişi sayısı · evaluation-only association',1.1,5.85,11.2,.4,19,MUTED,align=PP_ALIGN.CENTER)
+    elif layout=='formula':
+        text(s,d['formula'],.85,1.7,11.7,1,46,NAVY,True,align=PP_ALIGN.CENTER)
+        text(s,d['example'],.85,3.2,11.7,.8,28,TEAL,True,align=PP_ALIGN.CENTER)
+        for i,(var,label) in enumerate(d['legend']):
+            x=.9+i*4.1;circle(s,x,4.8,.65,TEAL);text(s,var,x+.14,4.9,.45,.43,24,WHITE,True);text(s,label,x+.85,4.83,3.1,1.1,18)
+    elif layout=='zoom':
+        image(s,d['image'],.7,1.55,8.2,4.8);image(s,d['zoom'],9.4,1.85,2.85,2.85)
+        rect(s,9.35,1.8,2.95,.045,GOLD);rect(s,9.35,4.7,2.95,.045,GOLD)
+        text(s,d['zoom_title'],9.1,5,3.55,.45,21,NAVY,True);text(s,d['zoom_caption'],9.1,5.6,3.55,.66,17)
+        if d.get('bbox'):
+            iw,ih=Image.open(ASSETS/d['image']).size;k=min(8.2/iw,4.8/ih);xx=.7+(8.2-iw*k)/2;yy=1.55+(4.8-ih*k)/2
+            bx,by,bw,bh=d['bbox'];line(s,xx+(bx+bw)*k,yy+(by+bh/2)*k,9.35,3.2,GOLD,1.4)
     elif layout in ('photo','diagram'):
         rect(s,.65,1.55,8.3,4.75,WHITE,radius=True)
         if layout=='photo':image(s,d['image'],.72,1.61,8.16,4.61)

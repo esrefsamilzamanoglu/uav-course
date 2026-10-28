@@ -192,15 +192,126 @@
     "limitations": "Known simulator camera poses; z=0 plane; not a DEM orthophoto or centimetre accuracy claim."
   },
   "building_product": {
-    "method": "SIFT + image matching + known-pose calibrated triangulation; sparse reconstruction",
-    "photos": 108,
-    "pairs": 141,
-    "vertices": 1787,
-    "height_span_m": 15.940620637845795,
-    "median_distance_to_main_building_surfaces_m": 0.07295269640823676,
-    "camera_poses_source": "recorded Gazebo camera poses, not estimated SfM poses",
+    "method": "3D Gaussian Splatting / Brush0.3.0",
+    "steps": 6000,
+    "gaussians": 45000,
+    "training_images": 94,
+    "holdout_images": 14,
+    "resolution": [
+      640,
+      427
+    ],
+    "mean_holdout_psnr_db": 27.99600652550785,
+    "mean_holdout_ssim": 0.9137379493901105,
+    "mean_central_building_roi_psnr_db": 30.61154940410139,
+    "mean_step1000_psnr_db": 22.076123375412585,
+    "holdout_used_in_training": false,
+    "holdout_used_in_sparse_initialization": false,
+    "camera_poses": "known Gazebo poses; not image-estimated SfM poses",
     "source_mesh_read": false,
-    "limitations": "No dense mesh, texture baking or bundle adjustment; simulator poses supply scale."
+    "flight_control_commands_sent": 0,
+    "images": [
+      {
+        "image": "images/0000.png",
+        "psnr_db": 34.20374400133752,
+        "ssim": 0.9514399436229192,
+        "central_building_roi_psnr_db": 37.78490966841842,
+        "step1000_psnr_db": 20.600328834619607
+      },
+      {
+        "image": "images/0008.png",
+        "psnr_db": 25.30556968197956,
+        "ssim": 0.9287699896476811,
+        "central_building_roi_psnr_db": 25.54356499104314,
+        "step1000_psnr_db": 20.001928403711148
+      },
+      {
+        "image": "images/0016.png",
+        "psnr_db": 24.46958481642308,
+        "ssim": 0.9068044802631882,
+        "central_building_roi_psnr_db": 24.88995679634538,
+        "step1000_psnr_db": 19.397999502460983
+      },
+      {
+        "image": "images/0024.png",
+        "psnr_db": 30.105255488028718,
+        "ssim": 0.9301333729555797,
+        "central_building_roi_psnr_db": 34.30419122095222,
+        "step1000_psnr_db": 19.25586945999012
+      },
+      {
+        "image": "images/0032.png",
+        "psnr_db": 23.87976421668442,
+        "ssim": 0.9138545625351481,
+        "central_building_roi_psnr_db": 32.227032204298766,
+        "step1000_psnr_db": 18.43615760913549
+      },
+      {
+        "image": "images/0040.png",
+        "psnr_db": 21.01583430367679,
+        "ssim": 0.876132904297551,
+        "central_building_roi_psnr_db": 33.331870444707775,
+        "step1000_psnr_db": 18.02740899179344
+      },
+      {
+        "image": "images/0048.png",
+        "psnr_db": 25.027233284808673,
+        "ssim": 0.9096245734190059,
+        "central_building_roi_psnr_db": 30.599350202770186,
+        "step1000_psnr_db": 20.62000350731653
+      },
+      {
+        "image": "images/0056.png",
+        "psnr_db": 35.79203745994566,
+        "ssim": 0.9552864391949981,
+        "central_building_roi_psnr_db": 37.36060430753455,
+        "step1000_psnr_db": 26.741736697091596
+      },
+      {
+        "image": "images/0064.png",
+        "psnr_db": 27.471155072833334,
+        "ssim": 0.8880773292942628,
+        "central_building_roi_psnr_db": 25.435031606012117,
+        "step1000_psnr_db": 24.226247589233086
+      },
+      {
+        "image": "images/0072.png",
+        "psnr_db": 26.780270521692696,
+        "ssim": 0.8794654214874691,
+        "central_building_roi_psnr_db": 25.37322783287681,
+        "step1000_psnr_db": 24.166619328189686
+      },
+      {
+        "image": "images/0080.png",
+        "psnr_db": 31.799925542664596,
+        "ssim": 0.9367738329690624,
+        "central_building_roi_psnr_db": 34.969132151944194,
+        "step1000_psnr_db": 25.224732272812
+      },
+      {
+        "image": "images/0088.png",
+        "psnr_db": 26.339666593226355,
+        "ssim": 0.8476813996213862,
+        "central_building_roi_psnr_db": 25.212609049922413,
+        "step1000_psnr_db": 23.02875633226286
+      },
+      {
+        "image": "images/0096.png",
+        "psnr_db": 27.939866694759232,
+        "ssim": 0.9243319235469891,
+        "central_building_roi_psnr_db": 26.97134160338143,
+        "step1000_psnr_db": 23.995488676570456
+      },
+      {
+        "image": "images/0104.png",
+        "psnr_db": 31.8141836790492,
+        "ssim": 0.9439551186063072,
+        "central_building_roi_psnr_db": 34.55886957721202,
+        "step1000_psnr_db": 25.34245005058919
+      }
+    ],
+    "limitations": "Appearance metrics on synthetic images, not geometric survey accuracy. A Gaussian radiance representation is not a watertight mesh. Central ROI is a fixed image crop, not a semantic ground-truth mask.",
+    "passed": true
   },
   "plane_product": {
     "method": "ORB + RANSAC ground homography + compensated residual + temporal persistence",
@@ -230,5 +341,14 @@
     "observer_flight_commands": 0,
     "tested": true
   },
-  "all_required_passed": true
+  "all_required_passed": true,
+  "gaussian_revision": {
+    "date": "2026-10-28",
+    "training_pipeline_passed": true,
+    "source_capture_run": "20261027-183245-building",
+    "poses": "known Gazebo poses",
+    "no_source_mesh": true,
+    "no_flight_control_commands": true,
+    "model_sha256": "7976371b9c396a65b744b1e9dfe234d2763c7943863d1a78850fcadc13f79e3b"
+  }
 }

@@ -1,9 +1,10 @@
 {
-  "files": 146,
-  "total_bytes": 59536340,
+  "files": 215,
+  "total_bytes": 87093299,
   "python_syntax": "PASS",
   "json_parse": "PASS",
   "sdf_parse_and_course_assets": "PASS",
   "runtime_executables_or_archives": 0,
-  "unused_generated_dae_exports_excluded": true
+  "unused_generated_dae_exports_excluded": true,
+  "canonical_pdf_source": "Hafta-02-Sunum-v2.pdf"
 }
