@@ -1,6 +1,14 @@
 # 2. hafta — hazırlık ve test kaydı
 
-## 28 Ekim 2026 — güncel v2
+## 28 Ekim 2026 — görsel anlatım v3
+
+- Önceki sunumun 40 metin/tablo/liste/işlem/formül/sayısal sonuç sayfası tarandı; her birine ayrı built-in image_gen çağrısıyla ilgili mekanizmayı anlatan çizim üretildi.
+- Kurulumdaki yerel yazılım bağlantısı, CONDITION/DO ayrımı, mesafeli tetik ve sabit kanat çizimleri görsel kontrolün ardından image_gen ile düzeltildi.
+- 40 özgün PNG, sunum için aynı çözünürlükte JPEG kopyaları, tam prompt seti, düzeltme promptları ve SHA256 köken listesi paylaşıldı. API/CLI fallback kullanılmadı.
+- Sayfa sayısı 93 kaldı. Tablolar/komutlar metin olarak korundu; çizimler ayrı yerleşimlerle yanlarına eklendi. Tüm yeni görseller kavramsal çizim olarak etiketlendi.
+- Yeni PDF `Hafta-02-Sunum-v3.pdf`; eski public `Hafta-02-Sunum.pdf` bağlantısı da güncel PDF içeriğine yönelir.
+
+## 28 Ekim 2026 — önceki v2
 
 - Bina ana çıktısı sparse point cloud yerine gerçek **3D Gaussian Splatting / Brush0.3.0** oldu.
 - Aynı gerçek AUTO capture:108 RGB.94train /14hold-out; initialization yalnız train karelerinden1298nokta.

@@ -1,6 +1,6 @@
 # 2. hafta — AUTO görevler ve uygulamalar
 
-[Güncel sunumu aç (v2 PDF · 93 sayfa)](Hafta-02-Sunum-v2.pdf) · [Düzenlenebilir PowerPoint](Hafta-02-Sunum.pptx) · [Eğitmen notları](Hafta-02-Egitmen-Notlari.txt)
+[Güncel sunumu aç (v3 PDF · 93 sayfa)](Hafta-02-Sunum-v3.pdf) · [Düzenlenebilir PowerPoint](Hafta-02-Sunum.pptx) · [Eğitmen notları](Hafta-02-Egitmen-Notlari.txt)
 
 İlk haftanın anlatım düzeniyle: **aracı ve kamerayı tanı → görevi planla → simülasyonda uygula → veriden ürün çıkar → sonucu değerlendir**. Önerilen süre: 80 dakika anlatım, 30 dakika canlı uygulama, 10 dakika değerlendirme.
 
@@ -34,6 +34,8 @@ Tüm sahneler ve görevler **sunum hazırlanmadan önce** gerçek Gazebo/SITL u�
 Metrikler ve kanıt özeti: [dogrulama/final_summary.json](dogrulama/final_summary.json). Görsellerin hangi gerçek kayıttan geldiği ve SHA256 değerleri: [provenance.json](sunum/gorseller/provenance.json).
 
 **28 Ekim revizyonu:** bina örneği sparse point cloud yerine gerçek Gaussian Splatting optimizasyonuna geçirildi. Sunumda yerleşik İngilizce teknik terimler korundu; camera footprint, overlap, NAV/DO zamanlaması, Gaussian projection, alpha compositing ve motion compensation için yeni şemalar eklendi. Tekrarlanan kart düzenleri; bölüm açılışları, büyük görseller, zoom/crop, checkpoint ve reference/render karşılaştırmalarıyla çeşitlendirildi.
+
+**Görsel anlatım revizyonu (v3):** yalnız tablo, liste, işlem adımları, formül veya sayılardan oluşan **40 sayfanın tamamına**, built-in **image_gen** ile konuya özel açıklayıcı çizimler üretildi. Tablolar, komutlar ve açıklamalar düzenlenebilir metin olarak korundu; görseller yanlarına yerleştirildi. Sunum **93 sayfa** olarak kaldı. Çizimler “Kavramsal çizim · AI” etiketi taşır; gerçek simülasyon kaydı veya ölçülmüş çıktı olarak sunulmaz. [Görseller ve üretim promptları](sunum/uretilen_gorseller/README.md) · [Görsel kökenleri](sunum/uretilen_gorseller/provenance.json).
 
 **Sonuçların kapsamı:** mozaik düz zemin ve bilinen simülasyon pozlarını kullanır; DEM ortofotosu veya ölçülmüş saha doğruluğu değildir. Gaussian model görünüş üretir; triangle mesh değildir. Kamera pozları Gazebo'dan bilinir; image-estimated SfM yapılmış gibi sunulmaz. Gimbal ideal kinematiktir. İlaçlama damlacık fiziği veya gerçek debi ölçümü değildir. Hareket işçisi insan sınıflandırıcısı değildir; olay sayıları kişi sayısı veya genel precision/recall sonucu değildir.
 

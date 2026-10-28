@@ -1297,7 +1297,7 @@
       ],
       "section": "UYGULAMA 2 · 2D TARLA HARİTALAMA",
       "sources": [],
-      "code": ".\\.local\\venv\\Scripts\\python.exe .\\tools\\mosaic_2d.py\n  \"UCUS_KLASORU\""
+      "code": ".\\.local\\venv\\Scripts\\python.exe `\n  .\\tools\\mosaic_2d.py `\n  \"UCUS_KLASORU\""
     },
     {
       "title": "Binayı bu kez dolu yüzeylerle görelim",
@@ -2293,7 +2293,7 @@
       ],
       "section": "SONUÇLARI ÜRETME VE DEĞERLENDİRME",
       "sources": [],
-      "code": ".\\.local\\venv\\Scripts\\python.exe .\\tools\\report_run.py\n  \"UCUS_KLASORU\""
+      "code": ".\\.local\\venv\\Scripts\\python.exe `\n  .\\tools\\report_run.py `\n  \"UCUS_KLASORU\""
     },
     {
       "title": "Son denemeler: ne doğrulandı?",

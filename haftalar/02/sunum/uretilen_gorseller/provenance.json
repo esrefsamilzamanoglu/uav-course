@@ -1,0 +1,811 @@
+{
+  "mode": "built-in image_gen",
+  "illustrated_pages": 40,
+  "deck_pages": 93,
+  "scope": "All previously cards/table/flow/code/formula/stats-only pages now include a subject-specific illustration.",
+  "limitations": "Conceptual drawings explain mechanisms; exact route geometry and performance claims come from recorded simulation evidence, not these images.",
+  "prompts": "prompts.json",
+  "edits": "generation-record.json",
+  "assets": [
+    {
+      "slide": 2,
+      "title": "Bugün neyi yapabiliyor olacağız?",
+      "kind": "AI-generated conceptual teaching illustration",
+      "mode": "built-in image_gen",
+      "is_simulation_evidence": false,
+      "geometry": "schematic, not measured flight geometry",
+      "source": "slide-02.png",
+      "source_sha256": "70f661013c34391794205907b1e1682e150cae5d47aa7d02513f621a20a7a494",
+      "slide_copy": "slide-02.jpg",
+      "slide_copy_sha256": "ad97202d586d0c5189a40084aa05313fecfd62d1dfbf94858ddf2b71dddc2e6e",
+      "dimensions": [
+        1122,
+        1402
+      ],
+      "encoding": "Windows JPEG codec quality 92, original dimensions, no content edits",
+      "generated_source_filename": "exec-745a71e7-3541-4ec7-990c-680e41b57a6a.png",
+      "edit_prompt": null,
+      "review": "accepted: clear plan-flight-evidence story, no text"
+    },
+    {
+      "slide": 4,
+      "title": "Dört uygulama, dört farklı çıktı",
+      "kind": "AI-generated conceptual teaching illustration",
+      "mode": "built-in image_gen",
+      "is_simulation_evidence": false,
+      "geometry": "schematic, not measured flight geometry",
+      "source": "slide-04.png",
+      "source_sha256": "45402fba80f1db9bbc69ded8edf970711a7cdb6c7b74a9f2d64f2243a13f8a5c",
+      "slide_copy": "slide-04.jpg",
+      "slide_copy_sha256": "c52e88bb4ffa6a97e4311373a412ca5d9c437630b5f021fef4083a1eca75668b",
+      "dimensions": [
+        1122,
+        1402
+      ],
+      "encoding": "Windows JPEG codec quality 92, original dimensions, no content edits",
+      "generated_source_filename": "exec-2f1845ab-d4da-432f-b615-caee82427a27.png",
+      "edit_prompt": null,
+      "review": "accepted after visual inspection: relevant conceptual illustration, no numerical test claims"
+    },
+    {
+      "slide": 5,
+      "title": "Terimleri arayüzde gördüğümüz gibi kullanalım",
+      "kind": "AI-generated conceptual teaching illustration",
+      "mode": "built-in image_gen",
+      "is_simulation_evidence": false,
+      "geometry": "schematic, not measured flight geometry",
+      "source": "slide-05.png",
+      "source_sha256": "a2895bcaf9246ed1c6291d867c00f1a3cb95adc616656aeb41ae6059fae0711c",
+      "slide_copy": "slide-05.jpg",
+      "slide_copy_sha256": "17a8eb105b1d0cc9763a55456b226e694e15a1379cb24dce7943753e971b40d6",
+      "dimensions": [
+        1122,
+        1402
+      ],
+      "encoding": "Windows JPEG codec quality 92, original dimensions, no content edits",
+      "generated_source_filename": "exec-62210786-2ae6-46f4-90fb-9db15fa3eabc.png",
+      "edit_prompt": null,
+      "review": "accepted after visual inspection: relevant conceptual illustration, no numerical test claims"
+    },
+    {
+      "slide": 7,
+      "title": "AUTO modunun sınırını koruyalım",
+      "kind": "AI-generated conceptual teaching illustration",
+      "mode": "built-in image_gen",
+      "is_simulation_evidence": false,
+      "geometry": "schematic, not measured flight geometry",
+      "source": "slide-07.png",
+      "source_sha256": "37fb3ece12d5cfd63ea013713365df7e00720797fef24a60a2f8b860244cfe14",
+      "slide_copy": "slide-07.jpg",
+      "slide_copy_sha256": "8b74cdd27693015edbf12ac67b941c7e449ae447e7858b1289af331e6e862867",
+      "dimensions": [
+        1122,
+        1402
+      ],
+      "encoding": "Windows JPEG codec quality 92, original dimensions, no content edits",
+      "generated_source_filename": "exec-783a2168-b50b-46fc-9b44-e15243daded3.png",
+      "edit_prompt": null,
+      "review": "accepted after visual inspection: relevant conceptual illustration, no numerical test claims"
+    },
+    {
+      "slide": 8,
+      "title": "Doğrulanan ortak ortam",
+      "kind": "AI-generated conceptual teaching illustration",
+      "mode": "built-in image_gen",
+      "is_simulation_evidence": false,
+      "geometry": "schematic, not measured flight geometry",
+      "source": "slide-08.png",
+      "source_sha256": "37a75145b66868e72ac9aa87abc175adf34bc6a7e7c47e54728697cf45bd0eaf",
+      "slide_copy": "slide-08.jpg",
+      "slide_copy_sha256": "b5bbfd7acf70f649669b7d007e1d9facc16619f476d1598730eee11a50a69773",
+      "dimensions": [
+        1122,
+        1402
+      ],
+      "encoding": "Windows JPEG codec quality 92, original dimensions, no content edits",
+      "generated_source_filename": "exec-b4586820-bb18-4f2f-9718-988649570850.png",
+      "edit_prompt": null,
+      "review": "accepted after visual inspection: relevant conceptual illustration, no numerical test claims"
+    },
+    {
+      "slide": 15,
+      "title": "Kamera yönü ArduPilot’tan geliyor",
+      "kind": "AI-generated conceptual teaching illustration",
+      "mode": "built-in image_gen",
+      "is_simulation_evidence": false,
+      "geometry": "schematic, not measured flight geometry",
+      "source": "slide-15.png",
+      "source_sha256": "8055d3e960476144acdcb6f8174d261da01bb1dee437ab67ea2f0e95e422af1a",
+      "slide_copy": "slide-15.jpg",
+      "slide_copy_sha256": "2385628533b556a650ffe037be9459af4ba932fab13aecc20127c87a849b1a8d",
+      "dimensions": [
+        1122,
+        1402
+      ],
+      "encoding": "Windows JPEG codec quality 92, original dimensions, no content edits",
+      "generated_source_filename": "exec-ac2757e8-ac32-4c75-acf7-f750ca995ffc.png",
+      "edit_prompt": null,
+      "review": "accepted after visual inspection: relevant conceptual illustration, no numerical test claims"
+    },
+    {
+      "slide": 16,
+      "title": "Tanıtım görevini satır satır okuyalım",
+      "kind": "AI-generated conceptual teaching illustration",
+      "mode": "built-in image_gen",
+      "is_simulation_evidence": false,
+      "geometry": "schematic, not measured flight geometry",
+      "source": "slide-16.png",
+      "source_sha256": "73005a56c6fb173462c5dfa3719d66cb3ca233df6d41576655993729e700b234",
+      "slide_copy": "slide-16.jpg",
+      "slide_copy_sha256": "c02e4a76ab04aae70faba015c1d1cae3964ab0409bfc19e45100cc208c9cb6a6",
+      "dimensions": [
+        1122,
+        1402
+      ],
+      "encoding": "Windows JPEG codec quality 92, original dimensions, no content edits",
+      "generated_source_filename": "exec-112fdac2-00e8-45bd-9571-2b90fc92e78b.png",
+      "edit_prompt": null,
+      "review": "accepted after visual inspection: relevant conceptual illustration, no numerical test claims"
+    },
+    {
+      "slide": 18,
+      "title": "Öğrencinin başlangıç adımları",
+      "kind": "AI-generated conceptual teaching illustration",
+      "mode": "built-in image_gen",
+      "is_simulation_evidence": false,
+      "geometry": "schematic, not measured flight geometry",
+      "source": "slide-18.png",
+      "source_sha256": "847c0b688d4174be7f5e94a7b96d512bc81b4a11268140d428b043f3cda8870a",
+      "slide_copy": "slide-18.jpg",
+      "slide_copy_sha256": "914b6117d901f8cec4f5d66f1ecf69b7ca3079fff0a0e1a90fad400738c76bd6",
+      "dimensions": [
+        1122,
+        1402
+      ],
+      "encoding": "Windows JPEG codec quality 92, original dimensions, no content edits",
+      "generated_source_filename": "exec-591a1bc8-9118-41ef-aebe-b5781267022e.png",
+      "edit_prompt": "Edit this conceptual teaching illustration. Preserve its pale-blue/navy/teal/gold style and first three setup stages. Replace the ENTIRE bottom stage: show two application windows on ONE computer monitor, left a 3D farm simulation containing a QUADROTOR and right a waypoint planning map, connected by a thin abstract local software link between the windows. Remove the physical aircraft on the desk, remove its cable, remove all fixed-wing/VTOL hybrid hardware. It must clearly mean two local software processes connecting on the same computer, not plugging a real aircraft in. No text or numbers.",
+      "review": "revised for technical clarity"
+    },
+    {
+      "slide": 19,
+      "title": "Mission Planner’dan görevi uçuralım",
+      "kind": "AI-generated conceptual teaching illustration",
+      "mode": "built-in image_gen",
+      "is_simulation_evidence": false,
+      "geometry": "schematic, not measured flight geometry",
+      "source": "slide-19.png",
+      "source_sha256": "ee14dca8e6246479d91b8198836e80233799ed4d28afabdd149b788528e5e907",
+      "slide_copy": "slide-19.jpg",
+      "slide_copy_sha256": "03d43b958077ffafe36bb729ae0b269d4a4dcaacd268f1318678c633a24746c2",
+      "dimensions": [
+        1122,
+        1402
+      ],
+      "encoding": "Windows JPEG codec quality 92, original dimensions, no content edits",
+      "generated_source_filename": "exec-6a9946f0-a4ce-4979-a87c-bd8140723c81.png",
+      "edit_prompt": null,
+      "review": "accepted after visual inspection: relevant conceptual illustration, no numerical test claims"
+    },
+    {
+      "slide": 20,
+      "title": "NAV, DO ve CONDITION ne yapar?",
+      "kind": "AI-generated conceptual teaching illustration",
+      "mode": "built-in image_gen",
+      "is_simulation_evidence": false,
+      "geometry": "schematic, not measured flight geometry",
+      "source": "slide-20.png",
+      "source_sha256": "31fd72c90bc0cbcc274bfa48a006b5fd8672fc63fa3d232972392138ccefc53e",
+      "slide_copy": "slide-20.jpg",
+      "slide_copy_sha256": "909e774c4edafcc444acbde1d0b78e1a10807eeaf7335423b40e31305726851c",
+      "dimensions": [
+        1122,
+        1402
+      ],
+      "encoding": "Windows JPEG codec quality 92, original dimensions, no content edits",
+      "generated_source_filename": "exec-926db679-04cf-46e7-b67f-fe8d175935c6.png",
+      "edit_prompt": "Correct this mission-engine teaching diagram. Preserve farm, drone, main blue route and waypoint spheres. The clock must NOT gate or block the main flight path. Remove the gold gate spanning the main navigation route. Move the clock and a small gold gate onto ONLY a dashed payload-action branch coming from the flight route toward a camera-shutter icon. Show the main NAV route proceeding uninterrupted to the next sphere; the delayed DO camera action on its own branch may be crossed out when NAV advances. Preserve pale blue/navy/teal/gold, no text, no numbers. This distinction is critical: CONDITION delays DO actions, not navigation.",
+      "review": "revised for technical clarity"
+    },
+    {
+      "slide": 22,
+      "title": "Sürümle birlikte parametre adları da değişir",
+      "kind": "AI-generated conceptual teaching illustration",
+      "mode": "built-in image_gen",
+      "is_simulation_evidence": false,
+      "geometry": "schematic, not measured flight geometry",
+      "source": "slide-22.png",
+      "source_sha256": "42a35fc490d4fed0fce1ba11f1a01a42a2fc2994aeb809d95a6fc77ecceb8399",
+      "slide_copy": "slide-22.jpg",
+      "slide_copy_sha256": "18d7ca5c232b5cad1154978994d5643377d24e0a504b7229abe3b5157a49521f",
+      "dimensions": [
+        1122,
+        1402
+      ],
+      "encoding": "Windows JPEG codec quality 92, original dimensions, no content edits",
+      "generated_source_filename": "exec-35f424c2-f226-4191-b85a-3e13824b2289.png",
+      "edit_prompt": null,
+      "review": "accepted after visual inspection: relevant conceptual illustration, no numerical test claims"
+    },
+    {
+      "slide": 25,
+      "title": "Aynı tarla, farklı görev geometrisi",
+      "kind": "AI-generated conceptual teaching illustration",
+      "mode": "built-in image_gen",
+      "is_simulation_evidence": false,
+      "geometry": "schematic, not measured flight geometry",
+      "source": "slide-25.png",
+      "source_sha256": "71a1dae599b908357a8c5721294e386bbc1c7d52e34dd2e5d3b10333e3a491d5",
+      "slide_copy": "slide-25.jpg",
+      "slide_copy_sha256": "251dc72b2a08bd4bc0a963389899c3432d012b66625404f1a23a4daff453f61a",
+      "dimensions": [
+        1122,
+        1402
+      ],
+      "encoding": "Windows JPEG codec quality 92, original dimensions, no content edits",
+      "generated_source_filename": "exec-9d660977-fd13-4d8f-9a57-51997b0c818b.png",
+      "edit_prompt": null,
+      "review": "accepted after visual inspection: relevant conceptual illustration, no numerical test claims"
+    },
+    {
+      "slide": 27,
+      "title": "İlaçlama görevinin tekrarlanan bloğu",
+      "kind": "AI-generated conceptual teaching illustration",
+      "mode": "built-in image_gen",
+      "is_simulation_evidence": false,
+      "geometry": "schematic, not measured flight geometry",
+      "source": "slide-27.png",
+      "source_sha256": "437ed9907566b0c7ece81c875b3596553c609b3249e701e303c56a7c5fba7e54",
+      "slide_copy": "slide-27.jpg",
+      "slide_copy_sha256": "f6f83e9f7ba71e31aa92f1f74429e9870f9e9f236c3159023b164af66aee23f7",
+      "dimensions": [
+        1122,
+        1402
+      ],
+      "encoding": "Windows JPEG codec quality 92, original dimensions, no content edits",
+      "generated_source_filename": "exec-a74f9371-18e1-462e-8b81-6608f58e4f64.png",
+      "edit_prompt": null,
+      "review": "accepted after visual inspection: relevant conceptual illustration, no numerical test claims"
+    },
+    {
+      "slide": 28,
+      "title": "Pompa komutunu fiziksel çıkıştan ayıralım",
+      "kind": "AI-generated conceptual teaching illustration",
+      "mode": "built-in image_gen",
+      "is_simulation_evidence": false,
+      "geometry": "schematic, not measured flight geometry",
+      "source": "slide-28.png",
+      "source_sha256": "b1680197e47cb563bb103bb75e445586732d8cfc9d94748295995de8aa82071d",
+      "slide_copy": "slide-28.jpg",
+      "slide_copy_sha256": "5a69b9ddd83d3cfa3f994cd4aed9150b6d9313e44595a645f08e34f3bf2cae06",
+      "dimensions": [
+        1122,
+        1402
+      ],
+      "encoding": "Windows JPEG codec quality 92, original dimensions, no content edits",
+      "generated_source_filename": "exec-0a296bdd-8521-439f-bec1-254ecb2bcee3.png",
+      "edit_prompt": null,
+      "review": "accepted after visual inspection: relevant conceptual illustration, no numerical test claims"
+    },
+    {
+      "slide": 32,
+      "title": "Doz hesabında hız neden önemli?",
+      "kind": "AI-generated conceptual teaching illustration",
+      "mode": "built-in image_gen",
+      "is_simulation_evidence": false,
+      "geometry": "schematic, not measured flight geometry",
+      "source": "slide-32.png",
+      "source_sha256": "76e9820fed6ef1a9de1c822e8374bb59fe8fb8357780fadcb38a1ec71d190b3e",
+      "slide_copy": "slide-32.jpg",
+      "slide_copy_sha256": "bf25b4a6e67293f6ec39dcc29e62c5c18c5b3d6f406559f89671af10fd54931f",
+      "dimensions": [
+        1122,
+        1402
+      ],
+      "encoding": "Windows JPEG codec quality 92, original dimensions, no content edits",
+      "generated_source_filename": "exec-7aa2fe83-a86d-418c-a577-dfe23bc8fe96.png",
+      "edit_prompt": null,
+      "review": "accepted after visual inspection: relevant conceptual illustration, no numerical test claims"
+    },
+    {
+      "slide": 33,
+      "title": "Uygulama: bir şeridi değiştirin",
+      "kind": "AI-generated conceptual teaching illustration",
+      "mode": "built-in image_gen",
+      "is_simulation_evidence": false,
+      "geometry": "schematic, not measured flight geometry",
+      "source": "slide-33.png",
+      "source_sha256": "badbc7efb65fd48d6f83c199980706277f6a046ce4914eecb731c4bee627b209",
+      "slide_copy": "slide-33.jpg",
+      "slide_copy_sha256": "8e7004f049f286b8886a549635b900f37df98b224b02cbb2d64aa7b48381aa5b",
+      "dimensions": [
+        1122,
+        1402
+      ],
+      "encoding": "Windows JPEG codec quality 92, original dimensions, no content edits",
+      "generated_source_filename": "exec-b059a67c-ce61-401b-9b59-45fc299f0aae.png",
+      "edit_prompt": null,
+      "review": "accepted after visual inspection: relevant conceptual illustration, no numerical test claims"
+    },
+    {
+      "slide": 35,
+      "title": "GSD, çıktı pikseli ve doğruluk farklıdır",
+      "kind": "AI-generated conceptual teaching illustration",
+      "mode": "built-in image_gen",
+      "is_simulation_evidence": false,
+      "geometry": "schematic, not measured flight geometry",
+      "source": "slide-35.png",
+      "source_sha256": "feb6cb26f091e6303839fcd2b9c61749580e8b29f366a8674134649211a621a4",
+      "slide_copy": "slide-35.jpg",
+      "slide_copy_sha256": "408602f877a604e1eba4e47ca66118b6c2f5747b3e4daf65bb7a65d5ff87860c",
+      "dimensions": [
+        1122,
+        1402
+      ],
+      "encoding": "Windows JPEG codec quality 92, original dimensions, no content edits",
+      "generated_source_filename": "exec-4e7005a1-310a-40ca-9116-097e772a6ceb.png",
+      "edit_prompt": null,
+      "review": "accepted after visual inspection: relevant conceptual illustration, no numerical test claims"
+    },
+    {
+      "slide": 37,
+      "title": "Mission Planner’da otomatik grid üretimi",
+      "kind": "AI-generated conceptual teaching illustration",
+      "mode": "built-in image_gen",
+      "is_simulation_evidence": false,
+      "geometry": "schematic, not measured flight geometry",
+      "source": "slide-37.png",
+      "source_sha256": "bec29d0c4e470098c3b39d7b078e721759989044dd4dbfb6f9a921012c1896eb",
+      "slide_copy": "slide-37.jpg",
+      "slide_copy_sha256": "4563d522544f6664121eec10100e5a898b80aaa007c4c8cc99495f2347f2e0a8",
+      "dimensions": [
+        1122,
+        1402
+      ],
+      "encoding": "Windows JPEG codec quality 92, original dimensions, no content edits",
+      "generated_source_filename": "exec-5b685373-1b6a-49d2-9fe6-fec518c2cd9e.png",
+      "edit_prompt": null,
+      "review": "accepted after visual inspection: relevant conceptual illustration, no numerical test claims"
+    },
+    {
+      "slide": 38,
+      "title": "Haritalama görevinde hangi öğeler var?",
+      "kind": "AI-generated conceptual teaching illustration",
+      "mode": "built-in image_gen",
+      "is_simulation_evidence": false,
+      "geometry": "schematic, not measured flight geometry",
+      "source": "slide-38.png",
+      "source_sha256": "102de50c75d545e1a654dcfc9a77fc8fd0c09a8c7df3d7cb19d073f9d05e5e4e",
+      "slide_copy": "slide-38.jpg",
+      "slide_copy_sha256": "9003057a11d97ef8375c620b77a8bd488d3bd8b0d4c9ff939bb4830a769f9a88",
+      "dimensions": [
+        1122,
+        1402
+      ],
+      "encoding": "Windows JPEG codec quality 92, original dimensions, no content edits",
+      "generated_source_filename": "exec-a13784c3-2de6-4e94-ab29-1008efbc1212.png",
+      "edit_prompt": null,
+      "review": "accepted after visual inspection: relevant conceptual illustration, no numerical test claims"
+    },
+    {
+      "slide": 39,
+      "title": "Mesafeli tetik zamanlayıcı değildir",
+      "kind": "AI-generated conceptual teaching illustration",
+      "mode": "built-in image_gen",
+      "is_simulation_evidence": false,
+      "geometry": "schematic, not measured flight geometry",
+      "source": "slide-39.png",
+      "source_sha256": "fc9f8bc40c15eb0799d34f8128714463ead7bb4200ef56dfc024eb18b856b3cc",
+      "slide_copy": "slide-39.jpg",
+      "slide_copy_sha256": "cc13be82ca91682fdb8538ee53ef49140f00647b7c96f4105aee990310c54897",
+      "dimensions": [
+        1122,
+        1402
+      ],
+      "encoding": "Windows JPEG codec quality 92, original dimensions, no content edits",
+      "generated_source_filename": "exec-a1343788-f657-4902-a961-94326e6e11a5.png",
+      "edit_prompt": "Correct this distance-trigger teaching illustration. Rebuild the horizontal position row as a straight horizontal ground-distance ruler with exactly FIVE perfectly EVENLY SPACED positions in a flat non-perspective orthographic layout. Put a quadrotor and shutter icon at each of the first FOUR positions. First four consecutive intervals must have IDENTICAL pixel width, not shrinking toward the right. Fifth position shows only a gray crossed-out CAMERA SHUTTER icon: remove the red cross from the drone, flight continues. Above the four active positions show four identical-size clock faces with unequal highlighted elapsed-time wedges. Below retain the farm and four overlapping viewing cones. Equal ground distance, unequal time intervals. No words or numbers; same palette.",
+      "review": "revised for technical clarity"
+    },
+    {
+      "slide": 40,
+      "title": "Tetik ile görüntüyü nasıl eşleştiriyoruz?",
+      "kind": "AI-generated conceptual teaching illustration",
+      "mode": "built-in image_gen",
+      "is_simulation_evidence": false,
+      "geometry": "schematic, not measured flight geometry",
+      "source": "slide-40.png",
+      "source_sha256": "161279c33b271cdb0567ccef1084f872675516995a3d3deea5f81183831e0540",
+      "slide_copy": "slide-40.jpg",
+      "slide_copy_sha256": "4acaab3a16f9593373fb7eb46eb685fd2b44c29c15174d36d8fc9f9f6007fdbf",
+      "dimensions": [
+        1122,
+        1402
+      ],
+      "encoding": "Windows JPEG codec quality 92, original dimensions, no content edits",
+      "generated_source_filename": "exec-a70c93a7-4bed-4bdb-b0b9-193e3e2e89f3.png",
+      "edit_prompt": null,
+      "review": "accepted after visual inspection: relevant conceptual illustration, no numerical test claims"
+    },
+    {
+      "slide": 46,
+      "title": "Uygulama: mozaik üretin ve karşılaştırın",
+      "kind": "AI-generated conceptual teaching illustration",
+      "mode": "built-in image_gen",
+      "is_simulation_evidence": false,
+      "geometry": "schematic, not measured flight geometry",
+      "source": "slide-46.png",
+      "source_sha256": "97f282e7d0371614b3dcb9ee287d389588f5348841b5c66249868ed8164766a8",
+      "slide_copy": "slide-46.jpg",
+      "slide_copy_sha256": "e66dbd49a911172eb4d49ab87c295bf612697c43b78d7555447c87e63b898f33",
+      "dimensions": [
+        1122,
+        1402
+      ],
+      "encoding": "Windows JPEG codec quality 92, original dimensions, no content edits",
+      "generated_source_filename": "exec-82dd8dc7-a475-46e8-9a86-bd6544932f9e.png",
+      "edit_prompt": null,
+      "review": "accepted after visual inspection: relevant conceptual illustration, no numerical test claims"
+    },
+    {
+      "slide": 51,
+      "title": "Pipeline: pose → initialization → training",
+      "kind": "AI-generated conceptual teaching illustration",
+      "mode": "built-in image_gen",
+      "is_simulation_evidence": false,
+      "geometry": "schematic, not measured flight geometry",
+      "source": "slide-51.png",
+      "source_sha256": "6e8ed2879b8d06385af819f44757e7d445d228879fb5313c68dbc895a2547482",
+      "slide_copy": "slide-51.jpg",
+      "slide_copy_sha256": "6c5a1e84ec017bef62f785e497d0b7cdbb5392d1b69aece7b8464cfbd679da57",
+      "dimensions": [
+        1122,
+        1402
+      ],
+      "encoding": "Windows JPEG codec quality 92, original dimensions, no content edits",
+      "generated_source_filename": "exec-ff863b6e-0057-4c93-af6b-ca70f8c96826.png",
+      "edit_prompt": null,
+      "review": "accepted after visual inspection: relevant conceptual illustration, no numerical test claims"
+    },
+    {
+      "slide": 63,
+      "title": "Gaussian model, mesh ve point cloud farklıdır",
+      "kind": "AI-generated conceptual teaching illustration",
+      "mode": "built-in image_gen",
+      "is_simulation_evidence": false,
+      "geometry": "schematic, not measured flight geometry",
+      "source": "slide-63.png",
+      "source_sha256": "560a9d5982a9c4a565b3ecd5a370fa4a1e15621b3a43eee7e583595741eef363",
+      "slide_copy": "slide-63.jpg",
+      "slide_copy_sha256": "26f1895010d5106a44fc0565ea732bea62ac0978fc75d938fd4e6f81f6b20d1d",
+      "dimensions": [
+        1122,
+        1402
+      ],
+      "encoding": "Windows JPEG codec quality 92, original dimensions, no content edits",
+      "generated_source_filename": "exec-f1f4ce5d-843a-4776-a22d-766d92d7a3f4.png",
+      "edit_prompt": null,
+      "review": "accepted after visual inspection: relevant conceptual illustration, no numerical test claims"
+    },
+    {
+      "slide": 64,
+      "title": "Öğrencinin 3D üretim adımları",
+      "kind": "AI-generated conceptual teaching illustration",
+      "mode": "built-in image_gen",
+      "is_simulation_evidence": false,
+      "geometry": "schematic, not measured flight geometry",
+      "source": "slide-64.png",
+      "source_sha256": "5f425500d609d70190388f92cd4cea8fd13e7932301cf67dfae447d4e5b6ec1c",
+      "slide_copy": "slide-64.jpg",
+      "slide_copy_sha256": "f9be01f90ae23f35f78db2ebed8aea68f2b0509f29fe7549903531874b302147",
+      "dimensions": [
+        1122,
+        1402
+      ],
+      "encoding": "Windows JPEG codec quality 92, original dimensions, no content edits",
+      "generated_source_filename": "exec-23443a16-ccef-4192-acc5-340bd702bedc.png",
+      "edit_prompt": null,
+      "review": "accepted after visual inspection: relevant conceptual illustration, no numerical test claims"
+    },
+    {
+      "slide": 66,
+      "title": "Uygulama: capture değişsin, AUTO sınırı kalsın",
+      "kind": "AI-generated conceptual teaching illustration",
+      "mode": "built-in image_gen",
+      "is_simulation_evidence": false,
+      "geometry": "schematic, not measured flight geometry",
+      "source": "slide-66.png",
+      "source_sha256": "849862e9804c78aa0a6aeed642d56ce968b6b1370fc17c7434ffbe3d986d4e6a",
+      "slide_copy": "slide-66.jpg",
+      "slide_copy_sha256": "ad37c03da79aa38c44ff5844e8f2864346dcd82a55b736e23017b14bf23fa2dc",
+      "dimensions": [
+        1122,
+        1402
+      ],
+      "encoding": "Windows JPEG codec quality 92, original dimensions, no content edits",
+      "generated_source_filename": "exec-ffbd960d-754b-4769-aa97-b79f6d5a1a1a.png",
+      "edit_prompt": null,
+      "review": "accepted after visual inspection: relevant conceptual illustration, no numerical test claims"
+    },
+    {
+      "slide": 70,
+      "title": "Sabit kanat görevinin tamamı AUTO",
+      "kind": "AI-generated conceptual teaching illustration",
+      "mode": "built-in image_gen",
+      "is_simulation_evidence": false,
+      "geometry": "schematic, not measured flight geometry",
+      "source": "slide-70.png",
+      "source_sha256": "d7557583c86bdad230a162464bf648e429c252170ea3f865d680dd8a19f511a8",
+      "slide_copy": "slide-70.jpg",
+      "slide_copy_sha256": "99790ff1f87cd8658e5e34380ada3ce6b4b92a7eb9d459a185c40c46d3fc1e9d",
+      "dimensions": [
+        1122,
+        1402
+      ],
+      "encoding": "Windows JPEG codec quality 92, original dimensions, no content edits",
+      "generated_source_filename": "exec-661f2660-6807-44c4-bcca-1547f239162c.png",
+      "edit_prompt": "Refine this fixed-wing AUTO teaching illustration. Keep rural landscape and runway. Redraw the survey route as exactly THREE long parallel straight scanning legs connected end-to-end by smooth broad U-turns, with takeoff/climb connecting from runway to the first leg and final approach connecting from the last leg back to runway. Remove EVERY directional arrowhead anywhere on this image and remove all repeated aircraft. Keep just ONE conventional fixed-wing UAV in flight above a straight leg, aligned with that leg. Use an unbroken teal route for scan legs, gold for turns and approach, simple translucent footprints only along straight legs. Avoid extra loops or extra legs. No text or numbers. This is a conceptual route, not measured geometry.",
+      "review": "revised for technical clarity"
+    },
+    {
+      "slide": 71,
+      "title": "AUTO kalkış için yer koşulları da önemlidir",
+      "kind": "AI-generated conceptual teaching illustration",
+      "mode": "built-in image_gen",
+      "is_simulation_evidence": false,
+      "geometry": "schematic, not measured flight geometry",
+      "source": "slide-71.png",
+      "source_sha256": "cf3b7717ba609390d6457ee4b5845a0f418fea298fb632f194e53d34ae41c014",
+      "slide_copy": "slide-71.jpg",
+      "slide_copy_sha256": "d8c595beb41ca6d8f7da94f72cd872f857d10d4c8c250f6a1c77602185f6f32e",
+      "dimensions": [
+        1122,
+        1402
+      ],
+      "encoding": "Windows JPEG codec quality 92, original dimensions, no content edits",
+      "generated_source_filename": "exec-360426e2-9b4a-4629-884a-0db769e3b4f4.png",
+      "edit_prompt": null,
+      "review": "accepted after visual inspection: relevant conceptual illustration, no numerical test claims"
+    },
+    {
+      "slide": 78,
+      "title": "İlk görüntü işleme denemesi neden zayıftı?",
+      "kind": "AI-generated conceptual teaching illustration",
+      "mode": "built-in image_gen",
+      "is_simulation_evidence": false,
+      "geometry": "schematic, not measured flight geometry",
+      "source": "slide-78.png",
+      "source_sha256": "ab2fcbf19c6d1041bbe70b5d9baddc670b14a5099d5dd968a23d106b14878799",
+      "slide_copy": "slide-78.jpg",
+      "slide_copy_sha256": "2d2058704710f2e8441167e35ab0d0231d04706a6e772ba60f5d87157b35e13d",
+      "dimensions": [
+        1122,
+        1402
+      ],
+      "encoding": "Windows JPEG codec quality 92, original dimensions, no content edits",
+      "generated_source_filename": "exec-1951be41-a3c8-432f-8a2f-f1645c0e0677.png",
+      "edit_prompt": null,
+      "review": "accepted after visual inspection: relevant conceptual illustration, no numerical test claims"
+    },
+    {
+      "slide": 79,
+      "title": "Görüntü analizi yalnız tarama fazında",
+      "kind": "AI-generated conceptual teaching illustration",
+      "mode": "built-in image_gen",
+      "is_simulation_evidence": false,
+      "geometry": "schematic, not measured flight geometry",
+      "source": "slide-79.png",
+      "source_sha256": "153899653b74da2f0743ce51098e46e2466806ef8ed3c8b381ad1d4257eb7788",
+      "slide_copy": "slide-79.jpg",
+      "slide_copy_sha256": "01bfaeec42ce6859fe5ee8fd02da75e364a698d9ff54aa7a4c29e0b972a9682c",
+      "dimensions": [
+        1122,
+        1402
+      ],
+      "encoding": "Windows JPEG codec quality 92, original dimensions, no content edits",
+      "generated_source_filename": "exec-9e3eb7af-cbee-4045-9ef2-ad89cdf5a0dd.png",
+      "edit_prompt": "Edit only for technical clarity. Preserve this processing-gate illustration, its palette, lower camera-data strip and one-way data-to-laptop arrows. In the upper rural flight route REMOVE ALL arrowheads from the colored path; show smooth continuous straight teal scan sections linked by muted gold turns, without contradictory directional markers. Keep just one fixed-wing UAV in the air aligned with a straight leg. The lower strip must remain bright only for straight scan phases and gray/off on turns. No text, no numbers, no command arrow back to plane.",
+      "review": "revised for technical clarity"
+    },
+    {
+      "slide": 82,
+      "title": "Canlı uçuşun sayısal sonucu",
+      "kind": "AI-generated conceptual teaching illustration",
+      "mode": "built-in image_gen",
+      "is_simulation_evidence": false,
+      "geometry": "schematic, not measured flight geometry",
+      "source": "slide-82.png",
+      "source_sha256": "0591b2cd26820b02c2135ed9bc00217aa9d816b660b3bd20c2a281f1cb9bb5c8",
+      "slide_copy": "slide-82.jpg",
+      "slide_copy_sha256": "ea7d03ad71038271d884ae9fb2e370415b35833d2576138ed6a9a681bf2fcfd5",
+      "dimensions": [
+        1122,
+        1402
+      ],
+      "encoding": "Windows JPEG codec quality 92, original dimensions, no content edits",
+      "generated_source_filename": "exec-4d239db2-5c61-4eb0-b0fc-b730fd1b75c4.png",
+      "edit_prompt": null,
+      "review": "accepted after visual inspection: relevant conceptual illustration, no numerical test claims"
+    },
+    {
+      "slide": 85,
+      "title": "Uygulama: alarmı üret, rotayı koru",
+      "kind": "AI-generated conceptual teaching illustration",
+      "mode": "built-in image_gen",
+      "is_simulation_evidence": false,
+      "geometry": "schematic, not measured flight geometry",
+      "source": "slide-85.png",
+      "source_sha256": "ee0ab0d7ffd6e326893cb27e61a3a68ddb6a0f0f2e71aa87bd2373630de46773",
+      "slide_copy": "slide-85.jpg",
+      "slide_copy_sha256": "3739a6fe9bd0cb0e762aee7456e29e9f6ef90678adce60e0732d67b247e78373",
+      "dimensions": [
+        1122,
+        1402
+      ],
+      "encoding": "Windows JPEG codec quality 92, original dimensions, no content edits",
+      "generated_source_filename": "exec-48f93593-1adc-4dc0-b9c2-8aca0ae578ea.png",
+      "edit_prompt": null,
+      "review": "accepted after visual inspection: relevant conceptual illustration, no numerical test claims"
+    },
+    {
+      "slide": 86,
+      "title": "Dosyaları nerede bulacağız?",
+      "kind": "AI-generated conceptual teaching illustration",
+      "mode": "built-in image_gen",
+      "is_simulation_evidence": false,
+      "geometry": "schematic, not measured flight geometry",
+      "source": "slide-86.png",
+      "source_sha256": "cf8f248df148b06b134f6a4631d72b08071d2a31289cc51c13f28a6f3cdccf39",
+      "slide_copy": "slide-86.jpg",
+      "slide_copy_sha256": "347c820812842069001dd8afc470144b5ee8d651ac94f4dde4006e41161c6402",
+      "dimensions": [
+        1122,
+        1402
+      ],
+      "encoding": "Windows JPEG codec quality 92, original dimensions, no content edits",
+      "generated_source_filename": "exec-0e4df082-635b-4187-91b6-1a76a696f26d.png",
+      "edit_prompt": null,
+      "review": "accepted after visual inspection: relevant conceptual illustration, no numerical test claims"
+    },
+    {
+      "slide": 87,
+      "title": "Her uçuş için aynı doğrulama komutu",
+      "kind": "AI-generated conceptual teaching illustration",
+      "mode": "built-in image_gen",
+      "is_simulation_evidence": false,
+      "geometry": "schematic, not measured flight geometry",
+      "source": "slide-87.png",
+      "source_sha256": "7bb32a435f82e39669f824cb97674a8e87bf942bf7d512ad67a4d54a24af59cc",
+      "slide_copy": "slide-87.jpg",
+      "slide_copy_sha256": "52773b5753c5aa19efc7d18d4bb19023caade871a0638496c733ad5fa6f62014",
+      "dimensions": [
+        1122,
+        1402
+      ],
+      "encoding": "Windows JPEG codec quality 92, original dimensions, no content edits",
+      "generated_source_filename": "exec-718ab090-f885-4b54-ab28-4bccb3bc11c9.png",
+      "edit_prompt": null,
+      "review": "accepted after visual inspection: relevant conceptual illustration, no numerical test claims"
+    },
+    {
+      "slide": 88,
+      "title": "Son denemeler: ne doğrulandı?",
+      "kind": "AI-generated conceptual teaching illustration",
+      "mode": "built-in image_gen",
+      "is_simulation_evidence": false,
+      "geometry": "schematic, not measured flight geometry",
+      "source": "slide-88.png",
+      "source_sha256": "9feb4eea09a475baaa2b45207f84506c128a3d7c4630729972803e2116e84803",
+      "slide_copy": "slide-88.jpg",
+      "slide_copy_sha256": "1be36aa482069969be4d3afe100d1a5e08b9e099cd89f93941fdbf977235c9c0",
+      "dimensions": [
+        1122,
+        1402
+      ],
+      "encoding": "Windows JPEG codec quality 92, original dimensions, no content edits",
+      "generated_source_filename": "exec-60f1c62e-30f0-4565-a0db-816e7a809cfe.png",
+      "edit_prompt": "Edit this five-row validation concept illustration. Preserve rows 1, 2, 3 and 5 exactly. In row 4 replace ONLY the rightmost rainbow-colored building/height-map output with a naturally colored SOFT 3D Gaussian rendering of the same building: overlapping translucent anisotropic ellipsoids form roof and facade, natural stone/roof colors, no rainbow elevation colors and no triangle mesh wireframe. Preserve orbit-capture scene to its left. This is an explanatory drawing, not actual test evidence. No text or numbers.",
+      "review": "revised for technical clarity"
+    },
+    {
+      "slide": 89,
+      "title": "Bir hata → bir düzeltme → yeniden test",
+      "kind": "AI-generated conceptual teaching illustration",
+      "mode": "built-in image_gen",
+      "is_simulation_evidence": false,
+      "geometry": "schematic, not measured flight geometry",
+      "source": "slide-89.png",
+      "source_sha256": "d43c14404c925065ccd77f0bf0a6bb9752bfed515dc73bc683c8600a18b7be96",
+      "slide_copy": "slide-89.jpg",
+      "slide_copy_sha256": "5b280f397f919658d49f18a04886e35f0b1683a9cf054ca7e31670d5aea71fc4",
+      "dimensions": [
+        1122,
+        1402
+      ],
+      "encoding": "Windows JPEG codec quality 92, original dimensions, no content edits",
+      "generated_source_filename": "exec-fc818af1-802d-4a5b-8895-ddbb91fac176.png",
+      "edit_prompt": null,
+      "review": "accepted after visual inspection: relevant conceptual illustration, no numerical test claims"
+    },
+    {
+      "slide": 90,
+      "title": "AUTO ile bu hafta nereye kadar geldik?",
+      "kind": "AI-generated conceptual teaching illustration",
+      "mode": "built-in image_gen",
+      "is_simulation_evidence": false,
+      "geometry": "schematic, not measured flight geometry",
+      "source": "slide-90.png",
+      "source_sha256": "fd9b682c50123d0c5d2d4749aa55882e2560183a65956f620fd83ae73bbb1055",
+      "slide_copy": "slide-90.jpg",
+      "slide_copy_sha256": "dbb271e37cce291fc2ca995ab028cd4c66b26425c374769a39dfb81a95999838",
+      "dimensions": [
+        1122,
+        1402
+      ],
+      "encoding": "Windows JPEG codec quality 92, original dimensions, no content edits",
+      "generated_source_filename": "exec-0d711b10-4f09-477a-b6ea-7d8947787967.png",
+      "edit_prompt": "Correct this AUTO capabilities summary illustration while preserving the three-tier composition and palette. In the MIDDLE TIER replace BOTH fixed-wing aircraft with realistic four-rotor QUADROTORS: left a camera/gimbal quadrotor photographing the building, right an agricultural quadrotor spraying crop rows. In the TOP TIER replace rainbow/height-map building thumbnail everywhere it appears with a naturally colored soft Gaussian rendered building, no elevation rainbow. In the BOTTOM TIER remove ALL directional arrowheads and keep a clean continuous concept route. Bottom fixed-wing aircraft and runways may remain. No text, numbers, logos or fake screenshot labels.",
+      "review": "revised for technical clarity"
+    },
+    {
+      "slide": 91,
+      "title": "Teslim: sonucu kanıtlayan kısa bir rapor",
+      "kind": "AI-generated conceptual teaching illustration",
+      "mode": "built-in image_gen",
+      "is_simulation_evidence": false,
+      "geometry": "schematic, not measured flight geometry",
+      "source": "slide-91.png",
+      "source_sha256": "8a45e63609f03fd07629111d1fc3a9526c14e64bd3de21af5e2f1ecfd6f12692",
+      "slide_copy": "slide-91.jpg",
+      "slide_copy_sha256": "02d911bf2d445de8541214315198676de8164ad60099b3d91936cdd3d309bd1d",
+      "dimensions": [
+        1122,
+        1402
+      ],
+      "encoding": "Windows JPEG codec quality 92, original dimensions, no content edits",
+      "generated_source_filename": "exec-fefae1b6-9099-4ae8-bae9-16ab018e7a60.png",
+      "edit_prompt": null,
+      "review": "accepted after visual inspection: relevant conceptual illustration, no numerical test claims"
+    },
+    {
+      "slide": 92,
+      "title": "Ders sonunda üç kontrol sorusu",
+      "kind": "AI-generated conceptual teaching illustration",
+      "mode": "built-in image_gen",
+      "is_simulation_evidence": false,
+      "geometry": "schematic, not measured flight geometry",
+      "source": "slide-92.png",
+      "source_sha256": "2416a9d1d4c986f398f55b82e61f748ace655cb999458663a0c16d6513eae525",
+      "slide_copy": "slide-92.jpg",
+      "slide_copy_sha256": "21c71123ab8c963a47f5a20e34b3b9597234d9b2c713f44c49d1e95a882c30bd",
+      "dimensions": [
+        1122,
+        1402
+      ],
+      "encoding": "Windows JPEG codec quality 92, original dimensions, no content edits",
+      "generated_source_filename": "exec-c94432ff-1a3b-4733-a473-9540a9642e90.png",
+      "edit_prompt": null,
+      "review": "accepted after visual inspection: relevant conceptual illustration, no numerical test claims"
+    },
+    {
+      "slide": 93,
+      "title": "Kaynaklar ve yeniden çalışma",
+      "kind": "AI-generated conceptual teaching illustration",
+      "mode": "built-in image_gen",
+      "is_simulation_evidence": false,
+      "geometry": "schematic, not measured flight geometry",
+      "source": "slide-93.png",
+      "source_sha256": "65d8a8fd645055fb30f8f1f8158031b475c2f030b4f78d70d0094b2c72ab6ac7",
+      "slide_copy": "slide-93.jpg",
+      "slide_copy_sha256": "7e563ecd201926ab94fa1841d0ec880b7d94a9f2fac58e3a8297fb147c68e0f6",
+      "dimensions": [
+        1122,
+        1402
+      ],
+      "encoding": "Windows JPEG codec quality 92, original dimensions, no content edits",
+      "generated_source_filename": "exec-b9b38450-7d39-40aa-83d9-eccc40630d4d.png",
+      "edit_prompt": null,
+      "review": "accepted after visual inspection: relevant conceptual illustration, no numerical test claims"
+    }
+  ]
+}

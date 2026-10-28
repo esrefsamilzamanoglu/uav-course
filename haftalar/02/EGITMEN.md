@@ -4,7 +4,7 @@
 
 İlk hafta kurulumunu açıp kapatın. Depoyu güncelleyin; bu haftanın `simulasyon/Kur.cmd` adımını tamamlayın. Birden fazla Gazebo/SITL oturumu açmayın. İlk hafta çalışma dosyaları değiştirilmez; ikinci haftanın ayrı yerel çalışma alanı `.local` altındadır.
 
-Sunum 93 sayfadır. Slayt başına tek ana fikir, gerçek simülasyon görselleri, yeni çalışma şemaları ve konuşmacı notları vardır. Bölüm açılışları, büyük görüntüler, zoom/crop, checkpoint ve reference/render karşılaştırmaları kullanılır. Yerleşik İngilizce terimler ilk geçtiğinde kısa Türkçe açıklamayla tanıtılır.
+Sunum 93 sayfadır. Slayt başına tek ana fikir, gerçek simülasyon görselleri, çalışma şemaları ve konuşmacı notları vardır. v3'te yalnız metin/tablo/işlem/formül/sayısal kart içeren 40 sayfanın tamamına built-in image_gen ile açıklayıcı çizimler eklendi. Tablolar ve komutlar düzenlenebilir metindir. “Kavramsal çizim · AI” etiketli görseller mekanizmayı açıklar; ölçülmüş geometri, gerçek uçuş ekranı veya model kalitesinin kanıtı değildir. Gerçek rota ve ürünler ilgili kayıt/grafik/render sayfalarında gösterilir. Bölüm açılışları, büyük görüntüler, zoom/crop, checkpoint ve reference/render karşılaştırmaları kullanılır. Yerleşik İngilizce terimler ilk geçtiğinde kısa Türkçe açıklamayla tanıtılır.
 
 ## Canlı ders sırası
 
@@ -72,5 +72,7 @@ Hareket olayları için gerçek kişi konumları **yalnız sonradan değerlendir
 ## Sunumu yeniden üretme
 
 Paylaşılan görseller, `dogrulama/final_summary.json` ve `dogrulama/gaussian_validation.json` ile `sunum/kaynak/build_slides.py` çalıştırılır (`python-pptx`, Pillow gerekir). Aktif revizyon `revise_curriculum.py` ve `gaussian_curriculum.py` içindedir. Üretici hem AUTO hem Gaussian doğrulaması geçmeden güncel sunumu yapmaz. Windows'ta PowerPoint ve pywin32 ile `export_pdf.py` PDF üretir; `check_pdf.py` PyMuPDF ile sayfa ve sayfa dışı metin kontrolü yapar. `build_explainers.py` şemaları PNG ve düzenlenebilir SVG olarak üretir; simülasyon Python ortamının bilimsel paketlerini kullanır.
+
+v3 çizimleri `sunum/uretilen_gorseller` içindedir; yeniden sunum üretmek için görsel üretim servisi gerekmez. Özgün PNG ve aynı çözünürlükte JPEG kopyaları paylaşılır. `encode_slide_assets.ps1` yalnız Windows JPEG kodlayıcısıyla dosya boyutunu azaltır, içerik çizmez veya değiştirmez. `finalize_generated_assets.py` SHA256 ve boyut kökenlerini kaydeder. Promptlar `prompts.json`, düzeltme promptları `generation-record.json`, köken listesi `provenance.json` içindedir. Sunumun tüm 40 hedef sayfasında doğru JPEG'nin gömülü olduğu `check_illustrations.py` ile doğrulanır.
 
 `prepare_evidence.py` yalnız eğitmenin ham yerel kayıtlarından kanıtları yeniden seçmesi içindir; öğrenci için gerekli değildir. Ham kayıtlar depoda paylaşılmaz. Sunumda kullanılan karelerin kökenleri `sunum/gorseller/provenance.json` içinde tutulur.

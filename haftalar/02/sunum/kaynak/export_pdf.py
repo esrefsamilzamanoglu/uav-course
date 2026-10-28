@@ -12,8 +12,8 @@ try:
     temporary=ROOT/'simulasyon/.local/research'/('Hafta-02-export-'+str(time.time_ns())+'.pdf')
     temporary.parent.mkdir(parents=True,exist_ok=True)
     pres.SaveAs(str(temporary),32)
-    os.replace(temporary,ROOT/'Hafta-02-Sunum-v2.pdf')
-    print(json.dumps({'slides':count,'pdf':str(ROOT/'Hafta-02-Sunum-v2.pdf')},ensure_ascii=False))
+    os.replace(temporary,ROOT/'Hafta-02-Sunum-v3.pdf')
+    print(json.dumps({'slides':count,'pdf':str(ROOT/'Hafta-02-Sunum-v3.pdf')},ensure_ascii=False))
 finally:
     if pres is not None:pres.Close()
     if existing==0 and app.Presentations.Count==0:app.Quit()

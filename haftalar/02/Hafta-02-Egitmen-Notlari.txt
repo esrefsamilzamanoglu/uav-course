@@ -5,7 +5,7 @@ ANA FİKİR: Uçuşu ArduPilot yürütür; görüntülerden anlamı biz üretiri
 
 İlk haftada araç, kontrol ve simülasyon bileşenlerini tanıdık. Bu hafta aynı düzeni gerçek iş akışlarına dönüştüreceğiz. Önce aracın ve kameranın davranışını göreceğiz; sonra tarla ilaçlama, 2D tarla haritalama, bina çevresinde 3D veri toplama ve sabit kanatla hareket gözlemini uygulayacağız. Tüm sahneler gerçek Gazebo kayıtlarıdır. Görevler önceden hazırlanmış, uçurulmuş ve inişle doğrulanmıştır. Önerilen ders: anlatım80, canlı uygulama30, değerlendirme10 dakika.
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya öğretim şeması. Köken listeleri: sunum/gorseller/provenance.json, explainers-provenance.json ve gaussian-provenance.json.
 
 ========================================================================
 02. Bugün neyi yapabiliyor olacağız?
@@ -16,7 +16,7 @@ ANA FİKİR: Bir görevi planlayıp uçuracak, çıktısını ölçerek değerle
 
 SINIFA SORU / KONTROL: İHA rotayı tamamladı ama fotoğraf yoksa haritalama görevi başarılı mıdır?
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Built-in image_gen ile üretilen kavramsal öğretim çizimi; gerçek simülasyon ekran görüntüsü, ölçüm veya gerçek model renderı değildir. Dosya: sunum/uretilen_gorseller/slide-02.png. Tam prompt ve köken: sunum/uretilen_gorseller/prompts.json ve provenance.json.
 
 ========================================================================
 03. İlk haftadan bu haftaya
@@ -28,7 +28,7 @@ ANA FİKİR: Kurulu simülasyon artık bir iş problemini çözmek için kullan�
 KAYNAKLAR:
 https://ardupilot.org/dev/docs/sitl-with-gazebo.html
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya öğretim şeması. Köken listeleri: sunum/gorseller/provenance.json, explainers-provenance.json ve gaussian-provenance.json.
 
 ========================================================================
 04. Dört uygulama, dört farklı çıktı
@@ -37,7 +37,7 @@ ANA FİKİR: Aynı AUTO mantığı farklı sektör problemlerine uygulanabilir.
 
 Bunlar sektörde kullanılan görev planlama yaklaşımlarının öğretim örnekleridir. İlaçlama için iş genişliği ve pompa zamanlaması; haritalama için örtüşme; bina için çoklu bakış ve kamera yönelimi; gözetim için hareketli kameradan gelen verinin ayrıştırılması önemlidir. Ürünlerin kapsamı farklıdır: mozaik DEM değildir, seyrek bulut yoğun model değildir, hareket adayı insan sınıfı değildir. Bu ayrımları her uygulamanın sonunda yeniden göstereceğiz.
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Built-in image_gen ile üretilen kavramsal öğretim çizimi; gerçek simülasyon ekran görüntüsü, ölçüm veya gerçek model renderı değildir. Dosya: sunum/uretilen_gorseller/slide-04.png. Tam prompt ve köken: sunum/uretilen_gorseller/prompts.json ve provenance.json.
 
 ========================================================================
 05. Terimleri arayüzde gördüğümüz gibi kullanalım
@@ -51,7 +51,7 @@ https://ardupilot.org/copter/docs/common-mavlink-mission-command-messages-mav_cm
 https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/
 https://github.com/ArthurBrussee/brush/tree/v0.3.0
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Built-in image_gen ile üretilen kavramsal öğretim çizimi; gerçek simülasyon ekran görüntüsü, ölçüm veya gerçek model renderı değildir. Dosya: sunum/uretilen_gorseller/slide-05.png. Tam prompt ve köken: sunum/uretilen_gorseller/prompts.json ve provenance.json.
 
 ========================================================================
 06. Komut kimden, veri kimden geliyor?
@@ -64,7 +64,7 @@ KAYNAKLAR:
 https://ardupilot.org/copter/docs/auto-mode.html
 https://ardupilot.org/dev/docs/sitl-with-gazebo.html
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya öğretim şeması. Köken listeleri: sunum/gorseller/provenance.json, explainers-provenance.json ve gaussian-provenance.json.
 
 ========================================================================
 07. AUTO modunun sınırını koruyalım
@@ -76,7 +76,7 @@ ANA FİKİR: Rota ve faydalı yük görevde; görüntü analizi ayrı süreçte.
 KAYNAKLAR:
 https://ardupilot.org/copter/docs/auto-mode.html
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Built-in image_gen ile üretilen kavramsal öğretim çizimi; gerçek simülasyon ekran görüntüsü, ölçüm veya gerçek model renderı değildir. Dosya: sunum/uretilen_gorseller/slide-07.png. Tam prompt ve köken: sunum/uretilen_gorseller/prompts.json ve provenance.json.
 
 ========================================================================
 08. Doğrulanan ortak ortam
@@ -89,7 +89,7 @@ KAYNAKLAR:
 https://gazebosim.org/docs/jetty/install_windows/
 https://ardupilot.org/dev/docs/sitl-with-gazebo.html
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Built-in image_gen ile üretilen kavramsal öğretim çizimi; gerçek simülasyon ekran görüntüsü, ölçüm veya gerçek model renderı değildir. Dosya: sunum/uretilen_gorseller/slide-08.png. Tam prompt ve köken: sunum/uretilen_gorseller/prompts.json ve provenance.json.
 
 ========================================================================
 09. Önce aracı tanıyalım
@@ -100,7 +100,7 @@ Gerçek Gazebo yakın planında pervaneleri, gövdeyi, iniş ayaklarını ve gö
 
 SINIFA SORU / KONTROL: Araç fiziği yerine pozunu doğrudan değiştirsek hangi uçuş hatalarını göremeyiz?
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya öğretim şeması. Köken listeleri: sunum/gorseller/provenance.json, explainers-provenance.json ve gaussian-provenance.json.
 
 ========================================================================
 10. Dünya, araç ve kamera farklı katmanlardır
@@ -109,7 +109,7 @@ ANA FİKİR: Gördüğümüz manzara ile uçuş telemetrisi birlikte okunmalı.
 
 Öğrenciye geniş görünüş ile araç kamerasını ayırt ettirin. Geniş görünüş sunum için sahneyi gösteren ikinci kameradır; haritalama ve hareket işçileri aracın RGB kamerasını kullanır. Görüş değişikliği her zaman aracın hareket ettiği anlamına gelmez: gimbal dönebilir. Aynı şekilde araç sabitken kamera yönelimi değiştiğinde görüntüdeki tüm zemin hareket eder. Bu ilişki son uygulamadaki hareket telafisinin temelidir.
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya öğretim şeması. Köken listeleri: sunum/gorseller/provenance.json, explainers-provenance.json ve gaussian-provenance.json.
 
 ========================================================================
 11. Sahnede koordinatlar nasıl okunuyor?
@@ -118,7 +118,7 @@ ANA FİKİR: Yerel ENU ile GPS ve irtifa referansını karıştırmayın.
 
 Sanal dünyamız SITL’nin varsayılan home koordinatına bağlanır; Canberra uydu haritasındaki gerçek yapıları temsil etmez. Mission Planner haritasında tarlanın görsel olarak görünmemesi görev dosyasının bozuk olduğu anlamına gelmez. Görev waypoint irtifaları home’a göredir; home’un584 m deniz seviyesi irtifasıyla toplanmamalıdır. Bina ROI hedefi de bu dosyada home’a göre7 m seçilmiştir. ENU dünyasında kuzey pozitif y yönüdür.
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya öğretim şeması. Köken listeleri: sunum/gorseller/provenance.json, explainers-provenance.json ve gaussian-provenance.json.
 
 ========================================================================
 12. Kamera ne üretiyor?
@@ -127,7 +127,7 @@ ANA FİKİR: Her RGB kareye zaman, kalibrasyon ve gerçek kamera pozu eşlik ede
 
 Kamera sensörü saniyede6 görüntü üretir; kayıt köprüsü yaklaşık3 kare/saniye saklar. Görev tetiği olduğunda en yakın gerçek RGB kare seçilir. Ekrandaki görüntü bir yer dokusu kopyası değil Gazebo kamerasının kaydıdır: bitkiler, gölgeler ve perspektif içerir. Kalibrasyon dosyasında çözünürlük ve yatay FOV saklanır. Bu bilgiler sonraki düzlem projeksiyonu ve triangulation için kullanılır; gerçek kamerada ayrıca lens ve zaman kalibrasyonu gerekir.
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya öğretim şeması. Köken listeleri: sunum/gorseller/provenance.json, explainers-provenance.json ve gaussian-provenance.json.
 
 ========================================================================
 13. İrtifa ve FOV, görülen alanı belirler
@@ -138,7 +138,7 @@ Düz zemine dik bakan kamerada genişlik W=2 H tan(FOV/2) bağıntısıyla bulun
 
 SINIFA SORU / KONTROL: İrtifayı iki katına çıkarınca footprint ve GSD nasıl değişir?
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya öğretim şeması. Köken listeleri: sunum/gorseller/provenance.json, explainers-provenance.json ve gaussian-provenance.json.
 
 ========================================================================
 14. Aynı araç, farklı kamera açısı
@@ -147,7 +147,7 @@ ANA FİKİR: Gimbal açısı görüntünün kapsamını değiştirir.
 
 Bu kareler aynı8 m AUTO tanıtım uçuşundan seçilmiştir. Önce−90 derecede kalkış alanına, sonra−45 ve−20 derecede ileriye bakılır. Sunumdaki iki kareyi karşılaştırın; ara açı kaydı kamera_45.png dosyasında mevcuttur. Kamera öne döndüğünde ufuk ve tarla görünüme girer. Aracın yatay rotası değişmeden görüntünün değişebildiğini vurgulayın. Geometrik hesaplarda araç yaw değeri tek başına kamera yönünü vermez.
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya öğretim şeması. Köken listeleri: sunum/gorseller/provenance.json, explainers-provenance.json ve gaussian-provenance.json.
 
 ========================================================================
 15. Kamera yönü ArduPilot’tan geliyor
@@ -160,7 +160,7 @@ KAYNAKLAR:
 https://ardupilot.org/copter/docs/common-camera-gimbal.html
 https://ardupilot.org/copter/docs/common-mount-targeting.html
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Built-in image_gen ile üretilen kavramsal öğretim çizimi; gerçek simülasyon ekran görüntüsü, ölçüm veya gerçek model renderı değildir. Dosya: sunum/uretilen_gorseller/slide-15.png. Tam prompt ve köken: sunum/uretilen_gorseller/prompts.json ve provenance.json.
 
 ========================================================================
 16. Tanıtım görevini satır satır okuyalım
@@ -172,7 +172,7 @@ ANA FİKİR: AUTO içinde kamera açısını değiştirip bekletebiliyoruz.
 KAYNAKLAR:
 https://ardupilot.org/copter/docs/common-mavlink-mission-command-messages-mav_cmd.html
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Built-in image_gen ile üretilen kavramsal öğretim çizimi; gerçek simülasyon ekran görüntüsü, ölçüm veya gerçek model renderı değildir. Dosya: sunum/uretilen_gorseller/slide-16.png. Tam prompt ve köken: sunum/uretilen_gorseller/prompts.json ve provenance.json.
 
 ========================================================================
 17. Tanıtım uçuşu da ölçüldü
@@ -181,7 +181,7 @@ ANA FİKİR: 8 m yükselme, kamera beklemeleri ve home’a iniş tamamlandı.
 
 Bu test iki TCP bağlantısını da doğruladı. Operatör bağlantısı5760 üzerinden görevi yükleyip normal arm ve mission start gönderdi;5762 üzerindeki gözlemci yalnız kayıt aldı. Uçuş çizgisinin yatayda nokta görünmesi doğaldır: tanıtımda araç home üzerinde yükselir. Sağ grafik göreli irtifayı gösterir. Kamera açısı değişirken uçuş modu değişmez. Bu kayıt menünün pasif çalışma mantığı için kanıt olarak saklanmıştır.
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya öğretim şeması. Köken listeleri: sunum/gorseller/provenance.json, explainers-provenance.json ve gaussian-provenance.json.
 
 ========================================================================
 18. Öğrencinin başlangıç adımları
@@ -193,7 +193,7 @@ Depoyu ilk hafta klonlayan öğrenci VS Code üzerinden güncellemeyi alabilir. 
 KAYNAKLAR:
 https://github.com/esrefsamilzamanoglu/uav-course/tree/main/haftalar/02
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Built-in image_gen ile üretilen kavramsal öğretim çizimi; gerçek simülasyon ekran görüntüsü, ölçüm veya gerçek model renderı değildir. Dosya: sunum/uretilen_gorseller/slide-18.png. Tam prompt ve köken: sunum/uretilen_gorseller/prompts.json ve provenance.json.
 
 ========================================================================
 19. Mission Planner’dan görevi uçuralım
@@ -206,7 +206,7 @@ KAYNAKLAR:
 https://ardupilot.org/copter/docs/auto-mode.html
 https://docs.ardupilot.org/planner/docs/mission-planner-flight-plan.html
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Built-in image_gen ile üretilen kavramsal öğretim çizimi; gerçek simülasyon ekran görüntüsü, ölçüm veya gerçek model renderı değildir. Dosya: sunum/uretilen_gorseller/slide-19.png. Tam prompt ve köken: sunum/uretilen_gorseller/prompts.json ve provenance.json.
 
 ========================================================================
 20. NAV, DO ve CONDITION ne yapar?
@@ -218,7 +218,7 @@ ArduPilot NAV komutlarını ve bunlara bağlı DO/CONDITION komutlarını görev
 KAYNAKLAR:
 https://ardupilot.org/copter/docs/common-mavlink-mission-command-messages-mav_cmd.html
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Built-in image_gen ile üretilen kavramsal öğretim çizimi; gerçek simülasyon ekran görüntüsü, ölçüm veya gerçek model renderı değildir. Dosya: sunum/uretilen_gorseller/slide-20.png. Tam prompt ve köken: sunum/uretilen_gorseller/prompts.json ve provenance.json.
 
 ========================================================================
 21. Bir zamanlama hatasını nasıl düzelttik?
@@ -232,7 +232,7 @@ SINIFA SORU / KONTROL: Pompa şerit sonunda açılıyorsa ilk bakılacak yer ner
 KAYNAKLAR:
 https://ardupilot.org/copter/docs/common-mavlink-mission-command-messages-mav_cmd.html
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya öğretim şeması. Köken listeleri: sunum/gorseller/provenance.json, explainers-provenance.json ve gaussian-provenance.json.
 
 ========================================================================
 22. Sürümle birlikte parametre adları da değişir
@@ -241,7 +241,7 @@ ANA FİKİR: 4.7.2’de gerçek parametre listesine göre çalışıyoruz.
 
 Eski eğitimlerde görülen WPNAV_SPEED ve santimetre temelli değerleri bu sürümde aynen kopyalamayın. Bu haftanın parametre dosyaları gerçek4.7.2 parametre geri okumasına göre hazırlandı. Varsayılan Iris dosyasında precision landing açık olduğunda beacon beklenebildi; sıradan LAND öğretmek için bu haftada kapatıldı. Öğrenciden parametre ismi ile fiziksel birimini birlikte okumasını isteyin. İlgili ayarlar yalnız bu haftanın ayrı SITL çalışma klasörüne uygulanır.
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Built-in image_gen ile üretilen kavramsal öğretim çizimi; gerçek simülasyon ekran görüntüsü, ölçüm veya gerçek model renderı değildir. Dosya: sunum/uretilen_gorseller/slide-22.png. Tam prompt ve köken: sunum/uretilen_gorseller/prompts.json ve provenance.json.
 
 ========================================================================
 23. Problem: tarlayı eşit işlemek
@@ -253,7 +253,7 @@ Tarla sınırını ve baş-son dönüş alanını geniş görüntüde gösterin.
 KAYNAKLAR:
 https://ardupilot.org/copter/docs/common-sprayer.html
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya öğretim şeması. Köken listeleri: sunum/gorseller/provenance.json, explainers-provenance.json ve gaussian-provenance.json.
 
 ========================================================================
 24. Aynı dünya iki göreve hizmet ediyor
@@ -262,7 +262,7 @@ ANA FİKİR: Tarla nesneleri hem ilaçlama hem kamera uygulaması için hazır.
 
 Tarla dokusu tek başına düz bir resim değildir; yapraklı ve gövdeli bitkiler 3D olarak yer alır. Bu nesneler gölge ve perspektif üretir, haritalamada gerçek görüntü eşleşmesini anlamlı kılar. Tarla dışındaki ağaç ve binalar görsel bağlam sağlar. Kalkış alanı tarladan ayrı konumdadır. İlaçlama ile 2D haritalama görevleri aynı dünya dosyasını kullanır; yalnız uçuş yüksekliği, şerit aralığı ve faydalı yük komutları değişir.
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya öğretim şeması. Köken listeleri: sunum/gorseller/provenance.json, explainers-provenance.json ve gaussian-provenance.json.
 
 ========================================================================
 25. Aynı tarla, farklı görev geometrisi
@@ -271,7 +271,7 @@ ANA FİKİR: İş genişliği ile kamera footprint aynı şey değildir.
 
 Bu değerler test edilmiş öğretim dünyasına aittir. İlaçlamada kamera yerine ideal iş şeridi genişliğini kullanıyoruz. Haritalamada ise FOV, irtifa ve örtüşme belirleyici. Öğrencilere aynı grid dosyasını iki uygulamada değiştirmeden kullanmanın neden doğru olmayacağını sorun. İlaçlama dönüşlerinde pompa kapalıdır. Haritalama kamera tetiği dönüşler sırasında da açık kalabilir; ürün üretirken tüm kareler bilinen pozlarla değerlendirilir.
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Built-in image_gen ile üretilen kavramsal öğretim çizimi; gerçek simülasyon ekran görüntüsü, ölçüm veya gerçek model renderı değildir. Dosya: sunum/uretilen_gorseller/slide-25.png. Tam prompt ve köken: sunum/uretilen_gorseller/prompts.json ve provenance.json.
 
 ========================================================================
 26. Grid planında kenarlar da önemlidir
@@ -280,7 +280,7 @@ ANA FİKİR: 7 m aralık, 8 m ideal iş genişliğiyle güvenli örtüşme sağl
 
 Bu şema grid kavramını anlatır; gerçek ilaçlama görevinde9 şerit vardır.7 m aralık ile ideal8 m genişlik arasında1 m nominal örtüşme bulunur. Uç noktaları y17 ve69 m seçilerek y19–67 m arasındaki tarla sınırları aşılır. Waypoint dönüşü ve kabul yarıçapı nedeniyle gerçek uçuş çizgisi köşeleri kesebilir; sadece ideal çizimleri değil kaydedilmiş izlerden hesaplanan kaplamayı kontrol ediyoruz. Kenar kaçırma hatasını sonraki sonuç karşılaştırmasında göreceğiz.
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya öğretim şeması. Köken listeleri: sunum/gorseller/provenance.json, explainers-provenance.json ve gaussian-provenance.json.
 
 ========================================================================
 27. İlaçlama görevinin tekrarlanan bloğu
@@ -293,7 +293,7 @@ KAYNAKLAR:
 https://ardupilot.org/copter/docs/common-sprayer.html
 https://ardupilot.org/copter/docs/common-mavlink-mission-command-messages-mav_cmd.html
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Built-in image_gen ile üretilen kavramsal öğretim çizimi; gerçek simülasyon ekran görüntüsü, ölçüm veya gerçek model renderı değildir. Dosya: sunum/uretilen_gorseller/slide-27.png. Tam prompt ve köken: sunum/uretilen_gorseller/prompts.json ve provenance.json.
 
 ========================================================================
 28. Pompa komutunu fiziksel çıkıştan ayıralım
@@ -305,7 +305,7 @@ Sahnede görülen tanecikler gerçek akışkan simülasyonu değildir. Gerçek A
 KAYNAKLAR:
 https://ardupilot.org/copter/docs/common-sprayer.html
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Built-in image_gen ile üretilen kavramsal öğretim çizimi; gerçek simülasyon ekran görüntüsü, ölçüm veya gerçek model renderı değildir. Dosya: sunum/uretilen_gorseller/slide-28.png. Tam prompt ve köken: sunum/uretilen_gorseller/prompts.json ve provenance.json.
 
 ========================================================================
 29. Dokuz şeritte pompa açılıp kapandı
@@ -316,7 +316,7 @@ Grafikte zaman yatayda, mikrosaniye cinsinden PWM düşeyde gösterilir. Yüksek
 
 SINIFA SORU / KONTROL: Dokuz şerit için sekiz açık blok görseydik hangi verileri karşılaştırırdık?
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya öğretim şeması. Köken listeleri: sunum/gorseller/provenance.json, explainers-provenance.json ve gaussian-provenance.json.
 
 ========================================================================
 30. Alçak irtifada bitkiler belirginleşiyor
@@ -325,7 +325,7 @@ ANA FİKİR: İlaçlama uçuşu 4 m ve 3 m/s ile AUTO içinde gerçekleşti.
 
 Kamera burada haritalama ürünü için değil uçuş bağlamını göstermek için kullanılıyor. Düşük irtifada tek tek bitkiler görünür; aynı kamera18 mde daha geniş alanı kapsar. İlaçlama görevini başlatıp ilk şerit, dönüş ve ikinci şeritte pompa davranışını izletin. Görsel damlacık işaretleri ile gerçek PWM kaydının tutarlı olduğunu gösterin. Fiziksel rotor akımı veya damlacık birikimi ölçtüğümüz izlenimini vermeyin.
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya öğretim şeması. Köken listeleri: sunum/gorseller/provenance.json, explainers-provenance.json ve gaussian-provenance.json.
 
 ========================================================================
 31. Test ettik, grid sınırlarını düzelttik
@@ -334,7 +334,7 @@ ANA FİKİR: İdeal kaplama %82,86’dan %100’e çıktı.
 
 Her iki görüntü de gerçek uçuş izleri ve gerçek pompa açık sinyalinden hesaplandı. Lacivert dikdörtgen hedef tarladır; yeşil en az bir geçiş, sarı birden fazla geçiş, açık alan işlenmeyen bölgedir. İlk görev uçuşu başarıyla bitirse de tarla kaplaması82,86 yüzdeydi.9 şerit ve uzatılmış uç noktalarla tekrar uçulduğunda hedef alanın tamamı ideal8 m genişlikte kaplandı. Bu sonuç damlacık kalitesi veya gerçek doz homojenliği değildir.
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya öğretim şeması. Köken listeleri: sunum/gorseller/provenance.json, explainers-provenance.json ve gaussian-provenance.json.
 
 ========================================================================
 32. Doz hesabında hız neden önemli?
@@ -343,7 +343,7 @@ ANA FİKİR: PWM yüzdesi tek başına litre/hektar vermez.
 
 Bu slayt bir birim dönüşümü ve mühendislik hesabı örneğidir; ürün veya kimyasal kullanım önerisi değildir. Hektar başına hedef hacim D, km/saat cinsinden hız V, metre cinsinden genişlik W ile litre/dakika Q hesaplanır.3 m/s hız10,8 km/saat eder. Pompa PWM’i ile gerçek debi arasındaki ilişki bilinmeden bu örnek dozun uygulandığı söylenemez. Simülasyonda kanıtlanan şey komut zamanlaması ve ideal alan kaplamasıdır.
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Built-in image_gen ile üretilen kavramsal öğretim çizimi; gerçek simülasyon ekran görüntüsü, ölçüm veya gerçek model renderı değildir. Dosya: sunum/uretilen_gorseller/slide-32.png. Tam prompt ve köken: sunum/uretilen_gorseller/prompts.json ve provenance.json.
 
 ========================================================================
 33. Uygulama: bir şeridi değiştirin
@@ -352,7 +352,7 @@ ANA FİKİR: Önce tahmin edin, sonra gerçek izden kaplamayı kontrol edin.
 
 Öğrencilerden orijinal dosyayı koruyarak görev kopyası hazırlamalarını isteyin. İlk çalışmada yalnız bir değişkeni değiştirin. Aynı uçuş bitiş şartını koruyun: AUTO tamamlanmış, araç inmiş ve disarm olmuş olmalı. Ardından raporun kaplama ve örtüşme değerlerini karşılaştırın. Şerit sayısını azaltmanın uçuş süresini düşürürken kenar boşluklarını artırabileceğini tartışın. Ürün kalitesi ile rota süresi arasında açık bir mühendislik tercihi vardır.
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Built-in image_gen ile üretilen kavramsal öğretim çizimi; gerçek simülasyon ekran görüntüsü, ölçüm veya gerçek model renderı değildir. Dosya: sunum/uretilen_gorseller/slide-33.png. Tam prompt ve köken: sunum/uretilen_gorseller/prompts.json ve provenance.json.
 
 ========================================================================
 34. Problem: tarlanın tek görüntüsünü üretmek
@@ -364,7 +364,7 @@ Aynı tarla dünyasında bu kez yükseklik ve şerit aralığı kamera geometris
 KAYNAKLAR:
 https://ardupilot.org/planner/docs/common-camera-control-and-auto-missions-in-mission-planner.html
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya öğretim şeması. Köken listeleri: sunum/gorseller/provenance.json, explainers-provenance.json ve gaussian-provenance.json.
 
 ========================================================================
 35. GSD, çıktı pikseli ve doğruluk farklıdır
@@ -373,7 +373,7 @@ ANA FİKİR: 2,6 cm nominal GSD, 2,6 cm konum doğruluğu demek değildir.
 
 GSD bir pikselin ideal zeminde kapladığı mesafedir. Mozaik rasterini daha kaba seçmemiz hesap yükünü azaltır; görüntü çözünürlüğü ile son raster boyutu birbirinden bağımsız seçimlerdir. Konumsal doğruluk ise kontrol noktalarıyla ölçülmesi gereken başka bir kavramdır. Bilinen simülatör pozları gerçek dünyada GNSS veya fotogrametriyle elde edilmek zorundadır. Öğrencinin yalnız piksel boyutuna bakıp santimetre hassasiyet iddiasında bulunmamasını sağlayın.
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Built-in image_gen ile üretilen kavramsal öğretim çizimi; gerçek simülasyon ekran görüntüsü, ölçüm veya gerçek model renderı değildir. Dosya: sunum/uretilen_gorseller/slide-35.png. Tam prompt ve köken: sunum/uretilen_gorseller/prompts.json ve provenance.json.
 
 ========================================================================
 36. İleri ve yanal örtüşme birlikte planlanır
@@ -385,7 +385,7 @@ Nominal kameranın genişliği25,2 m, uçuş yönündeki yüksekliği16,8 m kabu
 KAYNAKLAR:
 https://ardupilot.org/planner/docs/common-camera-control-and-auto-missions-in-mission-planner.html
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya öğretim şeması. Köken listeleri: sunum/gorseller/provenance.json, explainers-provenance.json ve gaussian-provenance.json.
 
 ========================================================================
 37. Mission Planner’da otomatik grid üretimi
@@ -398,7 +398,7 @@ KAYNAKLAR:
 https://ardupilot.org/planner/docs/common-camera-control-and-auto-missions-in-mission-planner.html
 https://docs.ardupilot.org/planner/docs/mission-planner-flight-plan.html
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Built-in image_gen ile üretilen kavramsal öğretim çizimi; gerçek simülasyon ekran görüntüsü, ölçüm veya gerçek model renderı değildir. Dosya: sunum/uretilen_gorseller/slide-37.png. Tam prompt ve köken: sunum/uretilen_gorseller/prompts.json ve provenance.json.
 
 ========================================================================
 38. Haritalama görevinde hangi öğeler var?
@@ -411,7 +411,7 @@ KAYNAKLAR:
 https://ardupilot.org/copter/docs/common-mavlink-mission-command-messages-mav_cmd.html
 https://ardupilot.org/planner/docs/common-camera-control-and-auto-missions-in-mission-planner.html
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Built-in image_gen ile üretilen kavramsal öğretim çizimi; gerçek simülasyon ekran görüntüsü, ölçüm veya gerçek model renderı değildir. Dosya: sunum/uretilen_gorseller/slide-38.png. Tam prompt ve köken: sunum/uretilen_gorseller/prompts.json ve provenance.json.
 
 ========================================================================
 39. Mesafeli tetik zamanlayıcı değildir
@@ -424,7 +424,7 @@ KAYNAKLAR:
 https://ardupilot.org/copter/docs/common-mavlink-mission-command-messages-mav_cmd.html
 https://ardupilot.org/planner/docs/common-camera-control-and-auto-missions-in-mission-planner.html
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Built-in image_gen ile üretilen kavramsal öğretim çizimi; gerçek simülasyon ekran görüntüsü, ölçüm veya gerçek model renderı değildir. Dosya: sunum/uretilen_gorseller/slide-39.png. Tam prompt ve köken: sunum/uretilen_gorseller/prompts.json ve provenance.json.
 
 ========================================================================
 40. Tetik ile görüntüyü nasıl eşleştiriyoruz?
@@ -433,7 +433,7 @@ ANA FİKİR: Tetik geri bildirimi ile gerçek RGB kaydı ayrı zaman kaynakları
 
 Final uçuşunda81 tetik mesajı81 gerçek Gazebo fotoğrafıyla eşleşti. En büyük duvar saati farkı yaklaşık0,394 s idi. Ürün üretirken tetik anındaki varsayımsal poz yerine seçilen görüntünün kendi simülasyon kamera pozu kullanıldı. Böylece geometrik hesap görüntünün gerçek anına bağlıdır. Bu yöntem gerçek bir donanım zaman senkronizasyonu çözümü olarak sunulmaz. Öğrencilerden fotoğraf sayısı ile tetik sayısının neden ayrı kontrol edildiğini açıklamalarını isteyin.
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Built-in image_gen ile üretilen kavramsal öğretim çizimi; gerçek simülasyon ekran görüntüsü, ölçüm veya gerçek model renderı değildir. Dosya: sunum/uretilen_gorseller/slide-40.png. Tam prompt ve köken: sunum/uretilen_gorseller/prompts.json ve provenance.json.
 
 ========================================================================
 41. Uçuş kaydı, planlanan grid’i doğruluyor
@@ -442,7 +442,7 @@ ANA FİKİR: Araç 18 m’de şeritleri tamamlayıp home’a indi.
 
 Soldaki iz gerçek telemetriden üretilmiştir; plan çizimi değildir. Şerit başındaki ivmelenme ve dönüşlerin köşeleri yumuşattığını gösterin. Sağdaki grafik kalkış, iş irtifası ve iniş evrelerini ayırır. Bu uçuşta normal arm öncesi bir hazır olma tekrar isteği oldu; force-arm kullanılmadı. Güncel başlatıcı gerçek pre-arm sağlık durumunu bekler. Araç inişten sonra disarm oldu; yalnız son waypoint’e gelmek tamamlanma ölçütü değildir.
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya öğretim şeması. Köken listeleri: sunum/gorseller/provenance.json, explainers-provenance.json ve gaussian-provenance.json.
 
 ========================================================================
 42. Tek fotoğrafta hangi bilgiler var?
@@ -451,7 +451,7 @@ ANA FİKİR: Bitki sıraları, parallax ve gölgeler gerçek kamera görüntüs�
 
 Fotoğrafı büyütüp bitki sıralarının tekrar eden yapısını gösterin. Tekrarlı desenler görüntü eşleştirmesini zorlaştırabilir. Düzlem projeksiyonunda zeminin z0 olduğunu varsayıyoruz; bitki tepeleri ve diğer yükseltiler bu varsayıma uymaz, küçük çiftlenme veya dikiş hataları oluşturabilir. Görüntüyü gerçek RGB sensöründen almanın avantajı bu sınırlamaları görünür kılmasıdır. Yer dokusunu doğrudan son ürüne kopyalamıyoruz.
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya öğretim şeması. Köken listeleri: sunum/gorseller/provenance.json, explainers-provenance.json ve gaussian-provenance.json.
 
 ========================================================================
 43. Mozaik üretiminin dört adımı
@@ -464,7 +464,7 @@ KAYNAKLAR:
 https://docs.opencv.org/4.x/d9/d0c/group__calib3d.html
 https://colmap.github.io/tutorial.html
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya öğretim şeması. Köken listeleri: sunum/gorseller/provenance.json, explainers-provenance.json ve gaussian-provenance.json.
 
 ========================================================================
 44. Sonuç: aynı tarlanın tek mozaik görüntüsü
@@ -473,7 +473,7 @@ ANA FİKİR: 81 fotoğraftan912×744 piksel düzlem mozaiği üretildi.
 
 Bu görüntü final uçuşunun ürünüdür. Sıraların sürekliliğini, tarla sınırını ve kenar dikişlerini birlikte inceleyin. Raster8,33 cm/piksel olarak seçildi. Kareler gerçek kamera pozlarına göre projekte edildiği için bu çalışma bilinen pozlu mozaik olarak adlandırılır. Bitkiler zemin düzleminden yüksek olduğu için yer yer dikiş etkileri görülebilir. Öğrencilerden hem başarılı alanı hem de varsayımın zayıf kaldığı bölgeyi göstermelerini isteyin.
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya öğretim şeması. Köken listeleri: sunum/gorseller/provenance.json, explainers-provenance.json ve gaussian-provenance.json.
 
 ========================================================================
 45. Haritalama sonucunu nasıl puanlarız?
@@ -482,7 +482,7 @@ ANA FİKİR: Görüntünün güzel görünmesi yanında kaplama da ölçülmeli.
 
 Kaplama metrikleri gerçek fotoğraf ayak izlerinin hedef alan üzerinde sayılmasıyla hesaplandı. En az üç görüntüyle kaplanan alan99,53 yüzdedir. Bu metrik görüntü eşleşmesinin her noktada başarılı olduğu veya konumun gerçek dünyada doğru olduğu anlamına gelmez. Öğrencinin nicel bir ölçüyü doğru kapsamda yorumlamasını isteyin. Aynı zamanda az fotoğrafın her zaman verimlilik olmadığını; yeterli örtüşmenin ürün güvenilirliği için gerekli olduğunu tartışın.
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya öğretim şeması. Köken listeleri: sunum/gorseller/provenance.json, explainers-provenance.json ve gaussian-provenance.json.
 
 ========================================================================
 46. Uygulama: mozaik üretin ve karşılaştırın
@@ -491,7 +491,7 @@ ANA FİKİR: Komutu kendi haritalama uçuşunuzun klasörüyle çalıştırın.
 
 Komut sunumda okunabilirlik için iki satıra ayrılmıştır; terminalde tek satır yazılır. Komutları haftalar/02/simulasyon klasöründe çalıştırın. UCUS_KLASORU yerine başlatıcının RESULT mesajında gösterilen flight.json dosyasının bulunduğu klasörü yazın. Görev kopyasında tetik aralığını değiştirin ve tekrar uçun. Fotoğraf sayısı, kaplama, örtüşme ve görünür dikişleri karşılaştırın. Çalışmayan bir çıktıyı yalnız daha yüksek çözünürlük seçerek düzeltmeye çalışmayın.
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Built-in image_gen ile üretilen kavramsal öğretim çizimi; gerçek simülasyon ekran görüntüsü, ölçüm veya gerçek model renderı değildir. Dosya: sunum/uretilen_gorseller/slide-46.png. Tam prompt ve köken: sunum/uretilen_gorseller/prompts.json ve provenance.json.
 
 ========================================================================
 47. Binayı bu kez dolu yüzeylerle görelim
@@ -504,7 +504,7 @@ KAYNAKLAR:
 https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/
 https://github.com/ArthurBrussee/brush/tree/v0.3.0
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya öğretim şeması. Köken listeleri: sunum/gorseller/provenance.json, explainers-provenance.json ve gaussian-provenance.json.
 
 ========================================================================
 48. Aynı binaya farklı açılardan bakmak
@@ -517,7 +517,7 @@ KAYNAKLAR:
 https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/
 https://github.com/ArthurBrussee/brush/tree/v0.3.0
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya öğretim şeması. Köken listeleri: sunum/gorseller/provenance.json, explainers-provenance.json ve gaussian-provenance.json.
 
 ========================================================================
 49. Capture trajectory: iki AUTO orbit
@@ -530,7 +530,7 @@ KAYNAKLAR:
 https://ardupilot.org/copter/docs/common-mavlink-mission-command-messages-mav_cmd.html
 https://ardupilot.org/copter/docs/common-mount-targeting.html
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya öğretim şeması. Köken listeleri: sunum/gorseller/provenance.json, explainers-provenance.json ve gaussian-provenance.json.
 
 ========================================================================
 50. Gimbal sürekli ROI’ye bakar
@@ -543,7 +543,7 @@ KAYNAKLAR:
 https://ardupilot.org/copter/docs/common-camera-gimbal.html
 https://ardupilot.org/copter/docs/common-mount-targeting.html
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya öğretim şeması. Köken listeleri: sunum/gorseller/provenance.json, explainers-provenance.json ve gaussian-provenance.json.
 
 ========================================================================
 51. Pipeline: pose → initialization → training
@@ -557,7 +557,7 @@ https://colmap.github.io/tutorial.html
 https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/
 https://github.com/ArthurBrussee/brush/tree/v0.3.0
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Built-in image_gen ile üretilen kavramsal öğretim çizimi; gerçek simülasyon ekran görüntüsü, ölçüm veya gerçek model renderı değildir. Dosya: sunum/uretilen_gorseller/slide-51.png. Tam prompt ve köken: sunum/uretilen_gorseller/prompts.json ve provenance.json.
 
 ========================================================================
 52. Sparse point cloud artık başlangıç verisi
@@ -570,7 +570,7 @@ KAYNAKLAR:
 https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/
 https://github.com/ArthurBrussee/brush/tree/v0.3.0
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya öğretim şeması. Köken listeleri: sunum/gorseller/provenance.json, explainers-provenance.json ve gaussian-provenance.json.
 
 ========================================================================
 53. Bir Gaussian hangi parametrelere sahip?
@@ -583,7 +583,7 @@ KAYNAKLAR:
 https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/
 https://github.com/ArthurBrussee/brush/tree/v0.3.0
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya öğretim şeması. Köken listeleri: sunum/gorseller/provenance.json, explainers-provenance.json ve gaussian-provenance.json.
 
 ========================================================================
 54. 3D Gaussian ekranda bir splat olur
@@ -596,7 +596,7 @@ KAYNAKLAR:
 https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/
 https://github.com/ArthurBrussee/brush/tree/v0.3.0
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya öğretim şeması. Köken listeleri: sunum/gorseller/provenance.json, explainers-provenance.json ve gaussian-provenance.json.
 
 ========================================================================
 55. Alpha compositing ve depth order
@@ -609,7 +609,7 @@ KAYNAKLAR:
 https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/
 https://github.com/ArthurBrussee/brush/tree/v0.3.0
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya öğretim şeması. Köken listeleri: sunum/gorseller/provenance.json, explainers-provenance.json ve gaussian-provenance.json.
 
 ========================================================================
 56. Training loop: render, compare, update
@@ -622,7 +622,7 @@ KAYNAKLAR:
 https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/
 https://github.com/ArthurBrussee/brush/tree/v0.3.0
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya öğretim şeması. Köken listeleri: sunum/gorseller/provenance.json, explainers-provenance.json ve gaussian-provenance.json.
 
 ========================================================================
 57. Densification: ayrıntı gereken yerde büyüme
@@ -635,7 +635,7 @@ KAYNAKLAR:
 https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/
 https://github.com/ArthurBrussee/brush/tree/v0.3.0
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya öğretim şeması. Köken listeleri: sunum/gorseller/provenance.json, explainers-provenance.json ve gaussian-provenance.json.
 
 ========================================================================
 58. Aynı run:1 000 →3 000 →6 000 steps
@@ -648,7 +648,7 @@ KAYNAKLAR:
 https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/
 https://github.com/ArthurBrussee/brush/tree/v0.3.0
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya öğretim şeması. Köken listeleri: sunum/gorseller/provenance.json, explainers-provenance.json ve gaussian-provenance.json.
 
 ========================================================================
 59. Hold-out view: görmediği açıyı render et
@@ -661,7 +661,7 @@ KAYNAKLAR:
 https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/
 https://github.com/ArthurBrussee/brush/tree/v0.3.0
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya öğretim şeması. Köken listeleri: sunum/gorseller/provenance.json, explainers-provenance.json ve gaussian-provenance.json.
 
 ========================================================================
 60. Reference RGB ile Gaussian render
@@ -674,7 +674,7 @@ KAYNAKLAR:
 https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/
 https://github.com/ArthurBrussee/brush/tree/v0.3.0
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya öğretim şeması. Köken listeleri: sunum/gorseller/provenance.json, explainers-provenance.json ve gaussian-provenance.json.
 
 ========================================================================
 61. Sonuç: kullanılabilir 3D Gaussian model
@@ -687,7 +687,7 @@ KAYNAKLAR:
 https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/
 https://github.com/ArthurBrussee/brush/tree/v0.3.0
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya öğretim şeması. Köken listeleri: sunum/gorseller/provenance.json, explainers-provenance.json ve gaussian-provenance.json.
 
 ========================================================================
 62. Tek model, farklı viewpoint’ler
@@ -699,7 +699,7 @@ Paneller aynı final Gaussian checkpoint’inin üç farklı hold-out camera’d
 KAYNAKLAR:
 https://github.com/ArthurBrussee/brush/tree/v0.3.0
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya öğretim şeması. Köken listeleri: sunum/gorseller/provenance.json, explainers-provenance.json ve gaussian-provenance.json.
 
 ========================================================================
 63. Gaussian model, mesh ve point cloud farklıdır
@@ -712,7 +712,7 @@ KAYNAKLAR:
 https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/
 https://github.com/ArthurBrussee/brush/tree/v0.3.0
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Built-in image_gen ile üretilen kavramsal öğretim çizimi; gerçek simülasyon ekran görüntüsü, ölçüm veya gerçek model renderı değildir. Dosya: sunum/uretilen_gorseller/slide-63.png. Tam prompt ve köken: sunum/uretilen_gorseller/prompts.json ve provenance.json.
 
 ========================================================================
 64. Öğrencinin 3D üretim adımları
@@ -725,7 +725,7 @@ KAYNAKLAR:
 https://github.com/esrefsamilzamanoglu/uav-course/tree/main/haftalar/02
 https://github.com/ArthurBrussee/brush/tree/v0.3.0
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Built-in image_gen ile üretilen kavramsal öğretim çizimi; gerçek simülasyon ekran görüntüsü, ölçüm veya gerçek model renderı değildir. Dosya: sunum/uretilen_gorseller/slide-64.png. Tam prompt ve köken: sunum/uretilen_gorseller/prompts.json ve provenance.json.
 
 ========================================================================
 65. Kaliteyi artırmak için önce veriye bakın
@@ -738,7 +738,7 @@ KAYNAKLAR:
 https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/
 https://github.com/ArthurBrussee/brush/tree/v0.3.0
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya öğretim şeması. Köken listeleri: sunum/gorseller/provenance.json, explainers-provenance.json ve gaussian-provenance.json.
 
 ========================================================================
 66. Uygulama: capture değişsin, AUTO sınırı kalsın
@@ -751,7 +751,7 @@ KAYNAKLAR:
 https://ardupilot.org/copter/docs/common-mavlink-mission-command-messages-mav_cmd.html
 https://github.com/ArthurBrussee/brush/tree/v0.3.0
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Built-in image_gen ile üretilen kavramsal öğretim çizimi; gerçek simülasyon ekran görüntüsü, ölçüm veya gerçek model renderı değildir. Dosya: sunum/uretilen_gorseller/slide-66.png. Tam prompt ve köken: sunum/uretilen_gorseller/prompts.json ve provenance.json.
 
 ========================================================================
 67. Problem: uçuş sürerken hareketi kaydetmek
@@ -760,7 +760,7 @@ ANA FİKİR: Sabit tarama görevi değişmeden, görüntüden olay çıktısı a
 
 Kırsal alanda önceden belirlenmiş bir tarama rotası düşünün. Uçak rota üzerinde kalırken görüntü işçisi hareket adayını bulur, çerçeveli görüntü ve kırpım üretir. Görev hedefe yönelmez, takip veya kovalamaya dönüşmez. Bu ayrım AUTO sınırını korumak için bilinçli seçildi. Hedefler simülasyondaki yürüyen üç insandır; öğrenilecek esas problem, hareketli kamerada arka plan hareketini ayırmaktır.
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya öğretim şeması. Köken listeleri: sunum/gorseller/provenance.json, explainers-provenance.json ve gaussian-provenance.json.
 
 ========================================================================
 68. Kırsal sahne ve hareketli insanlar
@@ -769,7 +769,7 @@ ANA FİKİR: Pist, tepeler, evler, ağaçlar ve üç yürüyen kişi hazır.
 
 Sahne nesneleri gerçek 3D varlıklardır. İnsan modelleri simülasyon zamanına bağlı hareket eder ve gerçek RGB görüntüde konum değiştirir. Konumları değerlendirme için saklanır, detektörün insanı bulmasına verilmez. Tepeler ve ağaçlar homografi varsayımını zorlayarak parallax üretir. Bu özellik yanlış alarmları tartışmak için yararlıdır. Pist ve sürekli zemin çarpışması otomatik kalkış ve iniş testleriyle geliştirilmiştir.
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya öğretim şeması. Köken listeleri: sunum/gorseller/provenance.json, explainers-provenance.json ve gaussian-provenance.json.
 
 ========================================================================
 69. Sabit kanatta kamera seçimi farklı
@@ -778,7 +778,7 @@ ANA FİKİR: 1280×800 ve55° aşağı eğim, hedefi görüntüde daha kullanı�
 
 İlk denemede nadir ve daha geniş görüşlü kamera, insanları çok az piksele indirdi; hareket analizi güvenilir olay üretmedi. Çözünürlük ve bakış açısı bu sahnede tekrar test edilerek güncellendi. Bu kamera tercihi her görev için optimum değildir; eğik bakışta perspektif ve mesafeye göre ölçek değişir. Hedefin kaç piksele düştüğü algılama yönteminin çalışabilirliğini doğrudan etkiler. Bu nedenle detektör ayarından önce kamera geometrisini kontrol ediyoruz.
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya öğretim şeması. Köken listeleri: sunum/gorseller/provenance.json, explainers-provenance.json ve gaussian-provenance.json.
 
 ========================================================================
 70. Sabit kanat görevinin tamamı AUTO
@@ -792,7 +792,7 @@ https://ardupilot.org/plane/docs/automatic-takeoff.html
 https://ardupilot.org/plane/docs/automatic-landing.html
 https://ardupilot.org/plane/docs/common-do-land-start.html
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Built-in image_gen ile üretilen kavramsal öğretim çizimi; gerçek simülasyon ekran görüntüsü, ölçüm veya gerçek model renderı değildir. Dosya: sunum/uretilen_gorseller/slide-70.png. Tam prompt ve köken: sunum/uretilen_gorseller/prompts.json ve provenance.json.
 
 ========================================================================
 71. AUTO kalkış için yer koşulları da önemlidir
@@ -804,7 +804,7 @@ Zephyr referans modelinde pistten kalkış için ideal teker temasları eklendi;
 KAYNAKLAR:
 https://ardupilot.org/plane/docs/automatic-takeoff.html
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Built-in image_gen ile üretilen kavramsal öğretim çizimi; gerçek simülasyon ekran görüntüsü, ölçüm veya gerçek model renderı değildir. Dosya: sunum/uretilen_gorseller/slide-71.png. Tam prompt ve köken: sunum/uretilen_gorseller/prompts.json ve provenance.json.
 
 ========================================================================
 72. Gerçek uçuş: sabit rota ve iniş yaklaşması
@@ -813,7 +813,7 @@ ANA FİKİR: Uçuş boyunca mod AUTO kaldı; görüntü analizi rotayı değişt
 
 Sol grafik gerçek GPS telemetrisinden üretilmiştir. Dönüşlerin waypoint noktalarını birleştiren keskin çizgiler olmadığını, uçuş dinamiğinin ve dönüş sınırlarının izde görüldüğünü gösterin. Sağda tarama yüksekliği ve iniş yaklaşması seçilebilir. Silahlı uçuş sırasında kaydedilmiş mod yalnız10 yani Plane AUTO’dur. Uçuş kontrolüne konum veya hız setpointi gönderilmemiştir. Bu kayıt, hedef görüldüğünde uçuşun sürdüğünü gösterecek olay zaman çizelgesiyle birlikte okunur.
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya öğretim şeması. Köken listeleri: sunum/gorseller/provenance.json, explainers-provenance.json ve gaussian-provenance.json.
 
 ========================================================================
 73. AUTO iniş: yaklaşma geometrisi
@@ -826,7 +826,7 @@ KAYNAKLAR:
 https://ardupilot.org/plane/docs/automatic-landing.html
 https://ardupilot.org/plane/docs/common-do-land-start.html
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya öğretim şeması. Köken listeleri: sunum/gorseller/provenance.json, explainers-provenance.json ve gaussian-provenance.json.
 
 ========================================================================
 74. Gazebo arayüzünde çalışan sahne
@@ -835,7 +835,7 @@ ANA FİKİR: Son canlı uçuşta Gazebo GUI, SITL ve görüntü işçisi birlikt
 
 Bu ekran görüntüsü gerçek native Gazebo Sim penceresinden alınmıştır. Solda sahne görünüşü, sağda model listesi ve araç bileşenleri görülür. Arayüz görüntüsü bir arka plan illüstrasyonu değildir. Aynı oturumda kamera kayıtları ve canlı hareket işçisi çalıştı. Sunumdaki diğer sahne fotoğrafları ise arayüzsüz kamera sensörünün gerçek RGB çıktılarıdır. Öğrenciler Gazebo görünüşünü değiştirirken araç kamerasının kalibrasyonunu değiştirmediklerini bilmelidir.
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya öğretim şeması. Köken listeleri: sunum/gorseller/provenance.json, explainers-provenance.json ve gaussian-provenance.json.
 
 ========================================================================
 75. Hareketli kamerada her şey hareket eder
@@ -847,7 +847,7 @@ Bir sabit kamerada basit arka plan çıkarma işe yarayabilir; uçan kamerada is
 KAYNAKLAR:
 https://docs.opencv.org/4.x/d1/de0/tutorial_py_feature_homography.html
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya öğretim şeması. Köken listeleri: sunum/gorseller/provenance.json, explainers-provenance.json ve gaussian-provenance.json.
 
 ========================================================================
 76. Hareket adayını nasıl buluyoruz?
@@ -860,7 +860,7 @@ KAYNAKLAR:
 https://docs.opencv.org/4.x/d1/d89/tutorial_py_orb.html
 https://docs.opencv.org/4.x/d1/de0/tutorial_py_feature_homography.html
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya öğretim şeması. Köken listeleri: sunum/gorseller/provenance.json, explainers-provenance.json ve gaussian-provenance.json.
 
 ========================================================================
 77. Homografi hangi varsayımla çalışıyor?
@@ -872,7 +872,7 @@ Homografi iki görüntüdeki tek düzlem arasındaki izdüşümsel ilişkiyi aç
 KAYNAKLAR:
 https://docs.opencv.org/4.x/d1/de0/tutorial_py_feature_homography.html
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya öğretim şeması. Köken listeleri: sunum/gorseller/provenance.json, explainers-provenance.json ve gaussian-provenance.json.
 
 ========================================================================
 78. İlk görüntü işleme denemesi neden zayıftı?
@@ -884,7 +884,7 @@ Kamerayı iyileştirdikten sonra bile ilk detektör düşük kontrastlı çimend
 KAYNAKLAR:
 https://docs.opencv.org/4.x/d1/d89/tutorial_py_orb.html
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Built-in image_gen ile üretilen kavramsal öğretim çizimi; gerçek simülasyon ekran görüntüsü, ölçüm veya gerçek model renderı değildir. Dosya: sunum/uretilen_gorseller/slide-78.png. Tam prompt ve köken: sunum/uretilen_gorseller/prompts.json ve provenance.json.
 
 ========================================================================
 79. Görüntü analizi yalnız tarama fazında
@@ -893,7 +893,7 @@ ANA FİKİR: Görev fazı bilgisi görüntü analizini sınırlar; uçuşu yöne
 
 Önce tüm uçuşu işlemek dönüş ve transit sırasında parallax kaynaklı çok sayıda yanlış alarm üretti. Sabit görevin SCAN etiketlerini salt-okunur analiz fazı olarak kullanınca bu gereksiz alarmlar azaldı. Bu bir detektör doğruluk hilesi değil uygulamanın kapsamını açık seçmektir: görev tarama bacaklarında gözlem yapar. Hedef konumları detektöre verilmez. En güncel kod irtifayı simülatör pozundan değil ArduPilot telemetrisinden okur.
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Built-in image_gen ile üretilen kavramsal öğretim çizimi; gerçek simülasyon ekran görüntüsü, ölçüm veya gerçek model renderı değildir. Dosya: sunum/uretilen_gorseller/slide-79.png. Tam prompt ve köken: sunum/uretilen_gorseller/prompts.json ve provenance.json.
 
 ========================================================================
 80. Canlı denemeden gerçek olay çıktısı
@@ -902,7 +902,7 @@ ANA FİKİR: Yeşil kutu bir hareket adayıdır; uçak AUTO uçuşuna devam eder
 
 Bu olay uçuş devam ederken canlı işçi tarafından üretildi. Çıktıdaki kutu görüntü tabanlı adaydır; değerlendirme katmanı daha sonra gerçek simülasyon kişi kutusuyla kesiştiğini doğruladı. İlk olayın hesaplanma gecikmesi bu örnekte yaklaşık0,77 sduvar saatidir. Bu değer tek olay örneğidir, gecikme garantisi değildir. Uçuşta yeni hedef waypoint’i veya GUIDED komutu gönderilmedi. Tam kareyi bağlam için, kırpımı ayrıntı için birlikte gösterin.
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya öğretim şeması. Köken listeleri: sunum/gorseller/provenance.json, explainers-provenance.json ve gaussian-provenance.json.
 
 ========================================================================
 81. Olayın ayrıntısı ve hareket artığı
@@ -911,7 +911,7 @@ ANA FİKİR: Küçük hedefler birkaç piksel olduğunda yorum dikkat ister.
 
 Kırpım sunumda büyütülmüştür; yeni ayrıntı üretilmemiştir. Bu çözünürlükte insanın görünmesi hareketi insan sınıfı olarak tanıdığımız anlamına gelmez. İşçi genel hareket adayları bulur. Simülasyon kişi koordinatları yalnız değerlendirmede kullanılır. Dolayısıyla renkli giysi veya küçük siluet bu örnekte yorumlamayı kolaylaştırsa da genellenmiş kişi algılama performansı iddia edilmez. Gerçek saha için farklı görüntü ölçeklerinde ve sahnelerde ayrıca değerlendirme gerekir.
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya öğretim şeması. Köken listeleri: sunum/gorseller/provenance.json, explainers-provenance.json ve gaussian-provenance.json.
 
 ========================================================================
 82. Canlı uçuşun sayısal sonucu
@@ -920,7 +920,7 @@ ANA FİKİR: 23 olay üretildi;19’u bağımsız kişi kutusuyla örtüştü.
 
 Bu sayılar tek canlı uçuşun olay sayılarıdır;23 farklı kişi ya da genel precision/recall anlamına gelmez. Değerlendirmede küçük ve dolgulu kırpımlar için IoU0,06 üstü ilişkilendirme kullanıldı. Aynı kişiden tekrar olay gelebilir; kaçırılan tüm insan anları etiketlenmediği için recall hesaplanmıyor. Detektör insan koordinatlarını giriş olarak kullanmaz. Bu kapsamı açıkça söylemek sonuçları karşılaştırılabilir ve dürüst tutar.
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Built-in image_gen ile üretilen kavramsal öğretim çizimi; gerçek simülasyon ekran görüntüsü, ölçüm veya gerçek model renderı değildir. Dosya: sunum/uretilen_gorseller/slide-82.png. Tam prompt ve köken: sunum/uretilen_gorseller/prompts.json ve provenance.json.
 
 ========================================================================
 83. Yanlış alarmı da inceleyelim
@@ -929,7 +929,7 @@ ANA FİKİR: Ağaç ve parallax, insan olmasa da hareket artığı üretebilir.
 
 Bu görsel aynı final canlı uçuşta üretilen dört yanlış alarmdan biridir. Ağaç zemin düzleminden yukarıda olduğundan kamera hareketi sonrası aynı homografiyle tam hizalanmaz. Kalan hareket süreklilik filtresini aşabilir. Örnek yalnız başarılı olayları seçmenin sistemi olduğundan iyi göstereceğini hatırlatır. Gerçek uygulamada insan sınıflandırıcısı, daha güçlü hareket modeli veya ek doğrulama katmanı gerekebilir; bu haftada ana hedef AUTO uçuşu değiştirmeden görsel olay üretmektir.
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya öğretim şeması. Köken listeleri: sunum/gorseller/provenance.json, explainers-provenance.json ve gaussian-provenance.json.
 
 ========================================================================
 84. Tespitten sonra uçuş ne yaptı?
@@ -938,7 +938,7 @@ ANA FİKİR: İlk olaydan yaklaşık317 s sonra AUTO iniş tamamlandı.
 
 Bu süre olayın gerçekten üretildiği duvar saati ile auto_landed olayının duvar saati arasından hesaplandı:317,05 s. Böylece yalnız daha sonra kayıttan işlenmiş bir görüntüyü canlıymış gibi sunmuyoruz. Aynı süre boyunca kayıtlı silahlı uçuş modu10 AUTOolarak kaldı. Görüntü işçisinin gönderdiği uçuş komutu sayısı sıfırdır. Uygulamanın başarısı tespit kutusu yanında görevin kesilmeden tamamlanmasıyla ölçülür.
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya öğretim şeması. Köken listeleri: sunum/gorseller/provenance.json, explainers-provenance.json ve gaussian-provenance.json.
 
 ========================================================================
 85. Uygulama: alarmı üret, rotayı koru
@@ -947,7 +947,7 @@ ANA FİKİR: Öğrenciden hem görüntü olayı hem AUTO devam kanıtı isteyin.
 
 Öğrenci menüsü4 sabit kanat görüntü işçisini otomatik açar. Başlatıcı uçuşu başlatmaz; Mission Planner operatörü görevi yazar ve AUTOarm yapar. Görev bitince events.jsonl dosyasındaki kaynak görev indeksi ve mod bilgisi incelenir. Bir doğru olay ve bir yanlış alarmı rapora eklemelerini isteyin. Algılanan hedefe gitmek için waypoint değiştirmek bu haftanın kapsamındaki görevi bozar. Rotanın sabit kalması bilinçli başarı koşuludur.
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Built-in image_gen ile üretilen kavramsal öğretim çizimi; gerçek simülasyon ekran görüntüsü, ölçüm veya gerçek model renderı değildir. Dosya: sunum/uretilen_gorseller/slide-85.png. Tam prompt ve köken: sunum/uretilen_gorseller/prompts.json ve provenance.json.
 
 ========================================================================
 86. Dosyaları nerede bulacağız?
@@ -959,7 +959,7 @@ Görev dosyaları küçük metin dosyalarıdır; zip veya hazır uygulama paketi
 KAYNAKLAR:
 https://github.com/esrefsamilzamanoglu/uav-course/tree/main/haftalar/02
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Built-in image_gen ile üretilen kavramsal öğretim çizimi; gerçek simülasyon ekran görüntüsü, ölçüm veya gerçek model renderı değildir. Dosya: sunum/uretilen_gorseller/slide-86.png. Tam prompt ve köken: sunum/uretilen_gorseller/prompts.json ve provenance.json.
 
 ========================================================================
 87. Her uçuş için aynı doğrulama komutu
@@ -968,7 +968,7 @@ ANA FİKİR: Uçuş modu, iniş ve uygulama ölçümlerini raporlayın.
 
 Komut terminalde tek satırdır. Rapor gerçek telemetriden uçuş izini ve irtifa profilini çizer. İlaçlamada pompa PWM’inden ideal kaplama üretir; bina uçuşunda gerçek kamera pozundan ROI doğrultu hatasını hesaplar. İlaçlama kaplaması95 yüzdenin altındaysa veya bina ROI yüzde95 hatası5 dereceden büyükse doğrulama hata verir. Bu eşikler öğretim dünyasına aittir. Salt gözlemci logunda uçuş komutu listesi boş olmalıdır; öğretmen otomasyonunda arm/start görülebilir.
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Built-in image_gen ile üretilen kavramsal öğretim çizimi; gerçek simülasyon ekran görüntüsü, ölçüm veya gerçek model renderı değildir. Dosya: sunum/uretilen_gorseller/slide-87.png. Tam prompt ve köken: sunum/uretilen_gorseller/prompts.json ve provenance.json.
 
 ========================================================================
 88. Son denemeler: ne doğrulandı?
@@ -977,7 +977,7 @@ ANA FİKİR: Sunum, çalışan son kayıtlar hazır olduktan sonra üretildi.
 
 AUTO uçuşlar27 Ekim2026 tarihinde doğrulandı. Gaussian Splatting ve sunum revizyonu28 Ekim2026 tarihinde eklendi. Bina modelinin train/hold-out ayrımı initialization aşamasından başlar. Güncel metrikler dogrulama/gaussian_validation.json içindedir. Önceki sparse point cloud artık nihai 3D ürün değildir.
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Built-in image_gen ile üretilen kavramsal öğretim çizimi; gerçek simülasyon ekran görüntüsü, ölçüm veya gerçek model renderı değildir. Dosya: sunum/uretilen_gorseller/slide-88.png. Tam prompt ve köken: sunum/uretilen_gorseller/prompts.json ve provenance.json.
 
 ========================================================================
 89. Bir hata → bir düzeltme → yeniden test
@@ -986,7 +986,7 @@ ANA FİKİR: İterasyon, simülasyon hazırlığının bir parçasıdır.
 
 Bu tablo denemelerin neden yalnız bir kez açıp kapatma olmadığını gösterir. Her düzeltme gözlenen bir soruna karşı yapılır ve farklı bir kanıtla doğrulanır. Bir düzenleme yeni sorun çıkarabilir; örneğin daha hassas ORB eşiği daha fazla gürültü getirebilir. Görüntü kalitesi, geometri, görev zamanlaması ve fizik birlikte değerlendirilir. Öğrenciler kendi raporlarında en az bir başarısız gözlem ve onu sınayan düzeltmeyi yazmalıdır.
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Built-in image_gen ile üretilen kavramsal öğretim çizimi; gerçek simülasyon ekran görüntüsü, ölçüm veya gerçek model renderı değildir. Dosya: sunum/uretilen_gorseller/slide-89.png. Tam prompt ve köken: sunum/uretilen_gorseller/prompts.json ve provenance.json.
 
 ========================================================================
 90. AUTO ile bu hafta nereye kadar geldik?
@@ -999,7 +999,7 @@ KAYNAKLAR:
 https://ardupilot.org/copter/docs/auto-mode.html
 https://ardupilot.org/copter/docs/common-mavlink-mission-command-messages-mav_cmd.html
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Built-in image_gen ile üretilen kavramsal öğretim çizimi; gerçek simülasyon ekran görüntüsü, ölçüm veya gerçek model renderı değildir. Dosya: sunum/uretilen_gorseller/slide-90.png. Tam prompt ve köken: sunum/uretilen_gorseller/prompts.json ve provenance.json.
 
 ========================================================================
 91. Teslim: sonucu kanıtlayan kısa bir rapor
@@ -1008,7 +1008,7 @@ ANA FİKİR: Görev dosyası + uçuş kanıtı + ürün + sınırlama yeterlidir
 
 Tüm ham videoyu veya binlerce kareyi teslim istemek yerine kısa ve ölçülebilir rapor isteyin. İlaçlamada kaplama ve PWM; haritalamada fotoğraf sayısı ve mozaik; binada yönelim, Gaussian PLY ve hold-out render; sabit kanatta bir doğru olay, bir yanlış alarm ve uçuş devam kanıtı seçilebilir. Tek bir başarılı ekran görüntüsü yeterli değildir. Öğrencinin sonuç için doğru terimi seçmesi değerlendirmeye dahildir: nominal GSD, ideal kaplama, Gaussian model ve hareket adayı.
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Built-in image_gen ile üretilen kavramsal öğretim çizimi; gerçek simülasyon ekran görüntüsü, ölçüm veya gerçek model renderı değildir. Dosya: sunum/uretilen_gorseller/slide-91.png. Tam prompt ve köken: sunum/uretilen_gorseller/prompts.json ve provenance.json.
 
 ========================================================================
 92. Ders sonunda üç kontrol sorusu
@@ -1017,7 +1017,7 @@ ANA FİKİR: Bir sonucun neyi kanıtladığını ve neyi ölçmediğini açıkla
 
 İlk soruda aktif NAV ve CONDITION zamanlaması, sonraki NAV’a geçiş ve çıkış parametreleri beklenir. İkinci soruda piksel örneklemesi ile kalibrasyon, poz ve kontrol noktası doğruluğu ayrımı beklenir. Üçüncü soruda hareket telafisi artığı, parallax, yanlış alarm ve sınıflandırıcının yokluğu tartışılır. Cevapların simülasyondaki gerçek örneklere bağlanmasını isteyin. Dersin amacı komut isimlerini ezberlemekten çok doğru başarı ölçütünü seçmektir.
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Built-in image_gen ile üretilen kavramsal öğretim çizimi; gerçek simülasyon ekran görüntüsü, ölçüm veya gerçek model renderı değildir. Dosya: sunum/uretilen_gorseller/slide-92.png. Tam prompt ve köken: sunum/uretilen_gorseller/prompts.json ve provenance.json.
 
 ========================================================================
 93. Kaynaklar ve yeniden çalışma
@@ -1047,4 +1047,4 @@ https://github.com/esrefsamilzamanoglu/uav-course/tree/main/haftalar/02
 https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/
 https://github.com/ArthurBrussee/brush/tree/v0.3.0
 
-GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya düzenlenebilir öğretim şeması. Köken listesi: sunum/gorseller/provenance.json.
+GÖRSEL: Built-in image_gen ile üretilen kavramsal öğretim çizimi; gerçek simülasyon ekran görüntüsü, ölçüm veya gerçek model renderı değildir. Dosya: sunum/uretilen_gorseller/slide-93.png. Tam prompt ve köken: sunum/uretilen_gorseller/prompts.json ve provenance.json.

@@ -26,6 +26,8 @@
 
 [Uçuş doğrulama özeti](dogrulama/final_summary.json) · [Gaussian hold-out metrikleri](dogrulama/gaussian_validation.json) · [Temel simülasyon görselleri](sunum/gorseller/provenance.json) · [Gaussian render kökenleri](sunum/gorseller/gaussian-provenance.json) · [Çalışma şemaları](sunum/gorseller/explainers-provenance.json).
 
-Şemalar kodla çizildi; PNG görsellerin düzenlenebilir SVG kaynakları `sunum/semalar` içindedir. Gerçek sensör kaydı, gerçek model render’ı ve kavramsal şema birbirinden ayrılır. PSNR/SSIM görünüş ölçüsüdür; geometric accuracy iddiası değildir.
+Önceki v2 şemaları kodla çizildi; PNG görsellerin düzenlenebilir SVG kaynakları `sunum/semalar` içindedir. Gerçek sensör kaydı, gerçek model render’ı ve kavramsal şema birbirinden ayrılır. PSNR/SSIM görünüş ölçüsüdür; geometric accuracy iddiası değildir.
+
+v3 için built-in image_gen ile 40 ayrı açıklayıcı çizim üretildi. [Görseller ve tam promptlar](sunum/uretilen_gorseller/README.md) · [AI görsel kökenleri](sunum/uretilen_gorseller/provenance.json). Bu çizimler gerçek simülasyon kanıtlarından ayrı etiketlenir.
 
 ArduPilot Gazebo kaynak sürümü `082a0fe231f6e63bc8d1598f1cba461d9e2ea7f5`; SITL4.7.2 kaynak sürümü `fbd0a3160c90a557c24ce4c38c16975532652536`. Resmî Brush0.3.0 release URL ve hash değeri `simulasyon/gaussian-downloads.json` içinde. [Model / araç kökenleri](simulasyon/UPSTREAM.md).

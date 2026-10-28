@@ -1,0 +1,332 @@
+{
+  "deck_pages": 93,
+  "target_pages": 40,
+  "illustrated_target_pages": 40,
+  "unillustrated_target_pages": [],
+  "issues": [],
+  "checks": [
+    {
+      "slide": 2,
+      "title": "Bugün neyi yapabiliyor olacağız?",
+      "original_layout": "cards",
+      "matching_generated_image_embedded": true,
+      "editable_text_retained": true,
+      "caption_present": true
+    },
+    {
+      "slide": 4,
+      "title": "Dört uygulama, dört farklı çıktı",
+      "original_layout": "table",
+      "matching_generated_image_embedded": true,
+      "editable_text_retained": true,
+      "caption_present": true
+    },
+    {
+      "slide": 5,
+      "title": "Terimleri arayüzde gördüğümüz gibi kullanalım",
+      "original_layout": "table",
+      "matching_generated_image_embedded": true,
+      "editable_text_retained": true,
+      "caption_present": true
+    },
+    {
+      "slide": 7,
+      "title": "AUTO modunun sınırını koruyalım",
+      "original_layout": "cards",
+      "matching_generated_image_embedded": true,
+      "editable_text_retained": true,
+      "caption_present": true
+    },
+    {
+      "slide": 8,
+      "title": "Doğrulanan ortak ortam",
+      "original_layout": "table",
+      "matching_generated_image_embedded": true,
+      "editable_text_retained": true,
+      "caption_present": true
+    },
+    {
+      "slide": 15,
+      "title": "Kamera yönü ArduPilot’tan geliyor",
+      "original_layout": "table",
+      "matching_generated_image_embedded": true,
+      "editable_text_retained": true,
+      "caption_present": true
+    },
+    {
+      "slide": 16,
+      "title": "Tanıtım görevini satır satır okuyalım",
+      "original_layout": "table",
+      "matching_generated_image_embedded": true,
+      "editable_text_retained": true,
+      "caption_present": true
+    },
+    {
+      "slide": 18,
+      "title": "Öğrencinin başlangıç adımları",
+      "original_layout": "flow",
+      "matching_generated_image_embedded": true,
+      "editable_text_retained": true,
+      "caption_present": true
+    },
+    {
+      "slide": 19,
+      "title": "Mission Planner’dan görevi uçuralım",
+      "original_layout": "flow",
+      "matching_generated_image_embedded": true,
+      "editable_text_retained": true,
+      "caption_present": true
+    },
+    {
+      "slide": 20,
+      "title": "NAV, DO ve CONDITION ne yapar?",
+      "original_layout": "table",
+      "matching_generated_image_embedded": true,
+      "editable_text_retained": true,
+      "caption_present": true
+    },
+    {
+      "slide": 22,
+      "title": "Sürümle birlikte parametre adları da değişir",
+      "original_layout": "table",
+      "matching_generated_image_embedded": true,
+      "editable_text_retained": true,
+      "caption_present": true
+    },
+    {
+      "slide": 25,
+      "title": "Aynı tarla, farklı görev geometrisi",
+      "original_layout": "table",
+      "matching_generated_image_embedded": true,
+      "editable_text_retained": true,
+      "caption_present": true
+    },
+    {
+      "slide": 27,
+      "title": "İlaçlama görevinin tekrarlanan bloğu",
+      "original_layout": "table",
+      "matching_generated_image_embedded": true,
+      "editable_text_retained": true,
+      "caption_present": true
+    },
+    {
+      "slide": 28,
+      "title": "Pompa komutunu fiziksel çıkıştan ayıralım",
+      "original_layout": "cards",
+      "matching_generated_image_embedded": true,
+      "editable_text_retained": true,
+      "caption_present": true
+    },
+    {
+      "slide": 32,
+      "title": "Doz hesabında hız neden önemli?",
+      "original_layout": "formula",
+      "matching_generated_image_embedded": true,
+      "editable_text_retained": true,
+      "caption_present": true
+    },
+    {
+      "slide": 33,
+      "title": "Uygulama: bir şeridi değiştirin",
+      "original_layout": "cards",
+      "matching_generated_image_embedded": true,
+      "editable_text_retained": true,
+      "caption_present": true
+    },
+    {
+      "slide": 35,
+      "title": "GSD, çıktı pikseli ve doğruluk farklıdır",
+      "original_layout": "cards",
+      "matching_generated_image_embedded": true,
+      "editable_text_retained": true,
+      "caption_present": true
+    },
+    {
+      "slide": 37,
+      "title": "Mission Planner’da otomatik grid üretimi",
+      "original_layout": "flow",
+      "matching_generated_image_embedded": true,
+      "editable_text_retained": true,
+      "caption_present": true
+    },
+    {
+      "slide": 38,
+      "title": "Haritalama görevinde hangi öğeler var?",
+      "original_layout": "table",
+      "matching_generated_image_embedded": true,
+      "editable_text_retained": true,
+      "caption_present": true
+    },
+    {
+      "slide": 39,
+      "title": "Mesafeli tetik zamanlayıcı değildir",
+      "original_layout": "cards",
+      "matching_generated_image_embedded": true,
+      "editable_text_retained": true,
+      "caption_present": true
+    },
+    {
+      "slide": 40,
+      "title": "Tetik ile görüntüyü nasıl eşleştiriyoruz?",
+      "original_layout": "flow",
+      "matching_generated_image_embedded": true,
+      "editable_text_retained": true,
+      "caption_present": true
+    },
+    {
+      "slide": 46,
+      "title": "Uygulama: mozaik üretin ve karşılaştırın",
+      "original_layout": "code",
+      "matching_generated_image_embedded": true,
+      "editable_text_retained": true,
+      "caption_present": true
+    },
+    {
+      "slide": 51,
+      "title": "Pipeline: pose → initialization → training",
+      "original_layout": "flow",
+      "matching_generated_image_embedded": true,
+      "editable_text_retained": true,
+      "caption_present": true
+    },
+    {
+      "slide": 63,
+      "title": "Gaussian model, mesh ve point cloud farklıdır",
+      "original_layout": "table",
+      "matching_generated_image_embedded": true,
+      "editable_text_retained": true,
+      "caption_present": true
+    },
+    {
+      "slide": 64,
+      "title": "Öğrencinin 3D üretim adımları",
+      "original_layout": "flow",
+      "matching_generated_image_embedded": true,
+      "editable_text_retained": true,
+      "caption_present": true
+    },
+    {
+      "slide": 66,
+      "title": "Uygulama: capture değişsin, AUTO sınırı kalsın",
+      "original_layout": "cards",
+      "matching_generated_image_embedded": true,
+      "editable_text_retained": true,
+      "caption_present": true
+    },
+    {
+      "slide": 70,
+      "title": "Sabit kanat görevinin tamamı AUTO",
+      "original_layout": "table",
+      "matching_generated_image_embedded": true,
+      "editable_text_retained": true,
+      "caption_present": true
+    },
+    {
+      "slide": 71,
+      "title": "AUTO kalkış için yer koşulları da önemlidir",
+      "original_layout": "cards",
+      "matching_generated_image_embedded": true,
+      "editable_text_retained": true,
+      "caption_present": true
+    },
+    {
+      "slide": 78,
+      "title": "İlk görüntü işleme denemesi neden zayıftı?",
+      "original_layout": "cards",
+      "matching_generated_image_embedded": true,
+      "editable_text_retained": true,
+      "caption_present": true
+    },
+    {
+      "slide": 79,
+      "title": "Görüntü analizi yalnız tarama fazında",
+      "original_layout": "table",
+      "matching_generated_image_embedded": true,
+      "editable_text_retained": true,
+      "caption_present": true
+    },
+    {
+      "slide": 82,
+      "title": "Canlı uçuşun sayısal sonucu",
+      "original_layout": "stats",
+      "matching_generated_image_embedded": true,
+      "editable_text_retained": true,
+      "caption_present": true
+    },
+    {
+      "slide": 85,
+      "title": "Uygulama: alarmı üret, rotayı koru",
+      "original_layout": "cards",
+      "matching_generated_image_embedded": true,
+      "editable_text_retained": true,
+      "caption_present": true
+    },
+    {
+      "slide": 86,
+      "title": "Dosyaları nerede bulacağız?",
+      "original_layout": "table",
+      "matching_generated_image_embedded": true,
+      "editable_text_retained": true,
+      "caption_present": true
+    },
+    {
+      "slide": 87,
+      "title": "Her uçuş için aynı doğrulama komutu",
+      "original_layout": "code",
+      "matching_generated_image_embedded": true,
+      "editable_text_retained": true,
+      "caption_present": true
+    },
+    {
+      "slide": 88,
+      "title": "Son denemeler: ne doğrulandı?",
+      "original_layout": "table",
+      "matching_generated_image_embedded": true,
+      "editable_text_retained": true,
+      "caption_present": true
+    },
+    {
+      "slide": 89,
+      "title": "Bir hata → bir düzeltme → yeniden test",
+      "original_layout": "table",
+      "matching_generated_image_embedded": true,
+      "editable_text_retained": true,
+      "caption_present": true
+    },
+    {
+      "slide": 90,
+      "title": "AUTO ile bu hafta nereye kadar geldik?",
+      "original_layout": "cards",
+      "matching_generated_image_embedded": true,
+      "editable_text_retained": true,
+      "caption_present": true
+    },
+    {
+      "slide": 91,
+      "title": "Teslim: sonucu kanıtlayan kısa bir rapor",
+      "original_layout": "cards",
+      "matching_generated_image_embedded": true,
+      "editable_text_retained": true,
+      "caption_present": true
+    },
+    {
+      "slide": 92,
+      "title": "Ders sonunda üç kontrol sorusu",
+      "original_layout": "cards",
+      "matching_generated_image_embedded": true,
+      "editable_text_retained": true,
+      "caption_present": true
+    },
+    {
+      "slide": 93,
+      "title": "Kaynaklar ve yeniden çalışma",
+      "original_layout": "table",
+      "matching_generated_image_embedded": true,
+      "editable_text_retained": true,
+      "caption_present": true
+    }
+  ],
+  "review": "All 40 generated illustrations reviewed individually; all 93 PDF pages reviewed in rendered contact sheets. Conceptual illustrations labelled separately from recorded simulation evidence.",
+  "native_powerpoint_vertical_overflow_issues": [],
+  "native_powerpoint_vertical_bounds_checked_pages": 40
+}

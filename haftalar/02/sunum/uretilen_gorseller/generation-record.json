@@ -1,0 +1,245 @@
+{
+  "mode": "built-in image_gen",
+  "assets": [
+    {
+      "slide": 2,
+      "generated_source_filename": "exec-745a71e7-3541-4ec7-990c-680e41b57a6a.png",
+      "edit_prompt": null,
+      "review": "accepted: clear plan-flight-evidence story, no text"
+    },
+    {
+      "slide": 4,
+      "generated_source_filename": "exec-2f1845ab-d4da-432f-b615-caee82427a27.png",
+      "edit_prompt": null,
+      "review": "accepted after visual inspection: relevant conceptual illustration, no numerical test claims"
+    },
+    {
+      "slide": 5,
+      "generated_source_filename": "exec-62210786-2ae6-46f4-90fb-9db15fa3eabc.png",
+      "edit_prompt": null,
+      "review": "accepted after visual inspection: relevant conceptual illustration, no numerical test claims"
+    },
+    {
+      "slide": 7,
+      "generated_source_filename": "exec-783a2168-b50b-46fc-9b44-e15243daded3.png",
+      "edit_prompt": null,
+      "review": "accepted after visual inspection: relevant conceptual illustration, no numerical test claims"
+    },
+    {
+      "slide": 8,
+      "generated_source_filename": "exec-b4586820-bb18-4f2f-9718-988649570850.png",
+      "edit_prompt": null,
+      "review": "accepted after visual inspection: relevant conceptual illustration, no numerical test claims"
+    },
+    {
+      "slide": 15,
+      "generated_source_filename": "exec-ac2757e8-ac32-4c75-acf7-f750ca995ffc.png",
+      "edit_prompt": null,
+      "review": "accepted after visual inspection: relevant conceptual illustration, no numerical test claims"
+    },
+    {
+      "slide": 16,
+      "generated_source_filename": "exec-112fdac2-00e8-45bd-9571-2b90fc92e78b.png",
+      "edit_prompt": null,
+      "review": "accepted after visual inspection: relevant conceptual illustration, no numerical test claims"
+    },
+    {
+      "slide": 18,
+      "generated_source_filename": "exec-591a1bc8-9118-41ef-aebe-b5781267022e.png",
+      "edit_prompt": "Edit this conceptual teaching illustration. Preserve its pale-blue/navy/teal/gold style and first three setup stages. Replace the ENTIRE bottom stage: show two application windows on ONE computer monitor, left a 3D farm simulation containing a QUADROTOR and right a waypoint planning map, connected by a thin abstract local software link between the windows. Remove the physical aircraft on the desk, remove its cable, remove all fixed-wing/VTOL hybrid hardware. It must clearly mean two local software processes connecting on the same computer, not plugging a real aircraft in. No text or numbers.",
+      "review": "revised for technical clarity"
+    },
+    {
+      "slide": 19,
+      "generated_source_filename": "exec-6a9946f0-a4ce-4979-a87c-bd8140723c81.png",
+      "edit_prompt": null,
+      "review": "accepted after visual inspection: relevant conceptual illustration, no numerical test claims"
+    },
+    {
+      "slide": 20,
+      "generated_source_filename": "exec-926db679-04cf-46e7-b67f-fe8d175935c6.png",
+      "edit_prompt": "Correct this mission-engine teaching diagram. Preserve farm, drone, main blue route and waypoint spheres. The clock must NOT gate or block the main flight path. Remove the gold gate spanning the main navigation route. Move the clock and a small gold gate onto ONLY a dashed payload-action branch coming from the flight route toward a camera-shutter icon. Show the main NAV route proceeding uninterrupted to the next sphere; the delayed DO camera action on its own branch may be crossed out when NAV advances. Preserve pale blue/navy/teal/gold, no text, no numbers. This distinction is critical: CONDITION delays DO actions, not navigation.",
+      "review": "revised for technical clarity"
+    },
+    {
+      "slide": 22,
+      "generated_source_filename": "exec-35f424c2-f226-4191-b85a-3e13824b2289.png",
+      "edit_prompt": null,
+      "review": "accepted after visual inspection: relevant conceptual illustration, no numerical test claims"
+    },
+    {
+      "slide": 25,
+      "generated_source_filename": "exec-9d660977-fd13-4d8f-9a57-51997b0c818b.png",
+      "edit_prompt": null,
+      "review": "accepted after visual inspection: relevant conceptual illustration, no numerical test claims"
+    },
+    {
+      "slide": 27,
+      "generated_source_filename": "exec-a74f9371-18e1-462e-8b81-6608f58e4f64.png",
+      "edit_prompt": null,
+      "review": "accepted after visual inspection: relevant conceptual illustration, no numerical test claims"
+    },
+    {
+      "slide": 28,
+      "generated_source_filename": "exec-0a296bdd-8521-439f-bec1-254ecb2bcee3.png",
+      "edit_prompt": null,
+      "review": "accepted after visual inspection: relevant conceptual illustration, no numerical test claims"
+    },
+    {
+      "slide": 32,
+      "generated_source_filename": "exec-7aa2fe83-a86d-418c-a577-dfe23bc8fe96.png",
+      "edit_prompt": null,
+      "review": "accepted after visual inspection: relevant conceptual illustration, no numerical test claims"
+    },
+    {
+      "slide": 33,
+      "generated_source_filename": "exec-b059a67c-ce61-401b-9b59-45fc299f0aae.png",
+      "edit_prompt": null,
+      "review": "accepted after visual inspection: relevant conceptual illustration, no numerical test claims"
+    },
+    {
+      "slide": 35,
+      "generated_source_filename": "exec-4e7005a1-310a-40ca-9116-097e772a6ceb.png",
+      "edit_prompt": null,
+      "review": "accepted after visual inspection: relevant conceptual illustration, no numerical test claims"
+    },
+    {
+      "slide": 37,
+      "generated_source_filename": "exec-5b685373-1b6a-49d2-9fe6-fec518c2cd9e.png",
+      "edit_prompt": null,
+      "review": "accepted after visual inspection: relevant conceptual illustration, no numerical test claims"
+    },
+    {
+      "slide": 38,
+      "generated_source_filename": "exec-a13784c3-2de6-4e94-ab29-1008efbc1212.png",
+      "edit_prompt": null,
+      "review": "accepted after visual inspection: relevant conceptual illustration, no numerical test claims"
+    },
+    {
+      "slide": 39,
+      "generated_source_filename": "exec-a1343788-f657-4902-a961-94326e6e11a5.png",
+      "edit_prompt": "Correct this distance-trigger teaching illustration. Rebuild the horizontal position row as a straight horizontal ground-distance ruler with exactly FIVE perfectly EVENLY SPACED positions in a flat non-perspective orthographic layout. Put a quadrotor and shutter icon at each of the first FOUR positions. First four consecutive intervals must have IDENTICAL pixel width, not shrinking toward the right. Fifth position shows only a gray crossed-out CAMERA SHUTTER icon: remove the red cross from the drone, flight continues. Above the four active positions show four identical-size clock faces with unequal highlighted elapsed-time wedges. Below retain the farm and four overlapping viewing cones. Equal ground distance, unequal time intervals. No words or numbers; same palette.",
+      "review": "revised for technical clarity"
+    },
+    {
+      "slide": 40,
+      "generated_source_filename": "exec-a70c93a7-4bed-4bdb-b0b9-193e3e2e89f3.png",
+      "edit_prompt": null,
+      "review": "accepted after visual inspection: relevant conceptual illustration, no numerical test claims"
+    },
+    {
+      "slide": 46,
+      "generated_source_filename": "exec-82dd8dc7-a475-46e8-9a86-bd6544932f9e.png",
+      "edit_prompt": null,
+      "review": "accepted after visual inspection: relevant conceptual illustration, no numerical test claims"
+    },
+    {
+      "slide": 51,
+      "generated_source_filename": "exec-ff863b6e-0057-4c93-af6b-ca70f8c96826.png",
+      "edit_prompt": null,
+      "review": "accepted after visual inspection: relevant conceptual illustration, no numerical test claims"
+    },
+    {
+      "slide": 63,
+      "generated_source_filename": "exec-f1f4ce5d-843a-4776-a22d-766d92d7a3f4.png",
+      "edit_prompt": null,
+      "review": "accepted after visual inspection: relevant conceptual illustration, no numerical test claims"
+    },
+    {
+      "slide": 64,
+      "generated_source_filename": "exec-23443a16-ccef-4192-acc5-340bd702bedc.png",
+      "edit_prompt": null,
+      "review": "accepted after visual inspection: relevant conceptual illustration, no numerical test claims"
+    },
+    {
+      "slide": 66,
+      "generated_source_filename": "exec-ffbd960d-754b-4769-aa97-b79f6d5a1a1a.png",
+      "edit_prompt": null,
+      "review": "accepted after visual inspection: relevant conceptual illustration, no numerical test claims"
+    },
+    {
+      "slide": 70,
+      "generated_source_filename": "exec-661f2660-6807-44c4-bcca-1547f239162c.png",
+      "edit_prompt": "Refine this fixed-wing AUTO teaching illustration. Keep rural landscape and runway. Redraw the survey route as exactly THREE long parallel straight scanning legs connected end-to-end by smooth broad U-turns, with takeoff/climb connecting from runway to the first leg and final approach connecting from the last leg back to runway. Remove EVERY directional arrowhead anywhere on this image and remove all repeated aircraft. Keep just ONE conventional fixed-wing UAV in flight above a straight leg, aligned with that leg. Use an unbroken teal route for scan legs, gold for turns and approach, simple translucent footprints only along straight legs. Avoid extra loops or extra legs. No text or numbers. This is a conceptual route, not measured geometry.",
+      "review": "revised for technical clarity"
+    },
+    {
+      "slide": 71,
+      "generated_source_filename": "exec-360426e2-9b4a-4629-884a-0db769e3b4f4.png",
+      "edit_prompt": null,
+      "review": "accepted after visual inspection: relevant conceptual illustration, no numerical test claims"
+    },
+    {
+      "slide": 78,
+      "generated_source_filename": "exec-1951be41-a3c8-432f-8a2f-f1645c0e0677.png",
+      "edit_prompt": null,
+      "review": "accepted after visual inspection: relevant conceptual illustration, no numerical test claims"
+    },
+    {
+      "slide": 79,
+      "generated_source_filename": "exec-9e3eb7af-cbee-4045-9ef2-ad89cdf5a0dd.png",
+      "edit_prompt": "Edit only for technical clarity. Preserve this processing-gate illustration, its palette, lower camera-data strip and one-way data-to-laptop arrows. In the upper rural flight route REMOVE ALL arrowheads from the colored path; show smooth continuous straight teal scan sections linked by muted gold turns, without contradictory directional markers. Keep just one fixed-wing UAV in the air aligned with a straight leg. The lower strip must remain bright only for straight scan phases and gray/off on turns. No text, no numbers, no command arrow back to plane.",
+      "review": "revised for technical clarity"
+    },
+    {
+      "slide": 82,
+      "generated_source_filename": "exec-4d239db2-5c61-4eb0-b0fc-b730fd1b75c4.png",
+      "edit_prompt": null,
+      "review": "accepted after visual inspection: relevant conceptual illustration, no numerical test claims"
+    },
+    {
+      "slide": 85,
+      "generated_source_filename": "exec-48f93593-1adc-4dc0-b9c2-8aca0ae578ea.png",
+      "edit_prompt": null,
+      "review": "accepted after visual inspection: relevant conceptual illustration, no numerical test claims"
+    },
+    {
+      "slide": 86,
+      "generated_source_filename": "exec-0e4df082-635b-4187-91b6-1a76a696f26d.png",
+      "edit_prompt": null,
+      "review": "accepted after visual inspection: relevant conceptual illustration, no numerical test claims"
+    },
+    {
+      "slide": 87,
+      "generated_source_filename": "exec-718ab090-f885-4b54-ab28-4bccb3bc11c9.png",
+      "edit_prompt": null,
+      "review": "accepted after visual inspection: relevant conceptual illustration, no numerical test claims"
+    },
+    {
+      "slide": 88,
+      "generated_source_filename": "exec-60f1c62e-30f0-4565-a0db-816e7a809cfe.png",
+      "edit_prompt": "Edit this five-row validation concept illustration. Preserve rows 1, 2, 3 and 5 exactly. In row 4 replace ONLY the rightmost rainbow-colored building/height-map output with a naturally colored SOFT 3D Gaussian rendering of the same building: overlapping translucent anisotropic ellipsoids form roof and facade, natural stone/roof colors, no rainbow elevation colors and no triangle mesh wireframe. Preserve orbit-capture scene to its left. This is an explanatory drawing, not actual test evidence. No text or numbers.",
+      "review": "revised for technical clarity"
+    },
+    {
+      "slide": 89,
+      "generated_source_filename": "exec-fc818af1-802d-4a5b-8895-ddbb91fac176.png",
+      "edit_prompt": null,
+      "review": "accepted after visual inspection: relevant conceptual illustration, no numerical test claims"
+    },
+    {
+      "slide": 90,
+      "generated_source_filename": "exec-0d711b10-4f09-477a-b6ea-7d8947787967.png",
+      "edit_prompt": "Correct this AUTO capabilities summary illustration while preserving the three-tier composition and palette. In the MIDDLE TIER replace BOTH fixed-wing aircraft with realistic four-rotor QUADROTORS: left a camera/gimbal quadrotor photographing the building, right an agricultural quadrotor spraying crop rows. In the TOP TIER replace rainbow/height-map building thumbnail everywhere it appears with a naturally colored soft Gaussian rendered building, no elevation rainbow. In the BOTTOM TIER remove ALL directional arrowheads and keep a clean continuous concept route. Bottom fixed-wing aircraft and runways may remain. No text, numbers, logos or fake screenshot labels.",
+      "review": "revised for technical clarity"
+    },
+    {
+      "slide": 91,
+      "generated_source_filename": "exec-fefae1b6-9099-4ae8-bae9-16ab018e7a60.png",
+      "edit_prompt": null,
+      "review": "accepted after visual inspection: relevant conceptual illustration, no numerical test claims"
+    },
+    {
+      "slide": 92,
+      "generated_source_filename": "exec-c94432ff-1a3b-4733-a473-9540a9642e90.png",
+      "edit_prompt": null,
+      "review": "accepted after visual inspection: relevant conceptual illustration, no numerical test claims"
+    },
+    {
+      "slide": 93,
+      "generated_source_filename": "exec-b9b38450-7d39-40aa-83d9-eccc40630d4d.png",
+      "edit_prompt": null,
+      "review": "accepted after visual inspection: relevant conceptual illustration, no numerical test claims"
+    }
+  ]
+}
