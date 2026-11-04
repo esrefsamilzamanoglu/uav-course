@@ -64,7 +64,11 @@ def reconstruct(run,output=None,frames=None):
         view=cv2.drawMatches(ima,ka,imb,kb,matches[:70],None,flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)
         cv2.imwrite(str(out/'bina_sift_eslesmeleri.png'),view)
     # Evaluation against analytic dimensions is separate from reconstruction.
-    surface=np.minimum.reduce([np.abs(pts[:,0]-7),np.abs(pts[:,0]+7),np.abs(pts[:,1]-39),np.abs(pts[:,1]-51),np.abs(pts[:,2]-14.1)])
+    # Current house: walls at x=±7, y=39/51; roof ridge z=12.1, eaves z=8.5.
+    # This evaluation does not feed back into image matching or triangulation.
+    roof_z=12.1-np.abs(pts[:,1]-45)*(3.6/6.7)
+    roof_distance=np.abs(pts[:,2]-roof_z)/math.sqrt(1+(3.6/6.7)**2)
+    surface=np.minimum.reduce([np.abs(pts[:,0]-7),np.abs(pts[:,0]+7),np.abs(pts[:,1]-39),np.abs(pts[:,1]-51),roof_distance])
     metrics={'method':'SIFT + image matching + known-pose calibrated triangulation; sparse reconstruction',
              'photos':len(photos),'pairs':len(reports),'vertices':len(pts),'height_span_m':float(np.ptp(pts[:,2])),
              'median_distance_to_main_building_surfaces_m':float(np.median(surface)),

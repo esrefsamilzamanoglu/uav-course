@@ -1,67 +1,38 @@
-# 2. hafta — AUTO uygulamaları
+# 2. hafta — simülasyonu çalıştırın
 
-İlk haftadaki **native Windows Gazebo Jetty10.5.0 + ArduCopter4.7.2** kurulumu kullanılır. Sabit kanat için aynı sürüm ailesindeki **ArduPlane4.7.2** resmî sunucudan indirilir. İlk hafta dosyaları değiştirilmez.
+İlk haftanın **Windows x64 · Gazebo Jetty 10.5.0 · ArduCopter 4.7.2** kurulumunu kullanın. ArduPlane 4.7.2 ve ek araçlar resmî adreslerinden alınır.
 
-## Bir kez kurun
+## Kurulum ve uçuş
 
-1. İlk haftanın kurulumunu tamamlayın; açık simülasyon oturumunu kapatın.
-2. Bu klasörde **`Kur.cmd`** dosyasını açın ve tamamlanmasını bekleyin. Kamera ve görüntü işleme araçları hazırlanır; ek Gazebo eklentisi bilgisayarınızda derlenir.
-3. **`Baslat.cmd`** dosyasını açın ve uygulamayı seçin.
+1. Açık simülasyon oturumunu kapatın, **Kur.cmd** dosyasını bir kez çalıştırın. Kamera/görüntü işleme ortamı ve yerel Gazebo eklentisi hazırlanır.
+2. **Baslat.cmd** dosyasını açıp uygulamayı seçin.
+3. Mission Planner'dan **TCP → 127.0.0.1 → 5760** ile bağlanın.
+4. **Plan** ekranında aşağıdaki görev dosyasını açın; **Write WPs** ile araca yazın.
+5. Sensörler hazırken **AUTO** modunu seçip **ARM** edin. Kalkıştan inişe kadar görevi ArduPilot yürütür.
 
-| Seçim | Uygulama | Mission Planner'a yüklenecek dosya |
+| Menü | Uygulama | Görev dosyası |
 | --- | --- | --- |
-| 0 | Araç/kamera tanıtımı | `missions/00_kamera_tanitimi.waypoints` |
+| 0 | Kamera tanıtımı | `missions/00_kamera_tanitimi.waypoints` |
 | 1 | Tarla ilaçlama | `missions/01_tarla_ilaclama.waypoints` |
-| 2 | Aynı tarlada 2D haritalama | `missions/02_tarla_2d_haritalama.waypoints` |
-| 3 | Bina çevresinde 3D veri toplama | `missions/03_bina_3d_haritalama.waypoints` |
-| 4 | Sabit kanatla hareket gözlemi | `missions/04_sabit_kanat_gozetim.waypoints` |
+| 2 | 2D tarla haritalama | `missions/02_tarla_2d_haritalama.waypoints` |
+| 3 | 3D ev haritalama | `missions/03_bina_3d_haritalama.waypoints` |
+| 4 | Sabit kanat gözlem | `missions/04_sabit_kanat_gozetim.waypoints` |
 
-## Görevi başlatın
+Mission Planner'ın SIMULATION sekmesinden ikinci SITL açmayın. Başlatıcı görevi kendiliğinden başlatmaz; Python pasif telemetri/görüntü kaydı yapar. Uçuş sonunda terminalde **RESULT** klasörünü saklayın. Oturumu bitirmek için terminalde `Ctrl+C` kullanın.
 
-Gazebo açılınca Mission Planner'dan **TCP → `127.0.0.1` → `5760`** ile bağlanın. **Plan** ekranında seçtiğiniz görev dosyasını açıp araca yazın. Sensörlerin hazır olduğu mesajını bekleyin; **AUTO** modunu seçip **ARM** edin.
+## Görüntülerden sonuç üretin
 
-Rotayı, kalkışı, görev komutlarını ve inişi ArduPilot yürütür. Başlatıcı uçuşu başlatmaz. Python, ikinci bağlantıdan yalnız telemetri/fotoğraf kaydeder; sabit kanat uygulamasında ayrıca görüntüleri işler. Mission Planner'ın **SIMULATION** sekmesinden ikinci SITL açmayın.
+- **Tarla:** `2D_Uret.cmd` açın; tarla haritalama uçuşunun RESULT klasörünü yapıştırın. `products/tarla_mozaik.png` RGB mozaiğidir. Ortalama mozaik ve örtüşme haritasını da karşılaştırın.
+- **Ev:** `3D_Uret.cmd` açın; ev uçuşunun RESULT klasörünü yapıştırın. Gerçek fotoğraflardan sparse initialization ve Gaussian training yapılır. Biten model viewer'da açılır.
+- **Hazır 3D model:** `3D_Goster.cmd` açın; yeniden eğitim beklemeden [ders örneğini](../ornekler/README.md) inceleyin.
+- **Sabit kanat:** menüde görüntü analizini seçin. Olay görüntüleri uçuş klasöründeki `products/motion` içine kaydedilir; araç AUTO görevine devam eder.
 
-Görev tamamlandığında sonuç klasörünün yolu terminalde görünür. Tekrar uçuş için başlatıcıyı yeniden açın. Oturumu erken bitirmek için terminalde `Ctrl+C` kullanın.
+Asıl algoritmalar [ders_kodlari](ders_kodlari/README.md) klasöründedir. Kurulum, kayıt ve geometri yardımcıları `tools/`; dünyalar `worlds/`; 3D nesneler/dokular `models/`; AUTO görevleri `missions/` içindedir. `src/` yerelde derlenecek kamera/sahne eklentisidir ve kurulum için gereklidir. Kendi kayıtlarınız `.local/` içinde kalır.
 
-## Görüntülerden ürün üretin
+## Çıktıları yorumlayın
 
-Uçuş bittiğinde terminaldeki `RESULT` yolunun bulunduğu klasör **uçuş klasörünüzdür**. Aşağıdaki komutlarda `UCUS_KLASORU` yerine bu klasörü yazın:
+Tarla 1 575 bitki ve bölgesel renk/boy çeşitliliği içerir. Mozaik yalnız kaydedilmiş RGB'yi kullanır; sentetik sararma gerçek NDVI veya tarımsal stres ölçümü değildir. Düz zemin varsayımı bitkilerde parallax bırakabilir.
 
-```powershell
-.\.local\venv\Scripts\python.exe .\ders_kodlari\haritalama_2d.py "UCUS_KLASORU"
-```
+Ev, taş/sıva cepheli, kiremit çatılı, panjurlu ve balkonlu gerçek 3D geometridir. Varsayılan Gaussian çalışması **640×427 RGB, 6 000 steps, en fazla 45 000 Gaussians, SH degree 2** kullanır. Referans uçuşta 108 fotoğrafın 94'ü train, 14'ü hold-out'tur; hold-out fotoğraflar initialization'a da verilmez. Kamera pozları Gazebo'dan bilinir, bina mesh'i eğitimde okunmaz. `products/gaussian/training` içinde PLY, render ve metrikler oluşur. Model görünüş üretir; watertight mesh değildir.
 
-Bu komut **tarla haritalama** uçuşundan sonra çalıştırılır. Aynı işlem için **`2D_Uret.cmd`** açılıp uçuş klasörü yapıştırılabilir. Sonuçlar uçuş klasöründeki `products` altına yazılır. `tarla_mozaik.png` en merkezi bakışlardan seçilen RGB mozaiğidir; yapraklarda ortalamadan oluşan çift görüntüyü azaltır. `tarla_mozaik_ortalama.png` aynı çekimlerin ağırlıklı ortalamasıdır; derste karşılaştırılabilir. Sabit kanat görüntü analizi menüden seçildiğinde kendiliğinden çalışır; örnek olaylar `products/motion` içindedir.
-
-## Bölgesel renk ve boyut çeşitliliği
-
-4 Kasım revizyonunda aynı tarla sınırlarında **1 575 bitki**, 48 yaprak renk çifti, yaklaşık **0,40–1,22 m** boy ve farklı yaprak yönleriyle hazırlandı. Geniş, yumuşak geçişli sararma bölgelerine küçük bireysel farklılıklar eklenir; aynı seed aynı sahneyi verir. Renkler ve boylar gerçek 3D yaprak/gövde geometrisindedir; görüntü işleme sonucuna renk kaplaması eklenmez.
-
-RGB mozaik stres dağılımını andıran görünüş verir. Bu sentetik senaryo **gerçek NDVI veya tarımsal stres ölçümü değildir**. Algoritma `field_layout.json` içindeki senaryo değerlerini okumaz. [Gerçek AUTO uçuşundan yeni örnekler](../ornekler/Tarla-2D/README.md).
-
-## Derste kodları açalım
-
-Asıl algoritmalar [ders_kodlari/](ders_kodlari/README.md) içindedir:
-
-- [haritalama_2d.py](ders_kodlari/haritalama_2d.py): fotoğraf → düzlem projeksiyonu → birleştirme → kaplama ölçümü.
-- [haritalama_3d.py](ders_kodlari/haritalama_3d.py): RGB/pose → sparse initialization → Gaussian training → hold-out.
-- [hareketli_unsur_tespiti.py](ders_kodlari/hareketli_unsur_tespiti.py): ORB/RANSAC → residual → aday → takip → kayıt.
-
-Kodlar Türkçe açıklamalar ve ayrı işlem fonksiyonlarıyla düzenlendi. Kurulum, kayıt, kamera kalibrasyonu ve bağımsız değerlendirme `tools/` içinde kalır. Eski komut yolları aynı ders kodlarına yönlendirilir.
-
-## Bina için gerçek Gaussian Splatting
-
-1. Menü **3** ile bina AUTO görevini uçurun; LAND tamamlanınca terminaldeki uçuş klasörünü saklayın.
-2. **`3D_Uret.cmd`** dosyasını açın ve bu uçuş klasörünü yapıştırın. Resmî [Brush0.3.0](https://github.com/ArthurBrussee/brush/releases/tag/v0.3.0) aracı yerelde hazırlanır; fotoğraflardan initialization, Gaussian training ve hold-out değerlendirmesi yapılır.
-3. Biten model Brush viewer'da açılır. Orbit ve zoom ile cepheleri, çatıyı ve kalan artefact'ları inceleyin.
-
-Hazır ders örneğini hemen görmek için **`3D_Goster.cmd`** dosyasını açın. [Örnek Gaussian PLY](../ornekler/Bina-Gaussian.ply), gerçek Gazebo fotoğraflarından eğitilmiş modeldir. CUDA kurulumu gerekmez; referans test Intel UHD730 bulunan bu Windows bilgisayarda yapıldı. Training süresi donanıma bağlıdır. Resmî araç arşivi otomatik indirilir ve SHA256 kontrolünden geçer; öğrenciye ZIP/EXE paketi dağıtılmaz.
-
-Varsayılan çalışma: **640×427 RGB, 6 000 steps, en fazla45 000 Gaussians, SH degree2**. 108fotoğrafın94'ü train,14'ü hold-out'tur. Hold-out kareler sparse initialization'a da verilmez. Camera pose simülatörden bilinir; bina mesh'i okunmaz. Çıktılar `products/gaussian/training` altındadır; `export_6000.ply`, `gaussian_metrics.json` ve `eval_6000/` incelemeye hazırdır. Eski `reconstruct_3d.py` artık ana ürün yerine sparse initialization aşamasını sağlar.
-
-**Çıktıların anlamı:** tarla mozaiği bilinen simülasyon kamera pozlarıyla düzlem projeksiyonudur. Yeni bina çıktısı optimize edilmiş **3D Gaussian radiance representation**'dır; dolu görünüş render eder, watertight triangle mesh veya ölçülmüş geometric accuracy değildir. İlaçlama kaplaması gerçek pompa çıkışından hesaplanan ideal geometrik iş genişliğidir; damlacık fiziği ölçümü değildir. Hareket işçisi insan sınıflandırıcısı değildir; hareket adayları üretir ve yanlış alarm verebilir.
-
-## Dosyalar
-
-`worlds/`: üç taşınabilir dünya; `models/`: yerel 3D nesneler ve dokular; `missions/`: AUTO görevleri; `params/`: doğrulanan parametreler; `ders_kodlari/`: üç ders algoritması; `tools/`: kurulum, kayıt, geometri ve değerlendirme yardımcıları. İndirmeler resmî sunuculardandır ve SHA256 ile kontrol edilir. Hazır EXE/DLL veya ZIP dağıtılmaz; yerel çıktılar `.local` içinde kalır.
+[Brush 0.3.0](https://github.com/ArthurBrussee/brush/releases/tag/v0.3.0) otomatik indirilip SHA256 ile doğrulanır. CUDA kurulumu gerekmez; eğitim süresi ve çalışabilirlik GPU/sürücüye bağlıdır. Referans deneme Intel UHD 730 ile yapılmıştır. İlaçlama sonucu ideal iş genişliğidir, damlacık fiziği değildir. Hareket kodu hareket adaylarını işaretler; insan tanıma modeli değildir.

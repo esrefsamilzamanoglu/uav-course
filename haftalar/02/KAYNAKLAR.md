@@ -1,33 +1,16 @@
-# 2. hafta — kaynaklar
+# Ders kaynakları
 
-4 Kasım 2026 revizyonu. Teknik davranışlar için resmî kaynaklar; sayısal sonuçlar için gerçek Gazebo/SITL kayıtlarımız kullanıldı.
-
-- [Copter AUTO](https://ardupilot.org/copter/docs/auto-mode.html)
-- [ArduPilot + Gazebo](https://ardupilot.org/dev/docs/sitl-with-gazebo.html)
-- [Gazebo native Windows](https://gazebosim.org/docs/jetty/install_windows/)
-- [MAVLink mission commands](https://ardupilot.org/copter/docs/common-mavlink-mission-command-messages-mav_cmd.html)
-- [Mission Planner Survey(Grid) ve camera trigger](https://ardupilot.org/planner/docs/common-camera-control-and-auto-missions-in-mission-planner.html)
-- [Mission Planner görev planlama](https://docs.ardupilot.org/planner/docs/mission-planner-flight-plan.html)
-- [Servo gimbal](https://ardupilot.org/copter/docs/common-camera-gimbal.html)
-- [Mount ROI targeting](https://ardupilot.org/copter/docs/common-mount-targeting.html)
-- [Sprayer](https://ardupilot.org/copter/docs/common-sprayer.html)
-- [Plane automatic takeoff](https://ardupilot.org/plane/docs/automatic-takeoff.html)
-- [Plane automatic landing](https://ardupilot.org/plane/docs/automatic-landing.html)
-- [DO_LAND_START](https://ardupilot.org/plane/docs/common-do-land-start.html)
-- [OpenCV ORB](https://docs.opencv.org/4.x/d1/d89/tutorial_py_orb.html)
-- [OpenCV feature matching ve homography](https://docs.opencv.org/4.x/d1/de0/tutorial_py_feature_homography.html)
-- [OpenCV camera geometry / triangulation](https://docs.opencv.org/4.x/d9/d0c/group__calib3d.html)
-- [COLMAP: SfM ve dense reconstruction](https://colmap.github.io/tutorial.html)
-- [Ders deposu](https://github.com/esrefsamilzamanoglu/uav-course/tree/main/haftalar/02)
-- [Kerbl ve diğerleri: 3D Gaussian Splatting (SIGGRAPH2023)](https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/)
-- [Brush0.3.0: training ve native viewer](https://github.com/ArthurBrussee/brush/tree/v0.3.0)
-
-## Gerçek deney ve görsel kökenleri
-
-[Uçuş doğrulama özeti](dogrulama/final_summary.json) · [Gaussian hold-out metrikleri](dogrulama/gaussian_validation.json) · [Temel simülasyon görselleri](sunum/gorseller/provenance.json) · [Gaussian render kökenleri](sunum/gorseller/gaussian-provenance.json) · [Çalışma şemaları](sunum/gorseller/explainers-provenance.json).
-
-Önceki v2 şemaları kodla çizildi; PNG görsellerin düzenlenebilir SVG kaynakları `sunum/semalar` içindedir. Gerçek sensör kaydı, gerçek model render’ı ve kavramsal şema birbirinden ayrılır. PSNR/SSIM görünüş ölçüsüdür; geometric accuracy iddiası değildir.
-
-v3 için built-in image_gen ile 40 ayrı açıklayıcı çizim üretildi. [Görseller ve tam promptlar](sunum/uretilen_gorseller/README.md) · [AI görsel kökenleri](sunum/uretilen_gorseller/provenance.json). Bu çizimler gerçek simülasyon kanıtlarından ayrı etiketlenir.
-
-ArduPilot Gazebo kaynak sürümü `082a0fe231f6e63bc8d1598f1cba461d9e2ea7f5`; SITL4.7.2 kaynak sürümü `fbd0a3160c90a557c24ce4c38c16975532652536`. Resmî Brush0.3.0 release URL ve hash değeri `simulasyon/gaussian-downloads.json` içinde. [Model / araç kökenleri](simulasyon/UPSTREAM.md).
+- [ArduCopter AUTO mode](https://ardupilot.org/copter/docs/auto-mode.html)
+- [ArduPilot mission commands](https://ardupilot.org/copter/docs/common-mavlink-mission-command-messages-mav_cmd.html)
+- [Mission Planner Survey Grid](https://ardupilot.org/planner/docs/common-planning-a-mission-with-waypoints-and-events.html)
+- [Camera shutter configuration](https://ardupilot.org/copter/docs/common-camera-shutter-with-servo.html)
+- [Camera gimbal](https://ardupilot.org/copter/docs/common-camera-gimbal.html)
+- [Crop sprayer](https://ardupilot.org/copter/docs/sprayer.html)
+- [ArduPlane automatic takeoff](https://ardupilot.org/plane/docs/automatic-takeoff.html)
+- [ArduPlane automatic landing](https://ardupilot.org/plane/docs/automatic-landing.html)
+- [ArduPilot Gazebo](https://github.com/ArduPilot/ardupilot_gazebo)
+- [Gazebo Jetty](https://gazebosim.org/docs/jetty/)
+- [3D Gaussian Splatting research](https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/)
+- [Brush 0.3.0](https://github.com/ArthurBrussee/brush/tree/v0.3.0)
+- [OpenCV feature matching](https://docs.opencv.org/4.x/dc/dc3/tutorial_py_matcher.html)
+- [OpenCV homography](https://docs.opencv.org/4.x/d1/de0/tutorial_py_feature_homography.html)

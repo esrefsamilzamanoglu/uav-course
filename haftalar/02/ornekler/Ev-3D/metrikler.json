@@ -1,0 +1,18 @@
+{
+  "method": "3D Gaussian Splatting / Brush0.3.0",
+  "steps": 6000,
+  "gaussians": 45000,
+  "training_images": 94,
+  "holdout_images": 14,
+  "resolution": [
+    640,
+    427
+  ],
+  "mean_holdout_psnr_db": 27.361509686901094,
+  "mean_holdout_ssim": 0.9038904688753666,
+  "initialization_points": 16789,
+  "camera_poses": "known Gazebo poses; not image-estimated SfM poses",
+  "source_mesh_read": false,
+  "passed": true,
+  "limitations": "Appearance metrics on synthetic images, not geometric survey accuracy. A Gaussian radiance representation is not a watertight mesh. Central ROI is a fixed image crop, not a semantic ground-truth mask."
+}

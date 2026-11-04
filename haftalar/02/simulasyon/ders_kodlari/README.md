@@ -27,8 +27,6 @@ Elle denemek için **simulasyon klasöründe** PowerShell açın:
 Hareket analizini tekrar çalıştırırken yeni bir `--output-name` seçin; eski olaylar
 ezilmez. `--follow` canlı yazılan dosyaları izler. `_ortak.py` yalnız yerel yardımcı
 modüllerin/DLL'lerin yolunu açar; derste algoritma anlatımına dahil edilmesi gerekmez.
-Eski `tools/mosaic_2d.py`, `reconstruct_gaussian.py` ve `motion_detect.py` komutları
-uyumluluk için aynı kodlara yönlendirilir; algoritmanın ikinci bir kopyası yoktur.
 
 ## Deneyde değiştirebileceğimiz noktalar
 
