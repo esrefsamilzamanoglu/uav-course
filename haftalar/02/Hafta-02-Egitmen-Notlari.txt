@@ -260,7 +260,7 @@ GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya öğre
 ========================================================================
 ANA FİKİR: Tarla nesneleri hem ilaçlama hem kamera uygulaması için hazır.
 
-Tarla dokusu tek başına düz bir resim değildir; yapraklı ve gövdeli bitkiler 3D olarak yer alır. Bu nesneler gölge ve perspektif üretir, haritalamada gerçek görüntü eşleşmesini anlamlı kılar. Tarla dışındaki ağaç ve binalar görsel bağlam sağlar. Kalkış alanı tarladan ayrı konumdadır. İlaçlama ile 2D haritalama görevleri aynı dünya dosyasını kullanır; yalnız uçuş yüksekliği, şerit aralığı ve faydalı yük komutları değişir.
+Tarla dokusu tek başına düz bir resim değildir; yapraklı ve gövdeli bitkiler 3D olarak yer alır. Bu nesneler gölge ve perspektif üretir, haritalamada gerçek görüntü eşleşmesini anlamlı kılar. Tarla dışındaki ağaç ve binalar görsel bağlam sağlar. Kalkış alanı tarladan ayrı konumdadır. İlaçlama ile 2D haritalama görevleri aynı dünya dosyasını kullanır; yalnız uçuş yüksekliği, şerit aralığı ve faydalı yük komutları değişir. 4 Kasım revizyonunda 1 575 bitkiye bölgesel ve bireysel renk/boyut çeşitliliği eklendi. Renkler senaryo tasarımıdır; NDVI veya ölçülmüş stres değildir.
 
 GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya öğretim şeması. Köken listeleri: sunum/gorseller/provenance.json, explainers-provenance.json ve gaussian-provenance.json.
 
@@ -469,9 +469,9 @@ GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya öğre
 ========================================================================
 44. Sonuç: aynı tarlanın tek mozaik görüntüsü
 ========================================================================
-ANA FİKİR: 81 fotoğraftan912×744 piksel düzlem mozaiği üretildi.
+ANA FİKİR: Gerçek RGB mozaikte yeşil, sararmış ve küçük bitki bölgeleri görülür.
 
-Bu görüntü final uçuşunun ürünüdür. Sıraların sürekliliğini, tarla sınırını ve kenar dikişlerini birlikte inceleyin. Raster8,33 cm/piksel olarak seçildi. Kareler gerçek kamera pozlarına göre projekte edildiği için bu çalışma bilinen pozlu mozaik olarak adlandırılır. Bitkiler zemin düzleminden yüksek olduğu için yer yer dikiş etkileri görülebilir. Öğrencilerden hem başarılı alanı hem de varsayımın zayıf kaldığı bölgeyi göstermelerini isteyin.
+Bu görüntü final uçuşunun ürünüdür. Sıraların sürekliliğini, tarla sınırını ve kenar dikişlerini birlikte inceleyin. Raster8,33 cm/piksel olarak seçildi. Kareler gerçek kamera pozlarına göre projekte edildiği için bu çalışma bilinen pozlu mozaik olarak adlandırılır. Bitkiler zemin düzleminden yüksek olduğu için yer yer dikiş etkileri görülebilir. Öğrencilerden hem başarılı alanı hem de varsayımın zayıf kaldığı bölgeyi göstermelerini isteyin. En merkezi fotoğraf pikselini seçen mozaik kullanılır; tarla_mozaik_ortalama.png karşılaştırma içindir. Senaryo stres bilgisi algoritmaya verilmez.
 
 GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya öğretim şeması. Köken listeleri: sunum/gorseller/provenance.json, explainers-provenance.json ve gaussian-provenance.json.
 
@@ -480,7 +480,7 @@ GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya öğre
 ========================================================================
 ANA FİKİR: Görüntünün güzel görünmesi yanında kaplama da ölçülmeli.
 
-Kaplama metrikleri gerçek fotoğraf ayak izlerinin hedef alan üzerinde sayılmasıyla hesaplandı. En az üç görüntüyle kaplanan alan99,53 yüzdedir. Bu metrik görüntü eşleşmesinin her noktada başarılı olduğu veya konumun gerçek dünyada doğru olduğu anlamına gelmez. Öğrencinin nicel bir ölçüyü doğru kapsamda yorumlamasını isteyin. Aynı zamanda az fotoğrafın her zaman verimlilik olmadığını; yeterli örtüşmenin ürün güvenilirliği için gerekli olduğunu tartışın.
+Kaplama metrikleri gerçek fotoğraf ayak izlerinin hedef alan üzerinde sayılmasıyla hesaplandı. En az üç görüntüyle kaplanan alan99,32 yüzdedir. Bu metrik görüntü eşleşmesinin her noktada başarılı olduğu veya konumun gerçek dünyada doğru olduğu anlamına gelmez. Öğrencinin nicel bir ölçüyü doğru kapsamda yorumlamasını isteyin. Aynı zamanda az fotoğrafın her zaman verimlilik olmadığını; yeterli örtüşmenin ürün güvenilirliği için gerekli olduğunu tartışın.
 
 GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya öğretim şeması. Köken listeleri: sunum/gorseller/provenance.json, explainers-provenance.json ve gaussian-provenance.json.
 
@@ -489,7 +489,7 @@ GÖRSEL: Gerçek Gazebo RGB kaydı, gerçek uçuş verisinden grafik veya öğre
 ========================================================================
 ANA FİKİR: Komutu kendi haritalama uçuşunuzun klasörüyle çalıştırın.
 
-Komut sunumda okunabilirlik için iki satıra ayrılmıştır; terminalde tek satır yazılır. Komutları haftalar/02/simulasyon klasöründe çalıştırın. UCUS_KLASORU yerine başlatıcının RESULT mesajında gösterilen flight.json dosyasının bulunduğu klasörü yazın. Görev kopyasında tetik aralığını değiştirin ve tekrar uçun. Fotoğraf sayısı, kaplama, örtüşme ve görünür dikişleri karşılaştırın. Çalışmayan bir çıktıyı yalnız daha yüksek çözünürlük seçerek düzeltmeye çalışmayın.
+Komut sunumda okunabilirlik için iki satıra ayrılmıştır; terminalde tek satır yazılır. Komutları haftalar/02/simulasyon klasöründe çalıştırın. UCUS_KLASORU yerine başlatıcının RESULT mesajında gösterilen flight.json dosyasının bulunduğu klasörü yazın. Görev kopyasında tetik aralığını değiştirin ve tekrar uçun. Fotoğraf sayısı, kaplama, örtüşme ve görünür dikişleri karşılaştırın. Çalışmayan bir çıktıyı yalnız daha yüksek çözünürlük seçerek düzeltmeye çalışmayın. Derste ders_kodlari/haritalama_2d.py dosyasında build, harita_pikselleri ve kenar_agirliklari adımlarını açın. En merkezi bakış ile ortalama çıktıyı karşılaştırın.
 
 GÖRSEL: Built-in image_gen ile üretilen kavramsal öğretim çizimi; gerçek simülasyon ekran görüntüsü, ölçüm veya gerçek model renderı değildir. Dosya: sunum/uretilen_gorseller/slide-46.png. Tam prompt ve köken: sunum/uretilen_gorseller/prompts.json ve provenance.json.
 
@@ -975,7 +975,7 @@ GÖRSEL: Built-in image_gen ile üretilen kavramsal öğretim çizimi; gerçek s
 ========================================================================
 ANA FİKİR: Sunum, çalışan son kayıtlar hazır olduktan sonra üretildi.
 
-AUTO uçuşlar27 Ekim2026 tarihinde doğrulandı. Gaussian Splatting ve sunum revizyonu28 Ekim2026 tarihinde eklendi. Bina modelinin train/hold-out ayrımı initialization aşamasından başlar. Güncel metrikler dogrulama/gaussian_validation.json içindedir. Önceki sparse point cloud artık nihai 3D ürün değildir.
+AUTO uçuşlar27 Ekim2026 tarihinde doğrulandı. Gaussian Splatting ve sunum revizyonu28 Ekim2026 tarihinde eklendi. Bina modelinin train/hold-out ayrımı initialization aşamasından başlar. Güncel metrikler dogrulama/gaussian_validation.json içindedir. Önceki sparse point cloud artık nihai 3D ürün değildir. Tarla görsel revizyonu ve 81 fotoğraflık AUTO uçuş 4 Kasım 2026 tarihinde tekrar doğrulandı.
 
 GÖRSEL: Built-in image_gen ile üretilen kavramsal öğretim çizimi; gerçek simülasyon ekran görüntüsü, ölçüm veya gerçek model renderı değildir. Dosya: sunum/uretilen_gorseller/slide-88.png. Tam prompt ve köken: sunum/uretilen_gorseller/prompts.json ve provenance.json.
 

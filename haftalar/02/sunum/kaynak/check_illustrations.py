@@ -7,7 +7,7 @@ import pymupdf as fitz
 ROOT=Path(__file__).resolve().parents[2];A=ROOT/'sunum/uretilen_gorseller'
 plan=json.loads((A/'prompts.json').read_text(encoding='utf-8-sig'))
 data=json.loads((ROOT/'sunum/kaynak/slides.json').read_text(encoding='utf-8'))
-deck=Presentation(ROOT/'Hafta-02-Sunum.pptx');pdf=fitz.open(ROOT/'Hafta-02-Sunum-v3.pdf')
+deck=Presentation(ROOT/'Hafta-02-Sunum.pptx');pdf=fitz.open(ROOT/'Hafta-02-Sunum-v4.pdf')
 targets={a['slide']:a for a in plan['assets']}
 expected={i+1 for i,d in enumerate(data['slides']) if d['layout'] in ('cards','flow','table','formula','stats','code')}
 assert set(targets)==expected and len(targets)==40 and len(deck.slides)==len(pdf)==93

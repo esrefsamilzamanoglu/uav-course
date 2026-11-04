@@ -55,7 +55,7 @@
       "coverage_note": "Ideal 8m geometric swath inferred from real pump PWM and vehicle trajectory; not droplet/chemical deposition measurement."
     },
     "mapping": {
-      "run": "20261027-174950-mapping",
+      "run": "20261104-134137-mapping",
       "scenario": "mapping",
       "flight_status": "auto_mission_passed",
       "armed_modes": [
@@ -65,12 +65,11 @@
       "only_auto_while_armed": true,
       "gcs_command_longs": [
         400,
-        400,
         300
       ],
       "flight_setpoints_sent": 0,
       "force_arm_used": false,
-      "recorded_seconds": 205.60170674324036,
+      "recorded_seconds": 200.3053846359253,
       "maximum_altitude_m": 18.01,
       "final_ground_distance_from_home_m": 0.0,
       "final_disarmed": true
@@ -186,10 +185,13 @@
       74
     ],
     "field_covered_fraction": 1.0,
-    "field_overlap_3plus_fraction": 0.9952829743008315,
-    "maximum_observations": 13,
+    "field_overlap_3plus_fraction": 0.9932397959183673,
+    "maximum_observations": 14,
     "source_ground_texture_used": false,
-    "limitations": "Known simulator camera poses; z=0 plane; not a DEM orthophoto or centimetre accuracy claim."
+    "scenario_stress_values_used": false,
+    "flight_commands_sent": 0,
+    "rgb_compositing": "highest center-weight observation per pixel; weighted mean also saved for comparison",
+    "limitations": "Known simulator poses; z=0 plane, plant-height parallax; RGB appearance is not measured crop stress or NDVI."
   },
   "building_product": {
     "method": "3D Gaussian Splatting / Brush0.3.0",
@@ -350,5 +352,51 @@
     "no_source_mesh": true,
     "no_flight_control_commands": true,
     "model_sha256": "7976371b9c396a65b744b1e9dfe234d2763c7943863d1a78850fcadc13f79e3b"
-  }
+  },
+  "previous_mapping_runs": [
+    {
+      "test": {
+        "run": "20261027-174950-mapping",
+        "scenario": "mapping",
+        "flight_status": "auto_mission_passed",
+        "armed_modes": [
+          3
+        ],
+        "expected_auto_mode": 3,
+        "only_auto_while_armed": true,
+        "gcs_command_longs": [
+          400,
+          400,
+          300
+        ],
+        "flight_setpoints_sent": 0,
+        "force_arm_used": false,
+        "recorded_seconds": 205.60170674324036,
+        "maximum_altitude_m": 18.01,
+        "final_ground_distance_from_home_m": 0.0,
+        "final_disarmed": true
+      },
+      "product": {
+        "method": "calibrated flat-plane projection from actual Gazebo RGB trigger images",
+        "images_used": 81,
+        "output_shape": [
+          744,
+          912
+        ],
+        "pixels_per_meter": 12,
+        "bounds_local_enu_m": [
+          -38,
+          12,
+          38,
+          74
+        ],
+        "field_covered_fraction": 1.0,
+        "field_overlap_3plus_fraction": 0.9952829743008315,
+        "maximum_observations": 13,
+        "source_ground_texture_used": false,
+        "limitations": "Known simulator camera poses; z=0 plane; not a DEM orthophoto or centimetre accuracy claim."
+      }
+    }
+  ],
+  "mapping_updated_on": "2026-11-04"
 }

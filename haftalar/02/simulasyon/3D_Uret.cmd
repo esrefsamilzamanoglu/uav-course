@@ -6,5 +6,5 @@ if not exist "%~dp0.local\venv\Scripts\python.exe" (
   pause
   exit /b 1
 )
-"%~dp0.local\venv\Scripts\python.exe" -u "%~dp0tools\reconstruct_gaussian.py" --viewer
+"%~dp0.local\venv\Scripts\python.exe" -u "%~dp0ders_kodlari\haritalama_3d.py" --viewer
 pause

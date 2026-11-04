@@ -13,8 +13,11 @@
     74
   ],
   "field_covered_fraction": 1.0,
-  "field_overlap_3plus_fraction": 0.9952829743008315,
-  "maximum_observations": 13,
+  "field_overlap_3plus_fraction": 0.9932397959183673,
+  "maximum_observations": 14,
   "source_ground_texture_used": false,
-  "limitations": "Known simulator camera poses; z=0 plane; not a DEM orthophoto or centimetre accuracy claim."
+  "scenario_stress_values_used": false,
+  "flight_commands_sent": 0,
+  "rgb_compositing": "highest center-weight observation per pixel; weighted mean also saved for comparison",
+  "limitations": "Known simulator poses; z=0 plane, plant-height parallax; RGB appearance is not measured crop stress or NDVI."
 }

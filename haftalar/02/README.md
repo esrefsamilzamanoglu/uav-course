@@ -1,6 +1,6 @@
 # 2. hafta — AUTO görevler ve uygulamalar
 
-[Güncel sunumu aç (v3 PDF · 93 sayfa)](Hafta-02-Sunum-v3.pdf) · [Düzenlenebilir PowerPoint](Hafta-02-Sunum.pptx) · [Eğitmen notları](Hafta-02-Egitmen-Notlari.txt)
+[Güncel sunumu aç (v4 PDF · 93 sayfa)](Hafta-02-Sunum-v4.pdf) · [Düzenlenebilir PowerPoint](Hafta-02-Sunum.pptx) · [Eğitmen notları](Hafta-02-Egitmen-Notlari.txt)
 
 İlk haftanın anlatım düzeniyle: **aracı ve kamerayı tanı → görevi planla → simülasyonda uygula → veriden ürün çıkar → sonucu değerlendir**. Önerilen süre: 80 dakika anlatım, 30 dakika canlı uygulama, 10 dakika değerlendirme.
 
@@ -26,7 +26,7 @@ Ayrıntılı ve kısa kullanım adımları: [Simülasyon rehberi](simulasyon/REA
 Tüm sahneler ve görevler **sunum hazırlanmadan önce** gerçek Gazebo/SITL uçuşlarıyla denendi. Son kayıtların tümünde silahlı uçuş AUTO modundaydı; görevler LAND ve disarm ile tamamlandı. Force-arm veya uçuş konum/hız setpointi kullanılmadı. Öğrenci başlatıcısı pasiftir; uçuşu Mission Planner operatörü başlatır. Python uçuş rotasını değiştirmez.
 
 - **İlaçlama:** 9 pompa açık bölümü; 8m ideal iş genişliğiyle hedef alanın %100 kaplaması. İlk denemedeki %82,86 kaplama, şerit sayısı ve uç noktalar değiştirilip yeniden uçularak düzeltildi.
-- **2D tarla:** 81 tetik / 81 gerçek fotoğraf, %100 alan kaplama; en az üç görüntülü alan %99,53. Mozaik 912×744 piksel.
+- **2D tarla (4 Kasım tekrar uçuşu):** 81 tetik / 81 gerçek fotoğraf, %100 alan kaplama; en az üç görüntülü alan %99,32. Mozaik 912×744 piksel. Bölgesel renk ve boy çeşitliliği gerçek RGB'de görülür.
 - **Bina:** 108 fotoğraf; 94training /14hold-out. Sparse noktalar yalnız initialization içindir; ana çıktı **3D Gaussian Splatting** modelidir. İdeal gimbalda ROI doğrultu hatası medyan0,318°, %95 değeri0,724°. [Güncel Gaussian metrikleri](dogrulama/gaussian_validation.json) ve [hazır model](ornekler/Bina-Gaussian.ply).
 - **Sabit kanat:** canlı analizde 23 hareket olayı; 19 olay sonradan bağımsız simülasyon kişi kutusuyla ilişkilendirildi, 4 yanlış alarm görüldü. İlk olaydan yaklaşık317s sonra AUTO iniş tamamlandı; hedefe son yatay uzaklık4,11m.
 - **Kurulum:** ayrı öğrenci Python ortamında ilk kurulum ve tekrar kurulum; GUI; operatör5760 + pasif gözlemci5762 akışı denendi.
@@ -36,6 +36,8 @@ Metrikler ve kanıt özeti: [dogrulama/final_summary.json](dogrulama/final_summa
 **28 Ekim revizyonu:** bina örneği sparse point cloud yerine gerçek Gaussian Splatting optimizasyonuna geçirildi. Sunumda yerleşik İngilizce teknik terimler korundu; camera footprint, overlap, NAV/DO zamanlaması, Gaussian projection, alpha compositing ve motion compensation için yeni şemalar eklendi. Tekrarlanan kart düzenleri; bölüm açılışları, büyük görseller, zoom/crop, checkpoint ve reference/render karşılaştırmalarıyla çeşitlendirildi.
 
 **Görsel anlatım revizyonu (v3):** yalnız tablo, liste, işlem adımları, formül veya sayılardan oluşan **40 sayfanın tamamına**, built-in **image_gen** ile konuya özel açıklayıcı çizimler üretildi. Tablolar, komutlar ve açıklamalar düzenlenebilir metin olarak korundu; görseller yanlarına yerleştirildi. Sunum **93 sayfa** olarak kaldı. Çizimler “Kavramsal çizim · AI” etiketi taşır; gerçek simülasyon kaydı veya ölçülmüş çıktı olarak sunulmaz. [Görseller ve üretim promptları](sunum/uretilen_gorseller/README.md) · [Görsel kökenleri](sunum/uretilen_gorseller/provenance.json).
+
+**4 Kasım revizyonu (v4):** tarladaki 1 575 bitkiye bölgesel sararma, 48 renk çifti ve bireysel boy/yaprak yönü çeşitliliği eklendi. Yeni AUTO uçuşundan [RGB mozaik ve örnekler](ornekler/Tarla-2D/README.md) üretildi; sunumdaki tarla görselleri yenilendi. Gerçek algoritmalar [ders_kodlari](simulasyon/ders_kodlari/README.md) klasörüne taşındı: `haritalama_2d.py`, `haritalama_3d.py`, `hareketli_unsur_tespiti.py`. Senaryo renkleri gerçek NDVI veya ölçülmüş stres değildir; mozaik yalnız kaydedilmiş RGB'yi kullanır.
 
 **Sonuçların kapsamı:** mozaik düz zemin ve bilinen simülasyon pozlarını kullanır; DEM ortofotosu veya ölçülmüş saha doğruluğu değildir. Gaussian model görünüş üretir; triangle mesh değildir. Kamera pozları Gazebo'dan bilinir; image-estimated SfM yapılmış gibi sunulmaz. Gimbal ideal kinematiktir. İlaçlama damlacık fiziği veya gerçek debi ölçümü değildir. Hareket işçisi insan sınıflandırıcısı değildir; olay sayıları kişi sayısı veya genel precision/recall sonucu değildir.
 

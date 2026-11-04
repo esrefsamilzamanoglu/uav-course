@@ -1,5 +1,16 @@
 # 2. hafta — hazırlık ve test kaydı
 
+## 4 Kasım 2026 — renkli tarla, ders kodları ve v4
+
+- Aynı tarla ve görev geometrisi korundu. 1 575 bitkide 48 renk çifti, 0,40–1,22 m boy, canopy ve yaprak yönü çeşitliliği; üç geniş sararma bölgesi üretildi. Aynı seed ile sahne birebir tekrarlanır. Senaryo değerleri görüntü algoritmalarında kullanılmaz.
+- Güncel dünyada gerçek AUTO uçuş tekrarlandı: 81 tetik / 81 RGB, LAND/disarm, yalnız AUTO, uçuş setpointi ve force-arm yok. Mozaik alanı %100, üçlü örtüşme %99,32.
+- Yaprak ghosting'ini azaltmak için ana mozaikte en merkezi gözlem seçilir; ağırlıklı ortalama ayrıca saklanır. Yeni RGB mozaik ve kaynak kareler sunuma/örneklere alındı.
+- Asıl algoritmalar `ders_kodlari/haritalama_2d.py`, `haritalama_3d.py`, `hareketli_unsur_tespiti.py` altında Türkçe açıklamalar ve işlem fonksiyonlarıyla düzenlendi. Eski yollar uyumluluk için bu dosyalara yönlenir. Canlı sabit kanat analizi ve 3D başlatıcı doğrudan yeni kodları kullanır; `2D_Uret.cmd` eklendi.
+- Hareket replay'i: aynı gerçek kayıtta 23 olayın tüm bbox/track/zaman bilgisi ve tam kare PNG'leri önceki sürümle birebir aynı; 19 kişi örtüşmesi.
+- 3D uçtan uca tekrar: gerçek 108 bina RGB'sinden train-only initialization, 3 000 steps, 640×427, 26 897 Gaussians; 14 hold-out PSNR 26,71 dB ve SSIM 0,895. Kalite kontrolü geçti. Ders varsayılanı 6 000 steps olarak korundu; hazır referans model değiştirilmedi.
+- Sunum v4: 93 sayfa; güncel tarla RGB'leri, yeni mozaik, güncel ölçümler ve ders kodu yolları. 40 image_gen çizimi korundu.
+- Ayrıntılı tekrar doğrulaması: `dogrulama/course_revision-20261104.json`.
+
 ## 28 Ekim 2026 — görsel anlatım v3
 
 - Önceki sunumun 40 metin/tablo/liste/işlem/formül/sayısal sonuç sayfası tarandı; her birine ayrı built-in image_gen çağrısıyla ilgili mekanizmayı anlatan çizim üretildi.

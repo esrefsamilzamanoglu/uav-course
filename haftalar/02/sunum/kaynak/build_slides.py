@@ -21,10 +21,12 @@ def typography(v):
     if isinstance(v,(tuple,list)):return [typography(x) for x in v]
     return v
 SLIDES=typography(SLIDES)
+from farm_curriculum import revise_farm
+SLIDES=revise_farm(SLIDES)
 for lesson in SLIDES:
     if lesson.get('layout')=='code':
         # Explicit PowerShell continuation keeps the displayed multi-line command runnable.
-        lesson['code']=lesson['code'].replace('\n  ',' ').replace(' .\\tools',' `\n  .\\tools').replace(' "UCUS_KLASORU"',' `\n  "UCUS_KLASORU"')
+        lesson['code']=lesson['code'].replace('\n  ',' ').replace(' .\\tools',' `\n  .\\tools').replace(' .\\ders_kodlari',' `\n  .\\ders_kodlari').replace(' "UCUS_KLASORU"',' `\n  "UCUS_KLASORU"')
 ROOT=Path(__file__).resolve().parents[2];ASSETS=ROOT/'sunum/gorseller'
 GENERATED=ROOT/'sunum/uretilen_gorseller'
 ILLUSTRATIONS=json.loads((GENERATED/'prompts.json').read_text(encoding='utf-8'))

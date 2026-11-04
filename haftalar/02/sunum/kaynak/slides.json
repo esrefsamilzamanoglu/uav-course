@@ -676,12 +676,12 @@
     {
       "title": "Aynı dünya iki göreve hizmet ediyor",
       "message": "Tarla nesneleri hem ilaçlama hem kamera uygulaması için hazır.",
-      "notes": "Tarla dokusu tek başına düz bir resim değildir; yapraklı ve gövdeli bitkiler 3D olarak yer alır. Bu nesneler gölge ve perspektif üretir, haritalamada gerçek görüntü eşleşmesini anlamlı kılar. Tarla dışındaki ağaç ve binalar görsel bağlam sağlar. Kalkış alanı tarladan ayrı konumdadır. İlaçlama ile 2D haritalama görevleri aynı dünya dosyasını kullanır; yalnız uçuş yüksekliği, şerit aralığı ve faydalı yük komutları değişir.",
+      "notes": "Tarla dokusu tek başına düz bir resim değildir; yapraklı ve gövdeli bitkiler 3D olarak yer alır. Bu nesneler gölge ve perspektif üretir, haritalamada gerçek görüntü eşleşmesini anlamlı kılar. Tarla dışındaki ağaç ve binalar görsel bağlam sağlar. Kalkış alanı tarladan ayrı konumdadır. İlaçlama ile 2D haritalama görevleri aynı dünya dosyasını kullanır; yalnız uçuş yüksekliği, şerit aralığı ve faydalı yük komutları değişir. 4 Kasım revizyonunda 1 575 bitkiye bölgesel ve bireysel renk/boyut çeşitliliği eklendi. Renkler senaryo tasarımıdır; NDVI veya ölçülmüş stres değildir.",
       "layout": "photo",
       "cards": [
         [
-          "3D varlıklar",
-          "Bitki sıraları, traktör, depo"
+          "3D bitkiler",
+          "Bölgesel sararma, farklı boy ve yaprak yönü."
         ],
         [
           "Çevre",
@@ -1235,8 +1235,8 @@
     },
     {
       "title": "Sonuç: aynı tarlanın tek mozaik görüntüsü",
-      "message": "81 fotoğraftan912×744 piksel düzlem mozaiği üretildi.",
-      "notes": "Bu görüntü final uçuşunun ürünüdür. Sıraların sürekliliğini, tarla sınırını ve kenar dikişlerini birlikte inceleyin. Raster8,33 cm/piksel olarak seçildi. Kareler gerçek kamera pozlarına göre projekte edildiği için bu çalışma bilinen pozlu mozaik olarak adlandırılır. Bitkiler zemin düzleminden yüksek olduğu için yer yer dikiş etkileri görülebilir. Öğrencilerden hem başarılı alanı hem de varsayımın zayıf kaldığı bölgeyi göstermelerini isteyin.",
+      "message": "Gerçek RGB mozaikte yeşil, sararmış ve küçük bitki bölgeleri görülür.",
+      "notes": "Bu görüntü final uçuşunun ürünüdür. Sıraların sürekliliğini, tarla sınırını ve kenar dikişlerini birlikte inceleyin. Raster8,33 cm/piksel olarak seçildi. Kareler gerçek kamera pozlarına göre projekte edildiği için bu çalışma bilinen pozlu mozaik olarak adlandırılır. Bitkiler zemin düzleminden yüksek olduğu için yer yer dikiş etkileri görülebilir. Öğrencilerden hem başarılı alanı hem de varsayımın zayıf kaldığı bölgeyi göstermelerini isteyin. En merkezi fotoğraf pikselini seçen mozaik kullanılır; tarla_mozaik_ortalama.png karşılaştırma içindir. Senaryo stres bilgisi algoritmaya verilmez.",
       "layout": "full",
       "cards": [],
       "section": "UYGULAMA 2 · 2D TARLA HARİTALAMA",
@@ -1246,7 +1246,7 @@
     {
       "title": "Haritalama sonucunu nasıl puanlarız?",
       "message": "Görüntünün güzel görünmesi yanında kaplama da ölçülmeli.",
-      "notes": "Kaplama metrikleri gerçek fotoğraf ayak izlerinin hedef alan üzerinde sayılmasıyla hesaplandı. En az üç görüntüyle kaplanan alan99,53 yüzdedir. Bu metrik görüntü eşleşmesinin her noktada başarılı olduğu veya konumun gerçek dünyada doğru olduğu anlamına gelmez. Öğrencinin nicel bir ölçüyü doğru kapsamda yorumlamasını isteyin. Aynı zamanda az fotoğrafın her zaman verimlilik olmadığını; yeterli örtüşmenin ürün güvenilirliği için gerekli olduğunu tartışın.",
+      "notes": "Kaplama metrikleri gerçek fotoğraf ayak izlerinin hedef alan üzerinde sayılmasıyla hesaplandı. En az üç görüntüyle kaplanan alan99,32 yüzdedir. Bu metrik görüntü eşleşmesinin her noktada başarılı olduğu veya konumun gerçek dünyada doğru olduğu anlamına gelmez. Öğrencinin nicel bir ölçüyü doğru kapsamda yorumlamasını isteyin. Aynı zamanda az fotoğrafın her zaman verimlilik olmadığını; yeterli örtüşmenin ürün güvenilirliği için gerekli olduğunu tartışın.",
       "layout": "spotlight",
       "cards": [
         [
@@ -1271,7 +1271,7 @@
           "field coverage"
         ],
         [
-          "99,53%",
+          "99,32%",
           "3+ image overlap"
         ],
         [
@@ -1283,7 +1283,7 @@
     {
       "title": "Uygulama: mozaik üretin ve karşılaştırın",
       "message": "Komutu kendi haritalama uçuşunuzun klasörüyle çalıştırın.",
-      "notes": "Komut sunumda okunabilirlik için iki satıra ayrılmıştır; terminalde tek satır yazılır. Komutları haftalar/02/simulasyon klasöründe çalıştırın. UCUS_KLASORU yerine başlatıcının RESULT mesajında gösterilen flight.json dosyasının bulunduğu klasörü yazın. Görev kopyasında tetik aralığını değiştirin ve tekrar uçun. Fotoğraf sayısı, kaplama, örtüşme ve görünür dikişleri karşılaştırın. Çalışmayan bir çıktıyı yalnız daha yüksek çözünürlük seçerek düzeltmeye çalışmayın.",
+      "notes": "Komut sunumda okunabilirlik için iki satıra ayrılmıştır; terminalde tek satır yazılır. Komutları haftalar/02/simulasyon klasöründe çalıştırın. UCUS_KLASORU yerine başlatıcının RESULT mesajında gösterilen flight.json dosyasının bulunduğu klasörü yazın. Görev kopyasında tetik aralığını değiştirin ve tekrar uçun. Fotoğraf sayısı, kaplama, örtüşme ve görünür dikişleri karşılaştırın. Çalışmayan bir çıktıyı yalnız daha yüksek çözünürlük seçerek düzeltmeye çalışmayın. Derste ders_kodlari/haritalama_2d.py dosyasında build, harita_pikselleri ve kenar_agirliklari adımlarını açın. En merkezi bakış ile ortalama çıktıyı karşılaştırın.",
       "layout": "code",
       "cards": [
         [
@@ -1297,7 +1297,7 @@
       ],
       "section": "UYGULAMA 2 · 2D TARLA HARİTALAMA",
       "sources": [],
-      "code": ".\\.local\\venv\\Scripts\\python.exe `\n  .\\tools\\mosaic_2d.py `\n  \"UCUS_KLASORU\""
+      "code": ".\\.local\\venv\\Scripts\\python.exe `\n  .\\ders_kodlari\\haritalama_2d.py `\n  \"UCUS_KLASORU\""
     },
     {
       "title": "Binayı bu kez dolu yüzeylerle görelim",
@@ -2250,6 +2250,11 @@
       ],
       "rows": [
         [
+          "ders_kodlari/",
+          "2D · 3D · hareket algoritmaları",
+          "Derste gerçek kodu açıp incele"
+        ],
+        [
           "missions/",
           "Beş .waypoints + okunabilir JSON",
           "Doğru görevi açıp araca yaz"
@@ -2298,7 +2303,7 @@
     {
       "title": "Son denemeler: ne doğrulandı?",
       "message": "Sunum, çalışan son kayıtlar hazır olduktan sonra üretildi.",
-      "notes": "AUTO uçuşlar27 Ekim2026 tarihinde doğrulandı. Gaussian Splatting ve sunum revizyonu28 Ekim2026 tarihinde eklendi. Bina modelinin train/hold-out ayrımı initialization aşamasından başlar. Güncel metrikler dogrulama/gaussian_validation.json içindedir. Önceki sparse point cloud artık nihai 3D ürün değildir.",
+      "notes": "AUTO uçuşlar27 Ekim2026 tarihinde doğrulandı. Gaussian Splatting ve sunum revizyonu28 Ekim2026 tarihinde eklendi. Bina modelinin train/hold-out ayrımı initialization aşamasından başlar. Güncel metrikler dogrulama/gaussian_validation.json içindedir. Önceki sparse point cloud artık nihai 3D ürün değildir. Tarla görsel revizyonu ve 81 fotoğraflık AUTO uçuş 4 Kasım 2026 tarihinde tekrar doğrulandı.",
       "layout": "table",
       "cards": [],
       "section": "SONUÇLARI ÜRETME VE DEĞERLENDİRME",

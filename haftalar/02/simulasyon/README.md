@@ -29,10 +29,26 @@ Görev tamamlandığında sonuç klasörünün yolu terminalde görünür. Tekra
 Uçuş bittiğinde terminaldeki `RESULT` yolunun bulunduğu klasör **uçuş klasörünüzdür**. Aşağıdaki komutlarda `UCUS_KLASORU` yerine bu klasörü yazın:
 
 ```powershell
-.\.local\venv\Scripts\python.exe .\tools\mosaic_2d.py "UCUS_KLASORU"
+.\.local\venv\Scripts\python.exe .\ders_kodlari\haritalama_2d.py "UCUS_KLASORU"
 ```
 
-Bu komut **tarla haritalama** uçuşundan sonra çalıştırılır. Sonuçlar uçuş klasöründeki `products` altına yazılır. Sabit kanat görüntü analizi menüden seçildiğinde kendiliğinden çalışır; örnek olaylar `products/motion` içindedir.
+Bu komut **tarla haritalama** uçuşundan sonra çalıştırılır. Aynı işlem için **`2D_Uret.cmd`** açılıp uçuş klasörü yapıştırılabilir. Sonuçlar uçuş klasöründeki `products` altına yazılır. `tarla_mozaik.png` en merkezi bakışlardan seçilen RGB mozaiğidir; yapraklarda ortalamadan oluşan çift görüntüyü azaltır. `tarla_mozaik_ortalama.png` aynı çekimlerin ağırlıklı ortalamasıdır; derste karşılaştırılabilir. Sabit kanat görüntü analizi menüden seçildiğinde kendiliğinden çalışır; örnek olaylar `products/motion` içindedir.
+
+## Bölgesel renk ve boyut çeşitliliği
+
+4 Kasım revizyonunda aynı tarla sınırlarında **1 575 bitki**, 48 yaprak renk çifti, yaklaşık **0,40–1,22 m** boy ve farklı yaprak yönleriyle hazırlandı. Geniş, yumuşak geçişli sararma bölgelerine küçük bireysel farklılıklar eklenir; aynı seed aynı sahneyi verir. Renkler ve boylar gerçek 3D yaprak/gövde geometrisindedir; görüntü işleme sonucuna renk kaplaması eklenmez.
+
+RGB mozaik stres dağılımını andıran görünüş verir. Bu sentetik senaryo **gerçek NDVI veya tarımsal stres ölçümü değildir**. Algoritma `field_layout.json` içindeki senaryo değerlerini okumaz. [Gerçek AUTO uçuşundan yeni örnekler](../ornekler/Tarla-2D/README.md).
+
+## Derste kodları açalım
+
+Asıl algoritmalar [ders_kodlari/](ders_kodlari/README.md) içindedir:
+
+- [haritalama_2d.py](ders_kodlari/haritalama_2d.py): fotoğraf → düzlem projeksiyonu → birleştirme → kaplama ölçümü.
+- [haritalama_3d.py](ders_kodlari/haritalama_3d.py): RGB/pose → sparse initialization → Gaussian training → hold-out.
+- [hareketli_unsur_tespiti.py](ders_kodlari/hareketli_unsur_tespiti.py): ORB/RANSAC → residual → aday → takip → kayıt.
+
+Kodlar Türkçe açıklamalar ve ayrı işlem fonksiyonlarıyla düzenlendi. Kurulum, kayıt, kamera kalibrasyonu ve bağımsız değerlendirme `tools/` içinde kalır. Eski komut yolları aynı ders kodlarına yönlendirilir.
 
 ## Bina için gerçek Gaussian Splatting
 
@@ -48,4 +64,4 @@ Varsayılan çalışma: **640×427 RGB, 6 000 steps, en fazla45 000 Gaussians, S
 
 ## Dosyalar
 
-`worlds/`: üç taşınabilir dünya; `models/`: yerel 3D nesneler ve dokular; `missions/`: AUTO görevleri; `params/`: doğrulanan parametreler; `tools/`: kayıt ve görüntü işleme araçları. İndirmeler resmî sunuculardandır ve SHA256 ile kontrol edilir. Hazır EXE/DLL veya ZIP dağıtılmaz; yerel çıktılar `.local` içinde kalır.
+`worlds/`: üç taşınabilir dünya; `models/`: yerel 3D nesneler ve dokular; `missions/`: AUTO görevleri; `params/`: doğrulanan parametreler; `ders_kodlari/`: üç ders algoritması; `tools/`: kurulum, kayıt, geometri ve değerlendirme yardımcıları. İndirmeler resmî sunuculardandır ve SHA256 ile kontrol edilir. Hazır EXE/DLL veya ZIP dağıtılmaz; yerel çıktılar `.local` içinde kalır.

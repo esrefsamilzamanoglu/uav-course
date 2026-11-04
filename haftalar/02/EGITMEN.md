@@ -37,14 +37,14 @@ Terminaldeki `RESULT=.../flight.json` yolunun bulunduğu klasörü aşağıda ku
 
 ```powershell
 .\.local\venv\Scripts\python.exe .\tools\report_run.py "UCUS_KLASORU"
-.\.local\venv\Scripts\python.exe .\tools\mosaic_2d.py "HARITALAMA_UCUS_KLASORU"
-.\.local\venv\Scripts\python.exe .\tools\reconstruct_gaussian.py "BINA_UCUS_KLASORU" --viewer
+.\.local\venv\Scripts\python.exe .\ders_kodlari\haritalama_2d.py "HARITALAMA_UCUS_KLASORU"
+.\.local\venv\Scripts\python.exe .\ders_kodlari\haritalama_3d.py "BINA_UCUS_KLASORU" --viewer
 ```
 
 Hareket analizini aynı gerçek kayıtta tekrar denemek için farklı çıktı adı kullanın; mevcut kanıtın üzerine yazılmaz:
 
 ```powershell
-.\.local\venv\Scripts\python.exe .\tools\motion_detect.py "PLANE_UCUS_KLASORU" --output-name motion_tekrar
+.\.local\venv\Scripts\python.exe .\ders_kodlari\hareketli_unsur_tespiti.py "PLANE_UCUS_KLASORU" --output-name motion_tekrar
 ```
 
 İki bağlantılı operatör/gözlemci kontrolü `tools/check_operator_flow.py` ile yapılabilir. Bu kontrol yerel simülasyonda operatörü otomatikleştirir; gözlemci komut sayısının sıfır kaldığını doğrular.
@@ -70,6 +70,8 @@ Hareket olayları için gerçek kişi konumları **yalnız sonradan değerlendir
 - Sabit kanat: rüzgârsız referans Zephyr, fiziksel hava hız sensörü yok. Bu iniş/kalkış ayarlarını gerçek araca doğrudan taşımayın.
 
 ## Sunumu yeniden üretme
+
+**4 Kasım ders akışı:** Kod anlatımı için `simulasyon/ders_kodlari/README.md` dosyasını açın. Üç dosyada asıl algoritmalar bulunur; kurulum/kayıt ayrıntıları `tools/` içindedir. Önce yeni tarlanın yeşil ve sararmış bölgelerini gösterin; ardından `haritalama_2d.py` içinde projeksiyon ve piksel seçimini okuyun. `tarla_mozaik.png` ile `tarla_mozaik_ortalama.png` arasındaki çift yaprak/dikiş farkını karşılaştırın. Renk dağılımı sentetik senaryodur; NDVI veya ölçülmüş saha stresi değildir. Yeni 81 fotoğraflık AUTO uçuşu %100 kapsama, %99,32 üçlü örtüşme verdi.
 
 Paylaşılan görseller, `dogrulama/final_summary.json` ve `dogrulama/gaussian_validation.json` ile `sunum/kaynak/build_slides.py` çalıştırılır (`python-pptx`, Pillow gerekir). Aktif revizyon `revise_curriculum.py` ve `gaussian_curriculum.py` içindedir. Üretici hem AUTO hem Gaussian doğrulaması geçmeden güncel sunumu yapmaz. Windows'ta PowerPoint ve pywin32 ile `export_pdf.py` PDF üretir; `check_pdf.py` PyMuPDF ile sayfa ve sayfa dışı metin kontrolü yapar. `build_explainers.py` şemaları PNG ve düzenlenebilir SVG olarak üretir; simülasyon Python ortamının bilimsel paketlerini kullanır.
 

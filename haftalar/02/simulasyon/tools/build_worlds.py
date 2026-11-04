@@ -3,8 +3,10 @@ from __future__ import annotations
 import argparse, copy, importlib.util, json, math, random, struct
 from pathlib import Path
 import xml.etree.ElementTree as E
+import vision_bootstrap
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
+from crop_variation import palette, plants, SEED
 
 ROOT=Path(__file__).resolve().parents[1]
 ASSETS=ROOT/'models/course_assets'
@@ -12,6 +14,7 @@ COLORS={'leaf':(.18,.36,.12),'leaf_light':(.32,.48,.17),'bark':(.29,.20,.13),
         'crop':(.29,.48,.14),'crop_light':(.43,.57,.22),'red':(.55,.18,.13),
         'roof':(.24,.26,.28),'concrete':(.69,.67,.58),'black':(.055,.065,.07),
         'glass':(.15,.35,.43),'white':(.88,.88,.81),'yellow':(.91,.65,.12)}
+COLORS.update(palette())
 
 def sub(parent,tag,text=None,**attrs):
     node=E.SubElement(parent,tag,attrs)
@@ -54,16 +57,16 @@ class Mesh:
         for i in range(sides):
             a=2*math.pi*i/sides;b=2*math.pi*(i+1)/sides
             self.tri(c,(x+r*math.cos(a),y+r*math.sin(a),z),(x+r*math.cos(b),y+r*math.sin(b),z),top)
-    def plant(self,x,y,h):
-        self.box((x,y,h/2),(.035,.035,h),'crop')
+    def plant(self,x,y,h,canopy=1,yaw=0,color='crop',light_color='crop_light'):
+        self.box((x,y,h/2),(.035,.035,h),color)
         for j in range(6):
-            a=j*2.399963;r=.35+.035*j;z=.10+j*.075
+            a=yaw+j*2.399963;r=(.40+.04*j)*canopy;z=h*(.13+j*.125)
             along=np.array([math.cos(a),math.sin(a),0]);across=np.array([-math.sin(a),math.cos(a),0])
-            base=np.array([x,y,z]);tip=base+along*r+np.array([0,0,.08]);spine=base+along*r*.5+np.array([0,0,.18])
-            left=spine+across*.085;right=spine-across*.085
-            color='crop' if j%2 else 'crop_light'
+            base=np.array([x,y,z]);tip=base+along*r+np.array([0,0,.08*h]);spine=base+along*r*.5+np.array([0,0,.20*h])
+            left=spine+across*.12*canopy;right=spine-across*.12*canopy
+            leaf_color=color if j%2 else light_color
             for p,q,t in [(base,left,spine),(base,spine,right),(left,tip,spine),(spine,tip,right)]:
-                self.tri(color,tuple(p),tuple(q),tuple(t));self.tri(color,tuple(t),tuple(q),tuple(p))
+                self.tri(leaf_color,tuple(p),tuple(q),tuple(t));self.tri(leaf_color,tuple(t),tuple(q),tuple(p))
     def write(self,path):
         d=E.Element('COLLADA',xmlns='http://www.collada.org/2005/11/COLLADASchema',version='1.4.1')
         a=sub(d,'asset');sub(a,'created','2026-10-27T00:00:00Z');sub(a,'modified','2026-10-27T00:00:00Z');sub(a,'unit',name='meter',meter='1');sub(a,'up_axis','Z_UP')
@@ -115,7 +118,8 @@ def terrain(kind):
     def rect(x0,y0,x1,y1,c):draw.rectangle(((x0+extent)*n/(2*extent),(extent-y1)*n/(2*extent),(x1+extent)*n/(2*extent),(extent-y0)*n/(2*extent)),fill=c)
     if kind=='farm':
         rect(-33,17,33,68,(105,75,44))
-        for x in np.arange(-31,32,1.4):rect(x,18,x+.65,67,(66+int((x+31)%7),103,41))
+        # Soil/furrows stay soil-colored: regional crop color comes from 3D leaves.
+        for x in np.arange(-31,32,1.4):rect(x-.20,18,x+.20,68,(91,66,40))
         rect(-60,-15,80,-5,(137,124,99));rect(45,-10,52,95,(137,124,99))
         rect(-85,78,-40,120,(173,155,78));rect(60,23,110,85,(81,112,46));rect(-105,-60,-40,7,(107,84,55))
     elif kind=='building':
@@ -189,9 +193,14 @@ def world(name,kind,vehicle,upstream):
 
 def make_farm(w):
     mesh=Mesh();rng=random.Random(2302)
-    for x in np.arange(-31,32,1.4):
-        for y in np.arange(19,67,1.4):
-            mesh.plant(x+rng.uniform(-.08,.08),y,rng.uniform(.5,.75))
+    field=plants()
+    for plant in field:
+        mesh.plant(plant['east_m'],plant['north_m'],plant['height_m'],
+                   plant['canopy_scale'],plant['yaw_rad'],plant['material'],plant['light_material'])
+    (ASSETS/'field_layout.json').write_text(json.dumps({
+        'version':'regional-variation-v1','seed':SEED,'plant_count':len(field),
+        'purpose':'Synthetic regional discoloration and size variation; not measured NDVI or crop stress',
+        'used_by_image_processing':False,'plants':field},indent=2),encoding='utf-8')
     for x,y in [(-55,-35),(-70,-30),(-78,10),(75,15),(78,80),(90,110),(-78,75),(-88,110)]:tree(mesh,x,y,rng.uniform(.9,1.8))
     for x in range(-35,36,5):mesh.box((x,73,.65),(.13,.13,1.3),'bark')
     mesh.box((0,73,.8),(70,.10,.10),'bark');mesh.box((0,73,.4),(70,.10,.10),'bark')
@@ -277,9 +286,11 @@ def make_rural(w):
             visual(l,'shoe'+str(sign),(.09,.115*sign,.06),(.27,.16,.12),(.04,.045,.05))
 
 def main():
-    ap=argparse.ArgumentParser();ap.add_argument('--upstream',type=Path,required=True);args=ap.parse_args()
+    ap=argparse.ArgumentParser();ap.add_argument('--upstream',type=Path,required=True)
+    ap.add_argument('--only',choices=['farm','building','rural']);args=ap.parse_args()
     (ROOT/'worlds').mkdir(exist_ok=True);(ASSETS/'textures').mkdir(parents=True,exist_ok=True)
     for kind,name,vehicle,fn in [('farm','course_farm','iris_with_ardupilot',make_farm),('building','course_building','iris_with_ardupilot',make_building),('rural','course_rural','zephyr_with_ardupilot',make_rural)]:
+        if args.only and args.only!=kind:continue
         sdf,w=world(name,kind,vehicle,args.upstream);fn(w);E.indent(sdf,space='  ')
         dest=ROOT/'worlds'/f'{kind}.sdf';E.ElementTree(sdf).write(dest,encoding='utf-8',xml_declaration=True)
         print(json.dumps({'world':str(dest),'models':len(w.findall('model')),'visuals':len(w.findall('.//visual'))}),flush=True)

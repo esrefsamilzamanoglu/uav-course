@@ -1,6 +1,6 @@
 # 2. hafta — kaynaklar
 
-28 Ekim 2026 revizyonu. Teknik davranışlar için resmî kaynaklar; sayısal sonuçlar için gerçek Gazebo/SITL kayıtlarımız kullanıldı.
+4 Kasım 2026 revizyonu. Teknik davranışlar için resmî kaynaklar; sayısal sonuçlar için gerçek Gazebo/SITL kayıtlarımız kullanıldı.
 
 - [Copter AUTO](https://ardupilot.org/copter/docs/auto-mode.html)
 - [ArduPilot + Gazebo](https://ardupilot.org/dev/docs/sitl-with-gazebo.html)

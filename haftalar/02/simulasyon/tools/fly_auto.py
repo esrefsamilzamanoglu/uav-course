@@ -186,7 +186,7 @@ def main():
         else:
             mission=json.loads((ROOT/'missions'/f'{MISSIONS[a.scenario]}.json').read_text());(s.run/'mission.json').write_text(json.dumps(mission,indent=2))
             if a.vision:
-                with (s.run/'vision-console.log').open('w') as log:vision=subprocess.Popen([sys.executable,str(ROOT/'tools/motion_detect.py'),str(s.run),'--follow'],stdout=log,stderr=subprocess.STDOUT,creationflags=subprocess.CREATE_NO_WINDOW if os.name=='nt' else 0)
+                with (s.run/'vision-console.log').open('w') as log:vision=subprocess.Popen([sys.executable,str(ROOT/'ders_kodlari/hareketli_unsur_tespiti.py'),str(s.run),'--follow'],stdout=log,stderr=subprocess.STDOUT,creationflags=subprocess.CREATE_NO_WINDOW if os.name=='nt' else 0)
             if a.observe_only:
                 g.event('waiting_for_mission_planner',connect='TCP127.0.0.1:5760',observer_commands_sent=0)
                 g.until(lambda:bool(g.last['HEARTBEAT'].base_mode&128) and g.last['HEARTBEAT'].custom_mode==(10 if a.scenario=='plane' else 3),900)

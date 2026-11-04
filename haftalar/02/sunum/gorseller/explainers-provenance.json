@@ -35,16 +35,6 @@
     "sha256": "a67472b8fca94739723a3bb5d620e558713c38c005a36e42c282891441740807"
   },
   {
-    "file": "ex_mosaic.png",
-    "kind": "teaching diagram / measured-data visualization",
-    "description": "Actual RGB frames projected to a common ground plane",
-    "source_files": [
-      "mapping_kamera.png",
-      "tarla_mozaik.png"
-    ],
-    "sha256": "4fc8f8fb02f009e896c09a46087af77134f2f924cdd6b9a4acd47118299b781e"
-  },
-  {
     "file": "ex_roi.png",
     "kind": "teaching diagram / measured-data visualization",
     "description": "Fixed ROI continuously drives the mount while AUTO flies the orbit",
@@ -138,5 +128,15 @@
     "description": "Actual checkpoint renders from the same final optimization run",
     "source_files": [],
     "sha256": "432dff511ec9f7ba81e23ef3b82294a62cfd5870e1db913458da15641d6a5e71"
+  },
+  {
+    "file": "ex_mosaic.png",
+    "kind": "teaching diagram / measured-data visualization",
+    "description": "Actual RGB frames projected to a common ground plane",
+    "source_files": [
+      "mapping_kamera.png",
+      "tarla_mozaik.png"
+    ],
+    "sha256": "797e3cc30349d8925ff1045975f477c553524b5dff8daa3b8795c890c23bd87d"
   }
 ]

@@ -30,21 +30,6 @@
     "sha256": "a01d7d7336d2f6f0f0a543f385aa73384d5b97ad9a37d9dbf53cb66d6b02a4ec"
   },
   {
-    "file": "mapping_ucus.png",
-    "source": ".local/runs/20261027-174950-mapping/products/ucus_izleri.png",
-    "sha256": "fe90d7a79512cbb565436962bdb6bb3c023562aec4243d0aace170be00056103"
-  },
-  {
-    "file": "mapping_dunya.png",
-    "source": ".local/runs/20261027-174950-mapping/overview/000023.png",
-    "sha256": "8c4f5118e5f5bcce81075b89c348873139e0be607b48c71af2b01cde16133a17"
-  },
-  {
-    "file": "mapping_kamera.png",
-    "source": ".local/runs/20261027-174950-mapping/camera/000267.png",
-    "sha256": "adedd759514795e50574f32670a4e281d50b0e7324e682d8edcba95c3ee9eabb"
-  },
-  {
     "file": "building_ucus.png",
     "source": ".local/runs/20261027-183245-building/products/ucus_izleri.png",
     "sha256": "72906dc5cdf01138834c5575c405d9fcf8a766074fbd5beba9f24cfad8eb5818"
@@ -105,11 +90,6 @@
     "sha256": "8cf8cb9c149dc4057f574adf120c1ce935bf7348f721c213a10298a2e200dc69"
   },
   {
-    "file": "tarla_mozaik.png",
-    "source": ".local/runs/20261027-174950-mapping/products/tarla_mozaik.png",
-    "sha256": "14d6f70d8367af592927008117b24d59d2b1e7cf66b6b25274c7efa44a3fcc82"
-  },
-  {
     "file": "bina_3d.png",
     "source": ".local/runs/20261027-183245-building/products/bina_3d_rekonstruksiyon.png",
     "sha256": "ac00d9c56889d6c40855e3ca27ae427505d44f3da5e14d6fe15bb944ca712ba2"
@@ -168,5 +148,35 @@
     "file": "yanlis_alarm_ham.png",
     "source": ".local/runs/20261027-190335-plane/camera/000130.png",
     "sha256": "cab3f9ffca6faa8fe399d2b4ced77fc7736970aedbee2aff4cd68a1ee00fb7cf"
+  },
+  {
+    "file": "mapping_dunya.png",
+    "source": ".local/runs/20261104-134137-mapping/overview/000030.png",
+    "sha256": "3aa2c0c0f1c9ea0916266bd9be5cd4fe15d901a656947d80b499ceddaae26512",
+    "revision": "2026-11-04"
+  },
+  {
+    "file": "mapping_kamera.png",
+    "source": ".local/runs/20261104-134137-mapping/photos/0020.png",
+    "sha256": "7aada9a5598a90997381ca6d3835666ba562f38868b9389079f60ce0ef62d3a1",
+    "revision": "2026-11-04"
+  },
+  {
+    "file": "mapping_ucus.png",
+    "source": ".local/runs/20261104-134137-mapping/products/ucus_izleri.png",
+    "sha256": "b1ded4e47e5910aae2a9157e6fa049a19916ee05e945b45b98aaa92ffdf76ed7",
+    "revision": "2026-11-04"
+  },
+  {
+    "file": "tarla_mozaik.png",
+    "source": ".local/runs/20261104-134137-mapping/products/tarla_mozaik.png",
+    "sha256": "de9116a6e62f13739b79088767ff0a8cc482b10b5f7b078c01cff3aaa9f2aa1e",
+    "revision": "2026-11-04"
+  },
+  {
+    "file": "tarla_mozaik_ortalama.png",
+    "source": ".local/runs/20261104-134137-mapping/products/tarla_mozaik_ortalama.png",
+    "sha256": "59179fc953baeae87842e6a4433310d57f5fd49c281f2025de2e08e75f5fc305",
+    "revision": "2026-11-04"
   }
 ]
