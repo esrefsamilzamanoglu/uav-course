@@ -1,10 +1,10 @@
 # 2. hafta — simülasyonu çalıştırın
 
-İlk haftanın **Windows x64 · Gazebo Jetty 10.5.0 · ArduCopter 4.7.2** kurulumunu kullanın. ArduPlane 4.7.2 ve ek araçlar resmî adreslerinden alınır.
+İlk haftanın **Windows x64 · Gazebo Jetty 10.5.0 · ArduCopter 4.7.3** kurulumunu kullanın. ArduPlane 4.7.3 ve ek araçlar resmî adreslerinden alınır.
 
 ## Kurulum ve uçuş
 
-1. Açık simülasyon oturumunu kapatın, **Kur.cmd** dosyasını bir kez çalıştırın. Kamera/görüntü işleme ortamı ve yerel Gazebo eklentisi hazırlanır.
+1. Açık simülasyon oturumunu kapatın. Windows SITL 4.7.2 kullanıyorsanız önce ilk haftanın **windows/Kur.cmd** dosyasını yeniden çalıştırın. Ardından bu klasördeki **Kur.cmd** dosyasını çalıştırın. Kamera/görüntü işleme ortamı ve yerel Gazebo eklentisi hazırlanır.
 2. **Baslat.cmd** dosyasını açıp uygulamayı seçin.
 3. Mission Planner'dan **TCP → 127.0.0.1 → 5760** ile bağlanın.
 4. **Plan** ekranında aşağıdaki görev dosyasını açın; **Write WPs** ile araca yazın.

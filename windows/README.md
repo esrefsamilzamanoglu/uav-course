@@ -8,7 +8,7 @@
 
 Bitirince Gazebo'yu kapatın veya terminalde `Ctrl+C` kullanın. Mission Planner bağlantısını kesmek de SITL oturumunu sonlandırabilir; tekrar bağlanmak için **Baslat.cmd** dosyasını açın.
 
-Kurulum, Gazebo Jetty **10.5.0**, ArduCopter **4.7.2** ve bu bilgisayarda çalıştırılmış Windows eklenti uyarlamasını kullanır. Programlar resmî kaynaklardan indirilir; eklenti kendi bilgisayarınızda derlenir. Kurulum çıktıları `.local` ve `.pixi` klasörlerinde kalır. Kurucu ve başlatıcı uçuş komutu göndermez.
+Kurulum, Gazebo Jetty **10.5.0**, ArduCopter **4.7.3** ve bu bilgisayarda çalıştırılmış Windows eklenti uyarlamasını kullanır. Programlar resmî kaynaklardan indirilir; eklenti kendi bilgisayarınızda derlenir. Kurulum çıktıları `.local` ve `.pixi` klasörlerinde kalır. Kurucu ve başlatıcı uçuş komutu göndermez.
 
 `ardupilot_gazebo` için resmî bir Windows kurucusu bulunmadığından [belirli kaynak sürümüne](https://github.com/ArduPilot/ardupilot_gazebo/tree/082a0fe231f6e63bc8d1598f1cba461d9e2ea7f5) küçük bir Windows yaması uygulanır. Ayrıntı ve lisanslar: [SOURCES.txt](SOURCES.txt), [COPYING.LESSER](COPYING.LESSER), [COPYING](COPYING). Resmî SITL dosyalarının sürümü değişip doğrulama durursa manifestin ders sorumlusu tarafından güncellenmesi gerekir.
 

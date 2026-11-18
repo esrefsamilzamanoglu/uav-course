@@ -31,7 +31,7 @@ ArduCopter 4.7.2 Linux SITL
   https://github.com/ArduPilot/ardupilot/tree/fb773567896014da007bca58358704d4a0d8516f
   GPL-3.0-or-later; copyright ArduPilot contributors.
   copter.parm and gazebo-iris.parm are downloaded from the same source commit.
-  The Windows SITL has the same release number but a different build commit.
+  The Windows SITL uses ArduCopter 4.7.3.
   Upstream file hashes are listed in downloads.json.
 
 QGroundControl 5.1.5 Linux x86_64

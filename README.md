@@ -18,13 +18,13 @@ Her hafta için yalnız güncel sunum paylaşılır; bağlantısı aynı kalır.
 | Sistem | Kullanılacak yol |
 | --- | --- |
 | Windows 10/11, x64 | Gazebo + ArduPilot Gazebo eklentisi + SITL → Mission Planner TCP |
-| Ubuntu 24.04 Desktop, amd64 | Aynı Jetty 10.5.0 + ArduCopter 4.7.2 → QGroundControl TCP |
+| Ubuntu 24.04 Desktop, amd64 | Gazebo Jetty 10.5.0 + ArduCopter 4.7.2 → QGroundControl TCP |
 
 İnternet bağlantısı ve birkaç GB boş alan gerekir. ROS kurulumu gerekmiyor.
 
 ### Windows — Gazebo + ArduPilot + Mission Planner
 
-Bu bilgisayarda çalışan düzen: **Gazebo Jetty 10.5.0 + ArduCopter 4.7.2 + Windows ArduPilot Gazebo eklentisi**. WSL gerekmez.
+Bu bilgisayarda çalışan düzen: **Gazebo Jetty 10.5.0 + ArduCopter 4.7.3 + Windows ArduPilot Gazebo eklentisi**. WSL gerekmez.
 
 **1. Programları resmî adreslerinden indirip kurun:**
 
@@ -58,7 +58,7 @@ Bu akışta Mission Planner'ın **SIMULATION** sekmesinden ikinci SITL açmayın
 
 ### Linux — Ubuntu 24.04 Desktop amd64
 
-Windows ile aynı **Gazebo Jetty 10.5.0**, **ArduCopter 4.7.2** ve **ArduPilot Gazebo eklentisi kaynak sürümü** kullanılır. Linux yer kontrol istasyonu **QGroundControl 5.1.5**'tir; bağlantı burada da **TCP 127.0.0.1:5760** üzerinden yapılır.
+**Gazebo Jetty 10.5.0**, **ArduCopter 4.7.2** ve Windows ile aynı **ArduPilot Gazebo eklentisi kaynak sürümü** kullanılır. Linux yer kontrol istasyonu **QGroundControl 5.1.5**'tir; bağlantı burada da **TCP 127.0.0.1:5760** üzerinden yapılır.
 
 **1. Git, VS Code ve Pixi'yi hazırlayın:** [VS Code](https://code.visualstudio.com/download) ve [Pixi](https://pixi.prefix.dev/latest/installation/) resmî kaynaklarından kurulur. Gazebo ve QGroundControl'u 3. adımdaki yardımcı otomatik kurar.
 

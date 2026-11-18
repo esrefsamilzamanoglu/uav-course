@@ -43,9 +43,13 @@ def prepare():
         E.indent(tree,space='  ');tree.write(LOCAL/'worlds'/f.name,encoding='utf-8',xml_declaration=True)
     # Official Windows Plane binary and its shared runtime; no existing SITL cache is changed.
     plane=LOCAL/'sitl/plane';plane.mkdir(parents=True,exist_ok=True)
-    source=LOCAL/'research/ArduPlane.exe'
-    if not source.is_file():raise RuntimeError('Resmi ArduPlane indirmesi eksik.')
-    if digest(source)!='8efc03f8c72433ef19db028f0c59a62ff3b48a67b680d94bed084b5e19fb798c':raise RuntimeError('ArduPlane surumu degismis.')
+    downloads = json.loads((ROOT / 'downloads.json').read_text(encoding='utf-8'))
+    entry = next(item for item in downloads if item['file'] == 'research/ArduPlane.exe')
+    source = LOCAL / entry['file']
+    if not source.is_file():
+        raise RuntimeError('Resmi ArduPlane indirmesi eksik.')
+    if digest(source) != entry['sha256']:
+        raise RuntimeError('ArduPlane surumu degismis. Kur.cmd dosyasini yeniden calistirin.')
     shutil.copy2(source,plane/'ArduPlane.exe')
     for dll in c['sitl'].glob('*.dll'):shutil.copy2(dll,plane/dll.name)
     copter=(c['sitl']/'default_params/copter.parm').read_text()

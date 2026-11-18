@@ -1,6 +1,6 @@
 # Ubuntu 24.04: Gazebo + ArduPilot
 
-**Ubuntu 24.04 Desktop, amd64** kullanın. Windows ile aynı **Gazebo Jetty 10.5.0**, **ArduCopter 4.7.2** ve aynı ArduPilot Gazebo kaynak sürümü kullanılır. Linux yer kontrol istasyonu **QGroundControl 5.1.5** olur.
+**Ubuntu 24.04 Desktop, amd64** kullanın. **Gazebo Jetty 10.5.0**, **ArduCopter 4.7.2** ve Windows ile aynı ArduPilot Gazebo kaynak sürümü kullanılır. Linux yer kontrol istasyonu **QGroundControl 5.1.5** olur.
 
 1. [Ana rehberin Linux bölümündeki](../README.md#linux--ubuntu-2404-desktop-amd64) **1 ve 2. adımları** tamamlayın: masaüstü bağımlılıklarını, Git, VS Code ve Pixi'yi kurup ders deposunu alın.
 2. VS Code'da depo klasörünü açın → **Terminal → New Terminal**. Kurulumu normal kullanıcı olarak başlatın:
@@ -28,6 +28,6 @@ Terminal açık kalsın. Bitirince Gazebo'yu kapatın veya terminalde `Ctrl+C` k
 
 Programlar kendi resmî kaynaklarından indirilir; depoda ZIP veya hazır çalıştırılabilir dosya dağıtılmaz. Derleme/indirme çıktıları `linux/.local` ve `linux/.pixi` içinde kalır. ArduCopter'in hazır Linux sürümü kullanıldığı için tam ArduPilot geliştirme ortamı gerekmez. QGroundControl AppImage yerelde çıkarılarak çalıştırılır; FUSE kurulumu gerekmez.
 
-Eklenti, [aynı resmî kaynak sürümünden](https://github.com/ArduPilot/ardupilot_gazebo/tree/082a0fe231f6e63bc8d1598f1cba461d9e2ea7f5) derlenir. [Linux CMake uyarlaması](linux-core.patch), ilk hafta gerekmeyen kamera akışını kapatır, RapidJSON başlıklarını belirtir ve Jetty bağımlılıkları için C++17 kullanır. Windows ağ kodu yaması Linux'a uygulanmaz. Windows ve Linux SITL dosyalarının sürüm numarası aynıdır; platform derlemeleri ve kaynak commit'leri farklıdır.
+Eklenti, [aynı resmî kaynak sürümünden](https://github.com/ArduPilot/ardupilot_gazebo/tree/082a0fe231f6e63bc8d1598f1cba461d9e2ea7f5) derlenir. [Linux CMake uyarlaması](linux-core.patch), ilk hafta gerekmeyen kamera akışını kapatır, RapidJSON başlıklarını belirtir ve Jetty bağımlılıkları için C++17 kullanır. Windows ağ kodu yaması Linux'a uygulanmaz. Linux SITL 4.7.2, Windows SITL 4.7.3 kullanır.
 
 Kaynaklar ve lisanslar: [SOURCES.txt](SOURCES.txt). Kurulum Ubuntu 24.04.3 (WSL2) üzerinde ayrı ortamda denendi: eklenti derlendi, tekrar kurulum geçti, Gazebo ve QGroundControl açıldı. TCP üzerinden heartbeat, yönelim ve konum verileri alındı; kapatıldığında süreçler ve portlar serbest kaldı. Testte uçuş veya arm komutu verilmedi.

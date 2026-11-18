@@ -1,13 +1,14 @@
 [
     {
         "file":  "ArduCopter.exe",
+        "version":  "4.7.3",
         "url":  "https://firmware.ardupilot.org/Tools/MissionPlanner/sitl/CopterStable/ArduCopter.elf",
-        "sha256":  "ab0dd325620501f91b24b1d55e20ad41750961c060bc67e306f7071e9f0b390c"
+        "sha256":  "916f59a820bd9ac3b19bc937a12661942c46350acaddb71e61c3e45c86b703fa"
     },
     {
         "file":  "firmware_git.txt",
         "url":  "https://firmware.ardupilot.org/Tools/MissionPlanner/sitl/CopterStable/git.txt",
-        "sha256":  "065caf05167599bb7c4e8ebe79fff3906c431b53c5024e8829cfc5794066e2d6"
+        "sha256":  "0a964875da4006a22b21c9b28a3a12079bfa876eb6c61e28b872acba7b47dc79"
     },
     {
         "file":  "cygatomic-1.dll",
@@ -32,12 +33,12 @@
     {
         "file":  "cygiconv-2.dll",
         "url":  "https://firmware.ardupilot.org/Tools/MissionPlanner/sitl/CopterStable/cygiconv-2.dll",
-        "sha256":  "e433ab6680eb509b5395f637137775dacebbc6e1ed3b564474aa87f0ca35379a"
+        "sha256":  "aea0d69478b5b07647fd83e77d586673f9eba5e63420c6fdfd350d013806bba8"
     },
     {
         "file":  "cygintl-8.dll",
         "url":  "https://firmware.ardupilot.org/Tools/MissionPlanner/sitl/CopterStable/cygintl-8.dll",
-        "sha256":  "9d0c063a226965e61664bdd9b771b5d0ee16b5214720b6f0086868e04fe67cdc"
+        "sha256":  "393b6a5b3058e19e0c4b024866fa124b4a0e85f5b1aaf62e984f840e17722de8"
     },
     {
         "file":  "cygquadmath-0.dll",
@@ -52,21 +53,21 @@
     {
         "file":  "cygstdc++-6.dll",
         "url":  "https://firmware.ardupilot.org/Tools/MissionPlanner/sitl/CopterStable/cygstdc++-6.dll",
-        "sha256":  "a2d175169715f7fd69d40a581dc7c6502bc2bb75601b77a03baef6ce41da8f32"
+        "sha256":  "7953c47c65f2c584e7add785662f507b2da5511e02f12deed7c260925b23131f"
     },
     {
         "file":  "cygwin1.dll",
         "url":  "https://firmware.ardupilot.org/Tools/MissionPlanner/sitl/CopterStable/cygwin1.dll",
-        "sha256":  "959048d1407074097af021708d87bdf5ac1a8f107ff963c8950cd6dc8f21afaf"
+        "sha256":  "ed9d5379061e5de79c3375cc62246c2142ea1c97d94f4d16bfbea6fb1b7fc889"
     },
     {
         "file":  "default_params/copter.parm",
-        "url":  "https://raw.githubusercontent.com/ArduPilot/ardupilot/fbd0a3160c90a557c24ce4c38c16975532652536/Tools/autotest/default_params/copter.parm",
+        "url":  "https://raw.githubusercontent.com/ArduPilot/ardupilot/d9c5097c3d8333435712ffed86bca8ce00c4bb46/Tools/autotest/default_params/copter.parm",
         "sha256":  "5e01345b45d1c6190b28bece5638bbdd4cf1cce35e05bbbf480ab24d2b51aa0e"
     },
     {
         "file":  "default_params/gazebo-iris.parm",
-        "url":  "https://raw.githubusercontent.com/ArduPilot/ardupilot/fbd0a3160c90a557c24ce4c38c16975532652536/Tools/autotest/default_params/gazebo-iris.parm",
+        "url":  "https://raw.githubusercontent.com/ArduPilot/ardupilot/d9c5097c3d8333435712ffed86bca8ce00c4bb46/Tools/autotest/default_params/gazebo-iris.parm",
         "sha256":  "4aee140cbb29b967e4519e4c84c4b389a2172c30e542f36b4fba4c118b4d4750"
     }
 ]
