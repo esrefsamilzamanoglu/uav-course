@@ -1,0 +1,4403 @@
+{
+  "schema_version": 1,
+  "world_name": "competition_realistic",
+  "coordinate_frame": "ENU",
+  "units": "metres, kilograms, radians",
+  "home_enu": [
+    -24.0,
+    0.0,
+    0.9
+  ],
+  "ground_z": 0.0,
+  "launch_rack_height": 0.705,
+  "home_reason": "No surveyed HOME is given in V7. This example places launch 24m from the field centre and equally close to the two pylons; not an official event coordinate.",
+  "field_bounds": {
+    "east": [
+      -100.0,
+      100.0
+    ],
+    "north": [
+      -150.0,
+      150.0
+    ]
+  },
+  "search_bounds": {
+    "east": [
+      -15.0,
+      15.0
+    ],
+    "north": [
+      -50.0,
+      50.0
+    ]
+  },
+  "pylons_enu": [
+    [
+      0.0,
+      75.0,
+      0.0
+    ],
+    [
+      0.0,
+      -75.0,
+      0.0
+    ]
+  ],
+  "pylon_spacing_status": "150m planned distance in V7; training arrangement centred at the origin.",
+  "vehicles": {
+    "primary_model": "competition_quad",
+    "body_link": "iris_with_standoffs::base_link",
+    "heading_rad": 1.5707963267948966
+  },
+  "camera": {
+    "topic": "/course/realistic/camera/image",
+    "sensor": "rgb_camera",
+    "image_px": [
+      960,
+      720
+    ],
+    "hfov_rad": 1.5707963267948966,
+    "local_pose": [
+      0.38,
+      0,
+      -0.13,
+      0,
+      1.5707963267948966,
+      0
+    ],
+    "update_rate_hz": 8
+  },
+  "overview": {
+    "topic": "/course/realistic/overview/image",
+    "image_px": [
+      1400,
+      1400
+    ],
+    "pose_enu_rpy": [
+      0,
+      0,
+      271.36,
+      0,
+      1.5707963267948966,
+      1.5707963267948966
+    ]
+  },
+  "targets": [
+    {
+      "id": "blue_hexagon",
+      "kind": "blue_hexagon",
+      "color": "blue",
+      "shape": "regular_hexagon",
+      "side_m": 2.0,
+      "center_enu": [
+        -4.0,
+        -15.0,
+        0.012
+      ],
+      "vertices_enu": [
+        [
+          -2.0,
+          -15.0
+        ],
+        [
+          -3.0,
+          -13.2679491924
+        ],
+        [
+          -5.0,
+          -13.2679491924
+        ],
+        [
+          -6.0,
+          -15.0
+        ],
+        [
+          -5.0,
+          -16.7320508076
+        ],
+        [
+          -3.0,
+          -16.7320508076
+        ]
+      ],
+      "payload_color": "red"
+    },
+    {
+      "id": "red_triangle",
+      "kind": "red_triangle",
+      "color": "red",
+      "shape": "equilateral_triangle",
+      "side_m": 1.0,
+      "center_enu": [
+        6.0,
+        20.0,
+        0.012
+      ],
+      "vertices_enu": [
+        [
+          6.5773502692,
+          20.0
+        ],
+        [
+          5.7113248654,
+          20.5
+        ],
+        [
+          5.7113248654,
+          19.5
+        ]
+      ],
+      "payload_color": "blue"
+    }
+  ],
+  "payloads": [
+    {
+      "id": "payload_red",
+      "color": "red",
+      "link": "payload_link",
+      "mass_kg": 0.3,
+      "cube_side_m": 0.16
+    },
+    {
+      "id": "payload_blue",
+      "color": "blue",
+      "link": "payload_link",
+      "mass_kg": 0.3,
+      "cube_side_m": 0.16
+    }
+  ],
+  "objects": [
+    {
+      "type": "boundary",
+      "name": "boundary_n_-150",
+      "position_enu": [
+        0,
+        -150,
+        0.012
+      ],
+      "size": [
+        200,
+        0.12,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "boundary",
+      "name": "boundary_n_150",
+      "position_enu": [
+        0,
+        150,
+        0.012
+      ],
+      "size": [
+        200,
+        0.12,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "boundary",
+      "name": "boundary_e_-100",
+      "position_enu": [
+        -100,
+        0,
+        0.012
+      ],
+      "size": [
+        0.12,
+        300,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "boundary",
+      "name": "boundary_e_100",
+      "position_enu": [
+        100,
+        0,
+        0.012
+      ],
+      "size": [
+        0.12,
+        300,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "home",
+      "name": "home_pad",
+      "position_enu": [
+        -24,
+        0,
+        0.015
+      ],
+      "size": [
+        3.4,
+        3.4,
+        0.025
+      ],
+      "color": [
+        0.53,
+        0.55,
+        0.53
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "pylon",
+      "name": "pylon_1",
+      "position_enu": [
+        0,
+        75,
+        0
+      ],
+      "size": [
+        0.6,
+        0.6,
+        8
+      ],
+      "color": [
+        0.98,
+        0.43,
+        0.08
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "pylon",
+      "name": "pylon_2",
+      "position_enu": [
+        0,
+        -75,
+        0
+      ],
+      "size": [
+        0.6,
+        0.6,
+        8
+      ],
+      "color": [
+        0.98,
+        0.43,
+        0.08
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road",
+      "name": "access_road",
+      "position_enu": [
+        -130,
+        0,
+        0.01
+      ],
+      "size": [
+        13,
+        360,
+        0.025
+      ],
+      "color": [
+        0.1,
+        0.115,
+        0.13
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "path",
+      "name": "road_sidewalk_-139",
+      "position_enu": [
+        -139,
+        0,
+        0.035
+      ],
+      "size": [
+        3,
+        360,
+        0.06
+      ],
+      "color": [
+        0.53,
+        0.55,
+        0.53
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "path",
+      "name": "road_sidewalk_-121",
+      "position_enu": [
+        -121,
+        0,
+        0.035
+      ],
+      "size": [
+        3,
+        360,
+        0.06
+      ],
+      "color": [
+        0.53,
+        0.55,
+        0.53
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "road_center_-175",
+      "position_enu": [
+        -130,
+        -175,
+        0.03
+      ],
+      "size": [
+        0.15,
+        4,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "road_center_-165",
+      "position_enu": [
+        -130,
+        -165,
+        0.03
+      ],
+      "size": [
+        0.15,
+        4,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "road_center_-155",
+      "position_enu": [
+        -130,
+        -155,
+        0.03
+      ],
+      "size": [
+        0.15,
+        4,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "road_center_-145",
+      "position_enu": [
+        -130,
+        -145,
+        0.03
+      ],
+      "size": [
+        0.15,
+        4,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "road_center_-135",
+      "position_enu": [
+        -130,
+        -135,
+        0.03
+      ],
+      "size": [
+        0.15,
+        4,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "road_center_-125",
+      "position_enu": [
+        -130,
+        -125,
+        0.03
+      ],
+      "size": [
+        0.15,
+        4,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "road_center_-115",
+      "position_enu": [
+        -130,
+        -115,
+        0.03
+      ],
+      "size": [
+        0.15,
+        4,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "road_center_-105",
+      "position_enu": [
+        -130,
+        -105,
+        0.03
+      ],
+      "size": [
+        0.15,
+        4,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "road_center_-95",
+      "position_enu": [
+        -130,
+        -95,
+        0.03
+      ],
+      "size": [
+        0.15,
+        4,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "road_center_-85",
+      "position_enu": [
+        -130,
+        -85,
+        0.03
+      ],
+      "size": [
+        0.15,
+        4,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "road_center_-75",
+      "position_enu": [
+        -130,
+        -75,
+        0.03
+      ],
+      "size": [
+        0.15,
+        4,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "road_center_-65",
+      "position_enu": [
+        -130,
+        -65,
+        0.03
+      ],
+      "size": [
+        0.15,
+        4,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "road_center_-55",
+      "position_enu": [
+        -130,
+        -55,
+        0.03
+      ],
+      "size": [
+        0.15,
+        4,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "road_center_-45",
+      "position_enu": [
+        -130,
+        -45,
+        0.03
+      ],
+      "size": [
+        0.15,
+        4,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "road_center_-35",
+      "position_enu": [
+        -130,
+        -35,
+        0.03
+      ],
+      "size": [
+        0.15,
+        4,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "road_center_-25",
+      "position_enu": [
+        -130,
+        -25,
+        0.03
+      ],
+      "size": [
+        0.15,
+        4,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "road_center_-15",
+      "position_enu": [
+        -130,
+        -15,
+        0.03
+      ],
+      "size": [
+        0.15,
+        4,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "road_center_-5",
+      "position_enu": [
+        -130,
+        -5,
+        0.03
+      ],
+      "size": [
+        0.15,
+        4,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "road_center_5",
+      "position_enu": [
+        -130,
+        5,
+        0.03
+      ],
+      "size": [
+        0.15,
+        4,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "road_center_15",
+      "position_enu": [
+        -130,
+        15,
+        0.03
+      ],
+      "size": [
+        0.15,
+        4,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "road_center_25",
+      "position_enu": [
+        -130,
+        25,
+        0.03
+      ],
+      "size": [
+        0.15,
+        4,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "road_center_35",
+      "position_enu": [
+        -130,
+        35,
+        0.03
+      ],
+      "size": [
+        0.15,
+        4,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "road_center_45",
+      "position_enu": [
+        -130,
+        45,
+        0.03
+      ],
+      "size": [
+        0.15,
+        4,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "road_center_55",
+      "position_enu": [
+        -130,
+        55,
+        0.03
+      ],
+      "size": [
+        0.15,
+        4,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "road_center_65",
+      "position_enu": [
+        -130,
+        65,
+        0.03
+      ],
+      "size": [
+        0.15,
+        4,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "road_center_75",
+      "position_enu": [
+        -130,
+        75,
+        0.03
+      ],
+      "size": [
+        0.15,
+        4,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "road_center_85",
+      "position_enu": [
+        -130,
+        85,
+        0.03
+      ],
+      "size": [
+        0.15,
+        4,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "road_center_95",
+      "position_enu": [
+        -130,
+        95,
+        0.03
+      ],
+      "size": [
+        0.15,
+        4,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "road_center_105",
+      "position_enu": [
+        -130,
+        105,
+        0.03
+      ],
+      "size": [
+        0.15,
+        4,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "road_center_115",
+      "position_enu": [
+        -130,
+        115,
+        0.03
+      ],
+      "size": [
+        0.15,
+        4,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "road_center_125",
+      "position_enu": [
+        -130,
+        125,
+        0.03
+      ],
+      "size": [
+        0.15,
+        4,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "road_center_135",
+      "position_enu": [
+        -130,
+        135,
+        0.03
+      ],
+      "size": [
+        0.15,
+        4,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "road_center_145",
+      "position_enu": [
+        -130,
+        145,
+        0.03
+      ],
+      "size": [
+        0.15,
+        4,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "road_center_155",
+      "position_enu": [
+        -130,
+        155,
+        0.03
+      ],
+      "size": [
+        0.15,
+        4,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "road_center_165",
+      "position_enu": [
+        -130,
+        165,
+        0.03
+      ],
+      "size": [
+        0.15,
+        4,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "road_center_175",
+      "position_enu": [
+        -130,
+        175,
+        0.03
+      ],
+      "size": [
+        0.15,
+        4,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road",
+      "name": "south_road",
+      "position_enu": [
+        0,
+        -174,
+        0.013
+      ],
+      "size": [
+        360,
+        12,
+        0.025
+      ],
+      "color": [
+        0.1,
+        0.115,
+        0.13
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "south_center_-175",
+      "position_enu": [
+        -175,
+        -174,
+        0.03
+      ],
+      "size": [
+        4,
+        0.15,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "south_center_-165",
+      "position_enu": [
+        -165,
+        -174,
+        0.03
+      ],
+      "size": [
+        4,
+        0.15,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "south_center_-155",
+      "position_enu": [
+        -155,
+        -174,
+        0.03
+      ],
+      "size": [
+        4,
+        0.15,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "south_center_-145",
+      "position_enu": [
+        -145,
+        -174,
+        0.03
+      ],
+      "size": [
+        4,
+        0.15,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "south_center_-135",
+      "position_enu": [
+        -135,
+        -174,
+        0.03
+      ],
+      "size": [
+        4,
+        0.15,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "south_center_-125",
+      "position_enu": [
+        -125,
+        -174,
+        0.03
+      ],
+      "size": [
+        4,
+        0.15,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "south_center_-115",
+      "position_enu": [
+        -115,
+        -174,
+        0.03
+      ],
+      "size": [
+        4,
+        0.15,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "south_center_-105",
+      "position_enu": [
+        -105,
+        -174,
+        0.03
+      ],
+      "size": [
+        4,
+        0.15,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "south_center_-95",
+      "position_enu": [
+        -95,
+        -174,
+        0.03
+      ],
+      "size": [
+        4,
+        0.15,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "south_center_-85",
+      "position_enu": [
+        -85,
+        -174,
+        0.03
+      ],
+      "size": [
+        4,
+        0.15,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "south_center_-75",
+      "position_enu": [
+        -75,
+        -174,
+        0.03
+      ],
+      "size": [
+        4,
+        0.15,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "south_center_-65",
+      "position_enu": [
+        -65,
+        -174,
+        0.03
+      ],
+      "size": [
+        4,
+        0.15,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "south_center_-55",
+      "position_enu": [
+        -55,
+        -174,
+        0.03
+      ],
+      "size": [
+        4,
+        0.15,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "south_center_-45",
+      "position_enu": [
+        -45,
+        -174,
+        0.03
+      ],
+      "size": [
+        4,
+        0.15,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "south_center_-35",
+      "position_enu": [
+        -35,
+        -174,
+        0.03
+      ],
+      "size": [
+        4,
+        0.15,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "south_center_-25",
+      "position_enu": [
+        -25,
+        -174,
+        0.03
+      ],
+      "size": [
+        4,
+        0.15,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "south_center_-15",
+      "position_enu": [
+        -15,
+        -174,
+        0.03
+      ],
+      "size": [
+        4,
+        0.15,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "south_center_-5",
+      "position_enu": [
+        -5,
+        -174,
+        0.03
+      ],
+      "size": [
+        4,
+        0.15,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "south_center_5",
+      "position_enu": [
+        5,
+        -174,
+        0.03
+      ],
+      "size": [
+        4,
+        0.15,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "south_center_15",
+      "position_enu": [
+        15,
+        -174,
+        0.03
+      ],
+      "size": [
+        4,
+        0.15,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "south_center_25",
+      "position_enu": [
+        25,
+        -174,
+        0.03
+      ],
+      "size": [
+        4,
+        0.15,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "south_center_35",
+      "position_enu": [
+        35,
+        -174,
+        0.03
+      ],
+      "size": [
+        4,
+        0.15,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "south_center_45",
+      "position_enu": [
+        45,
+        -174,
+        0.03
+      ],
+      "size": [
+        4,
+        0.15,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "south_center_55",
+      "position_enu": [
+        55,
+        -174,
+        0.03
+      ],
+      "size": [
+        4,
+        0.15,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "south_center_65",
+      "position_enu": [
+        65,
+        -174,
+        0.03
+      ],
+      "size": [
+        4,
+        0.15,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "south_center_75",
+      "position_enu": [
+        75,
+        -174,
+        0.03
+      ],
+      "size": [
+        4,
+        0.15,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "south_center_85",
+      "position_enu": [
+        85,
+        -174,
+        0.03
+      ],
+      "size": [
+        4,
+        0.15,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "south_center_95",
+      "position_enu": [
+        95,
+        -174,
+        0.03
+      ],
+      "size": [
+        4,
+        0.15,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "south_center_105",
+      "position_enu": [
+        105,
+        -174,
+        0.03
+      ],
+      "size": [
+        4,
+        0.15,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "south_center_115",
+      "position_enu": [
+        115,
+        -174,
+        0.03
+      ],
+      "size": [
+        4,
+        0.15,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "south_center_125",
+      "position_enu": [
+        125,
+        -174,
+        0.03
+      ],
+      "size": [
+        4,
+        0.15,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "south_center_135",
+      "position_enu": [
+        135,
+        -174,
+        0.03
+      ],
+      "size": [
+        4,
+        0.15,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "south_center_145",
+      "position_enu": [
+        145,
+        -174,
+        0.03
+      ],
+      "size": [
+        4,
+        0.15,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "south_center_155",
+      "position_enu": [
+        155,
+        -174,
+        0.03
+      ],
+      "size": [
+        4,
+        0.15,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "south_center_165",
+      "position_enu": [
+        165,
+        -174,
+        0.03
+      ],
+      "size": [
+        4,
+        0.15,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "road_mark",
+      "name": "south_center_175",
+      "position_enu": [
+        175,
+        -174,
+        0.03
+      ],
+      "size": [
+        4,
+        0.15,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "fence",
+      "name": "safety_fence_-108",
+      "position_enu": [
+        -108,
+        0,
+        1
+      ],
+      "size": [
+        0.1,
+        320,
+        2
+      ],
+      "color": [
+        0.35,
+        0.39,
+        0.42
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "fence",
+      "name": "safety_fence_108",
+      "position_enu": [
+        108,
+        0,
+        1
+      ],
+      "size": [
+        0.1,
+        320,
+        2
+      ],
+      "color": [
+        0.35,
+        0.39,
+        0.42
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tree",
+      "name": "tree_1",
+      "position_enu": [
+        -116.52352046014414,
+        -146.9849054686125,
+        0
+      ],
+      "size": [
+        5.103965646294023,
+        5.103965646294023,
+        7.291379494705748
+      ],
+      "color": [
+        0.19,
+        0.3,
+        0.085
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tree",
+      "name": "tree_2",
+      "position_enu": [
+        -113.5599976494029,
+        -126.38417889695825,
+        0
+      ],
+      "size": [
+        4.397047163861076,
+        4.397047163861076,
+        6.281495948372967
+      ],
+      "color": [
+        0.19,
+        0.3,
+        0.085
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tree",
+      "name": "tree_3",
+      "position_enu": [
+        -114.59587739045965,
+        -100.66064586845272,
+        0
+      ],
+      "size": [
+        5.7692647870838165,
+        5.7692647870838165,
+        8.241806838691167
+      ],
+      "color": [
+        0.19,
+        0.3,
+        0.085
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tree",
+      "name": "tree_4",
+      "position_enu": [
+        -114.80875418059821,
+        -76.61676604554478,
+        0
+      ],
+      "size": [
+        5.731882541274397,
+        5.731882541274397,
+        8.188403630391996
+      ],
+      "color": [
+        0.19,
+        0.3,
+        0.085
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tree",
+      "name": "tree_5",
+      "position_enu": [
+        -113.99589616736553,
+        -54.4808749210345,
+        0
+      ],
+      "size": [
+        4.43783849445142,
+        4.43783849445142,
+        6.339769277787744
+      ],
+      "color": [
+        0.19,
+        0.3,
+        0.085
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tree",
+      "name": "tree_6",
+      "position_enu": [
+        -114.5431828772806,
+        -34.33558073845922,
+        0
+      ],
+      "size": [
+        5.851065314488309,
+        5.851065314488309,
+        8.3586647349833
+      ],
+      "color": [
+        0.19,
+        0.3,
+        0.085
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tree",
+      "name": "tree_7",
+      "position_enu": [
+        -115.20138066972825,
+        -7.111423869834974,
+        0
+      ],
+      "size": [
+        5.5286862652838415,
+        5.5286862652838415,
+        7.8981232361197735
+      ],
+      "color": [
+        0.19,
+        0.3,
+        0.085
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tree",
+      "name": "tree_8",
+      "position_enu": [
+        -114.28244422929784,
+        12.261347967261853,
+        0
+      ],
+      "size": [
+        4.466207104189409,
+        4.466207104189409,
+        6.380295863127727
+      ],
+      "color": [
+        0.19,
+        0.3,
+        0.085
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tree",
+      "name": "tree_9",
+      "position_enu": [
+        -113.0803506076661,
+        39.575903789250674,
+        0
+      ],
+      "size": [
+        5.822582957685321,
+        5.822582957685321,
+        8.317975653836173
+      ],
+      "color": [
+        0.19,
+        0.3,
+        0.085
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tree",
+      "name": "tree_10",
+      "position_enu": [
+        -113.00137550395817,
+        60.08152527977753,
+        0
+      ],
+      "size": [
+        4.036983757627191,
+        4.036983757627191,
+        5.767119653753131
+      ],
+      "color": [
+        0.19,
+        0.3,
+        0.085
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tree",
+      "name": "tree_11",
+      "position_enu": [
+        -115.63842171163365,
+        83.34470322153261,
+        0
+      ],
+      "size": [
+        4.565698592399245,
+        4.565698592399245,
+        6.52242656057035
+      ],
+      "color": [
+        0.19,
+        0.3,
+        0.085
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tree",
+      "name": "tree_12",
+      "position_enu": [
+        -115.17020880756115,
+        108.25884885988214,
+        0
+      ],
+      "size": [
+        5.574740076103937,
+        5.574740076103937,
+        7.963914394434196
+      ],
+      "color": [
+        0.19,
+        0.3,
+        0.085
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tree",
+      "name": "tree_13",
+      "position_enu": [
+        -114.69030656489734,
+        126.14843580936466,
+        0
+      ],
+      "size": [
+        5.591612717909136,
+        5.591612717909136,
+        7.988018168441624
+      ],
+      "color": [
+        0.19,
+        0.3,
+        0.085
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tree",
+      "name": "tree_14",
+      "position_enu": [
+        116.45416892948963,
+        -147.46669502150934,
+        0
+      ],
+      "size": [
+        4.826994650310825,
+        4.826994650310825,
+        6.895706643301178
+      ],
+      "color": [
+        0.19,
+        0.3,
+        0.085
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tree",
+      "name": "tree_15",
+      "position_enu": [
+        117.34287126524595,
+        -124.00926949677354,
+        0
+      ],
+      "size": [
+        4.13529746191454,
+        4.13529746191454,
+        5.907567802735057
+      ],
+      "color": [
+        0.19,
+        0.3,
+        0.085
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tree",
+      "name": "tree_16",
+      "position_enu": [
+        117.02543499477355,
+        -99.499119257923,
+        0
+      ],
+      "size": [
+        5.320404855123251,
+        5.320404855123251,
+        7.6005783644617875
+      ],
+      "color": [
+        0.19,
+        0.3,
+        0.085
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tree",
+      "name": "tree_17",
+      "position_enu": [
+        116.96412284368719,
+        -75.4994721774167,
+        0
+      ],
+      "size": [
+        4.483676409117656,
+        4.483676409117656,
+        6.4052520130252235
+      ],
+      "color": [
+        0.19,
+        0.3,
+        0.085
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tree",
+      "name": "tree_18",
+      "position_enu": [
+        116.67986460220814,
+        -52.44260127921715,
+        0
+      ],
+      "size": [
+        5.024015416627571,
+        5.024015416627571,
+        7.17716488089653
+      ],
+      "color": [
+        0.19,
+        0.3,
+        0.085
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tree",
+      "name": "tree_19",
+      "position_enu": [
+        117.07194893971601,
+        -34.847743172547986,
+        0
+      ],
+      "size": [
+        4.400085928486843,
+        4.400085928486843,
+        6.2858370406954895
+      ],
+      "color": [
+        0.19,
+        0.3,
+        0.085
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tree",
+      "name": "tree_20",
+      "position_enu": [
+        115.51599540764488,
+        -11.70667375790811,
+        0
+      ],
+      "size": [
+        5.576423467560712,
+        5.576423467560712,
+        7.966319239372446
+      ],
+      "color": [
+        0.19,
+        0.3,
+        0.085
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tree",
+      "name": "tree_21",
+      "position_enu": [
+        118.54729863019237,
+        11.615458282111922,
+        0
+      ],
+      "size": [
+        5.374658753738204,
+        5.374658753738204,
+        7.67808393391172
+      ],
+      "color": [
+        0.19,
+        0.3,
+        0.085
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tree",
+      "name": "tree_22",
+      "position_enu": [
+        116.88016128964462,
+        36.89267868776498,
+        0
+      ],
+      "size": [
+        4.410871807721186,
+        4.410871807721186,
+        6.301245439601694
+      ],
+      "color": [
+        0.19,
+        0.3,
+        0.085
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tree",
+      "name": "tree_23",
+      "position_enu": [
+        118.5436848438386,
+        60.76002304408136,
+        0
+      ],
+      "size": [
+        4.969151046887358,
+        4.969151046887358,
+        7.098787209839084
+      ],
+      "color": [
+        0.19,
+        0.3,
+        0.085
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tree",
+      "name": "tree_24",
+      "position_enu": [
+        116.87762414558301,
+        85.57678814051846,
+        0
+      ],
+      "size": [
+        6.26870277336406,
+        6.26870277336406,
+        8.955289676234372
+      ],
+      "color": [
+        0.19,
+        0.3,
+        0.085
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tree",
+      "name": "tree_25",
+      "position_enu": [
+        117.18252906951328,
+        106.35877631911994,
+        0
+      ],
+      "size": [
+        5.490897132051231,
+        5.490897132051231,
+        7.8441387600731876
+      ],
+      "color": [
+        0.19,
+        0.3,
+        0.085
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tree",
+      "name": "tree_26",
+      "position_enu": [
+        116.23050911868062,
+        130.79881201595947,
+        0
+      ],
+      "size": [
+        5.0796540510720956,
+        5.0796540510720956,
+        7.256648644388709
+      ],
+      "color": [
+        0.19,
+        0.3,
+        0.085
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tree",
+      "name": "tree_27",
+      "position_enu": [
+        149.91557162418647,
+        -144.6932994245612,
+        0
+      ],
+      "size": [
+        4.911013737292601,
+        4.911013737292601,
+        7.015733910418001
+      ],
+      "color": [
+        0.19,
+        0.3,
+        0.085
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tree",
+      "name": "tree_28",
+      "position_enu": [
+        149.17749657725818,
+        -125.38578438717379,
+        0
+      ],
+      "size": [
+        3.9311176960700536,
+        3.9311176960700536,
+        5.6158824229572195
+      ],
+      "color": [
+        0.19,
+        0.3,
+        0.085
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tree",
+      "name": "tree_29",
+      "position_enu": [
+        150.62257083898908,
+        -100.41636070784907,
+        0
+      ],
+      "size": [
+        4.972657262673154,
+        4.972657262673154,
+        7.103796089533078
+      ],
+      "color": [
+        0.19,
+        0.3,
+        0.085
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tree",
+      "name": "tree_30",
+      "position_enu": [
+        150.09155523559326,
+        -78.06289483487893,
+        0
+      ],
+      "size": [
+        6.107698818591252,
+        6.107698818591252,
+        8.725284026558931
+      ],
+      "color": [
+        0.19,
+        0.3,
+        0.085
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tree",
+      "name": "tree_31",
+      "position_enu": [
+        149.04044207014584,
+        -55.0865851730113,
+        0
+      ],
+      "size": [
+        5.102603613797003,
+        5.102603613797003,
+        7.289433733995718
+      ],
+      "color": [
+        0.19,
+        0.3,
+        0.085
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tree",
+      "name": "tree_32",
+      "position_enu": [
+        151.30469404152504,
+        -30.152244339843268,
+        0
+      ],
+      "size": [
+        5.216703112993754,
+        5.216703112993754,
+        7.452433018562505
+      ],
+      "color": [
+        0.19,
+        0.3,
+        0.085
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tree",
+      "name": "tree_33",
+      "position_enu": [
+        151.62906488876402,
+        -7.011582465913781,
+        0
+      ],
+      "size": [
+        4.625809912169397,
+        4.625809912169397,
+        6.608299874527711
+      ],
+      "color": [
+        0.19,
+        0.3,
+        0.085
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tree",
+      "name": "tree_34",
+      "position_enu": [
+        151.66724678313437,
+        11.59024394028415,
+        0
+      ],
+      "size": [
+        5.5388661716540915,
+        5.5388661716540915,
+        7.912665959505846
+      ],
+      "color": [
+        0.19,
+        0.3,
+        0.085
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tree",
+      "name": "tree_35",
+      "position_enu": [
+        151.14033612496314,
+        37.091039996988975,
+        0
+      ],
+      "size": [
+        4.959655726021736,
+        4.959655726021736,
+        7.085222465745337
+      ],
+      "color": [
+        0.19,
+        0.3,
+        0.085
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tree",
+      "name": "tree_36",
+      "position_enu": [
+        151.8610728139594,
+        62.80360670800998,
+        0
+      ],
+      "size": [
+        5.913977451499828,
+        5.913977451499828,
+        8.448539216428326
+      ],
+      "color": [
+        0.19,
+        0.3,
+        0.085
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tree",
+      "name": "tree_37",
+      "position_enu": [
+        149.9165849965852,
+        80.38577093102998,
+        0
+      ],
+      "size": [
+        4.502842043064504,
+        4.502842043064504,
+        6.43263149009215
+      ],
+      "color": [
+        0.19,
+        0.3,
+        0.085
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tree",
+      "name": "tree_38",
+      "position_enu": [
+        149.99368302137043,
+        103.57997527098298,
+        0
+      ],
+      "size": [
+        5.681500736242244,
+        5.681500736242244,
+        8.116429623203206
+      ],
+      "color": [
+        0.19,
+        0.3,
+        0.085
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tree",
+      "name": "tree_39",
+      "position_enu": [
+        149.64524335105295,
+        128.6963688842869,
+        0
+      ],
+      "size": [
+        3.884379731311002,
+        3.884379731311002,
+        5.54911390187286
+      ],
+      "color": [
+        0.19,
+        0.3,
+        0.085
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tree",
+      "name": "tree_40",
+      "position_enu": [
+        173.00085587654203,
+        -146.51616004646164,
+        0
+      ],
+      "size": [
+        6.133836932100876,
+        6.133836932100876,
+        8.762624188715538
+      ],
+      "color": [
+        0.19,
+        0.3,
+        0.085
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tree",
+      "name": "tree_41",
+      "position_enu": [
+        173.33226226598424,
+        -122.23737636809982,
+        0
+      ],
+      "size": [
+        4.457202148035215,
+        4.457202148035215,
+        6.367431640050308
+      ],
+      "color": [
+        0.19,
+        0.3,
+        0.085
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tree",
+      "name": "tree_42",
+      "position_enu": [
+        175.48429864778097,
+        -99.48886997045061,
+        0
+      ],
+      "size": [
+        6.193098883389787,
+        6.193098883389787,
+        8.847284119128268
+      ],
+      "color": [
+        0.19,
+        0.3,
+        0.085
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tree",
+      "name": "tree_43",
+      "position_enu": [
+        175.67390852444356,
+        -77.18754908335579,
+        0
+      ],
+      "size": [
+        4.229164216388547,
+        4.229164216388547,
+        6.041663166269354
+      ],
+      "color": [
+        0.19,
+        0.3,
+        0.085
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tree",
+      "name": "tree_44",
+      "position_enu": [
+        174.2537709374601,
+        -54.5016073625855,
+        0
+      ],
+      "size": [
+        5.735343146094662,
+        5.735343146094662,
+        8.193347351563803
+      ],
+      "color": [
+        0.19,
+        0.3,
+        0.085
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tree",
+      "name": "tree_45",
+      "position_enu": [
+        176.79974224748315,
+        -32.04806649581686,
+        0
+      ],
+      "size": [
+        5.615157951764078,
+        5.615157951764078,
+        8.021654216805826
+      ],
+      "color": [
+        0.19,
+        0.3,
+        0.085
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tree",
+      "name": "tree_46",
+      "position_enu": [
+        173.53945835071218,
+        -10.662433975652597,
+        0
+      ],
+      "size": [
+        5.290439567502437,
+        5.290439567502437,
+        7.557770810717768
+      ],
+      "color": [
+        0.19,
+        0.3,
+        0.085
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tree",
+      "name": "tree_47",
+      "position_enu": [
+        176.83310984367537,
+        16.255962760413276,
+        0
+      ],
+      "size": [
+        5.086567406446981,
+        5.086567406446981,
+        7.26652486635283
+      ],
+      "color": [
+        0.19,
+        0.3,
+        0.085
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tree",
+      "name": "tree_48",
+      "position_enu": [
+        173.33773283415374,
+        38.01132924080438,
+        0
+      ],
+      "size": [
+        6.140886985746011,
+        6.140886985746011,
+        8.772695693922874
+      ],
+      "color": [
+        0.19,
+        0.3,
+        0.085
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tree",
+      "name": "tree_49",
+      "position_enu": [
+        176.1337518329147,
+        62.49009684857857,
+        0
+      ],
+      "size": [
+        4.599710600777488,
+        4.599710600777488,
+        6.571015143967841
+      ],
+      "color": [
+        0.19,
+        0.3,
+        0.085
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tree",
+      "name": "tree_50",
+      "position_enu": [
+        174.64815659494423,
+        84.84796995588555,
+        0
+      ],
+      "size": [
+        5.1240757582852545,
+        5.1240757582852545,
+        7.320108226121793
+      ],
+      "color": [
+        0.19,
+        0.3,
+        0.085
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tree",
+      "name": "tree_51",
+      "position_enu": [
+        173.78678844499606,
+        103.08479124123564,
+        0
+      ],
+      "size": [
+        4.110028154804576,
+        4.110028154804576,
+        5.871468792577966
+      ],
+      "color": [
+        0.19,
+        0.3,
+        0.085
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tree",
+      "name": "tree_52",
+      "position_enu": [
+        176.55108303050497,
+        126.30825223775803,
+        0
+      ],
+      "size": [
+        4.700193718696888,
+        4.700193718696888,
+        6.7145624552812695
+      ],
+      "color": [
+        0.19,
+        0.3,
+        0.085
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tree",
+      "name": "tree_53",
+      "position_enu": [
+        -92,
+        -162,
+        0
+      ],
+      "size": [
+        4.942145896423919,
+        4.942145896423919,
+        7.060208423462742
+      ],
+      "color": [
+        0.19,
+        0.3,
+        0.085
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tree",
+      "name": "tree_54",
+      "position_enu": [
+        -67,
+        -162,
+        0
+      ],
+      "size": [
+        5.816020849977803,
+        5.816020849977803,
+        8.308601214254004
+      ],
+      "color": [
+        0.19,
+        0.3,
+        0.085
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tree",
+      "name": "tree_55",
+      "position_enu": [
+        -42,
+        -162,
+        0
+      ],
+      "size": [
+        4.254159497869929,
+        4.254159497869929,
+        6.077370711242756
+      ],
+      "color": [
+        0.19,
+        0.3,
+        0.085
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tree",
+      "name": "tree_56",
+      "position_enu": [
+        -17,
+        -162,
+        0
+      ],
+      "size": [
+        5.271814467010284,
+        5.271814467010284,
+        7.531163524300406
+      ],
+      "color": [
+        0.19,
+        0.3,
+        0.085
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tree",
+      "name": "tree_57",
+      "position_enu": [
+        8,
+        -162,
+        0
+      ],
+      "size": [
+        4.888296111925455,
+        4.888296111925455,
+        6.983280159893508
+      ],
+      "color": [
+        0.19,
+        0.3,
+        0.085
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tree",
+      "name": "tree_58",
+      "position_enu": [
+        33,
+        -162,
+        0
+      ],
+      "size": [
+        4.837710614094844,
+        4.837710614094844,
+        6.911015162992634
+      ],
+      "color": [
+        0.19,
+        0.3,
+        0.085
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tree",
+      "name": "tree_59",
+      "position_enu": [
+        58,
+        -162,
+        0
+      ],
+      "size": [
+        4.884689771527868,
+        4.884689771527868,
+        6.978128245039811
+      ],
+      "color": [
+        0.19,
+        0.3,
+        0.085
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tree",
+      "name": "tree_60",
+      "position_enu": [
+        83,
+        -162,
+        0
+      ],
+      "size": [
+        4.454882974512103,
+        4.454882974512103,
+        6.3641185350172895
+      ],
+      "color": [
+        0.19,
+        0.3,
+        0.085
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tree",
+      "name": "tree_61",
+      "position_enu": [
+        -92,
+        162,
+        0
+      ],
+      "size": [
+        6.192442545144437,
+        6.192442545144437,
+        8.846346493063482
+      ],
+      "color": [
+        0.19,
+        0.3,
+        0.085
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tree",
+      "name": "tree_62",
+      "position_enu": [
+        -67,
+        162,
+        0
+      ],
+      "size": [
+        5.400398259603028,
+        5.400398259603028,
+        7.7148546565757545
+      ],
+      "color": [
+        0.19,
+        0.3,
+        0.085
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tree",
+      "name": "tree_63",
+      "position_enu": [
+        -42,
+        162,
+        0
+      ],
+      "size": [
+        5.890371092845056,
+        5.890371092845056,
+        8.41481584692151
+      ],
+      "color": [
+        0.19,
+        0.3,
+        0.085
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tree",
+      "name": "tree_64",
+      "position_enu": [
+        -17,
+        162,
+        0
+      ],
+      "size": [
+        4.5231702271226775,
+        4.5231702271226775,
+        6.461671753032397
+      ],
+      "color": [
+        0.19,
+        0.3,
+        0.085
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tree",
+      "name": "tree_65",
+      "position_enu": [
+        8,
+        162,
+        0
+      ],
+      "size": [
+        5.291188831885679,
+        5.291188831885679,
+        7.558841188408113
+      ],
+      "color": [
+        0.19,
+        0.3,
+        0.085
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tree",
+      "name": "tree_66",
+      "position_enu": [
+        33,
+        162,
+        0
+      ],
+      "size": [
+        5.110575892843458,
+        5.110575892843458,
+        7.3008227040620834
+      ],
+      "color": [
+        0.19,
+        0.3,
+        0.085
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tree",
+      "name": "tree_67",
+      "position_enu": [
+        58,
+        162,
+        0
+      ],
+      "size": [
+        4.906479612466068,
+        4.906479612466068,
+        7.009256589237241
+      ],
+      "color": [
+        0.19,
+        0.3,
+        0.085
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tree",
+      "name": "tree_68",
+      "position_enu": [
+        83,
+        162,
+        0
+      ],
+      "size": [
+        5.456261170580876,
+        5.456261170580876,
+        7.794658815115538
+      ],
+      "color": [
+        0.19,
+        0.3,
+        0.085
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "building",
+      "name": "campus_building_0",
+      "position_enu": [
+        -158,
+        -126,
+        3.0
+      ],
+      "size": [
+        19,
+        12,
+        6
+      ],
+      "color": [
+        0.71,
+        0.69,
+        0.62
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "building",
+      "name": "campus_building_1",
+      "position_enu": [
+        -159,
+        -91,
+        3.5
+      ],
+      "size": [
+        18,
+        13,
+        7
+      ],
+      "color": [
+        0.56,
+        0.62,
+        0.63
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "building",
+      "name": "campus_building_2",
+      "position_enu": [
+        -158,
+        -53,
+        4.0
+      ],
+      "size": [
+        20,
+        14,
+        8
+      ],
+      "color": [
+        0.71,
+        0.69,
+        0.62
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "building",
+      "name": "campus_building_3",
+      "position_enu": [
+        -159,
+        42,
+        3.5
+      ],
+      "size": [
+        18,
+        14,
+        7
+      ],
+      "color": [
+        0.72,
+        0.61,
+        0.5
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "building",
+      "name": "campus_building_4",
+      "position_enu": [
+        -160,
+        83,
+        3.0
+      ],
+      "size": [
+        21,
+        14,
+        6
+      ],
+      "color": [
+        0.72,
+        0.61,
+        0.5
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "building",
+      "name": "campus_building_5",
+      "position_enu": [
+        -157,
+        128,
+        4.0
+      ],
+      "size": [
+        20,
+        15,
+        8
+      ],
+      "color": [
+        0.71,
+        0.69,
+        0.62
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "building",
+      "name": "campus_building_6",
+      "position_enu": [
+        145,
+        -125,
+        3.0
+      ],
+      "size": [
+        18,
+        13,
+        6
+      ],
+      "color": [
+        0.71,
+        0.69,
+        0.62
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "building",
+      "name": "campus_building_7",
+      "position_enu": [
+        153,
+        -66,
+        3.5
+      ],
+      "size": [
+        20,
+        14,
+        7
+      ],
+      "color": [
+        0.56,
+        0.62,
+        0.63
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "building",
+      "name": "campus_building_8",
+      "position_enu": [
+        149,
+        6,
+        3.0
+      ],
+      "size": [
+        17,
+        12,
+        6
+      ],
+      "color": [
+        0.72,
+        0.61,
+        0.5
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "building",
+      "name": "campus_building_9",
+      "position_enu": [
+        151,
+        75,
+        3.5
+      ],
+      "size": [
+        21,
+        13,
+        7
+      ],
+      "color": [
+        0.56,
+        0.62,
+        0.63
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "building",
+      "name": "campus_building_10",
+      "position_enu": [
+        147,
+        130,
+        3.0
+      ],
+      "size": [
+        18,
+        12,
+        6
+      ],
+      "color": [
+        0.71,
+        0.69,
+        0.62
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "parking",
+      "name": "asphalt_parking",
+      "position_enu": [
+        -154,
+        -5,
+        0.014
+      ],
+      "size": [
+        25,
+        49,
+        0.026
+      ],
+      "color": [
+        0.13,
+        0.14,
+        0.15
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "parking_mark",
+      "name": "parking_bay_0",
+      "position_enu": [
+        -154,
+        -22,
+        0.036
+      ],
+      "size": [
+        9,
+        0.09,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "vehicle",
+      "name": "parked_vehicle_0",
+      "position_enu": [
+        -154,
+        -20,
+        0
+      ],
+      "size": [
+        4.3,
+        1.8,
+        1.6
+      ],
+      "color": [
+        0.12,
+        0.16,
+        0.2
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "parking_mark",
+      "name": "parking_bay_1",
+      "position_enu": [
+        -154,
+        -17,
+        0.036
+      ],
+      "size": [
+        9,
+        0.09,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "vehicle",
+      "name": "parked_vehicle_1",
+      "position_enu": [
+        -154,
+        -15,
+        0
+      ],
+      "size": [
+        4.3,
+        1.8,
+        1.6
+      ],
+      "color": [
+        0.12,
+        0.16,
+        0.2
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "parking_mark",
+      "name": "parking_bay_2",
+      "position_enu": [
+        -154,
+        -12,
+        0.036
+      ],
+      "size": [
+        9,
+        0.09,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "vehicle",
+      "name": "parked_vehicle_2",
+      "position_enu": [
+        -154,
+        -10,
+        0
+      ],
+      "size": [
+        4.3,
+        1.8,
+        1.6
+      ],
+      "color": [
+        0.12,
+        0.16,
+        0.2
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "parking_mark",
+      "name": "parking_bay_3",
+      "position_enu": [
+        -154,
+        -7,
+        0.036
+      ],
+      "size": [
+        9,
+        0.09,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "vehicle",
+      "name": "parked_vehicle_3",
+      "position_enu": [
+        -154,
+        -5,
+        0
+      ],
+      "size": [
+        4.3,
+        1.8,
+        1.6
+      ],
+      "color": [
+        0.12,
+        0.16,
+        0.2
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "parking_mark",
+      "name": "parking_bay_4",
+      "position_enu": [
+        -154,
+        -2,
+        0.036
+      ],
+      "size": [
+        9,
+        0.09,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "vehicle",
+      "name": "parked_vehicle_4",
+      "position_enu": [
+        -154,
+        0,
+        0
+      ],
+      "size": [
+        4.3,
+        1.8,
+        1.6
+      ],
+      "color": [
+        0.12,
+        0.16,
+        0.2
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "parking_mark",
+      "name": "parking_bay_5",
+      "position_enu": [
+        -154,
+        3,
+        0.036
+      ],
+      "size": [
+        9,
+        0.09,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "vehicle",
+      "name": "parked_vehicle_5",
+      "position_enu": [
+        -154,
+        5,
+        0
+      ],
+      "size": [
+        4.3,
+        1.8,
+        1.6
+      ],
+      "color": [
+        0.1,
+        0.23,
+        0.4
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "parking_mark",
+      "name": "parking_bay_6",
+      "position_enu": [
+        -154,
+        8,
+        0.036
+      ],
+      "size": [
+        9,
+        0.09,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "vehicle",
+      "name": "parked_vehicle_6",
+      "position_enu": [
+        -154,
+        10,
+        0
+      ],
+      "size": [
+        4.3,
+        1.8,
+        1.6
+      ],
+      "color": [
+        0.48,
+        0.08,
+        0.08
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "parking_mark",
+      "name": "parking_bay_7",
+      "position_enu": [
+        -154,
+        13,
+        0.036
+      ],
+      "size": [
+        9,
+        0.09,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "vehicle",
+      "name": "parked_vehicle_7",
+      "position_enu": [
+        -154,
+        15,
+        0
+      ],
+      "size": [
+        4.3,
+        1.8,
+        1.6
+      ],
+      "color": [
+        0.1,
+        0.23,
+        0.4
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "parking_mark",
+      "name": "parking_bay_8",
+      "position_enu": [
+        -154,
+        18,
+        0.036
+      ],
+      "size": [
+        9,
+        0.09,
+        0.015
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "vehicle",
+      "name": "parked_vehicle_8",
+      "position_enu": [
+        -154,
+        20,
+        0
+      ],
+      "size": [
+        4.3,
+        1.8,
+        1.6
+      ],
+      "color": [
+        0.1,
+        0.23,
+        0.4
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "vehicle",
+      "name": "parked_vehicle_10",
+      "position_enu": [
+        -122.8,
+        -132,
+        0
+      ],
+      "size": [
+        4.3,
+        1.8,
+        1.6
+      ],
+      "color": [
+        0.76,
+        0.77,
+        0.75
+      ],
+      "yaw": 1.5707963267948966
+    },
+    {
+      "type": "vehicle",
+      "name": "parked_vehicle_11",
+      "position_enu": [
+        -122.8,
+        -98,
+        0
+      ],
+      "size": [
+        4.3,
+        1.8,
+        1.6
+      ],
+      "color": [
+        0.1,
+        0.23,
+        0.4
+      ],
+      "yaw": 1.5707963267948966
+    },
+    {
+      "type": "vehicle",
+      "name": "parked_vehicle_12",
+      "position_enu": [
+        -122.8,
+        -67,
+        0
+      ],
+      "size": [
+        4.3,
+        1.8,
+        1.6
+      ],
+      "color": [
+        0.48,
+        0.08,
+        0.08
+      ],
+      "yaw": 1.5707963267948966
+    },
+    {
+      "type": "vehicle",
+      "name": "parked_vehicle_13",
+      "position_enu": [
+        -122.8,
+        45,
+        0
+      ],
+      "size": [
+        4.3,
+        1.8,
+        1.6
+      ],
+      "color": [
+        0.12,
+        0.16,
+        0.2
+      ],
+      "yaw": 1.5707963267948966
+    },
+    {
+      "type": "vehicle",
+      "name": "parked_vehicle_14",
+      "position_enu": [
+        -122.8,
+        80,
+        0
+      ],
+      "size": [
+        4.3,
+        1.8,
+        1.6
+      ],
+      "color": [
+        0.48,
+        0.08,
+        0.08
+      ],
+      "yaw": 1.5707963267948966
+    },
+    {
+      "type": "vehicle",
+      "name": "parked_vehicle_15",
+      "position_enu": [
+        -122.8,
+        132,
+        0
+      ],
+      "size": [
+        4.3,
+        1.8,
+        1.6
+      ],
+      "color": [
+        0.12,
+        0.16,
+        0.2
+      ],
+      "yaw": 1.5707963267948966
+    },
+    {
+      "type": "tent",
+      "name": "team_tent_0",
+      "position_enu": [
+        -91,
+        -26,
+        2.5
+      ],
+      "size": [
+        7,
+        7,
+        0.2
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tent",
+      "name": "team_tent_1",
+      "position_enu": [
+        -91,
+        -13,
+        2.5
+      ],
+      "size": [
+        7,
+        7,
+        0.2
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tent",
+      "name": "team_tent_2",
+      "position_enu": [
+        -91,
+        0,
+        2.5
+      ],
+      "size": [
+        7,
+        7,
+        0.2
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tent",
+      "name": "team_tent_3",
+      "position_enu": [
+        -91,
+        13,
+        2.5
+      ],
+      "size": [
+        7,
+        7,
+        0.2
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "tent",
+      "name": "team_tent_4",
+      "position_enu": [
+        -91,
+        26,
+        2.5
+      ],
+      "size": [
+        7,
+        7,
+        0.2
+      ],
+      "color": [
+        0.88,
+        0.9,
+        0.89
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "bench",
+      "name": "spectator_bench_0",
+      "position_enu": [
+        -101,
+        -48,
+        0.55
+      ],
+      "size": [
+        2,
+        0.55,
+        0.12
+      ],
+      "color": [
+        0.3,
+        0.18,
+        0.075
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "bench",
+      "name": "spectator_bench_1",
+      "position_enu": [
+        -101,
+        -36,
+        0.55
+      ],
+      "size": [
+        2,
+        0.55,
+        0.12
+      ],
+      "color": [
+        0.3,
+        0.18,
+        0.075
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "bench",
+      "name": "spectator_bench_2",
+      "position_enu": [
+        -101,
+        -24,
+        0.55
+      ],
+      "size": [
+        2,
+        0.55,
+        0.12
+      ],
+      "color": [
+        0.3,
+        0.18,
+        0.075
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "bench",
+      "name": "spectator_bench_3",
+      "position_enu": [
+        -101,
+        -12,
+        0.55
+      ],
+      "size": [
+        2,
+        0.55,
+        0.12
+      ],
+      "color": [
+        0.3,
+        0.18,
+        0.075
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "bench",
+      "name": "spectator_bench_4",
+      "position_enu": [
+        -101,
+        0,
+        0.55
+      ],
+      "size": [
+        2,
+        0.55,
+        0.12
+      ],
+      "color": [
+        0.3,
+        0.18,
+        0.075
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "bench",
+      "name": "spectator_bench_5",
+      "position_enu": [
+        -101,
+        12,
+        0.55
+      ],
+      "size": [
+        2,
+        0.55,
+        0.12
+      ],
+      "color": [
+        0.3,
+        0.18,
+        0.075
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "bench",
+      "name": "spectator_bench_6",
+      "position_enu": [
+        -101,
+        24,
+        0.55
+      ],
+      "size": [
+        2,
+        0.55,
+        0.12
+      ],
+      "color": [
+        0.3,
+        0.18,
+        0.075
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "bench",
+      "name": "spectator_bench_7",
+      "position_enu": [
+        -101,
+        36,
+        0.55
+      ],
+      "size": [
+        2,
+        0.55,
+        0.12
+      ],
+      "color": [
+        0.3,
+        0.18,
+        0.075
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "bench",
+      "name": "spectator_bench_8",
+      "position_enu": [
+        -101,
+        48,
+        0.55
+      ],
+      "size": [
+        2,
+        0.55,
+        0.12
+      ],
+      "color": [
+        0.3,
+        0.18,
+        0.075
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "sign",
+      "name": "field_sign_0",
+      "position_enu": [
+        -104,
+        -42,
+        1.35
+      ],
+      "size": [
+        1.8,
+        0.1,
+        0.85
+      ],
+      "color": [
+        0.055,
+        0.075,
+        0.1
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "sign",
+      "name": "field_sign_1",
+      "position_enu": [
+        -104,
+        42,
+        1.35
+      ],
+      "size": [
+        1.8,
+        0.1,
+        0.85
+      ],
+      "color": [
+        0.055,
+        0.075,
+        0.1
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "bin",
+      "name": "waste_bin_0",
+      "position_enu": [
+        -91,
+        -43,
+        0.5
+      ],
+      "size": [
+        0.55,
+        0.55,
+        1
+      ],
+      "color": [
+        0.1,
+        0.28,
+        0.2
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "bin",
+      "name": "waste_bin_1",
+      "position_enu": [
+        -91,
+        43,
+        0.5
+      ],
+      "size": [
+        0.55,
+        0.55,
+        1
+      ],
+      "color": [
+        0.1,
+        0.28,
+        0.2
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "bin",
+      "name": "waste_bin_2",
+      "position_enu": [
+        102,
+        -90,
+        0.5
+      ],
+      "size": [
+        0.55,
+        0.55,
+        1
+      ],
+      "color": [
+        0.1,
+        0.28,
+        0.2
+      ],
+      "yaw": 0
+    },
+    {
+      "type": "bin",
+      "name": "waste_bin_3",
+      "position_enu": [
+        102,
+        90,
+        0.5
+      ],
+      "size": [
+        0.55,
+        0.55,
+        1
+      ],
+      "color": [
+        0.1,
+        0.28,
+        0.2
+      ],
+      "yaw": 0
+    }
+  ],
+  "map_view_bounds": {
+    "east_min": -190,
+    "east_max": 190,
+    "north_min": -190,
+    "north_max": 190
+  },
+  "follow_camera": {
+    "model": "follow_observer",
+    "topic": "/course/realistic/follow/image",
+    "image_px": [
+      640,
+      360
+    ],
+    "hfov_rad": 1.2217304763960306,
+    "update_rate_hz": 8,
+    "default_mode": "chase",
+    "purpose": "external spectator only; not onboard perception"
+  },
+  "landing_gear": {
+    "foot_bottom_body_z_m": -0.845,
+    "foot_radius_m": 0.014,
+    "strut_radius_m": 0.007,
+    "foot_centres_body_xyz": [
+      [
+        0.48,
+        0.48,
+        -0.831
+      ],
+      [
+        0.48,
+        -0.48,
+        -0.831
+      ],
+      [
+        -0.48,
+        0.48,
+        -0.831
+      ],
+      [
+        -0.48,
+        -0.48,
+        -0.831
+      ]
+    ],
+    "design": "four fixed splayed carbon struts, rounded toes, no horizontal bars",
+    "lumped_in_existing_body_mass": true,
+    "home_pad_top_m": 0.0275,
+    "nominal_rest_body_z_m": 0.8725,
+    "nominal_loaded_cube_pad_clearance_m": 0.005,
+    "pickup_body_z_m": 0.89,
+    "pickup_foot_mat_clearance_m": 0.023
+  }
+}

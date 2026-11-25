@@ -1,0 +1,5 @@
+{
+  "method": "built-in image_gen",
+  "asset": "../models/competition_assets/textures/grass_albedo.png",
+  "prompt": "Use case: photorealistic-natural. Asset type: seamless PBR albedo texture for a realistically rendered outdoor UAV competition training field in Gazebo. A square top-down orthographic photograph of close-cropped real park grass, natural irregular small blades, fine organic moss/soil detail, occasional subtle dry yellow strands, healthy muted olive green tones with fine light variation. Completely even diffuse illumination, no directional shadows, no horizon, no objects, no perspective, no writing or marks. Tileable seamless edges; no identifiable large patches. This is a flat material albedo map, no lighting baked in, realistic fine texture. Square 1024 by 1024."
+}

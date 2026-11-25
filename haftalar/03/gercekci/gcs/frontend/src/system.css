@@ -1,0 +1,8 @@
+.planner-instructions {
+  padding: 0 16px 14px;
+  font-size: 12px;
+  line-height: 1.65;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+.planner-connection .panel-heading { flex-wrap: wrap; }

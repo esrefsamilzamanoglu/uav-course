@@ -11,7 +11,7 @@ try {
     New-Item -ItemType Directory -Path $LocalRoot -Force | Out-Null
 
     Write-Host '[1/4] Gazebo ve derleme araclari resmi conda-forge kaynagindan kuruluyor...'
-    Invoke-Checked $Pixi @('install','--manifest-path',$Manifest)
+    Invoke-Checked $Pixi @('install','--locked','--manifest-path',$Manifest)
     Set-GazeboEnvironment
 
     Write-Host '[2/4] Resmi ArduPilot Gazebo kaynagi ve Windows uyarlamasi hazirlaniyor...'

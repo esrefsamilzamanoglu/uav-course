@@ -22,12 +22,12 @@ LGPL text: COPYING.LESSER; GPL text: COPYING
 Apache text: https://www.apache.org/licenses/LICENSE-2.0
 Local port changes and course helper code: LGPL-3.0-or-later.
 
-Windows ArduCopter 4.7.3 (d9c5097c) and ten runtime DLLs are downloaded
+Windows ArduCopter 4.7.3 (f503ccfd) and ten runtime DLLs are downloaded
 directly from https://firmware.ardupilot.org/Tools/MissionPlanner/sitl/CopterStable/
 The official .elf download is a Windows PE executable saved as ArduCopter.exe.
 Parameters come from official ArduPilot commit
-d9c5097c3d8333435712ffed86bca8ce00c4bb46.
-downloads.json records SHA-256 values for the 2026-11-14 Windows SITL build.
+f503ccfd53a50cf4145a07c5db4fa795b330589c.
+downloads.json records SHA-256 values of the official 4.7.3 Windows files verified on 2026-11-25.
 If the mutable CopterStable files change, installation stops instead of mixing
 unverified versions; the course maintainer must verify and update the manifest.
 

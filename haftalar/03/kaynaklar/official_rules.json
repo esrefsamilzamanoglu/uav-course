@@ -1,0 +1,170 @@
+{
+  "schema_version": 1,
+  "retrieved_date": "2026-11-24",
+  "language": "tr",
+  "scope": "2026 TÜBİTAK / TEKNOFEST Uluslararası İHA Yarışması, Döner Kanat kategorisi; Liseler Arası farkları ayrıca verilmiştir.",
+  "scope_reason": "SUBÜ üniversite ders deposu bağlamında Uluslararası kategori esas alınmıştır. Kullanıcı kategori alt türünü belirtmemiştir.",
+  "primary_source": {
+    "title": "2026 İHA Yarışmaları Şartnamesi",
+    "version": "V7",
+    "version_date": "2026-09-06",
+    "competition_page": "https://www.teknofest.org/tr/yarismalar/uluslararasi-insansiz-hava-araci-yarismasi/",
+    "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_%C4%B0HA_Yar%C4%B1%C5%9Fmalar%C4%B1_%C5%9Eartnamesi_TR_VBU_aWNZu.pdf",
+    "local_pdf": "2026-IHA-Sartnamesi-V7.pdf",
+    "local_text": "2026-IHA-Sartnamesi-V7.txt",
+    "pdf_page_count": 84,
+    "page_numbering": "Aşağıdaki sayfa numaraları basılı numaralardır. PDF görüntüleyici sayfası = basılı numara + 1. Kapak numarasızdır.",
+    "verification": "Resmî yarışma sayfasının İndir bağlantısından indirilmiştir. Sayfa 1 sürüm tablosu V7 tarihini doğrular. Yerel V6 ile SHA-256/sayfa sayısı karşılaştırması version_comparison.json içindedir."
+  },
+  "common": {
+    "evidence_pages": [26, 27, 28, 29, 30, 31, 33],
+    "field_m": [200, 300],
+    "pole_separation_planned_m": 150,
+    "pole_separation_status": "Planlanan uzunluktur; kesin saha koordinatları veya yönelim verilmemiştir. Simülasyonda seçilen konumlar örnek yerleşimdir.",
+    "search_area_m": [30, 100],
+    "search_area_evidence_page": 28,
+    "target_positions": "Her ikinci görev uçuşu öncesi rastgele konumlandırılır; dönüş alanlarına yakın yerleştirilmez. Hedef konumları önceden uçuş planına yerleştirilemez.",
+    "max_aircraft_mass_including_payload_kg": 4,
+    "altitude": {
+      "max_agl_m": 120,
+      "min_agl_m": null,
+      "rule": "Yere temas etmemek kaydıyla alt irtifa limiti yoktur (s27). Görüntü işleme için ayrıca alt irtifa sınırlaması yoktur (s51). Eğitim uçuş yüksekliği resmî zorunluluk olarak gösterilmemelidir."
+    },
+    "setup_limit_s": 480,
+    "preflight_limit_s": 480,
+    "setup_vs_preflight": "Kurulum montaj, yük yerleştirme ve güç bağlantılarını; uçuşa hazırlık GNSS ve arm gibi işlemleri kapsar. Kutudaki sistemler önceden enerjili olamaz. Güç verme/kesme dışında ek müdahale süresi +10s, kurulum süresine eklenir.",
+    "setup_members_max": 3,
+    "ground_station_additional_members_max": 1,
+    "competition_flights_max_total_for_two_tasks": 4,
+    "best_score_per_task_used": true,
+    "payload": {
+      "count_task2": 2,
+      "identical_except_color": true,
+      "mass_and_size": "Takım seçer; iki yük renk hariç ağırlık ve diğer özelliklerde aynı olmalıdır. Farklı deneme konfigürasyonları teknik kontrolde önceden beyan edilir.",
+      "forbidden": ["Elektronik bileşen", "Karekod", "İşaret", "Şerit"],
+      "parachute": "Yükle aynı renkte pasif paraşüt kullanılabilir.",
+      "must_remain_intact": true,
+      "evidence_page": 27
+    },
+    "container": {
+      "shape": "Dikdörtgen veya kare prizma, tamamen kapalı, tek kişinin taşıyabileceği boyut/ağırlık",
+      "volume": "En dış boyutlardan hesaplanır. Taşıma kulpu gibi eklentiler hacme katılmaz.",
+      "contents": "Yer kontrol istasyonu ve kumanda dışında yükler dahil bütün İHA bileşenleri kutuda bulunur.",
+      "evidence_pages": [28, 29]
+    },
+    "penalties": {
+      "one_inside_pole_turn_points": 10,
+      "second_inside_pole_turn_invalidates_flight": true,
+      "outside_container_or_unsportsmanlike_points_range": [0, 5],
+      "evidence_pages": [30, 63]
+    },
+    "landing": "Finish geçişi süreyi durdurur; ardından İHA kırıma uğrarsa görev başarısızdır. İnişte yalnız pervane kırılması istisnası s31'de açıklanır.",
+    "radio_failsafe": "Döner kanatta kontrollü iniş; RTL seçilemez. Hakem emriyle gaz kesme de gerekir (s33). Bu madde radyo failsafe'ini tarif eder; normal görev dönüşünü yasaklamaz.",
+    "hardware_consistency": "Görev1 ve Görev2 aynı motor ve pervane ile uçulur; teknik kontrol sonrası motor/pervane/ESC değiştirilemez. İzin verilen aynı özellikli batarya değişimi teknik kurallara tabidir."
+  },
+  "missions": [
+    {
+      "id": "G1",
+      "name": "Yüksüz iki sonsuz turu",
+      "required": true,
+      "flight_limit_s": 300,
+      "figure": {"number": 6, "printed_page": 50, "png": "resmi-sayfa-50.png"},
+      "evidence_pages": [48, 49, 50],
+      "payload_count": 0,
+      "successive_figure_eight_laps": 2,
+      "sequence": [
+        "Başlangıç/bitiş çizgisinden kalkış ve direk2'ye ilerleme",
+        "Direk2'yi dışarıdan alma",
+        "Her iki direği döngüler içinde bırakacak şekilde iki ardışık sonsuz (yatay8) turu",
+        "İki turdan sonra direk2 arkasından geçerek dışından dönüş",
+        "Başlangıç/bitiş çizgisini geçiş ve bütünlüğü koruyarak iniş"
+      ],
+      "timing": "İHA'nın başlangıç/bitiş çizgisinden hareketiyle başlar; parkurdan sonra çizgiyi geçişte durur.",
+      "dependency": "Başarılı G1 olmadan G2 denenemez.",
+      "scoring_factors": ["Kutu hacmi", "Kurulum süresi", "Yüksüz kütle", "Görev uçuş süresi", "Otonomi katsayısı", "Cezalar"]
+    },
+    {
+      "id": "G2",
+      "name": "Görüntü işleme ile iki hedefe renk eşlemeli yük bırakma",
+      "required": true,
+      "flight_limit_s": 600,
+      "evidence_pages": [50, 51, 52, 53],
+      "figure": {"number": 7, "printed_page": 53, "png": "resmi-sayfa-53.png"},
+      "payload_count": 2,
+      "targets": [
+        {"id": "blue_hexagon", "color": "blue", "shape": "regular_hexagon", "side_m": 2, "payload_color": "red"},
+        {"id": "red_triangle", "color": "red", "shape": "equilateral_triangle", "side_m": 1, "payload_color": "blue"}
+      ],
+      "target_order": "Önce tespit edilen hedefe uygun renkli yük bırakılır; hedef sırası zorunlu değildir.",
+      "detection_gate": "Hedef tespiti direk2 dışından geçişten sonra yapılmalıdır (s52).",
+      "camera_count": 1,
+      "image_processing_location": "Havadan veya karadan; alt irtifa sınırlaması olmaksızın. Tespitin görüntü işlemeyle yapıldığı yer kontrol istasyonu aracılığıyla hakeme gösterilir.",
+      "image_processing_required_for_target_points": true,
+      "distractors_to_reject": [
+        {"color": "blue", "shape": "square", "side_m": 4, "belongs_to": "Sabit Kanat"},
+        {"color": "red", "shape": "square", "side_m": 2, "belongs_to": "Sabit Kanat"}
+      ],
+      "range_scoring": {
+        "measurement_radius_m": 10,
+        "position_used": "Yükün ilk yere değdiği değil, son durduğu konum",
+        "reference": "Hedef merkezi",
+        "beyond_radius": "İlgili mesafe/isabet kriteri sıfırdır; otomatik olarak bütün G2'nin geçersiz olduğu iddia edilmez.",
+        "in_target_vs_measurement": "Hedef poligonu içine isabet, eğitim başarı ölçütü olarak daha sıkı seçilebilir. 10m ölçüm yarıçapı hedefin fiziksel boyutu veya poligona tam isabet anlamına gelmez."
+      },
+      "degree_award_dependency": "G2'yi başarıyla tamamlamayan takımlar derece ödülü alamaz (s47)."
+    },
+    {
+      "id": "G3",
+      "name": "İlk bırakılan yükü alma ve diğer hedefe aktarma",
+      "required": false,
+      "category": "Yalnız Uluslararası Döner Kanat",
+      "evidence_pages": [10, 51, 54, 62, 63],
+      "sequence": ["G2'de her iki yükü de bırak", "İlk yükün bırakıldığı hedefe dön", "İlk yükü yerden al", "Alınan yükü diğer hedefe bırak"],
+      "pickup_bonus_raw": 10,
+      "accurate_transfer_bonus_raw": 10,
+      "bonus_in_g2_formula_before_autonomy_multiplier": true,
+      "time_limit": "Ayrı üçüncü görev süresi verilmemiştir. İkinci görev devamı olarak 600s içinde planlamak güvenli eğitim yorumudur; kaynak bunu ayrı süre cümlesiyle tanımlamaz.",
+      "success_metric": "AY alınan yük için 0/1; BY isabetli bırakma için 0/1. Hedefe isabet ölçütünün detaylı poligon toleransı kaynakta sayısal olarak ayrıca verilmez."
+    }
+  ],
+  "scoring": {
+    "evidence_pages": [61, 62, 63],
+    "official_maxima": {"video": 10, "G1": 30, "G2_including_G3": 80, "total": 120},
+    "autonomy_c": {"all_autonomous": 1, "autonomous_flight_with_manual_takeoff_or_landing": 0.7},
+    "G1_formula": "PG1 = c * (6*Vmin/Vtk + 6*tsetup_min/tsetup_tk + 6*W0min/W0tk + 12*tflight_min/tflight_tk) - penalty",
+    "G2_formula": "PG2 = c * (4*Vmin/Vtk + 4*tsetup_min/tsetup_tk + 4*W0min/W0tk + 20*Wpayload_tk/Wpayload_max + 8*dhex_min/dhex_tk + 12*dtri_min/dtri_tk + 10*(AY+BY) + 8*tflight_min/tflight_tk) - penalty",
+    "normalization": {
+      "Vmin": "Tüm takımlar arasında en düşük kutu hacmi",
+      "tsetup_min": "Tüm takımlar arasında en düşük İHA kurulum süresi; GNSS beklemesiyle tanımlanan ayrı uçuşa hazırlık süresi değildir",
+      "W0min": "Tüm takımlar arasında en düşük yüksüz ağırlık",
+      "Wpayload_max": "Tüm takımlar arasında en yüksek toplam yük ağırlığı",
+      "tflight_min": "İlgili görevde başarılı takımlar arasında en düşük uçuş süresi",
+      "dhex_min": "Takımların altıgen merkezine yük son durma minimum mesafesi",
+      "dtri_min": "Takımların üçgen merkezine yük son durma minimum mesafesi",
+      "AY": "Yük alınamadı0 / alındı1",
+      "BY": "İsabetsiz0 / isabetli1"
+    },
+    "not_a_standalone_absolute_score": "Tek koşunun resmi yarışma puanı diğer takımların min/max değerleri olmadan hesaplanamaz. Simülasyon puanı örnek kohort/referans varsayımıyla ve açıkça örnek olarak verilir.",
+    "zero_distance_ambiguity": "Resmî formülde dmin/dtk bulunur. Her iki mesafe sıfırken 0/0 için açık özel kural yoktur. Kodun seçtiği epsilon/tolerans veya doygunluk yorumu eğitim varsayımı olarak belgelenmelidir; resmî kural gibi sunulmamalıdır."
+  },
+  "high_school_differences": {
+    "evidence_pages": [54, 55, 56, 57, 58, 59, 63, 64, 65],
+    "G1": "Aynı yüksüz iki sonsuz turu ve 300s limit",
+    "G2": "Mavi2x2m kareye kırmızı yük; kırmızı1x1m kareye mavi yük; görüntü işleme zorunlu,600s limit",
+    "G3": "Tanımlanmamıştır; Uluslararası Döner Kanat'a özgü isteğe bağlı görev",
+    "manual_full_flight_c": 0.5,
+    "G2_target_score_coefficients": {"blue_square": 10, "red_square": 20},
+    "G2_max": 70,
+    "total_max": 110
+  },
+  "source_ambiguities_and_interpretations": [
+    "s50 açıklamasında altıgenden üçgene aktarma örneği vardır; s10,s51 ve s54'te üçüncü görev ilk bırakılan yükün diğer hedefe aktarımı olarak, sırasız tanımlanmıştır. Ders ve kod açık s54 görev tanımını esas alır.",
+    "Direklerarası150m planlanan değerdir; mutlak koordinatlar, güzergâh yarıçapı, kamera irtifası ve örnek GNSShome eğitim sahnesi seçimleridir.",
+    "Görev3 için ayrı zaman limiti yazılmamıştır;600s G2 bütçesine dahil kabulü açık yorumdur.",
+    "Hedef içi pickup/transfer fiziksel kavrama toleransı sayısal verilmez; simülasyonun kavrama yarıçapı ve bırakma doğruluğu kendi model parametreleridir."
+  ],
+  "supporting_official_sources": [
+    {"title": "TÜBİTAK Uluslararası İHA Yarışmaları", "url": "https://tubitak.gov.tr/tr/yarismalar/uluslararasi-insansiz-hava-araclari-yarismasi"},
+    {"title": "TEKNOFEST Liseler Arası İHA Yarışması", "url": "https://www.teknofest.org/tr/yarismalar/liseler-arasi-insansiz-hava-araclari-yarismasi/"}
+  ]
+}

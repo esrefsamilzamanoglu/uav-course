@@ -1,6 +1,10 @@
 # UAV Course
 
-Haftalık ders sunumları ve Windows/Linux kurulum rehberi.
+Haftalık ders sunumları, öğrenci kodları ve simülasyon uygulamaları.
+
+**3. hafta / başka Windows bilgisayarda:** Depoyu `C:\uav-course` konumuna alın → kökte **Kur.cmd** → **Kontrol.cmd** → **Baslat.cmd**. [Adım adım kurulum](KURULUM.md).
+
+**Mission Planner + ROTA birlikte:** ROTA'da simülasyonu başlatın; Mission Planner'da **TCP / 127.0.0.1 / 5762** seçin. 5760 ROTA GCS'ye ayrılmıştır. Görev ve renkli Python bloklarını ROTA'dan, telemetriyi iki uygulamadan izleyin.
 
 ## Haftalık sunumlar
 
@@ -8,8 +12,13 @@ Haftalık ders sunumları ve Windows/Linux kurulum rehberi.
 | --- | --- | --- |
 | 1. hafta | İHA Yazılımı ve Simülasyonu | [PDF'yi aç](haftalar/01/Hafta-01-Sunum.pdf) |
 | 2. hafta | AUTO görevler ve Gaussian Splatting | [PDF'yi aç](haftalar/02/Hafta-02-Sunum.pdf) · [Uygulamalar](haftalar/02/README.md) |
+| 3. hafta | 2026 döner kanat yarışması: G1, G2 ve G3 | [Güncel sunum PDF](haftalar/03/Hafta-03-Sunum-Gercekci.pdf) · [Görselli ders notları](haftalar/03/Hafta-03-Ders-Notlari-Gercekci.pdf) · [Gerçekçi Gazebo ve ROTA GCS](haftalar/03/gercekci/README.md) · [Tüm içerik](haftalar/03/README.md) |
 
-Her hafta için yalnız güncel sunum paylaşılır; bağlantısı aynı kalır. Ders kodları, görevler ve gerekli simülasyon dosyaları ilgili haftanın klasöründedir.
+Tablo güncel sunumlara yönlendirir. Ders kodları, görevler ve gerekli simülasyon dosyaları ilgili haftanın klasöründedir; öğrencinin çalıştıracağı kaynaklar ve ders materyalleri yayımlanır.
+
+3. haftanın [canlı ders rehberi](haftalar/03/gercekci/CANLI_DERS.md), G1/G2/G3 seçimini, dört modlu üçüncü şahıs kamerasını ve gerçek Python satır/çağrı yığını takibini açıklar.
+
+[Kodlar Satır Satır — PDF](haftalar/03/Hafta-03-Kodlar-Satir-Satir.pdf), aynı uygulamanın 9 kaynak dosyasını satır satır Türkçe açıklamalar ve şemalarla anlatır.
 
 ## 1. hafta kurulumu
 
@@ -18,7 +27,7 @@ Her hafta için yalnız güncel sunum paylaşılır; bağlantısı aynı kalır.
 | Sistem | Kullanılacak yol |
 | --- | --- |
 | Windows 10/11, x64 | Gazebo + ArduPilot Gazebo eklentisi + SITL → Mission Planner TCP |
-| Ubuntu 24.04 Desktop, amd64 | Gazebo Jetty 10.5.0 + ArduCopter 4.7.2 → QGroundControl TCP |
+| Ubuntu 24.04 Desktop, amd64 | Aynı Jetty 10.5.0 + ArduCopter 4.7.3 → QGroundControl TCP |
 
 İnternet bağlantısı ve birkaç GB boş alan gerekir. ROS kurulumu gerekmiyor.
 
@@ -58,7 +67,7 @@ Bu akışta Mission Planner'ın **SIMULATION** sekmesinden ikinci SITL açmayın
 
 ### Linux — Ubuntu 24.04 Desktop amd64
 
-**Gazebo Jetty 10.5.0**, **ArduCopter 4.7.2** ve Windows ile aynı **ArduPilot Gazebo eklentisi kaynak sürümü** kullanılır. Linux yer kontrol istasyonu **QGroundControl 5.1.5**'tir; bağlantı burada da **TCP 127.0.0.1:5760** üzerinden yapılır.
+Linux kurulumu **Gazebo Jetty 10.5.0**, **ArduCopter 4.7.2** ve **ArduPilot Gazebo eklentisi kaynak sürümü** kullanılır. Linux yer kontrol istasyonu **QGroundControl 5.1.5**'tir; bağlantı burada da **TCP 127.0.0.1:5760** üzerinden yapılır.
 
 **1. Git, VS Code ve Pixi'yi hazırlayın:** [VS Code](https://code.visualstudio.com/download) ve [Pixi](https://pixi.prefix.dev/latest/installation/) resmî kaynaklarından kurulur. Gazebo ve QGroundControl'u 3. adımdaki yardımcı otomatik kurar.
 

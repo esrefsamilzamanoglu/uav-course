@@ -1,0 +1,6 @@
+numpy==2.5.5
+opencv-python==4.14.0.94
+Pillow==13.0.0
+pymavlink==2.4.50
+fastcrc==0.5.0
+lxml==6.1.3

@@ -1,0 +1,33 @@
+# Installed software, build output and per-flight data stay on each student's PC.
+**/.local/
+**/.pixi/
+**/.venv/
+**/venv/
+**/node_modules/
+**/__pycache__/
+*.py[cod]
+*.log
+*.tlog
+*.bin
+*.download
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
+**/test-results/
+**/playwright-report/
+# These files contain machine-specific paths and are rebuilt by Kur.cmd.
+haftalar/03/gercekci/world/competition.sdf
+haftalar/03/gercekci/world/world_manifest.json
+haftalar/03/gercekci/world/*-check.json
+# The tested, ready-to-run frontend dist is intentionally published.
+# Lesson authoring history and acceptance captures are not student deliverables.
+haftalar/03/sunum/
+haftalar/03/kod-rehberi/
+haftalar/03/dogrulama/
+haftalar/03/gercekci/dogrulama/
+haftalar/03/gercekci/world/qa/
+haftalar/03/gercekci/gcs/design/
+haftalar/03/*.zip
+haftalar/03/*.zip.sha256.txt

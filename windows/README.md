@@ -13,3 +13,5 @@ Kurulum, Gazebo Jetty **10.5.0**, ArduCopter **4.7.3** ve bu bilgisayarda çalı
 `ardupilot_gazebo` için resmî bir Windows kurucusu bulunmadığından [belirli kaynak sürümüne](https://github.com/ArduPilot/ardupilot_gazebo/tree/082a0fe231f6e63bc8d1598f1cba461d9e2ea7f5) küçük bir Windows yaması uygulanır. Ayrıntı ve lisanslar: [SOURCES.txt](SOURCES.txt), [COPYING.LESSER](COPYING.LESSER), [COPYING](COPYING). Resmî SITL dosyalarının sürümü değişip doğrulama durursa manifestin ders sorumlusu tarafından güncellenmesi gerekir.
 
 21 Ekim 2026'da bu yardımcılarla ayrı bir klasörde yeni Gazebo ortamı oluşturuldu; eklenti derlendi ve kurulumun yeniden çalıştırılması denendi. Gazebo'da Iris görüntüsü, JSON bağlantısı ve TCP üzerinden disarmed durumunda heartbeat, tutum ve konum telemetrisi doğrulandı. Bu kontrolde uçuş komutu gönderilmedi; temiz bilgisayar testi yapılmadı.
+
+3. haftada ROTA GCS ile birlikte kullanım için depo kökündeki [Kur.cmd](../Kur.cmd) ve [KURULUM.md](../KURULUM.md) rehberini kullanın. Bu durumda Mission Planner portu **5762** olur; yukarıdaki tek GCS örneği 1. haftaya aittir.
